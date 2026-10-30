@@ -1,0 +1,548 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "macos-pr1-validation-handoff-20261030",
+  "summary": "Hand off PR1 to native macOS validation on an isolated branch; preserve the physical-alias P1 and separate offline/live acceptance.",
+  "impact": "documentation",
+  "paths": [
+    "docs/development/macos-pr1-check.md",
+    "machine/changes/macos-pr1-validation-handoff-20261030.json",
+    "machine/document-notes/docs/development/macos-pr1-check.md.json",
+    "CHANGELOG.md",
+    "machine/document-notes/CHANGELOG.md.json",
+    "machine/source-design-index.jsonl"
+  ],
+  "reading_paths": [
+    "docs/development/macos-pr1-check.md",
+    "core/docs/methods/guides/plan-seal-and-first-execution.md",
+    "core/docs/methods/guides/revision-responses-and-acceptance.md",
+    "core/docs/methods/source-acquisition-routing.md",
+    "machine/documentation-operations.json"
+  ],
+  "revisit": "Recover native macOS operation-level fixtures before deciding whether P1 and platform compatibility are resolved. Preserve first draft and existing revisor workflow.",
+  "acceptance": "Physical equality and either containment direction reject before staging/copy/ACK; distinct safe roots and root-controlled ancestors work; user-writable links remain refused. Maintainer decides merge separately.",
+  "historical_backfill": false,
+  "identity": {
+    "pull_request": "https://github.com/vvcchh0/BioInformaticsHarness/pull/1",
+    "received_pr_head": "e0562ed003a5bcb75a115f13acbc14771501e202",
+    "branch": "codex/macos-pr1-validation",
+    "branch_start": "e0562ed003a5bcb75a115f13acbc14771501e202",
+    "preparation_platform": "win32",
+    "native_macos_execution": false,
+    "handoff_state": "prepared_pending_native_execution_and_recovery",
+    "p1_fix_implemented_in_this_handoff": false,
+    "merge_or_release_authorized_by_this_record": false
+  },
+  "protected_materials": [
+    "Original PR snapshot and historical reviews",
+    "Frozen first plan, first draft, old snapshots and release assets",
+    "Existing revisor protocol; no new first-draft requirement",
+    "System links/ownership/permissions and global proxy configuration"
+  ],
+  "prior_evidence": {
+    "availability": "private_archive",
+    "records": [
+      {
+        "locator": "machine/reviews/2026-10-single-session-iteration-20261029/PR1-REVIEW-SUMMARY.json",
+        "role": "Parent summary and scoped Windows results"
+      },
+      {
+        "locator": "machine/reviews/2026-10-single-session-iteration-20261029/PR1-INDEPENDENT-REVIEW.json",
+        "role": "Independent static/control-flow and pure-path review"
+      },
+      {
+        "locator": "machine/reviews/2026-10-single-session-iteration-20261029/PR1-PARENT-ALIAS-REPRODUCTION.json",
+        "role": "Full seal_plan under one controlled Windows junction premise"
+      }
+    ],
+    "aggregate": {
+      "tests_run": 39,
+      "passed": 36,
+      "skipped": 3,
+      "platform": "Windows",
+      "python": "3.11.2",
+      "includes": "38 selected suite tests plus one changed mutation-hook regression",
+      "native_macos": false,
+      "live_download": false
+    },
+    "alias_reproduction": {
+      "premise": "Only one local junction admitted as a root-controlled system ancestor",
+      "observed_status": "archived",
+      "source_ARCHIVED_written": true,
+      "independent_archive_copy_created": false,
+      "native_macos": false
+    },
+    "routing_scope": "Fake HTTP sessions and deterministic public DNS stub; no live GitHub download.",
+    "public_explanation": "Private locators supply provenance; actionable public instructions resolve to repository files."
+  },
+  "blocking_finding": {
+    "id": "PR1-ALIAS-OVERLAP",
+    "priority": "P1",
+    "status_at_handoff": "open_pending_fix_and_native_validation",
+    "path": "core/scripts/research_support/plan_seal.py",
+    "mechanism": "Root-controlled ancestors are admitted but _reject_overlapping_roots compares lexical roots. Equal physical roots can reach the preexisting archive branch and ACK without an independent copy. Descendant aliases can modify the source before the final source check fails.",
+    "required_order": [
+      "Retain existing ownership/link refusal checks",
+      "Resolve existing source physically (strictly) and potentially missing destination physically after refusal checks",
+      "Reject physical equality and containment in both directions",
+      "Only then permit staging, copying, installation and ACK"
+    ],
+    "bounded_fix_specification": "Keep requested spellings for reporting if useful; compare physical paths before archive mutations. This specification neither implements a fix nor grants broader write/merge authority.",
+    "regression_invariants": [
+      "Distinct safe roots continue to seal through actual root-controlled system ancestors",
+      "User-owned links and links replaceable via writable parents remain refused",
+      "Member/hard-link refusal and open/read identity checks remain active"
+    ]
+  },
+  "execution_preconditions": {
+    "platform": "Native macOS, ordinary non-root user",
+    "python": "Use already available branch-supported interpreter and record exact build/executable",
+    "optional_dependencies": "Record psutil and requests availability/versions; missing dependencies are skip/blocked rows, not passes; do not install as a research side effect.",
+    "new_base_command_templates": [
+      "mktemp -d /var/tmp/harness-pr1-macos.XXXXXX",
+      "mktemp -d /tmp/harness-pr1-macos.XXXXXX"
+    ],
+    "temporary_policy": "Resolve and inspect each new task-owned base; retain creation records. Each matrix row uses a fresh fixture and output prefix; logs remain outside plan/source. Preserve failures; rerun with new fixtures.",
+    "environment": "Record OS build, architecture, UID, filesystem/device, TMPDIR, tempfile root, link lstat and immediate-parent ownership/mode. Record proxy variable presence/redacted endpoints, never credentials.",
+    "system_changes": "No sudo, system-link replacement, chmod/chown, global Git/proxy changes or cleanup of old material.",
+    "git_policy": "Identify branch read-only; no merge-main, push, review posting or publication from this checklist."
+  },
+  "commands": [
+    {
+      "id": "environment-os",
+      "cwd": "public_git_root",
+      "argv": [
+        "sw_vers"
+      ],
+      "kind": "environment"
+    },
+    {
+      "id": "environment-arch",
+      "cwd": "public_git_root",
+      "argv": [
+        "uname",
+        "-m"
+      ],
+      "kind": "environment"
+    },
+    {
+      "id": "environment-python",
+      "cwd": "public_git_root",
+      "argv": [
+        "python3",
+        "-B",
+        "-c",
+        "import sys, platform, tempfile, importlib.util; print(sys.version); print(sys.executable); print(platform.platform()); print(tempfile.gettempdir()); print({p: importlib.util.find_spec(p) is not None for p in ('psutil','requests')})"
+      ],
+      "kind": "environment",
+      "note": "Also record exact installed psutil/requests distributions when present; do not install automatically."
+    },
+    {
+      "id": "branch-identity",
+      "cwd": "public_git_root",
+      "argv": [
+        "git",
+        "rev-parse",
+        "--show-toplevel",
+        "HEAD"
+      ],
+      "kind": "read_only_identity"
+    },
+    {
+      "id": "branch-status",
+      "cwd": "public_git_root",
+      "argv": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "kind": "read_only_identity"
+    },
+    {
+      "id": "plan-seal",
+      "cwd": "core",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_plan_seal.py",
+        "-v"
+      ],
+      "kind": "offline_existing_suite",
+      "expected_exit_on_success": 0,
+      "note": "Retain testsRun/errors/failures/skips/log; for native ancestry coverage set TMPDIR only to a newly created checked fixture directory before Python starts."
+    },
+    {
+      "id": "execution-capture",
+      "cwd": "core",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_execution_capture.py",
+        "-v"
+      ],
+      "kind": "offline_existing_suite",
+      "expected_exit_on_success": 0,
+      "note": "Retain testsRun/errors/failures/skips/log; for native ancestry coverage set TMPDIR only to a newly created checked fixture directory before Python starts."
+    },
+    {
+      "id": "public-run-bounded",
+      "cwd": "core",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_public_run_bounded.py",
+        "-v"
+      ],
+      "kind": "offline_existing_suite",
+      "expected_exit_on_success": 0,
+      "note": "Retain testsRun/errors/failures/skips/log; for native ancestry coverage set TMPDIR only to a newly created checked fixture directory before Python starts."
+    },
+    {
+      "id": "documentation",
+      "cwd": "public_git_root",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_documentation.py",
+        "-v"
+      ],
+      "kind": "offline_existing_suite",
+      "expected_exit_on_success": 0,
+      "note": "Retain testsRun/errors/failures/skips/log; for native ancestry coverage set TMPDIR only to a newly created checked fixture directory before Python starts."
+    },
+    {
+      "id": "capture-mutation-hook",
+      "cwd": "core",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_public_run_bounded.py",
+        "-k",
+        "test_inconsistent_capture_is_rejected_before_child_start",
+        "-v"
+      ],
+      "kind": "offline_existing_regression",
+      "requires": "psutil and explicit hook activation evidence",
+      "expected_exit_on_success": 0
+    },
+    {
+      "id": "source-routing-offline-public-dns-stub",
+      "cwd": "core",
+      "argv": [
+        "python3",
+        "-B",
+        "-c",
+        "import socket, sys, unittest\nfrom unittest import mock\nsuite = unittest.defaultTestLoader.discover('tests/acquisition', pattern='test_source_routing.py')\nanswer = [(socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP, '', ('93.184.216.34',443))]\nwith mock.patch('socket.getaddrinfo', return_value=answer):\n    result = unittest.TextTestRunner(verbosity=2).run(suite)\nsys.exit(0 if result.wasSuccessful() else 1)\n"
+      ],
+      "kind": "offline_fake_transport",
+      "expected_exit_on_success": 0,
+      "dns_stub": "Process-local deterministic public IP; test-specific nested mocks retain their own scopes. No live DNS/download evidence.",
+      "transport": "Existing FakeSession/SessionSequence; no execute-mode live CLI."
+    },
+    {
+      "id": "prepare-fixture-template",
+      "cwd": "core",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "scripts.research_support.plan_seal",
+        "prepare",
+        "--plan-root",
+        "<PLAN_ABSOLUTE>",
+        "--case-id",
+        "macos-pr1-fixture"
+      ],
+      "kind": "native_fixture_template",
+      "substitution": "Replace placeholders with a new row fixture and capture actual argv/exit.",
+      "expected_rejection_exit": 2
+    },
+    {
+      "id": "check-fixture-template",
+      "cwd": "core",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "scripts.research_support.plan_seal",
+        "check",
+        "--plan-root",
+        "<PLAN_ABSOLUTE>"
+      ],
+      "kind": "native_fixture_template",
+      "substitution": "Replace placeholders with a new row fixture and capture actual argv/exit.",
+      "expected_rejection_exit": 2
+    },
+    {
+      "id": "seal-fixture-template",
+      "cwd": "core",
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "scripts.research_support.plan_seal",
+        "seal",
+        "--plan-root",
+        "<PLAN_ABSOLUTE>",
+        "--archive-root",
+        "<ARCHIVE_ABSOLUTE>",
+        "--case-id",
+        "macos-pr1-fixture"
+      ],
+      "kind": "native_fixture_template",
+      "substitution": "Replace placeholders with a new row fixture and capture actual argv/exit.",
+      "expected_rejection_exit": 2
+    },
+    {
+      "id": "documentation-fixture-template",
+      "cwd": "public_git_root",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/documentation.py",
+        "check",
+        "--root",
+        "<NEW_DOCUMENTATION_FIXTURE_ROOT>",
+        "--out",
+        "<NEW_LEGAL_REPORT_PATH>"
+      ],
+      "kind": "native_fixture_template",
+      "expected_valid_exit": 0,
+      "expected_guard_rejection_exit": 2
+    },
+    {
+      "id": "documentation-current-tree",
+      "cwd": "public_git_root",
+      "argv": [
+        "python3",
+        "-B",
+        "tools/documentation.py",
+        "check",
+        "--root",
+        ".",
+        "--out",
+        ".scratch/macos-pr1-new-run/documentation-check.json"
+      ],
+      "kind": "read_only_payload_check",
+      "precondition": "Use a new checked .scratch run directory, no links and no reused output names."
+    }
+  ],
+  "native_cases": {
+    "fixture_construction": [
+      "For each alias family create a fresh base. L is /var/tmp/<new-base> or /tmp/<new-base>; P is its resolved /private/var/tmp/<new-base> or /private/tmp/<new-base>. Confirm lstat/parent identity and L.resolve()==P without simulated acceptance.",
+      "For each row create L/plan with PLAN.md and notes/scope.txt; prepare READY once. Keep logs outside plan. Use absolute roots.",
+      "Repeat each row with L/P input spellings swapped; execute both alias families. If actual mapping or access is absent, retain the row as not-run with its reason.",
+      "Snapshot full task fixture and prospective archive parent before/after; for a missing archive record physical existing parent plus missing leaf."
+    ],
+    "alias_matrix": [
+      {
+        "id": "same-physical-root",
+        "plan": "L/plan",
+        "archive": "P/plan",
+        "expected": "SupportError / CLI exit 2 before any mutation; no new ACK; source/READY unchanged"
+      },
+      {
+        "id": "archive-physical-descendant",
+        "plan": "L/plan",
+        "archive": "P/plan/archive-new",
+        "precondition": "archive-new missing, parent exists",
+        "expected": "Reject before stage/copy/ACK; source unchanged"
+      },
+      {
+        "id": "archive-physical-ancestor",
+        "plan": "L/plan",
+        "archive": "P",
+        "precondition": "existing task-owned base contains plan",
+        "expected": "Reject before stage/copy/ACK; base/source unchanged"
+      },
+      {
+        "id": "distinct-safe-sibling",
+        "plan": "L/plan",
+        "archive": "P/archive-new",
+        "precondition": "archive missing, parent exists",
+        "expected": "prepare/check/seal exit 0; independent copy; repeat already_archived without rewriting old ACK"
+      }
+    ],
+    "write_order_observation": {
+      "method": "After READY creation, use unittest.mock spies with wraps on plan_seal.tempfile.mkdtemp, plan_seal._copy_one and plan_seal.dump_new during seal_plan; observe os.rename/install if needed. Never patch resolution, ownership or is_root_controlled_link for native acceptance. Retain direct-API spy evidence and CLI exits separately.",
+      "acceptance": "Overlapping rows have zero stage/copy/ACK calls and unchanged source/READY, no new target/staging entries. Absence of a final stage alone is insufficient evidence of no attempted write."
+    },
+    "link_policy": {
+      "required": [
+        "User-owned source root link",
+        "User-owned ancestor link above real source",
+        "User-owned member link",
+        "User-owned target or target-ancestor link",
+        "Hard-linked selected member where current contract refuses it"
+      ],
+      "construction": "Create links solely within fresh task-owned fixtures pointing to task-owned files/directories; record link/parent lstat. Do not create root-owned replacement links.",
+      "expected": "Refusal preserving existing source/destination/ACK bytes",
+      "positive": "Use actual /var and /tmp ancestry for full prepare/check/seal/capture operations; the existing helper-only /var unit test cannot supply this evidence."
+    },
+    "independent_copy_acceptance": {
+      "directories": "Resolved roots differ; neither contains the other; os.path.samefile(source,archive) is false.",
+      "files": "READY/selected bytes match, but source/destination st_dev/st_ino and samefile establish distinct physical files; record st_nlink and reject shared hard links.",
+      "source_changes": "Only the expected new ARCHIVED.json may appear on successful first seal; plan/READY bytes unchanged.",
+      "ack": "Record prior/new ACK existence/content identity and its source/destination identities; repeat seal must preserve old ACK bytes."
+    },
+    "capture": {
+      "runs": "Both alias families, L and P root spellings; root-relative child.py/config.json/input.bin; new output prefix outside source.",
+      "acceptance": [
+        "Snapshot exists before child work; exact code/config bytes saved",
+        "Input identity recorded without input-payload copy",
+        "Existing output conflict preserves original snapshot",
+        "Source fixture mutation leaves captured snapshot stable",
+        "Unsafe links and escaping selected paths remain refused"
+      ],
+      "mutation_hook": {
+        "test": "PublicRunBoundedTests.test_inconsistent_capture_is_rejected_before_child_start",
+        "requires": "psutil present and hook actually hits path == subject.resolve()",
+        "observables": [
+          "Hook count and resolved subject path",
+          "Runner exit 2",
+          "stderr contains child was not started",
+          "No child marker",
+          "No execution receipt"
+        ],
+        "missing_dependency": "Record skip; native hook acceptance unresolved"
+      }
+    },
+    "documentation": {
+      "fixture": "Create tests/test_documentation.py DocumentationFixture in fresh native base, or a derived source copy with explicit identity. Invoke actual branch tools/documentation.py, not the fixture placeholder tool bytes.",
+      "positive": [
+        "root=L/repository,out=L/repository/.scratch/<new>.json",
+        "root=P/repository,out=P/repository/.scratch/<new>.json",
+        "Fresh report outside inventoried fixture"
+      ],
+      "refusal": [
+        "Report in public payload outside .scratch",
+        "Report crossing user-created link inside .scratch"
+      ],
+      "cross_spelling": [
+        "root=L/repository,out=P/repository/.scratch/<new>.json",
+        "root=P/repository,out=L/repository/.scratch/<new>.json"
+      ],
+      "static_inference": {
+        "status": "inferred_from_head_not_native_reproduced",
+        "basis": "_assert_outside_root compares lexical out with requested/resolved roots. Physical root P plus alias out L/.scratch appears to reach the physical-inside-root refusal; reverse spelling appears accepted.",
+        "followup": "Recover both native exits, resolved root/out and guard findings before deciding compatibility revision. This record asserts no reproduced native defect."
+      },
+      "inventory": "Parent refreshes preparation-branch inventories after writers stop; never refresh from private archive Git history."
+    }
+  },
+  "routing_checks": {
+    "offline": {
+      "transport": "FakeResponse/FakeSession/SessionSequence only; no live requests",
+      "dns": "Process-local deterministic public DNS answer, disclosed as a stub",
+      "matrix": [
+        "github_proxy=null -> github-direct, trust_env false, proxies empty",
+        "Explicit github_proxy -> github-proxy; academic-direct stays proxy-free",
+        "Scope uppercase/lowercase HTTP_PROXY, HTTPS_PROXY and ALL_PROXY to the test process; routes still ignore environment",
+        "GitHub-direct -> academic-direct redirect",
+        "GitHub-proxy -> academic-direct redirect",
+        "Academic-direct -> GitHub-direct under null config",
+        "Academic-direct -> GitHub-proxy under explicit config"
+      ],
+      "assertions": [
+        "A fresh route/session is selected for every hop",
+        "Record route_history or session route sequence and actual proxy settings",
+        "Automatic redirects disabled; request count and redirect budget remain correct",
+        "No GitHub proxy carried into an academic destination"
+      ],
+      "coverage_gap": "Existing redirect execution test covers default GitHub-direct -> academic-direct. Proxy-enabled cross-domain redirects require explicit additional bounded fixtures; existing suite success cannot mark those rows passed."
+    },
+    "live": {
+      "status": "optional_separate_run",
+      "preconditions": "Already authorized network access; requests present; for proxy run a user-provided already running proxy. Select and record a small public resource.",
+      "method": "Copy core/config/source-routing.json to a new run directory. Keep github_proxy null for direct; set explicit proxy only in a separate copy. Use execute with explicit small max-requests/max-bytes budgets and new output directories. Preserve redacted URL/redirects, response/request counts and receipts.",
+      "forbidden_shortcuts": [
+        "No allow-private-test-destination flag for real destination refusal",
+        "No global proxy/environment changes or disabling private-address checks",
+        "No live claim from fake sessions or DNS stub"
+      ]
+    },
+    "fake_ip_diagnosis": {
+      "record": [
+        "Actual requested host and DNS addresses",
+        "Private/reserved/fake-IP classification",
+        "Exact validation refusal before HTTP or later transport error",
+        "Selected route, available proxy and redacted endpoint; no credentials"
+      ],
+      "interpretation": "Environment-provided fake-IP/reserved addresses rejected by the guard are recorded as environment-blocked live execution plus actual guard behavior. Preserve evidence, use a separate run after authorized network adjustment, and retain the guard. Deterministic offline success is separate."
+    }
+  },
+  "result_bundle": {
+    "write_policy": "Create machine/reviews/<new-native-run>/ and new evidence files. Preserve historical reviews and earlier runs; do not overwrite this preparation record.",
+    "required_files": [
+      "MACOS-PR1-RESULT.json",
+      "commands.jsonl",
+      "native-cases.jsonl",
+      "Raw logs for actual commands",
+      "Fixture inventory and pre/post identities",
+      "Offline route/session evidence; live DNS/transport observations and receipts when attempted"
+    ],
+    "result_json_fields": [
+      "run_id, started_at_utc, finished_at_utc, branch, received_head, tested_head, working_tree_diff_identity",
+      "macOS version/build, architecture, Python version/executable, UID, filesystem and TMPDIR",
+      "psutil/requests exact versions or absence; proxy variable presence/redacted endpoints",
+      "tests_run, passed, failures, errors, each skipped/not_run row and reason",
+      "Per-alias-family/direction outcomes and actual system mapping",
+      "P1 disposition and independent_archive_copy_created with identity evidence",
+      "Separate offline/live routing dispositions and explicit DNS-stub disclosure",
+      "Remaining uncertainties, authorized fix/revisor references if any, next responsibility/action, merge_decision_pending"
+    ],
+    "command_fields": [
+      "cwd, actual argv, scoped environment changes, UTC start/end, exit code, stdout/stderr references, timeout/interruption, test counts/skips"
+    ],
+    "case_fields": [
+      "Fixture creation/ownership; lexical/physical source/archive; strict existing-source and existing-parent resolution",
+      "Before/after lists and st_dev/st_ino/st_mode/st_uid/st_gid/st_nlink/bytes/sha256 where relevant",
+      "READY before/after identity; ACK before/after existence/content/identity",
+      "Stage/copy/install/ACK observer counts/events",
+      "Exception/status/CLI exit; source_mutated; destination_created; independent_archive_copy_created",
+      "Native or simulated premise; all monkeypatch scope; unresolved acceptance"
+    ],
+    "acceptance_separation": "Preparation, actual execution, recovered evidence and maintainer acceptance are distinct states. Skipped/not-run rows are not passes; operational success does not replace scientific/revisor acceptance."
+  },
+  "handoff_stop_conditions": [
+    "Stop P1 acceptance if any overlapping physical case reaches stage/copy/ACK or a successful seal lacks an independent copy. Preserve fixture and report.",
+    "Continue independent authorized checks while affected dependencies remain unresolved. Do not broaden filesystem/network authority.",
+    "Return results to maintainer; no merge-main, review posting or publication from this handoff."
+  ],
+  "preparation_validation": {
+    "native_tests_executed": false,
+    "code_or_test_changes": false,
+    "manifest_refresh_performed": false,
+    "parent_owns_final_documentation_checks_and_verifiers": true
+  }
+}

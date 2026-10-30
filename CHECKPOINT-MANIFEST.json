@@ -37,10 +37,10 @@
       "transform": "first-party-documentation-revision"
     },
     {
-      "bytes": 7911,
+      "bytes": 8245,
       "license": "CC-BY-4.0",
       "path": "CHANGELOG.md",
-      "sha256": "592eb2a55980d2adbac4297c785f9f3c5a29cff6a2ef5cdd2f5c949a5dd8d949",
+      "sha256": "9646a88d52cd57ef35c277738652393eed4a7cf443a1d3f32835edc66b39361f",
       "source": {
         "bytes": 1632,
         "path": "docs/reviews/2026-10-checkpoint-publication/public-repository/CHANGELOG.md",
@@ -450,7 +450,7 @@
       "bytes": 281427,
       "license": "Apache-2.0",
       "path": "core/RELEASE-MANIFEST.json",
-      "sha256": "60d80c3efc0d39a9ded93328a9e2aea0dfcddbec4fadd426ca930370a1fe9623",
+      "sha256": "1ec70bce677b7d278334b4397f4cc8651f97b27c2184e26360d36c9170dac3cf",
       "source": {
         "path": "generated:scripts/release/build_release.py",
         "release_manifest": {
@@ -5601,6 +5601,18 @@
       }
     },
     {
+      "path": "docs/development/macos-pr1-check.md",
+      "bytes": 7266,
+      "sha256": "9cd6203b6b30abc8762a572a5dbb91798aaf92d01a5e1b9f97681447077f3d7b",
+      "license": "CC-BY-4.0",
+      "source": {
+        "kind": "first-party-documentation-revision",
+        "path": "docs/development/macos-pr1-check.md",
+        "revision": "2026-10-27"
+      },
+      "transform": "first-party-documentation-revision"
+    },
+    {
       "path": "docs/harness-updates.md",
       "bytes": 5892,
       "sha256": "9435a0cf529a6ee292f24724aece8255576ba4090a0cb09cf6376e4f1e360889",
@@ -6152,6 +6164,18 @@
       "transform": "first-party-documentation-revision"
     },
     {
+      "path": "machine/changes/macos-pr1-validation-handoff-20261030.json",
+      "bytes": 25215,
+      "sha256": "854d93167e63230a43e96811a8ba54f050edd7af106967831c8c18386d70c073",
+      "license": "CC-BY-4.0",
+      "source": {
+        "kind": "first-party-documentation-revision",
+        "path": "machine/changes/macos-pr1-validation-handoff-20261030.json",
+        "revision": "2026-10-27"
+      },
+      "transform": "first-party-documentation-revision"
+    },
+    {
       "path": "machine/changes/method-experience-20261027.json",
       "bytes": 1308,
       "sha256": "ee678089c9330995d1254d7efb284e9254ada27468dfd3688ce68ca18e57915d",
@@ -6177,8 +6201,8 @@
     },
     {
       "path": "machine/document-notes/CHANGELOG.md.json",
-      "bytes": 7660,
-      "sha256": "95d1c1cf30fdb21cf6210fda77ff945fd95470ff3e5c0c185c76b40a5d4a3705",
+      "bytes": 8205,
+      "sha256": "e3e361f1dab19420667e0a798e8b69da27d7aeb2fa35bc4f20b86413ae0ba660",
       "license": "CC-BY-4.0",
       "source": {
         "kind": "first-party-documentation-revision",
@@ -8159,6 +8183,18 @@
       }
     },
     {
+      "path": "machine/document-notes/docs/development/macos-pr1-check.md.json",
+      "bytes": 892,
+      "sha256": "413c488f55ceaaefec954c6a1e4c8cc4d77a287b5e15dc2bfeee117843e66646",
+      "license": "CC-BY-4.0",
+      "source": {
+        "kind": "first-party-documentation-revision",
+        "path": "machine/document-notes/docs/development/macos-pr1-check.md.json",
+        "revision": "2026-10-27"
+      },
+      "transform": "first-party-documentation-revision"
+    },
+    {
       "path": "machine/document-notes/docs/harness-updates.md.json",
       "bytes": 1597,
       "sha256": "09773302af0a97f487e19159d26a6d3dbf1ffeee831bf77fd7f5bdc95ea65320",
@@ -8416,8 +8452,8 @@
     },
     {
       "path": "machine/history/documentation-refresh.json",
-      "bytes": 127985,
-      "sha256": "ec2dd3a350e3281eba5cb40f242a23f0a03fc1dae8ada9272a2b57884d7bc69a",
+      "bytes": 128783,
+      "sha256": "02209379a147e0478d2090ebaf441f437c3b5a3695708a4b365910226325e9fd",
       "license": "CC-BY-4.0",
       "source": {
         "kind": "first-party-documentation-revision",
@@ -8617,8 +8653,8 @@
     },
     {
       "path": "machine/source-design-index.jsonl",
-      "bytes": 262263,
-      "sha256": "665ad22f2ae2780bd0e28fc82c85fccad936be90f81ddc30aedd39064d32f33a",
+      "bytes": 264780,
+      "sha256": "03bae2f4a953260b32f960fc34a9bbdc526544d9d3b6464fd6195e8d0ea3e3c6",
       "license": "CC-BY-4.0",
       "source": {
         "kind": "first-party-documentation-revision",

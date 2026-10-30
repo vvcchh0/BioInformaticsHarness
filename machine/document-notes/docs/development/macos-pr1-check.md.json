@@ -1,0 +1,18 @@
+{
+  "schema": "harness.document-notes/v1",
+  "document": "docs/development/macos-pr1-check.md",
+  "origin": "first_party_new_document",
+  "editorial_revisions": [
+    {
+      "id": "macos-pr1-validation-handoff-20261030",
+      "date": "2026-10-30",
+      "reason": "Standalone native macOS execution checklist from fixed PR1 evidence, preserving P1, link policy and separate offline/live scope.",
+      "technical_records": [
+        "machine/changes/macos-pr1-validation-handoff-20261030.json"
+      ],
+      "acceptance": "Prepared handoff; native macOS execution and recovery pending. Parent owns final publication validation."
+    }
+  ],
+  "evidence_availability": "Private inputs are indexed in the machine change record; actionable public instructions resolve to repository files.",
+  "retained_workflow": "Existing first draft and revisor continue; no new first-draft requirement."
+}

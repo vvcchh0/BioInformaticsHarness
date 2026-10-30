@@ -7,7 +7,7 @@
   "documentation_revision": "2026-10-27",
   "working_tree": {
     "kind": "first-party-documentation-revision",
-    "head": "4ef40ff4873255f614d27c4c706cbe7fc5c96ab1",
+    "head": "e0562ed003a5bcb75a115f13acbc14771501e202",
     "tag_unchanged_by_refresh": true
   },
   "record_path": "machine/history/documentation-refresh.json",
@@ -27,8 +27,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:CHANGELOG.md",
       "previous_sha256": "7e09c5cb4ab65d4368ea89ecddf01daeb8fb10a4e51af2c08a5f432c59f67e7d",
-      "current_bytes": 7911,
-      "current_sha256": "592eb2a55980d2adbac4297c785f9f3c5a29cff6a2ef5cdd2f5c949a5dd8d949"
+      "current_bytes": 8245,
+      "current_sha256": "9646a88d52cd57ef35c277738652393eed4a7cf443a1d3f32835edc66b39361f"
     },
     {
       "path": "LICENSING.md",
@@ -127,7 +127,7 @@
       "baseline_locator": "764bd88:core/RELEASE-MANIFEST.json",
       "previous_sha256": "b54b0cd83b5870306211066aaf6f49d346d3e379cdcb95351f332e408830da65",
       "current_bytes": 281427,
-      "current_sha256": "60d80c3efc0d39a9ded93328a9e2aea0dfcddbec4fadd426ca930370a1fe9623"
+      "current_sha256": "1ec70bce677b7d278334b4397f4cc8651f97b27c2184e26360d36c9170dac3cf"
     },
     {
       "path": "core/THIRD_PARTY.md",
@@ -1680,6 +1680,13 @@
       "current_sha256": "9552a844e6af3522e22bf2b1c869eaf70e0d3cbfb419e7c9a8c4ad78645cf481"
     },
     {
+      "path": "docs/development/macos-pr1-check.md",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 7266,
+      "current_sha256": "9cd6203b6b30abc8762a572a5dbb91798aaf92d01a5e1b9f97681447077f3d7b"
+    },
+    {
       "path": "docs/harness-updates.md",
       "change": "added",
       "baseline_revision": "764bd88",
@@ -1795,6 +1802,13 @@
       "current_sha256": "0eb7e548cffda826c114dbe2de0816f1ab359e5fb3340c913a3216bd34b21a49"
     },
     {
+      "path": "machine/changes/macos-pr1-validation-handoff-20261030.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 25215,
+      "current_sha256": "854d93167e63230a43e96811a8ba54f050edd7af106967831c8c18386d70c073"
+    },
+    {
       "path": "machine/changes/method-experience-20261027.json",
       "change": "added",
       "baseline_revision": "764bd88",
@@ -1812,8 +1826,8 @@
       "path": "machine/document-notes/CHANGELOG.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 7660,
-      "current_sha256": "95d1c1cf30fdb21cf6210fda77ff945fd95470ff3e5c0c185c76b40a5d4a3705"
+      "current_bytes": 8205,
+      "current_sha256": "e3e361f1dab19420667e0a798e8b69da27d7aeb2fa35bc4f20b86413ae0ba660"
     },
     {
       "path": "machine/document-notes/LICENSING.md.json",
@@ -2754,6 +2768,13 @@
       "current_sha256": "a2e40c596c42d0b318a820ea309ef50591c02b408e0f5ca3214040cc059644a0"
     },
     {
+      "path": "machine/document-notes/docs/development/macos-pr1-check.md.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 892,
+      "current_sha256": "413c488f55ceaaefec954c6a1e4c8cc4d77a287b5e15dc2bfeee117843e66646"
+    },
+    {
       "path": "machine/document-notes/docs/harness-updates.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
@@ -2946,8 +2967,8 @@
       "path": "machine/source-design-index.jsonl",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 262263,
-      "current_sha256": "665ad22f2ae2780bd0e28fc82c85fccad936be90f81ddc30aedd39064d32f33a"
+      "current_bytes": 264780,
+      "current_sha256": "03bae2f4a953260b32f960fc34a9bbdc526544d9d3b6464fd6195e8d0ea3e3c6"
     },
     {
       "path": "machine/time-budget-recovery-contract.json",

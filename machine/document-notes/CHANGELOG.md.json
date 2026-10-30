@@ -138,6 +138,20 @@
         "core/machine/design/review-derived-worked-examples.json"
       ],
       "scientific_execution": false
+    },
+    {
+      "date": "2026-10-30",
+      "reason": "Add isolated-branch macOS handoff; native acceptance pending.",
+      "current_identity": {
+        "bytes": 8245,
+        "sha256": "9646a88d52cd57ef35c277738652393eed4a7cf443a1d3f32835edc66b39361f"
+      },
+      "technical_refs": [
+        "machine/changes/macos-pr1-validation-handoff-20261030.json",
+        "machine/document-notes/docs/development/macos-pr1-check.md.json"
+      ],
+      "native_macos_execution": false,
+      "merge_or_publication_performed": false
     }
   ]
 }
