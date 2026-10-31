@@ -48,12 +48,21 @@
       ],
       "acceptance_status": "accepted_bounded_content_v2",
       "accepted_at_utc": "2026-10-25T13:48:09.940509+00:00"
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason": "PROV-02 stale current identity repaired; policy and historical/source fields unchanged.",
+      "previous_declared_current_identity": {
+        "bytes": 8079,
+        "sha256": "f263c862ea67c076ae9c014ed7a0c8e58c779e39a29221f77bf44cd24d03cf49"
+      }
     }
   ],
   "updated_at_utc": "2026-10-25T13:48:09.940509+00:00",
   "current_identity": {
-    "bytes": 8079,
-    "sha256": "f263c862ea67c076ae9c014ed7a0c8e58c779e39a29221f77bf44cd24d03cf49"
+    "bytes": 8749,
+    "sha256": "1e9fcbe2add109fc7953a0917a1bde54a7529c5dd89122f9960ca5121763bc46"
   },
   "current_technical_records": [
     "core/machine/design/biological-argument.json"

@@ -158,12 +158,24 @@
         "machine/changes/method-experience-20261027.json"
       ],
       "acceptance": "Local record and native Artifact/Task consumption checks; scientific and upstream acceptance separate."
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "PROV-05-avoid-unversioned-fixed-totals"
+      ],
+      "previous_document_identity": {
+        "bytes": 67719,
+        "sha256": "9552a844e6af3522e22bf2b1c869eaf70e0d3cbfb419e7c9a8c4ad78645cf481"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
   ],
-  "updated_at_utc": "2026-10-26T23:55:03.663728+00:00",
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00",
   "current_identity": {
-    "bytes": 65358,
-    "sha256": "36e663105302427885bd57b39757846fdf5c13d479c6cf0bcfac5b677e989e4f"
+    "bytes": 67756,
+    "sha256": "c282185fdc33f0e295349195019603fc6a3dea14b1c126813cee48c662fe4162"
   },
   "current_technical_records": [
     "core/machine/design/review-scope-appraisal.json",

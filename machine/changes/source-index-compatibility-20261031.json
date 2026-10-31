@@ -1,0 +1,20 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "source-index-compatibility-20261031",
+  "date": "2026-10-31",
+  "summary": "Align published source-index schema with typed historical extensions and make maintenance checks enforce that profile plus present current document identities.",
+  "impact": "interface",
+  "baseline_commit": "83e6e575cac8f01b86f531ca01074b689231661e",
+  "paths": [
+    "machine/schemas/source-design-index.schema.json",
+    "tools/documentation.py",
+    "tests/test_documentation.py"
+  ],
+  "reading_paths": [
+    "machine/schemas/source-design-index.schema.json",
+    "docs/REFERENCES-AND-DESIGN.md"
+  ],
+  "revisit": "Maintainers or external source-index consumers check the declared profile and typed extensions. Research outputs need not be rewritten to a new carrier; retained source records and their reading/science status stay unchanged.",
+  "acceptance": "Original source-index rows remain byte-preserved; valid historical forms pass, malformed/unsupported forms and stale declared current identities are detected. Source reading, rights and scientific acceptance require their own appraisal.",
+  "evidence": "machine/history/repository-copyedit-20261031.json"
+}

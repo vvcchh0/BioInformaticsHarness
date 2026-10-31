@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-31",
+  "baseline_commit": "83e6e575cac8f01b86f531ca01074b689231661e",
+  "scope": "Current public prose, source-index schema/checker compatibility and current document identities. No frozen release, original research report or legal text rewritten.",
+  "coverage": {
+    "tracked_files": 508,
+    "markdown": 149,
+    "full_text_read": 102,
+    "targeted_read": 33,
+    "program_or_role_check": 14,
+    "methods_all_read": 58,
+    "json": 271,
+    "jsonl_rows": 384,
+    "python_ast": 61,
+    "document_notes": 147
+  },
+  "prior_source_index": {
+    "records": 133,
+    "distinct_source_ids": 166,
+    "schema_incompatible_records": 39,
+    "formal_error_objects": 199,
+    "expanded_field_occurrences": 263,
+    "interpretation": "Intentional historical extension/contract drift; not JSON corruption or a scientific-error count."
+  },
+  "corrections": [
+    "Make conditional study/template/tool entry consistent below the root.",
+    "Correct1800-second checkpoint versus explicit hard execution budget prose.",
+    "State historical joint-geometry execution-material availability accurately.",
+    "Make analytic counterexample self-contained without a missing figure.",
+    "Correct example cwd, status/exit-code mapping, input scope and seven-column table.",
+    "Repair damaged/duplicated prose while retaining implementation entry and scientific alternatives.",
+    "Scope model/effort choices to task/resources/observed use; recover old model statements from baseline/Git, without inventing missing source_text.",
+    "Replace undated fixed source totals with maintained-ledger navigation.",
+    "Explain retained NOTICE archive context in editable licensing companions.",
+    "Preserve old Yeast report and append verified definition/Figure3 page navigation."
+  ],
+  "source_index_contract": {
+    "schema": "machine/schemas/source-design-index.schema.json",
+    "checker": "tools/documentation.py",
+    "stdlib_only": true,
+    "profile": "harness-source-index-profile/v1",
+    "limits": "Explicit supported vocabulary and URI/date-time profile; unsupported schema features fail. Structural checks leave source rights and scientific acceptance unassessed.",
+    "existing_rows_preserved": true,
+    "regression_basis": "Existing133 records plus negative examples independently compared with an already available formal JSONSchema validator; no installation."
+  },
+  "identity_repair": "Top-level current identities updated to current bytes; existing source_* and nested historical identities preserved. Missing original fields remain missing rather than being fabricated.",
+  "rights": "Original LICENSE/NOTICE bytes unchanged; no private source body, original figure, code archive or font asset imported.",
+  "evidence_access": "Curated first-party public summary; complete coverage, findings, implementation and independent review retained privately.",
+  "scientific_revalidation": "Targeted original-PDF locator check only; not a repeat of all historical experiments or cited studies.",
+  "experimental_control": "A separate H/N pilot continues to use immutable83e6e57; these corrections are not delivered to either experimental author."
+}

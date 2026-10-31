@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-31",
+  "kind": "derived_locator_clarification",
+  "source": {
+    "url": "https://cdn.aaai.org/ISMB/1996/ISMB96-012.pdf",
+    "title": "A Probabilistic Classification System for Predicting the Cellular Localization Sites of Proteins",
+    "authors": [
+      "Paul Horton",
+      "Kenta Nakai"
+    ],
+    "year": 1996,
+    "pdf_pages": 7
+  },
+  "scope": {
+    "text_retrieved": "Firecrawl extracted the PDF; the audit used the definition and Figure 3 locations.",
+    "visual_pages_inspected": [
+      {
+        "pdf_page_one_based": 3,
+        "printed_page": 111,
+        "observed": "vac is defined as a discriminant-analysis feature from vacuolar and extracellular amino-acid content; this page also refers forward to Figure 3."
+      },
+      {
+        "pdf_page_one_based": 6,
+        "printed_page": 114,
+        "observed": "Figure 3 is the yeast classification tree. The vac feature is the parent split leading to VAC and EXC."
+      }
+    ],
+    "not_assessed": [
+      "feature-generation reproducibility",
+      "upstream training membership",
+      "current model usefulness",
+      "independent validation of the complete paper"
+    ]
+  },
+  "result": "confirmed_locator_split_scientific_relationship_retained",
+  "preserve_original": [
+    "core/examples/research-support/preparation/choice-synthesis-example/biological-argument/report.md",
+    "all source_text/source_commit/source_sha256 fields",
+    "existing acceptance records"
+  ],
+  "public_append": "core/examples/research-support/preparation/choice-synthesis-example/biological-argument/README.md",
+  "source_pdf_identity": {
+    "bytes": 472537,
+    "sha256": "8ecca931057ffbc48c283667defc5d3a816b65dd1b0a82417d43788e5ba7e764"
+  },
+  "no_source_asset_redistributed": true
+}

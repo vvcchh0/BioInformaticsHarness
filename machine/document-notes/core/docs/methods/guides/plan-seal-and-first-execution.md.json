@@ -16,5 +16,24 @@
     "source_text is the exact UTF-8 decode of the baseline Git blob; line endings are preserved in the JSON string. source_sha256 hashes the original blob bytes."
   ],
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
-  "source_sha256": "eb68b72efaed19e3b123b22581d9ef9974f450ef2be2ec53942a870d8d93c9c4"
+  "source_sha256": "eb68b72efaed19e3b123b22581d9ef9974f450ef2be2ec53942a870d8d93c9c4",
+  "editorial_revisions": [
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "ED-01"
+      ],
+      "previous_document_identity": {
+        "bytes": 3509,
+        "sha256": "c580202e9411d47381f993b8bbe1e6a66cf7481976ec1c8a04af40f60ff44360"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
+    }
+  ],
+  "current_identity": {
+    "bytes": 3628,
+    "sha256": "9e0804f2c18fa94f285bcc4d27288508610164504ee2eab71130d3a21327a858"
+  },
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00"
 }

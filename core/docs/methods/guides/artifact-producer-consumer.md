@@ -1,6 +1,6 @@
 # 真实工件接口：让生产输出走通实际消费路径
 
-版本 `artifact-interface-v1.1`，2026-10-20；[公开研究设计与方法索引](../../../../docs/REFERENCES-AND-DESIGN.md)保留。来源。沿用 Artifact、Run、Task 与已有[接手操作](receiving-research-work.md)，不建立新的顶层对象。
+版本 `artifact-interface-v1.1`，2026-10-20。来源与设计关系见[公开研究设计与方法索引](../../../../docs/REFERENCES-AND-DESIGN.md)。沿用 Artifact、Run、Task 与已有[接手操作](receiving-research-work.md)，不建立新的顶层对象。
 
 ## 何时使用
 

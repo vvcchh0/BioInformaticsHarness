@@ -30,6 +30,23 @@
         "machine/history/research-guidance-cycle.json"
       ],
       "acceptance": "Parent interface and documentation acceptance recorded in the linked machine history; actual new scientific direction remains to be discussed."
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "ED-08"
+      ],
+      "previous_document_identity": {
+        "bytes": 1875,
+        "sha256": "5b430bcc7e6cf8d70a86d8c45eb8941d463f9072b5914890b0a41708e5f2c3a2"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
-  ]
+  ],
+  "current_identity": {
+    "bytes": 1954,
+    "sha256": "a38976d832cfb4aa418c0fc177dfb84e8d74955db6985fd46b3ed3a98a8cf65a"
+  },
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00"
 }

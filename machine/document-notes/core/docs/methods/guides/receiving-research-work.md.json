@@ -45,6 +45,23 @@
         "machine/changes/time-budget-recovery-20261027.json"
       ],
       "acceptance": "Controlled operational and abnormal-path tests; scientific acceptance remains separately judged."
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "ED-09"
+      ],
+      "previous_document_identity": {
+        "bytes": 7678,
+        "sha256": "f6f2adce3b84f3c6ca1eb9ab2d871800a6a5dd958be6e86fb44926d68b42e668"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
-  ]
+  ],
+  "current_identity": {
+    "bytes": 7678,
+    "sha256": "afd36316ad9662d0ba803cf64ee539db15ebeeb948c373a8123c67d52ae050ad"
+  },
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00"
 }

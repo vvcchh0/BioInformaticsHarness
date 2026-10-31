@@ -6,5 +6,24 @@
   "source_text": "# Licensing and distribution scope\r\n\r\n- First-party source code, tests, machine-readable configurations, fictional fixtures, and this project's new parameter/packaging material: **Apache-2.0**, see [LICENSE](LICENSE).\r\n- Original explanatory prose, guides and project-created diagrams: **CC BY 4.0**, see [legal text](LICENSES/CC-BY-4.0.txt). Executable code examples in prose may also be used under Apache-2.0.\r\n- Official UCI Splice/Yeast archives and tables containing their features or ground truth: **CC BY 4.0** with the original attribution, DOI and change notes retained in each case. Any source-data content retained inside fitted bundles (such as support vectors, IDs or direct feature transformations) keeps that scope; mixed bundles are labelled `Apache-2.0 AND CC-BY-4.0`.\r\n\r\nFirst-party attribution: BioInformaticsHarness contributors; maintainer `vvcchh0`. The explicit parameter-state license covers this project's fits, not other authors' pretrained weights. Runtime libraries and interpreters are obtained separately and keep their own licenses.\r\n\r\nThe current per-file scope is [CHECKPOINT-MANIFEST.json](CHECKPOINT-MANIFEST.json), supported by [core manifest](core/RELEASE-MANIFEST.json), [Splice manifest](examples/splice/CASE-MANIFEST.json) and [Yeast manifest](examples/yeast/CASE-MANIFEST.json). Generated manifests do not self-hash; Git commits and release asset checksums provide external identities. Historical source indexes retain their original time and scope.\r\n\r\nRaw research deliveries originally lacked publisher licensing context; that historical unknown remains unchanged in the private archive. This checkpoint separately supplies the publisher's reviewed scope. It does not grant rights to excluded papers, code, weights, data or conversations. See [PUBLICATION](PUBLICATION.md) and [publication handoff guidance](core/docs/methods/guides/publication-handoff.md).\r\n\r\nLoad serialized model states only from a trusted source after verifying the manifest. These examples include parameter artifacts and consumer code; no third-party library binaries are bundled.\r\n",
   "technical_notes": [
     "Original published document retained here; current human prose uses public links and keeps technical identity and audit detail in structured records."
-  ]
+  ],
+  "editorial_revisions": [
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "PROV-06-current-notice-scope"
+      ],
+      "previous_document_identity": {
+        "bytes": 1111,
+        "sha256": "43ff4e0466e8a168ea4abe3db583410f560a7e7c3d0956a045192385a09735ef"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
+    }
+  ],
+  "current_identity": {
+    "bytes": 1577,
+    "sha256": "dfda6a5335e8d26a3292ec0f1c5a2b2380b7ae3195639daa27f777069600c990"
+  },
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00"
 }

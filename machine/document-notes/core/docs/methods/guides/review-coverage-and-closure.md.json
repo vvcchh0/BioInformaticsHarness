@@ -79,12 +79,24 @@
         "sha256": "deaf45dcf098099c99d0df58fad657e802b8833f35c7918149d99ee62d368a4f"
       },
       "previous_document_updated_at_utc": "2026-10-25T12:41:42.164835+00:00"
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "ED-11-scope-project-model-default"
+      ],
+      "previous_document_identity": {
+        "bytes": 11563,
+        "sha256": "73efbc0bbe0b7ead0f13c0a884d9b3dcb004e74e8beb102b1579cfd3521271b3"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
   ],
-  "updated_at_utc": "2026-10-29T05:06:58.445080+00:00",
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00",
   "current_identity": {
-    "bytes": 11563,
-    "sha256": "73efbc0bbe0b7ead0f13c0a884d9b3dcb004e74e8beb102b1579cfd3521271b3"
+    "bytes": 11564,
+    "sha256": "5331d0e1c8afff2eca38cbcd798b4cd2c80995c4847dd3c902cc657ef7ed98fa"
   },
   "current_technical_records": [
     "core/machine/design/rereading-perspectives.json",

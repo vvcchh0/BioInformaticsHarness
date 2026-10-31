@@ -70,12 +70,24 @@
         "machine/history/review-coverage-iteration.json"
       ],
       "previous_document_snapshot": "machine/reviews/2026-10-review-coverage-iteration/before/public/core/README.md"
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "ED-04"
+      ],
+      "previous_document_identity": {
+        "bytes": 4008,
+        "sha256": "9e96dec44eb3efd532a222f5bfc3149f8b4c67fad93139a5049a6686979714e8"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
   ],
-  "updated_at_utc": "2026-10-23T05:49:05.511223+00:00",
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00",
   "current_identity": {
-    "bytes": 4008,
-    "sha256": "9e96dec44eb3efd532a222f5bfc3149f8b4c67fad93139a5049a6686979714e8"
+    "bytes": 4028,
+    "sha256": "4a8a436078186166f5e08bd05445a8f74b358519e07d338ca2bb3ce4c2be29f5"
   },
   "current_technical_records": [
     "core/machine/design/review-coverage.json",

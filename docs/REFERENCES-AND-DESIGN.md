@@ -2,7 +2,7 @@
 
 This index follows sources through design choices, public guidance or examples, and the result recorded for each stated scope. It covers academic methods, formal model cases, early engineering frameworks, official software guidance, guided research applications, UCI examples, and historical README writing references. The machine ledger preserves exact reading scopes, unknowns, analysis phases, and archive-only evidence locations.
 
-There are **118 relationship records** linked to **130 source identifiers**. A source can appear in more than one relationship when it serves a different role, such as a paper citation and a separate case analysis.
+The [machine ledger](../machine/source-design-index.jsonl) records the maintained source-to-design relationships. A source can appear in more than one relationship when it serves a different role, such as a paper citation and a separate case analysis.
 
 Formal model-case results here describe source-led paper and implementation analysis, with retrospective manuscript review where recorded. Model execution and saved-artifact applications have their own records below.
 

@@ -1,6 +1,6 @@
 # 接手一项研究：从材料到第一个真实动作
 
-版本research-operations-v1.1，2026-10-20；[公开研究设计与方法索引](../../../../docs/REFERENCES-AND-DESIGN.md)保留。适用于更换执行者、机器、工作目录、权限或工件封包的任务。来源为的真实交接问题。沿用已有Task、Artifact、Run与Decision；小改动仍可用简短文字交接。
+版本research-operations-v1.1，2026-10-20。适用于更换执行者、机器、工作目录、权限或工件封包的任务。真实交接问题及其设计来源见[公开研究设计与方法索引](../../../../docs/REFERENCES-AND-DESIGN.md)。沿用已有Task、Artifact、Run与Decision；小改动仍可用简短文字交接。
 
 ## 先给一页可以行动的材料
 

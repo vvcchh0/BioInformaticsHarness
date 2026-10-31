@@ -30,3 +30,7 @@ python -B -X utf8 -m scripts.research_support.review_coverage --root REVIEW_ROOT
 本例没有历史原生地图；当前地图是本轮为解释路线建立的初版。复制后的文件检查与独立科学接受分别记录。测试副本可用于检查缺失阅读依据或关键关系尚未综合却要求交付的错误，原件继续保留。
 
 回到[生物学解释指南](../../../../../docs/methods/guides/biological-explanation-and-handoff.md#从对象到用途接通关系)或[方法取舍指南](../../../../../docs/methods/guides/review-choice-synthesis.md)。
+
+## 引用定位补记（2026-10-31）
+
+vac 特征的定义见[原论文印刷第111页（PDF第3页）](https://cdn.aaai.org/ISMB/1996/ISMB96-012.pdf#page=3)；Yeast 分类树 Figure 3 及其中的 VAC/EXC 分叉见[印刷第114页（PDF第6页）](https://cdn.aaai.org/ISMB/1996/ISMB96-012.pdf#page=6)。这两处分别支持正文中对特征来源和分类树角色的解释。原报告及其接受记录继续保留，本补记供读者定位来源。

@@ -4,10 +4,10 @@ BioInformaticsHarness is a small research toolkit for bioinformatics model studi
 
 ## Start here
 
-1. Start a new topic with the [research preparation guide](docs/methods/guides/research-preparation.md). Choose a focused question or a [review-first route](docs/methods/guides/review-first-preparation.md) that develops the evidence and method landscape before deciding on a study.
-2. Read the [quickstart](QUICKSTART.md) and run one of its examples from the core directory. The [acquisition guide](docs/methods/source-acquisition-routing.md) provides the entry for selected DOI, PMCID and source URLs.
-3. Choose a relevant topic from the [method guide](docs/methods/README.md). Each card explains when to use a method, what to measure, and which alternatives are appropriate.
-4. For project context, see the [public design and source index](../docs/REFERENCES-AND-DESIGN.md) and the [research history](../docs/history/EVOLUTION.zh.md).
+- For a new topic, use the [research preparation guide](docs/methods/guides/research-preparation.md). Choose a focused question or a [review-first route](docs/methods/guides/review-first-preparation.md) that develops the evidence and method landscape before deciding on a study.
+- For an existing question, choose the relevant topic from the [method guide](docs/methods/README.md) and connect its conditions to the sources and actual work.
+- When a tool serves the current task, read the [quickstart](QUICKSTART.md) and run its selected example from the core directory. The [acquisition guide](docs/methods/source-acquisition-routing.md) provides the entry for selected DOI, PMCID and source URLs.
+- For project context, see the [public design and source index](../docs/REFERENCES-AND-DESIGN.md) and the [research history](../docs/history/EVOLUTION.zh.md).
 
 Most core commands use Python 3.11 or newer and the standard library. The bounded runner uses the optional `psutil` package when you need process-tree CPU and memory observations. The acquisition tool uses optional `requests` for explicitly requested downloads; its default mode creates a plan with the standard library. Install dependencies in your chosen environment.
 

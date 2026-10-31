@@ -2,8 +2,8 @@
 
 # First-plan seal
 
-From a repository checkout or extracted release, make its root the current
-directory and start Python 3.11 or newer:
+From the public repository's `core/` directory, or the root of a standalone
+extracted core release, start Python 3.11 or newer:
 
     python -B -X utf8
 
