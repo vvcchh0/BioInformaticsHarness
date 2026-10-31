@@ -129,7 +129,10 @@
     "core/examples/research-support/preparation/choice-synthesis-example/rereading/machine/*.json": "CC-BY-4.0",
     "core/examples/research-support/preparation/choice-synthesis-example/biological-argument/*.json": "CC-BY-4.0",
     "core/tests/test_run_recovery.py": "Apache-2.0",
-    "core/examples/research-support/method-experience/*.template.json": "Apache-2.0"
+    "core/examples/research-support/method-experience/*.template.json": "Apache-2.0",
+    "core/scripts/research_support/study_view_template.html": "Apache-2.0",
+    "core/tests/research_support/test_study_view.py": "Apache-2.0",
+    "core/examples/research-support/study-view/demo-study/*.json": "Apache-2.0"
   },
   "license_scope_updates": [
     {
@@ -201,6 +204,15 @@
       "reason": "First-party editable method-experience templates; narrative guide/design stay CC BY 4.0.",
       "scopes": {
         "core/examples/research-support/method-experience/*.template.json": "Apache-2.0"
+      }
+    },
+    {
+      "date": "2026-10-31",
+      "reason": "First-party study view prototype: page template, tests and fictional demo records used as program fixtures retain the project code license; narrative README files stay CC BY 4.0.",
+      "scopes": {
+        "core/scripts/research_support/study_view_template.html": "Apache-2.0",
+        "core/tests/research_support/test_study_view.py": "Apache-2.0",
+        "core/examples/research-support/study-view/demo-study/*.json": "Apache-2.0"
       }
     }
   ]

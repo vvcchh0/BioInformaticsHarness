@@ -204,19 +204,35 @@
         "sha256": "700e39815c6405f06770b5ccbc9ce99f66126ca4e6b53b89cd7577a481eff527"
       },
       "acceptance_status": "accepted_user_after_scoped_science_and_usage_trials"
+    },
+    {
+      "id": "study-view-prototype-20261031",
+      "date": "2026-10-31",
+      "reason": "Add the study view prototype entry for issue #6.",
+      "technical_records": [
+        "core/machine/tools/study-view.json",
+        "machine/changes/study-view-prototype-20261031.json"
+      ],
+      "previous_document_identity": {
+        "bytes": 11418,
+        "sha256": "7d5964bcccd74f130d50b7196a8aedb762545f3dfcc7b4de16f90821c675e849"
+      },
+      "acceptance_status": "contributor_prototype_pending_maintainer_review"
     }
   ],
-  "updated_at_utc": "2026-10-31T06:39:32.075172+00:00",
+  "updated_at_utc": "2026-10-31T13:09:51.976296+00:00",
   "current_identity": {
-    "bytes": 11418,
-    "sha256": "7d5964bcccd74f130d50b7196a8aedb762545f3dfcc7b4de16f90821c675e849"
+    "bytes": 11999,
+    "sha256": "ecb0fd0cfdbf33eb7dfe27bade96b86f01599a0db2952e2071c16eac8a779f0a"
   },
   "current_technical_records": [
     "core/machine/design/review-scope-appraisal.json",
     "machine/history/review-scope-appraisal.json",
     "machine/changes/conditional-model-comparison-20261030.json",
     "machine/changes/revisor-contextual-preparation-20261030.json",
-    "machine/changes/macos-paths-optional-github-proxy-20261030.json"
+    "machine/changes/macos-paths-optional-github-proxy-20261030.json",
+    "core/machine/tools/study-view.json",
+    "machine/changes/study-view-prototype-20261031.json"
   ],
   "revisions": [
     {

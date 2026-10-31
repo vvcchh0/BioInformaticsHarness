@@ -1,0 +1,175 @@
+{
+  "schema": "harness.research-preparation-evidence-map/v1",
+  "preparation_id": "demo-preparation-001",
+  "definitions": [],
+  "findings": [
+    {
+      "finding_id": "demo-finding-1",
+      "finding_type": "conditional_consensus",
+      "claim_or_observation": "随机划分下的表现可能高估新批次上的表现（虚构）",
+      "scope_conditions": [],
+      "author_reports": [],
+      "cross_source_synthesis": "A 与 B 的评价单位不同，差异可能来自划分方式（虚构）。",
+      "researcher_inference": "虚构示例，没有科学推断。",
+      "evidence": [
+        {
+          "source_id": "demo-source-1",
+          "work_id": "demo-work-1",
+          "evidence_unit_id": "demo-source-1-unit",
+          "relation": "demo_reference",
+          "basis": "演示 ID 关系。"
+        },
+        {
+          "source_id": "demo-source-2",
+          "work_id": "demo-work-2",
+          "evidence_unit_id": "demo-source-2-unit",
+          "relation": "demo_reference",
+          "basis": "演示 ID 关系。"
+        }
+      ]
+    },
+    {
+      "finding_id": "demo-finding-2",
+      "finding_type": "open_question",
+      "claim_or_observation": "标签更新可能与批次重合（虚构）",
+      "scope_conditions": [],
+      "author_reports": [],
+      "cross_source_synthesis": "只有一份未读来源提到，尚未核实（虚构）。",
+      "researcher_inference": "虚构示例，没有科学推断。",
+      "evidence": [
+        {
+          "source_id": "demo-source-3",
+          "work_id": "demo-work-3",
+          "evidence_unit_id": "demo-source-3-unit",
+          "relation": "demo_reference",
+          "basis": "演示 ID 关系。"
+        }
+      ]
+    },
+    {
+      "finding_id": "demo-finding-3",
+      "finding_type": "observation",
+      "claim_or_observation": "罕见类别的假阳性集中在少数批次（虚构）",
+      "scope_conditions": [],
+      "author_reports": [],
+      "cross_source_synthesis": "来自一份来源的描述（虚构）。",
+      "researcher_inference": "虚构示例，没有科学推断。",
+      "evidence": [
+        {
+          "source_id": "demo-source-2",
+          "work_id": "demo-work-2",
+          "evidence_unit_id": "demo-source-2-unit",
+          "relation": "demo_reference",
+          "basis": "演示 ID 关系。"
+        }
+      ]
+    }
+  ],
+  "disagreements": [],
+  "method_candidates": [
+    {
+      "method_id": "demo-method-1",
+      "motivated_by_finding_ids": [
+        "demo-finding-1"
+      ],
+      "intended_use": "按批次分组的留出评价",
+      "preconditions": [],
+      "information_requirements": [],
+      "costs": [],
+      "failure_modes": [],
+      "alternatives": [],
+      "selection": "candidate",
+      "selection_reason": "能直接区分划分方式的影响（虚构）。",
+      "change_condition": "若批次信息不可得，改用时间切分。",
+      "source_refs": [
+        "demo-source-1"
+      ]
+    },
+    {
+      "method_id": "demo-method-2",
+      "motivated_by_finding_ids": [
+        "demo-finding-2"
+      ],
+      "intended_use": "标签版本对照分析",
+      "preconditions": [],
+      "information_requirements": [],
+      "costs": [],
+      "failure_modes": [],
+      "alternatives": [],
+      "selection": "candidate",
+      "selection_reason": "需要先取得标签版本记录（虚构）。",
+      "change_condition": "若标签记录缺失，收窄主张。",
+      "source_refs": [
+        "demo-source-1"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question_id": "demo-question-1",
+      "question": "按批次分组后，原结论是否仍然成立？（虚构）",
+      "motivated_by_finding_ids": [
+        "demo-finding-1",
+        "demo-finding-3"
+      ],
+      "candidate_method_ids": [
+        "demo-method-1"
+      ],
+      "biological_or_practical_significance": "虚构：决定模型能否用于新批次。",
+      "relation_to_existing_work": "虚构示例。",
+      "evidence_gap": "缺少批次分组下的评价（虚构）。",
+      "discriminating_evidence": [],
+      "novelty_search_scope": {
+        "status": "not_searched",
+        "coverage_snapshot_ref": null,
+        "search_ids": [],
+        "seen_work_ids": [],
+        "unfound_topics": [],
+        "limitation": "未检索（虚构）。"
+      },
+      "status": "candidate"
+    },
+    {
+      "question_id": "demo-question-2",
+      "question": "标签更新是否解释了表现变化？（虚构）",
+      "motivated_by_finding_ids": [
+        "demo-finding-2"
+      ],
+      "candidate_method_ids": [
+        "demo-method-2"
+      ],
+      "biological_or_practical_significance": "虚构：决定模型能否用于新批次。",
+      "relation_to_existing_work": "虚构示例。",
+      "evidence_gap": "标签版本记录尚未取得（虚构）。",
+      "discriminating_evidence": [],
+      "novelty_search_scope": {
+        "status": "not_searched",
+        "coverage_snapshot_ref": null,
+        "search_ids": [],
+        "seen_work_ids": [],
+        "unfound_topics": [],
+        "limitation": "未检索（虚构）。"
+      },
+      "status": "candidate"
+    }
+  ],
+  "hypothesis_review": {
+    "status": "not_assessed",
+    "reason": "虚构示例。",
+    "hypotheses": []
+  },
+  "narrative": {
+    "main_line": "虚构示例。",
+    "outline": [],
+    "figure_or_table_ideas": [],
+    "glossary": []
+  },
+  "review_decision": {
+    "status": "needs_human_review",
+    "reason": "虚构示例。",
+    "unresolved_questions": [
+      "全部内容为虚构。"
+    ],
+    "next_action": "向人说明两条候选问题并讨论方向。"
+  }
+}

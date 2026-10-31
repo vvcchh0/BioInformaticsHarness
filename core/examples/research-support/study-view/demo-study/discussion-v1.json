@@ -1,0 +1,68 @@
+{
+  "schema": "research-support.direction-discussion.v1",
+  "discussion_id": "demo-discussion-001",
+  "cycle_id": "demo-cycle-001",
+  "version": "discussion-v1",
+  "status": "prepared",
+  "brief_ref": "brief.md",
+  "technical_route_ref": "technical-route.md",
+  "directions": [
+    {
+      "direction_id": "demo-direction-batch",
+      "intent": "study",
+      "question_ids": [
+        "demo-question-1"
+      ],
+      "method_ids": [
+        "demo-method-1"
+      ],
+      "reason": "直接检验划分方式是否改变结论（虚构）。",
+      "cost_and_dependencies": "需要批次字段；一轮小规模评价。",
+      "alternative": "改用时间切分。",
+      "change_condition": "若批次信息缺失超过一半，改为时间切分。"
+    },
+    {
+      "direction_id": "demo-direction-labels",
+      "intent": "defer",
+      "question_ids": [
+        "demo-question-2"
+      ],
+      "method_ids": [
+        "demo-method-2"
+      ],
+      "reason": "标签记录尚未取得，现在开展会缺少关键输入（虚构）。",
+      "cost_and_dependencies": "依赖外部标签版本记录。",
+      "alternative": "先做批次评价。",
+      "change_condition": "取得标签版本记录后重新讨论。"
+    },
+    {
+      "direction_id": "demo-direction-review",
+      "intent": "review_delivery",
+      "question_ids": [],
+      "method_ids": [],
+      "reason": "只交付现有综述，不开展新研究（虚构）。",
+      "cost_and_dependencies": "无新增计算。",
+      "alternative": "开展批次评价。",
+      "change_condition": "若人不需要新证据，选择此出口。"
+    }
+  ],
+  "recommendation": {
+    "direction_id": "demo-direction-batch",
+    "reason": "成本最低且能直接区分两种解释（虚构）。"
+  },
+  "discussion": {
+    "held_at": null,
+    "human_input_ref": null,
+    "points_raised": [],
+    "unresolved": []
+  },
+  "decision": {
+    "status": "pending",
+    "authority": null,
+    "selected_direction_id": null,
+    "source_ref": null,
+    "made_at": null,
+    "reason": null,
+    "constraints": []
+  }
+}

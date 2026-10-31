@@ -1,0 +1,137 @@
+{
+  "schema": "harness.research-preparation-source-ledger/v1",
+  "preparation_id": "demo-preparation-001",
+  "search_runs": [],
+  "sources": [
+    {
+      "source_id": "demo-source-1",
+      "work_id": "demo-work-1",
+      "version_family_id": "demo-work-1-family",
+      "kind": "fictional demo record",
+      "bibliography": {
+        "authors": [],
+        "title": "虚构来源 A：按随机划分报告的分类表现",
+        "venue_or_repository": "虚构示例，不对应任何真实文献",
+        "year": "2026",
+        "doi_or_identifier": "demo:source-1",
+        "url": "",
+        "version_or_release": "demo-v1",
+        "published_or_updated_on": "2026-10-31"
+      },
+      "relation_to_work": "提供原始评价设置（虚构）。",
+      "found_by_search_ids": [],
+      "selection": {
+        "status": "selected",
+        "reason": "演示视图中的来源节点。"
+      },
+      "acquisition": {
+        "status": "metadata_only",
+        "license_or_access_terms": "不适用（虚构）",
+        "artifact_path": null,
+        "receipt_path": null
+      },
+      "reading": {
+        "status": "read",
+        "parts_read": [],
+        "locator_notes": "虚构示例，没有原文。"
+      },
+      "evidence_relationship": {
+        "same_work_or_version_family": "独立虚构记录",
+        "shared_dataset_or_cohort": "不适用",
+        "independence_note": "不是科学证据"
+      }
+    },
+    {
+      "source_id": "demo-source-2",
+      "work_id": "demo-work-2",
+      "version_family_id": "demo-work-2-family",
+      "kind": "fictional demo record",
+      "bibliography": {
+        "authors": [],
+        "title": "虚构来源 B：按批次分组后表现下降的报告",
+        "venue_or_repository": "虚构示例，不对应任何真实文献",
+        "year": "2026",
+        "doi_or_identifier": "demo:source-2",
+        "url": "",
+        "version_or_release": "demo-v1",
+        "published_or_updated_on": "2026-10-31"
+      },
+      "relation_to_work": "提出分组方式会改变结论（虚构）。",
+      "found_by_search_ids": [],
+      "selection": {
+        "status": "selected",
+        "reason": "演示视图中的来源节点。"
+      },
+      "acquisition": {
+        "status": "metadata_only",
+        "license_or_access_terms": "不适用（虚构）",
+        "artifact_path": null,
+        "receipt_path": null
+      },
+      "reading": {
+        "status": "read",
+        "parts_read": [],
+        "locator_notes": "虚构示例，没有原文。"
+      },
+      "evidence_relationship": {
+        "same_work_or_version_family": "独立虚构记录",
+        "shared_dataset_or_cohort": "不适用",
+        "independence_note": "不是科学证据"
+      }
+    },
+    {
+      "source_id": "demo-source-3",
+      "work_id": "demo-work-3",
+      "version_family_id": "demo-work-3-family",
+      "kind": "fictional demo record",
+      "bibliography": {
+        "authors": [],
+        "title": "虚构来源 C：标签更新流程说明",
+        "venue_or_repository": "虚构示例，不对应任何真实文献",
+        "year": "2026",
+        "doi_or_identifier": "demo:source-3",
+        "url": "",
+        "version_or_release": "demo-v1",
+        "published_or_updated_on": "2026-10-31"
+      },
+      "relation_to_work": "可能解释标签漂移，尚未阅读（虚构）。",
+      "found_by_search_ids": [],
+      "selection": {
+        "status": "selected",
+        "reason": "演示视图中的来源节点。"
+      },
+      "acquisition": {
+        "status": "metadata_only",
+        "license_or_access_terms": "不适用（虚构）",
+        "artifact_path": null,
+        "receipt_path": null
+      },
+      "reading": {
+        "status": "not_read",
+        "parts_read": [],
+        "locator_notes": "虚构示例，没有原文。"
+      },
+      "evidence_relationship": {
+        "same_work_or_version_family": "独立虚构记录",
+        "shared_dataset_or_cohort": "不适用",
+        "independence_note": "不是科学证据"
+      }
+    }
+  ],
+  "coverage_snapshot": {
+    "fixed_on": "2026-10-31",
+    "scope_version": "demo-v1",
+    "included_source_ids": [
+      "demo-source-1",
+      "demo-source-2",
+      "demo-source-3"
+    ],
+    "excluded_source_ids": [],
+    "unavailable_or_unread_source_ids": [
+      "demo-source-3"
+    ],
+    "remaining_gaps": [
+      "全部内容为虚构，只用于演示研究路径视图。"
+    ]
+  }
+}

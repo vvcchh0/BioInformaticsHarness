@@ -1,0 +1,528 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>研究路径视图</title>
+<style>
+:root {
+  --bg: #f7f7f5; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6b66; --line: #e2e1dc;
+  --accent: #2f5d8a; --accent-soft: #e6eef6;
+  --ok: #2e7d4f; --ok-soft: #e3f2e8; --warn: #9a6400; --warn-soft: #fbf0d9;
+  --bad: #b3261e; --bad-soft: #fbe5e3; --idle: #7a7a74; --idle-soft: #efefec;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615; --panel: #1f1f1d; --ink: #ecebe6; --muted: #a3a29b; --line: #34332f;
+    --accent: #8db6e0; --accent-soft: #233343;
+    --ok: #7fcf9c; --ok-soft: #1f3327; --warn: #e8bd63; --warn-soft: #3a2f17;
+    --bad: #f08f86; --bad-soft: #3d201d; --idle: #9a9993; --idle-soft: #2a2a27;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.55 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif; }
+header { padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--panel); display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+header h1 { font-size: 17px; margin: 0; }
+header .meta { color: var(--muted); font-size: 12px; }
+header select { font: inherit; padding: 3px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); }
+.layout { display: grid; grid-template-columns: 250px minmax(0, 1fr) 360px; min-height: calc(100vh - 56px); }
+aside, main, .detail { padding: 16px; }
+aside { border-right: 1px solid var(--line); }
+.detail { border-left: 1px solid var(--line); background: var(--panel); position: sticky; top: 0; align-self: start; max-height: 100vh; overflow: auto; }
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 220px minmax(0, 1fr); }
+  .detail { grid-column: 1 / -1; position: static; max-height: none; border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 720px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  aside { border-right: 0; border-bottom: 1px solid var(--line); }
+}
+h2 { font-size: 15px; margin: 0 0 10px; }
+h3 { font-size: 13px; margin: 16px 0 6px; color: var(--muted); font-weight: 600; }
+.stage { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; background: var(--panel); }
+.stage.current { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.stage.future { opacity: .62; }
+.stage .name { font-weight: 600; display: flex; justify-content: space-between; gap: 6px; align-items: center; }
+.stage ul { list-style: none; padding: 0; margin: 6px 0 0; font-size: 12px; }
+.stage li { display: flex; justify-content: space-between; gap: 6px; padding: 2px 0; }
+.stage li .field { color: var(--muted); overflow-wrap: anywhere; }
+.chip { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; white-space: nowrap; background: var(--idle-soft); color: var(--idle); }
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+.chip.warn { background: var(--warn-soft); color: var(--warn); }
+.chip.bad { background: var(--bad-soft); color: var(--bad); }
+.chip.accent { background: var(--accent-soft); color: var(--accent); }
+nav.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+nav.tabs button { font: inherit; border: 0; background: none; color: var(--muted); padding: 6px 10px; border-bottom: 2px solid transparent; cursor: pointer; }
+nav.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+.card .label { color: var(--muted); font-size: 12px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.item { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; background: var(--panel); cursor: pointer; }
+.item:hover { border-color: var(--accent); }
+.item.selected { border-color: var(--accent); background: var(--accent-soft); }
+.item.related { border-color: var(--accent); }
+.item.dim { opacity: .4; }
+.item .title { font-weight: 600; overflow-wrap: anywhere; }
+.item .sub { color: var(--muted); font-size: 12px; margin-top: 2px; overflow-wrap: anywhere; }
+.columns { display: grid; grid-template-columns: repeat(4, minmax(160px, 1fr)); gap: 10px; overflow-x: auto; }
+@media (max-width: 720px) { .columns { grid-template-columns: minmax(0, 1fr); } }
+.timeline { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; }
+.timeline .ver { flex: 1 1 200px; }
+.timeline .arrow { align-self: center; color: var(--muted); }
+table.facts { width: 100%; border-collapse: collapse; font-size: 12px; }
+table.facts td { border-top: 1px solid var(--line); padding: 4px 6px 4px 0; vertical-align: top; overflow-wrap: anywhere; }
+table.facts td:first-child { color: var(--muted); width: 38%; }
+.links a, .linkbtn { color: var(--accent); cursor: pointer; text-decoration: none; background: none; border: 0; font: inherit; padding: 0; text-align: left; }
+.links a:hover, .linkbtn:hover { text-decoration: underline; }
+.rel { font-size: 12px; color: var(--muted); margin-top: 8px; }
+.rel li { margin: 2px 0; }
+pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 8px; max-height: 420px; overflow: auto; }
+.empty { color: var(--muted); font-style: italic; }
+.note { color: var(--muted); font-size: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+</style>
+</head>
+<body>
+<header>
+  <h1>研究路径视图</h1>
+  <span class="meta" id="root-name"></span>
+  <label class="meta">周期版本 <select id="cycle-select" aria-label="周期版本"></select></label>
+  <span class="chip" title="本视图只呈现记录中的结构关系">科学结论：未评估</span>
+  <span class="meta" id="generated"></span>
+</header>
+<div class="layout">
+  <aside>
+    <h2>阶段主线</h2>
+    <div id="stages"></div>
+  </aside>
+  <main>
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+    <section id="view"></section>
+  </main>
+  <section class="detail" id="detail" aria-live="polite"></section>
+</div>
+<script type="application/json" id="study-view-data">__STUDY_VIEW_DATA__</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("study-view-data").textContent);
+
+  var STAGE_LABELS = {
+    synthesis: ["证据综合", "来源账本、证据图与综合说明"],
+    human_discussion: ["向人说明并讨论", "讨论简报、技术路线与真实意见"],
+    direction_choice: ["共同选择方向", "有理由的选择与人的来源"],
+    data_and_plan: ["数据要求与首计划", "研究桥接、任务上下文与计划封存"],
+    execution_evaluation: ["执行与评价", "实际运行、评价与交付"],
+    evidence_revision: ["按新证据修订", "保留、修订、收窄、暂缓或停止"]
+  };
+  var STAGE_EXITS = {
+    synthesis: ["独立交付综述", "向人说明并讨论", "继续定向阅读"],
+    human_discussion: ["共同选择方向"],
+    direction_choice: ["独立交付综述", "继续定向阅读", "数据要求与首计划", "暂缓", "停止"],
+    data_and_plan: ["执行与评价"],
+    execution_evaluation: ["按新证据修订"],
+    evidence_revision: ["新周期版本", "暂缓", "停止"]
+  };
+  var KIND_LABELS = {
+    cycle: "研究周期", source_ledger: "来源账本", source: "来源", evidence_map: "证据图",
+    finding: "发现", method: "方法候选", question: "研究问题", discussion: "方向讨论",
+    direction: "候选方向", decision: "方向决定", cycle_decision: "修订决定", file: "文件",
+    directory: "目录", revision_record: "修订记录", revision_source: "意见来源", request: "修订请求",
+    revision_decision: "处理路线", task: "修订任务", artifact: "产物", claim: "主张",
+    acceptance_check: "复核检查", response_group: "可选路线"
+  };
+  // Edges run upstream -> downstream; labels read from the upstream side.
+  var RELATION_LABELS = {
+    supports: "支撑发现", motivates: "引出", candidate_for: "可用于问题", offers: "提出方向",
+    addressed_by: "由此方向处理", method_of: "被此方向采用", records: "记录决定", chosen_by: "被决定选定",
+    used_by: "被周期引用", next_version: "下一版本", considered_by: "被周期考虑", brief_ref: "作为讨论简报",
+    technical_route_ref: "作为技术路线", human_input_ref: "作为人的意见", source_ref: "作为决定来源",
+    contains: "包含", raises: "提出请求", decided_as: "处理为", assigns: "安排任务", produces: "产出",
+    served_by: "由任务处理", answered_by: "由主张回应", supports_claim: "支撑主张", checked_by: "由检查复核",
+    inspected_by: "被检查", observed_findings_ref: "作为观察结果", evidence_refs: "作为决定证据",
+    handled_by_selected_route: "按选定路线处理", handled_by_other_route: "属于未选路线"
+  };
+  var INTENT_LABELS = {
+    study: "开展研究", review_delivery: "交付综述", continue_reading: "继续阅读",
+    retain: "保持现状", defer: "暂缓", stop: "停止"
+  };
+  var STATUS_LABELS = {
+    ready: "结构齐备", waiting_human: "等待人的选择", needs_work: "需要补齐", unknown: "无法检查",
+    selected: "已选定", not_selected: "未选定", awaiting_choice: "待讨论", pending: "待定",
+    recorded: "已记录", prepared: "可讨论", discussed: "已讨论", candidate: "候选",
+    selected_for_study: "选定研究", not_read: "未读", needs_human_review: "待人审阅",
+    pass: "通过", present: "已记录", "null": "未记录", missing: "文件缺失", directory: "目录",
+    outside_root: "越出根目录", invalid: "无效引用", keep: "保留", revise: "修订",
+    narrow: "收窄", defer: "暂缓", stop: "停止"
+  };
+  var TONE = {
+    ready: "ok", selected: "ok", pass: "ok", present: "ok", recorded: "ok", discussed: "ok",
+    selected_for_study: "ok", keep: "ok", directory: "ok",
+    waiting_human: "warn", awaiting_choice: "warn", pending: "warn", prepared: "warn",
+    candidate: "warn", needs_human_review: "warn", revise: "warn", narrow: "warn",
+    needs_work: "bad", missing: "bad", outside_root: "bad", invalid: "bad", unknown: "bad",
+    not_selected: "", defer: "", stop: "", "null": ""
+  };
+
+  var nodes = DATA.nodes || {};
+  var incoming = {}, outgoing = {};
+  (DATA.edges || []).forEach(function (e) {
+    (outgoing[e.from] = outgoing[e.from] || []).push(e);
+    (incoming[e.to] = incoming[e.to] || []).push(e);
+  });
+  var cycles = DATA.cycles || [];
+  var state = { cycle: cycles.length ? cycles.length - 1 : -1, tab: "overview", selected: null };
+
+  function el(tag, attrs, children) {
+    var node = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (key) {
+      if (key === "text") node.textContent = attrs[key];
+      else if (key === "class") node.className = attrs[key];
+      else if (key.slice(0, 2) === "on") node.addEventListener(key.slice(2), attrs[key]);
+      else node.setAttribute(key, attrs[key]);
+    });
+    (children || []).forEach(function (child) {
+      if (child === null || child === undefined) return;
+      node.appendChild(typeof child === "string" ? document.createTextNode(child) : child);
+    });
+    return node;
+  }
+  function label(map, key) { return (key !== null && key !== undefined && map[key]) || (key === null || key === undefined ? "—" : String(key)); }
+  function chip(status, extra) {
+    if (status === null || status === undefined || status === "") return null;
+    var tone = TONE[status] !== undefined ? TONE[status] : "";
+    return el("span", { "class": "chip " + (extra || tone), text: label(STATUS_LABELS, status) });
+  }
+  function fileHref(path) { return (DATA.link_base || "") + path.split("/").map(encodeURIComponent).join("/"); }
+  function nodeIdForFile(path) { return nodes["file:" + path] ? "file:" + path : null; }
+  function fmt(value) {
+    if (value === null || value === undefined || value === "") return "—";
+    if (Array.isArray(value)) return value.length ? value.map(fmt).join("；") : "—";
+    if (typeof value === "object") return JSON.stringify(value);
+    return String(value);
+  }
+
+  function select(id) { state.selected = id; renderDetail(); renderView(); }
+
+  function nodeItem(id, opts) {
+    var n = nodes[id];
+    if (!n) return el("div", { "class": "item", text: id });
+    var cls = "item";
+    if (state.selected === id) cls += " selected";
+    else if (opts && opts.highlight) cls += opts.highlight[id] ? " related" : (opts.dimOthers ? " dim" : "");
+    var head = el("div", { "class": "row" }, [chip(n.status), n.recommended ? el("span", { "class": "chip accent", text: "推荐" }) : null,
+      n.intent ? el("span", { "class": "chip", text: label(INTENT_LABELS, n.intent) }) : null]);
+    return el("div", { "class": cls, role: "button", tabindex: "0", onclick: function () { select(id); },
+      onkeydown: function (ev) { if (ev.key === "Enter") select(id); } }, [
+      el("div", { "class": "title", text: n.label }),
+      el("div", { "class": "sub", text: label(KIND_LABELS, n.kind) + (n.record_id && n.record_id !== n.label ? " · " + n.record_id : "") }),
+      n.summary ? el("div", { "class": "sub", text: n.summary }) : null,
+      head.childNodes.length ? head : null
+    ]);
+  }
+
+  // Everything reachable from the selection in either direction.
+  function neighborhood(id) {
+    var seen = {};
+    if (!id) return seen;
+    [["out", outgoing], ["in", incoming]].forEach(function (pair) {
+      var stack = [id], map = pair[1];
+      while (stack.length) {
+        var cur = stack.pop();
+        if (seen[cur + pair[0]]) continue;
+        seen[cur + pair[0]] = true; seen[cur] = true;
+        (map[cur] || []).forEach(function (e) {
+          var next = pair[0] === "out" ? e.to : e.from;
+          if (nodes[next] && nodes[next].kind !== "cycle" && nodes[next].kind !== "file") stack.push(next);
+        });
+      }
+    });
+    return seen;
+  }
+
+  function currentCycle() { return state.cycle >= 0 ? cycles[state.cycle] : null; }
+
+  function renderHeader() {
+    document.getElementById("root-name").textContent = "研究目录：" + DATA.root_name;
+    document.getElementById("generated").textContent = "生成于 " + DATA.generated_utc;
+    var sel = document.getElementById("cycle-select");
+    sel.textContent = "";
+    if (!cycles.length) sel.appendChild(el("option", { text: "未找到研究周期记录" }));
+    cycles.forEach(function (c, i) { sel.appendChild(el("option", { value: String(i), text: c.version + " · " + label(STAGE_LABELS, c.stage)[0] })); });
+    sel.value = String(state.cycle);
+    sel.onchange = function () { state.cycle = Number(sel.value); renderAll(); };
+  }
+
+  function renderStages() {
+    var box = document.getElementById("stages");
+    box.textContent = "";
+    var c = currentCycle();
+    var currentIndex = c ? DATA.stages.indexOf(c.stage) : -1;
+    DATA.stages.forEach(function (stage, i) {
+      var info = STAGE_LABELS[stage] || [stage, ""];
+      var cls = "stage" + (i === currentIndex ? " current" : i > currentIndex ? " future" : "");
+      var badge = i === currentIndex ? chip(c.check.status) : i < currentIndex ? el("span", { "class": "chip ok", text: "已经过" }) : el("span", { "class": "chip", text: "未到达" });
+      var refs = el("ul");
+      var stageRefs = c ? (c.stages.filter(function (s) { return s.stage === stage; })[0] || { refs: [] }).refs : [];
+      stageRefs.forEach(function (r) {
+        var target = r.path ? nodeIdForFile(r.path) : null;
+        refs.appendChild(el("li", {}, [
+          target ? el("button", { "class": "linkbtn", text: r.path, onclick: function () { select(target); } }) : el("span", { "class": "field", text: r.field.split(".").pop() }),
+          chip(r.state)
+        ]));
+      });
+      if (stage === "direction_choice" && c) {
+        var sid = c.selected_direction_id;
+        refs.appendChild(el("li", {}, [el("span", { "class": "field", text: "选定方向" }), sid ? el("span", { "class": "chip ok", text: sid }) : chip("null")]));
+      }
+      box.appendChild(el("div", { "class": cls }, [
+        el("div", { "class": "name" }, [el("span", { text: (i + 1) + ". " + info[0] }), badge]),
+        el("div", { "class": "note", text: info[1] }),
+        refs
+      ]));
+    });
+  }
+
+  var TABS = [["overview", "总览"], ["branches", "分支与选择"], ["evidence", "证据链"], ["revision", "修订链"], ["gaps", "缺口与检查"], ["files", "原始文件"]];
+  function renderTabs() {
+    var nav = document.getElementById("tabs");
+    nav.textContent = "";
+    TABS.forEach(function (t) {
+      nav.appendChild(el("button", { role: "tab", "aria-selected": String(state.tab === t[0]), text: t[1],
+        onclick: function () { state.tab = t[0]; renderTabs(); renderView(); } }));
+    });
+  }
+
+  function renderOverview(view) {
+    var c = currentCycle();
+    if (!c) { view.appendChild(el("p", { "class": "empty", text: "此目录中没有 research-support.research-cycle.v1 记录。" })); return; }
+    var stageInfo = STAGE_LABELS[c.stage] || [c.stage];
+    var next = c.check.next_action || c.next_action || {};
+    var branchInfo = c.branches || {};
+    var why = [];
+    if (branchInfo.decided) {
+      var decision = nodes["decision:" + c.discussion];
+      why.push(el("div", {}, [el("span", { "class": "label", text: "已选定方向：" }), el("strong", { text: branchInfo.selected || "—" })]));
+      if (decision && decision.summary) why.push(el("div", { text: "理由：" + decision.summary }));
+    } else if (c.discussion) {
+      why.push(el("div", { text: "方向尚未决定。推荐方向：" + (branchInfo.recommended || "—") }));
+      var rec = nodes["discussion:" + c.discussion] || nodes["file:" + c.discussion];
+      if (rec && rec.summary) why.push(el("div", { "class": "note", text: "推荐理由：" + rec.summary }));
+    } else {
+      why.push(el("div", { "class": "empty", text: "尚无方向讨论记录。" }));
+    }
+    view.appendChild(el("div", { "class": "grid2" }, [
+      el("div", { "class": "card" }, [el("div", { "class": "label", text: "现在进行到哪里" }), el("h2", { text: stageInfo[0] }), el("div", { "class": "row" }, [chip(c.check.status)]),
+        el("div", { "class": "note", text: c.cycle_id + " · " + c.version + " · " + (c.task && c.task.task_id || "") })]),
+      el("div", { "class": "card" }, [el("div", { "class": "label", text: "为什么走到这里" })].concat(why)),
+      el("div", { "class": "card" }, [el("div", { "class": "label", text: "接下来准备做什么" }), el("div", { text: (next.owner ? "[" + next.owner + "] " : "") + (next.action || "—") }),
+        el("div", { "class": "note", text: "本阶段可能的出口：" + (STAGE_EXITS[c.stage] || []).join("、") })])
+    ]));
+    if (c.task && c.task.objective) view.appendChild(el("div", { "class": "card" }, [el("div", { "class": "label", text: "课题目标" }), el("div", { text: c.task.objective })]));
+    view.appendChild(el("h3", { text: "版本经过" }));
+    var line = el("div", { "class": "timeline" });
+    cycles.forEach(function (v, i) {
+      if (i) line.appendChild(el("span", { "class": "arrow", text: "→" }));
+      var changes = [];
+      var prev = i ? cycles[i - 1] : null;
+      if (prev && v.previous === prev.path) {
+        if (prev.stage !== v.stage) changes.push("阶段：" + label(STAGE_LABELS, prev.stage)[0] + " → " + label(STAGE_LABELS, v.stage)[0]);
+        if (prev.selected_direction_id !== v.selected_direction_id) changes.push("方向：" + (prev.selected_direction_id || "未选") + " → " + (v.selected_direction_id || "未选"));
+        if (prev.discussion !== v.discussion) changes.push("讨论记录：" + (prev.discussion || "—") + " → " + (v.discussion || "—"));
+        if (prev.evidence_map !== v.evidence_map) changes.push("证据图：" + (prev.evidence_map || "—") + " → " + (v.evidence_map || "—"));
+      }
+      line.appendChild(el("div", { "class": "item ver" + (i === state.cycle ? " selected" : ""), onclick: function () { state.cycle = i; renderAll(); } }, [
+        el("div", { "class": "title", text: v.version }),
+        el("div", { "class": "row" }, [el("span", { "class": "chip accent", text: label(STAGE_LABELS, v.stage)[0] }), chip(v.check.status)]),
+        el("div", { "class": "sub", text: v.path }),
+        changes.length ? el("div", { "class": "sub", text: "与上一版相比：" + changes.join("；") }) : (i ? el("div", { "class": "sub", text: "与上一版本没有显式链接" }) : null)
+      ]));
+    });
+    view.appendChild(line);
+  }
+
+  function renderBranches(view) {
+    var c = currentCycle();
+    if (!c || !c.discussion) { view.appendChild(el("p", { "class": "empty", text: "当前周期版本尚未引用方向讨论记录。" })); return; }
+    var groups = { selected: [], awaiting_choice: [], not_selected: [] };
+    Object.keys(c.branches.branches || {}).forEach(function (did) {
+      var id = "direction:" + c.discussion + "#" + did;
+      (groups[c.branches.branches[did]] || groups.not_selected).push(id);
+    });
+    var titles = { selected: "已选定的路线", awaiting_choice: "待讨论的方向", not_selected: "未选定的方向（保留其理由与改判条件）" };
+    view.appendChild(el("p", { "class": "note", text: "讨论记录：" + c.discussion + "。点击方向查看它针对的问题、采用的方法和改判条件。" }));
+    ["selected", "awaiting_choice", "not_selected"].forEach(function (key) {
+      if (!groups[key].length) return;
+      view.appendChild(el("h3", { text: titles[key] }));
+      var box = el("div", { "class": "grid2" });
+      groups[key].forEach(function (id) {
+        var n = nodes[id];
+        var card = nodeItem(id);
+        var facts = n && n.facts || {};
+        if (facts.change_condition) card.appendChild(el("div", { "class": "sub", text: "改判条件：" + fmt(facts.change_condition) }));
+        box.appendChild(card);
+      });
+      view.appendChild(box);
+    });
+    var decision = nodes["decision:" + c.discussion];
+    if (decision) { view.appendChild(el("h3", { text: "方向决定" })); view.appendChild(nodeItem(decision.id)); }
+  }
+
+  function renderEvidence(view) {
+    var c = currentCycle();
+    var emap = c && c.evidence_map;
+    if (!emap) { view.appendChild(el("p", { "class": "empty", text: "当前周期版本尚未引用证据图。" })); return; }
+    var hl = neighborhood(state.selected);
+    var opts = { highlight: hl, dimOthers: !!state.selected && !!hl[state.selected] };
+    function list(kind, filter) {
+      return Object.keys(nodes).filter(function (id) { return nodes[id].kind === kind && filter(nodes[id]); });
+    }
+    var cols = [
+      ["来源", list("source", function (n) { return n.file === c.source_ledger; })],
+      ["发现", list("finding", function (n) { return n.file === emap; })],
+      ["方法候选与研究问题", list("method", function (n) { return n.file === emap; }).concat(list("question", function (n) { return n.file === emap; }))],
+      ["候选方向", list("direction", function (n) { return n.file === c.discussion; })]
+    ];
+    view.appendChild(el("p", { "class": "note", text: "点击任一项，高亮它的来路与去向；关系只取自记录中声明的 ID 与引用。证据图：" + emap }));
+    var grid = el("div", { "class": "columns" });
+    cols.forEach(function (col) {
+      var box = el("div", {}, [el("h3", { text: col[0] + "（" + col[1].length + "）" })]);
+      if (!col[1].length) box.appendChild(el("div", { "class": "empty", text: "无" }));
+      col[1].forEach(function (id) { box.appendChild(nodeItem(id, opts)); });
+      grid.appendChild(box);
+    });
+    view.appendChild(grid);
+  }
+
+  function renderRevision(view) {
+    var records = Object.keys(nodes).filter(function (id) { return nodes[id].kind === "revision_record" || nodes[id].kind === "cycle_decision"; });
+    if (!records.length) { view.appendChild(el("p", { "class": "empty", text: "此目录中没有 research-revision-v1 或研究周期修订决定记录。" })); return; }
+    view.appendChild(el("p", { "class": "note", text: "从意见来源到修订请求、处理路线、任务与产物，再到主张和复核检查；未解决项与未选路线如实保留。" }));
+    function targets(id, relation) { return (outgoing[id] || []).filter(function (e) { return e.relation === relation; }).map(function (e) { return e.to; }); }
+    function sources(id, relation) { return (incoming[id] || []).filter(function (e) { return e.relation === relation; }).map(function (e) { return e.from; }); }
+    function row(chain) {
+      var box = el("div", { "class": "timeline card" });
+      chain.forEach(function (id, i) { if (i) box.appendChild(el("span", { "class": "arrow", text: "→" })); var item = nodeItem(id); item.classList.add("ver"); box.appendChild(item); });
+      return box;
+    }
+    records.forEach(function (rid) {
+      var rec = nodes[rid];
+      view.appendChild(el("h3", { text: label(KIND_LABELS, rec.kind) + "：" + rec.file }));
+      if (rec.kind === "cycle_decision") { view.appendChild(nodeItem(rid)); return; }
+      targets(rid, "contains").forEach(function (child) {
+        if (nodes[child].kind === "response_group") {
+          var chosen = sources(child, "handled_by_selected_route"), other = sources(child, "handled_by_other_route");
+          var box = el("div", { "class": "card" }, [el("div", { "class": "label", text: "路线取舍" }), nodeItem(child)]);
+          if (chosen.length) { box.appendChild(el("div", { "class": "note", text: "选定路线处理：" })); chosen.forEach(function (id) { box.appendChild(nodeItem(id)); }); }
+          if (other.length) { box.appendChild(el("div", { "class": "note", text: "未选路线涉及：" })); other.forEach(function (id) { box.appendChild(nodeItem(id)); }); }
+          view.appendChild(box);
+          return;
+        }
+        var chain = sources(child, "raises").concat([child]);
+        targets(child, "decided_as").forEach(function (decision) {
+          chain.push(decision);
+          targets(decision, "assigns").forEach(function (task) { chain.push(task); chain = chain.concat(targets(task, "produces")); });
+        });
+        chain = chain.concat(targets(child, "answered_by"), targets(child, "checked_by"));
+        view.appendChild(row(chain));
+      });
+    });
+  }
+
+  function renderGaps(view) {
+    var c = currentCycle();
+    if (c) {
+      var findings = c.check.findings || [];
+      var bad = findings.filter(function (f) { return f.status === "needs_work"; });
+      view.appendChild(el("div", { "class": "card" }, [
+        el("div", { "class": "label", text: "研究周期结构检查（" + c.version + "）" }),
+        el("div", { "class": "row" }, [chip(c.check.status), el("span", { "class": "note", text: findings.length + " 项检查，" + bad.length + " 项需要补齐" })]),
+        c.check.error ? el("div", { "class": "note", text: c.check.error }) : null,
+        el("div", { "class": "note", text: "检查只说明交接记录与阶段前置条件是否齐备；科学充分性由研究评价流程判断。" })
+      ]));
+      var details = el("details", {}, [el("summary", { text: "查看全部检查项" })]);
+      var table = el("table", { "class": "facts" });
+      findings.forEach(function (f) { table.appendChild(el("tr", {}, [el("td", { text: f.id }), el("td", {}, [chip(f.status), " ", f.detail])])); });
+      details.appendChild(table);
+      view.appendChild(details);
+    }
+    view.appendChild(el("h3", { text: "全目录缺口（" + (DATA.gaps || []).length + "）" }));
+    if (!(DATA.gaps || []).length) view.appendChild(el("p", { "class": "empty", text: "没有发现无法解析的引用。值为空的引用表示尚未记录，不计为缺口。" }));
+    (DATA.gaps || []).forEach(function (g) {
+      var target = nodeIdForFile(g.file);
+      view.appendChild(el("div", { "class": "item", onclick: function () { if (target) select(target); } }, [
+        el("div", { "class": "title", text: g.detail }), el("div", { "class": "sub", text: g.kind + " · " + g.file })]));
+    });
+  }
+
+  function renderFiles(view) {
+    var table = el("table", { "class": "facts" });
+    Object.keys(DATA.files || {}).sort().forEach(function (path) {
+      var f = DATA.files[path];
+      var target = nodeIdForFile(path);
+      table.appendChild(el("tr", {}, [
+        el("td", {}, [target ? el("button", { "class": "linkbtn", text: path, onclick: function () { select(target); } }) : el("span", { text: path })]),
+        el("td", { text: (f.schema || f.kind) + " · " + f.bytes + " B" })
+      ]));
+    });
+    view.appendChild(table);
+  }
+
+  function renderView() {
+    var view = document.getElementById("view");
+    view.textContent = "";
+    ({ overview: renderOverview, branches: renderBranches, evidence: renderEvidence, revision: renderRevision, gaps: renderGaps, files: renderFiles })[state.tab](view);
+  }
+
+  function relationList(title, edges, pick) {
+    if (!edges || !edges.length) return null;
+    var ul = el("ul");
+    edges.forEach(function (e) {
+      var other = pick(e);
+      var n = nodes[other];
+      ul.appendChild(el("li", {}, [label(RELATION_LABELS, e.relation.replace(/\[\d+\]$/, "")) + "：",
+        el("button", { "class": "linkbtn", text: n ? n.label : other, onclick: function () { select(other); } })]));
+    });
+    return el("div", { "class": "rel" }, [el("strong", { text: title }), ul]);
+  }
+
+  function renderDetail() {
+    var box = document.getElementById("detail");
+    box.textContent = "";
+    var n = nodes[state.selected];
+    if (!n) {
+      box.appendChild(el("h2", { text: "详情" }));
+      box.appendChild(el("p", { "class": "note", text: "点击阶段中的记录、方向、发现或缺口，在这里查看摘要、来路、去向与原始文件。" }));
+      return;
+    }
+    box.appendChild(el("div", { "class": "label note", text: label(KIND_LABELS, n.kind) }));
+    box.appendChild(el("h2", { text: n.label }));
+    box.appendChild(el("div", { "class": "row" }, [chip(n.status), n.recommended ? el("span", { "class": "chip accent", text: "推荐" }) : null,
+      n.intent ? el("span", { "class": "chip", text: label(INTENT_LABELS, n.intent) }) : null]));
+    if (n.summary) box.appendChild(el("p", { text: n.summary }));
+    var facts = el("table", { "class": "facts" });
+    if (n.record_id) facts.appendChild(el("tr", {}, [el("td", { text: "记录 ID" }), el("td", { text: n.record_id })]));
+    if (n.schema) facts.appendChild(el("tr", {}, [el("td", { text: "schema" }), el("td", { text: n.schema })]));
+    Object.keys(n.facts || {}).forEach(function (k) { facts.appendChild(el("tr", {}, [el("td", { text: k }), el("td", { text: fmt(n.facts[k]) })])); });
+    if (facts.childNodes.length) box.appendChild(facts);
+    box.appendChild(relationList("来路", incoming[n.id], function (e) { return e.from; }));
+    box.appendChild(relationList("去向", outgoing[n.id], function (e) { return e.to; }));
+    var file = DATA.files[n.file];
+    box.appendChild(el("h3", { text: "原件" }));
+    box.appendChild(el("div", { "class": "links" }, [el("a", { href: fileHref(n.file), target: "_blank", rel: "noopener", text: n.file })]));
+    if (file && file.content) {
+      var details = el("details", {}, [el("summary", { text: "在此查看内容（生成时的副本）" }), el("pre", { text: file.content })]);
+      box.appendChild(details);
+    } else if (n.kind === "directory") {
+      box.appendChild(el("p", { "class": "note", text: "目录引用；其中的文件见“原始文件”。" }));
+    }
+  }
+
+  function renderAll() { renderHeader(); renderStages(); renderTabs(); renderView(); renderDetail(); }
+  renderAll();
+})();
+</script>
+</body>
+</html>

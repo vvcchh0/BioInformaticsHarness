@@ -1,0 +1,115 @@
+{
+  "schema": "harness.study-view-interface/v1",
+  "state": "prototype_locally_validated",
+  "origin": "https://github.com/vvcchh0/BioInformaticsHarness/issues/6",
+  "root": "core",
+  "implementation": "scripts/research_support/study_view.py",
+  "template": "scripts/research_support/study_view_template.html",
+  "tests": "tests/research_support/test_study_view.py",
+  "example": "examples/research-support/study-view/demo-study",
+  "entry": {
+    "cwd": "independent core root",
+    "cli": ["python", "-B", "-m", "scripts.research_support.study_view", "--root", "STUDY_ROOT", "--out", "NEW.html", "[--model-out", "NEW.json]"],
+    "python_api": ["build_study_view(root, exclude=())", "render_html(model, link_base='')"],
+    "dependencies": "Python standard library; the page uses inline CSS/JS without network resources",
+    "writes": "only --out and optional --model-out, created exclusively; refuses existing paths",
+    "exit_codes": {"0": "written", "2": "invalid root, existing output, or read failure"}
+  },
+  "model": {
+    "schema": "research-support.study-view.v1",
+    "fields": ["generated_utc", "root_name", "stages", "cycles", "nodes", "edges", "files", "gaps", "scientific_acceptance"],
+    "edge_direction": "Every edge runs upstream -> downstream (basis or input -> derived record). Relations stated from the dependent side are reversed and renamed on creation.",
+    "scientific_acceptance": "always not_assessed"
+  },
+  "scan": {
+    "skips": ["dot-prefixed files and directories", "symlinks", "the requested output paths"],
+    "limits": {"files": 2000, "json_bytes": 2097152, "embedded_text_bytes": 262144},
+    "text_suffixes": [".md", ".txt", ".tsv", ".csv"]
+  },
+  "record_mapping": [
+    {
+      "schema": "research-support.research-cycle.v1",
+      "node": "cycle (one per version file)",
+      "status_source": "check_research_cycle(root, record): overall, status, next_action, findings",
+      "edges": {
+        "previous_version": "previous cycle -> cycle (next_version)",
+        "stage *_ref fields": "referenced file -> cycle (used_by)",
+        "synthesis.question_ids": "question -> cycle (considered_by)"
+      },
+      "stage_refs": {
+        "synthesis": ["synthesis.source_ledger_ref", "synthesis.evidence_map_ref", "synthesis.report_ref", "synthesis.time_scope.refresh_record_ref"],
+        "human_discussion": ["direction.discussion_ref"],
+        "direction_choice": ["direction.selected_direction_id (shown, not a path)"],
+        "data_and_plan": ["study.bridge_ref", "study.task_context_ref", "study.first_plan_ref", "study.first_plan_seal_ref"],
+        "execution_evaluation": ["execution.run_receipt_refs", "execution.evaluation_ref", "execution.evidence_refs", "execution.delivery_ref"],
+        "evidence_revision": ["revision.decision_ref", "revision.next_cycle_ref"]
+      }
+    },
+    {
+      "schema": "harness.research-preparation-source-ledger/v1",
+      "node": "source per sources[]",
+      "label": "bibliography.title",
+      "status": "reading.status"
+    },
+    {
+      "schema": "harness.research-preparation-evidence-map/v1",
+      "nodes": {"finding": "findings[]", "method": "method_candidates[]", "question": "questions[]"},
+      "edges": {
+        "findings[].evidence[].source_id": "source -> finding (supports), using the ledger named by the same cycle",
+        "method_candidates[].motivated_by_finding_ids": "finding -> method (motivates)",
+        "questions[].motivated_by_finding_ids": "finding -> question (motivates)",
+        "questions[].candidate_method_ids": "method -> question (candidate_for)"
+      }
+    },
+    {
+      "schema": "research-support.direction-discussion.v1",
+      "nodes": {"direction": "directions[]", "decision": "decision when status is not pending"},
+      "branch_states": {"awaiting_choice": "decision pending", "selected": "decision.selected_direction_id", "not_selected": "other declared directions after a decision"},
+      "edges": {
+        "directions[]": "discussion -> direction (offers)",
+        "directions[].question_ids": "question -> direction (addressed_by)",
+        "directions[].method_ids": "method -> direction (method_of)",
+        "decision.selected_direction_id": "direction -> decision (chosen_by)",
+        "brief_ref, technical_route_ref, discussion.human_input_ref, decision.source_ref": "file -> owner (field name)"
+      }
+    },
+    {
+      "schema": "research-support.research-cycle-decision.v1",
+      "node": "cycle_decision",
+      "edges": {"evidence_refs[], observed_findings_ref": "file -> decision"}
+    },
+    {
+      "schema_version": "research-revision-v1",
+      "nodes": ["revision_source", "request", "revision_decision", "task", "artifact", "claim", "acceptance_check", "response_group"],
+      "edges": {
+        "requests[].source_ids": "source -> request (raises)",
+        "decisions[]": "request -> decision (decided_as); decision -> task (assigns)",
+        "tasks[]": "request -> task (served_by); task -> artifact (produces)",
+        "claims[]": "request -> claim (answered_by); artifact -> claim (supports_claim)",
+        "acceptance_checks[]": "request -> check (checked_by); artifact -> check (inspected_by)",
+        "response_groups[]": "request -> group (handled_by_selected_route | handled_by_other_route)"
+      },
+      "not_shown": "check_research_revision results are not yet integrated"
+    }
+  ],
+  "states": {
+    "null": "not recorded yet; not a gap",
+    "present": "root-contained file",
+    "directory": "root-contained directory reference",
+    "missing | outside_root | invalid": "listed as a gap; no edge drawn",
+    "unresolved ID": "listed as a gap; no edge drawn"
+  },
+  "structure_observations": [
+    {"id": "revision-record-not-bound-to-cycle", "detail": "research-revision-v1 has no cycle_id, study_id or version; the view can group it only by directory."},
+    {"id": "evidence-map-does-not-name-ledger", "detail": "An evidence map carries preparation_id but no ledger path; source links depend on a cycle naming both."},
+    {"id": "discussion-has-no-previous-version", "detail": "Discussion versions are linked only through cycle previous_version."},
+    {"id": "schema-key-naming", "detail": "Most records use schema; research-revision-v1 uses schema_version."},
+    {"id": "stage-exits-duplicated", "detail": "Stage exits live in machine/design/research-guidance-cycle.json; the checker does not export them and the page keeps its own labels."},
+    {"id": "multiple-next-actions", "detail": "Cycle next_action, checker next_action and evidence-map review_decision.next_action coexist; the view prefers the checker."}
+  ],
+  "validation": {
+    "automated": "tests/research_support/test_study_view.py: version order, checker reuse, edge direction, branch states, revision chain, gaps vs null, later-stage needs_work, symlink/dot exclusion, script-close escaping, CLI no-overwrite",
+    "manual": "Demo page inspected in a browser at desktop and 375 px widths: all tabs, trace highlighting, detail panel; no console errors or horizontal overflow",
+    "not_done": ["Use on a real study directory", "Reader study of whether the page explains a research path"]
+  }
+}
