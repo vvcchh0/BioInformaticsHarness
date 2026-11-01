@@ -103,15 +103,31 @@
         "machine/changes/time-budget-recovery-20261027.json"
       ],
       "acceptance": "Controlled operational and abnormal-path tests; scientific acceptance remains separately judged."
+    },
+    {
+      "id": "study-view-prototype-20261031",
+      "date": "2026-10-31",
+      "reason": "Add the study view prototype entry for issue #6.",
+      "technical_records": [
+        "core/machine/tools/study-view.json",
+        "machine/changes/study-view-prototype-20261031.json"
+      ],
+      "previous_document_identity": {
+        "bytes": 9742,
+        "sha256": "48c3527c5ac774581e4597d39672ccc222b7325362e89d738a059cc1c087ab52"
+      },
+      "acceptance_status": "contributor_prototype_pending_maintainer_review"
     }
   ],
-  "updated_at_utc": "2026-10-23T05:49:05.511223+00:00",
+  "updated_at_utc": "2026-10-31T13:09:51.976296+00:00",
   "current_identity": {
-    "bytes": 9288,
-    "sha256": "3a03aa5a6982e4c18b34816a688976b2e823f92735c86ac44d1d113e046a62ab"
+    "bytes": 10064,
+    "sha256": "57488f5bc9779aa94f9af5f26347e05cd916aa4a81d1c0ffd140b3f2aff2fddd"
   },
   "current_technical_records": [
     "core/machine/design/review-coverage.json",
-    "machine/history/review-coverage-iteration.json"
+    "machine/history/review-coverage-iteration.json",
+    "core/machine/tools/study-view.json",
+    "machine/changes/study-view-prototype-20261031.json"
   ]
 }

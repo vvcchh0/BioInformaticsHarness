@@ -1,0 +1,148 @@
+{
+  "schema_version": "research-revision-v1",
+  "id": "demo-revision-001",
+  "sources": [
+    {
+      "id": "demo-review",
+      "path": "revision/review-comment.md",
+      "sha256": "bee0da9efd557a93bf2c96416f28a61a5a6fc58a7950de483ad47653872fe1ed",
+      "source_layer": "reviewer_claim",
+      "locator": "评阅意见第 1–2 条（虚构）"
+    }
+  ],
+  "requests": [
+    {
+      "id": "demo-req-explain",
+      "text": "说明随机划分与批次划分的差异来源（虚构）",
+      "source_ids": [
+        "demo-review"
+      ],
+      "required": true
+    },
+    {
+      "id": "demo-req-labels",
+      "text": "补做标签版本对照（虚构）",
+      "source_ids": [
+        "demo-review"
+      ],
+      "required": false
+    }
+  ],
+  "response_groups": [
+    {
+      "id": "demo-route-labels",
+      "alternatives": [
+        {
+          "id": "do-label-analysis",
+          "request_ids": [
+            "demo-req-labels"
+          ]
+        },
+        {
+          "id": "retain-limitation",
+          "request_ids": [
+            "demo-req-explain"
+          ]
+        }
+      ],
+      "selected_alternative": "retain-limitation",
+      "reason": "标签记录尚未取得，先保留限制（虚构）。"
+    }
+  ],
+  "decisions": [
+    {
+      "request_id": "demo-req-explain",
+      "route": "explain",
+      "reason": "补充说明即可回应（虚构）。",
+      "task_ids": [
+        "demo-task-explain"
+      ],
+      "unresolved": []
+    },
+    {
+      "request_id": "demo-req-labels",
+      "route": "not_selected",
+      "reason": "依赖外部标签记录，本轮不处理，并在主张中保留限制（虚构）。",
+      "task_ids": [
+        "demo-task-labels"
+      ],
+      "unresolved": [
+        "标签版本记录尚未取得"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "demo-task-explain",
+      "request_ids": [
+        "demo-req-explain"
+      ],
+      "input_uses": [
+        {
+          "source_id": "demo-review",
+          "use": "读取评阅意见"
+        }
+      ],
+      "artifact_ids": [
+        "demo-artifact-explanation"
+      ],
+      "status": "completed"
+    },
+    {
+      "id": "demo-task-labels",
+      "request_ids": [
+        "demo-req-labels"
+      ],
+      "input_uses": [],
+      "artifact_ids": [],
+      "status": "planned"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "demo-artifact-explanation",
+      "path": "revision/explanation.md",
+      "sha256": "6cdf6eedd6b12f2ea6ff0556440521b65ffb0384b0f6c8f3f5eca697af08c2da",
+      "kind": "修订说明"
+    }
+  ],
+  "claims": [
+    {
+      "id": "demo-claim-1",
+      "text": "原结论只在随机划分下成立，批次划分下待检验（虚构）。",
+      "request_ids": [
+        "demo-req-explain"
+      ],
+      "source_ids": [
+        "demo-review"
+      ],
+      "artifact_ids": [
+        "demo-artifact-explanation"
+      ],
+      "limits": [
+        "标签对照尚未完成。",
+        "全部内容为虚构。"
+      ]
+    }
+  ],
+  "measurement_links": {
+    "applicable": false,
+    "reason": "虚构示例没有测量关系。",
+    "items": []
+  },
+  "acceptance_checks": [
+    {
+      "id": "demo-check-explain",
+      "request_ids": [
+        "demo-req-explain"
+      ],
+      "scope": "record_contract",
+      "mode": "manual",
+      "predicate": "说明文件存在并引用评阅意见",
+      "artifact_ids": [
+        "demo-artifact-explanation"
+      ],
+      "implementation_id": "demo-manual"
+    }
+  ]
+}
