@@ -1,0 +1,25 @@
+{
+  "schema": "harness.reader-guidance-adoption/v1",
+  "id": "reader-guidance-20261101",
+  "date": "2026-11-01",
+  "decision": "Adopt the user-confirmed explanation structure and reader-comprehension criterion through existing readable-process and handoff guides.",
+  "existing_basis": [
+    "core/docs/design/06-readable-process.md",
+    "core/docs/methods/guides/biological-explanation-and-handoff.md",
+    "docs/DOCUMENTATION.md"
+  ],
+  "changes": [
+    "core/docs/design/06-readable-process.md",
+    "core/docs/methods/guides/biological-explanation-and-handoff.md",
+    "core/docs/methods/guides/research-guidance-cycle.md",
+    "core/examples/research-support/research-cycle/HUMAN-DISCUSSION.template.md"
+  ],
+  "scope": "Writing and human-facing presentation; scientific evidence, IDs, limits and first-draft/revisor/revision path continue to apply.",
+  "source_authority": "Maintainer adoption after user feedback; normative guidance change, no new literature-derived scientific claim.",
+  "case_validation": {
+    "availability": "private_archive",
+    "record_id": "20261101-reader-guidance/onclass-readability",
+    "status": "bounded agent proxy reading can explain purpose/action/implication; one historical-operation wording corrected after independent source review; actual human acceptance and cross-case improvement unassessed"
+  },
+  "updated_utc": "2026-11-01T10:31:59.525423+00:00"
+}

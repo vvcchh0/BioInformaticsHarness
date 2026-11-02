@@ -218,12 +218,29 @@
         "bytes": 11418,
         "sha256": "7d5964bcccd74f130d50b7196a8aedb762545f3dfcc7b4de16f90821c675e849"
       }
+    },
+    {
+      "id": "2026-11-01-reader-guidance",
+      "date": "2026-11-01",
+      "reason": "Adopt decision-oriented explanation and uninvolved-reader comprehension; keep technical identity in linked records.",
+      "technical_records": [
+        "machine/history/reader-guidance-20261101.json",
+        "machine/changes/reader-guidance-20261101.json"
+      ],
+      "previous_snapshot": {
+        "availability": "private_archive",
+        "record_id": "20261101-reader-guidance/before/CHANGELOG.md"
+      },
+      "current_identity": {
+        "bytes": 12377,
+        "sha256": "b22f42a38caa07d37e1f174f27eaa801ffde44d6a4ba57f52067039e772b6766"
+      }
     }
   ],
-  "updated_at_utc": "2026-10-31T09:42:20.982152+00:00",
+  "updated_at_utc": "2026-11-01T10:23:08.291360+00:00",
   "current_identity": {
-    "bytes": 11930,
-    "sha256": "d09543922e24d906332cc17a3e66fa7ba52c3775300edf607572d6617be31075"
+    "bytes": 12377,
+    "sha256": "b22f42a38caa07d37e1f174f27eaa801ffde44d6a4ba57f52067039e772b6766"
   },
   "current_technical_records": [
     "core/machine/design/review-scope-appraisal.json",

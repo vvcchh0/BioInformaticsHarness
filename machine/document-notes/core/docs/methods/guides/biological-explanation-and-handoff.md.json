@@ -83,12 +83,29 @@
       ],
       "acceptance_status": "accepted_bounded_content_v2",
       "accepted_at_utc": "2026-10-25T13:48:09.940509+00:00"
+    },
+    {
+      "id": "2026-11-01-reader-guidance",
+      "date": "2026-11-01",
+      "reason": "Adopt decision-oriented explanation and uninvolved-reader comprehension; keep technical identity in linked records.",
+      "technical_records": [
+        "machine/history/reader-guidance-20261101.json",
+        "machine/changes/reader-guidance-20261101.json"
+      ],
+      "previous_snapshot": {
+        "availability": "private_archive",
+        "record_id": "20261101-reader-guidance/before/core/docs/methods/guides/biological-explanation-and-handoff.md"
+      },
+      "current_identity": {
+        "bytes": 10935,
+        "sha256": "a1831cc41a006a7ffd50292a030046beb36bb49bd56faea4efed246087834c4c"
+      }
     }
   ],
-  "updated_at_utc": "2026-10-25T13:48:09.940509+00:00",
+  "updated_at_utc": "2026-11-01T10:23:08.291360+00:00",
   "current_identity": {
-    "bytes": 10776,
-    "sha256": "9ffe1dbe12835a1b39f2178f5097c21855f72a836cd1bb52f0d6e9be2360ad91"
+    "bytes": 10935,
+    "sha256": "a1831cc41a006a7ffd50292a030046beb36bb49bd56faea4efed246087834c4c"
   },
   "current_technical_records": [
     "core/machine/design/biological-argument.json"
