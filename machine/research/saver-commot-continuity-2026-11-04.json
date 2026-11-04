@@ -1,0 +1,289 @@
+{
+  "schema": "harness.public-continuity-trial/v1",
+  "date": "2026-11-04",
+  "status": "accepted_with_reported_limits_after_independent_recovery_audits",
+  "human_summary": "docs/research/saver-commot-continuity-2026-11-04.zh.md",
+  "design": {
+    "type": "two selected, seeded observational case studies in independent theory chats",
+    "theory_configuration": "GPT-6.1 Sol / medium",
+    "unit": "one same-context theory trajectory per case",
+    "comparison": "no no-Harness or alternative-workflow control",
+    "target_dimensions": [
+      "goal_retention",
+      "control_flow_retention",
+      "revision_implementation",
+      "state_convergence"
+    ],
+    "cross_session_recovery_tested": false,
+    "elapsed_time_is_acceptance_criterion": false,
+    "cycle_quota": false
+  },
+  "harness": {
+    "public_guidance_commit": "b6265ec048637f724961c4154f4a4fe5006e25b1",
+    "private_archive_commit_reported_by_commot": "34234a07c304032a6c74312dc269436bd082464d",
+    "interpretation": "Private archival repository identity differs from the maintained public guidance tree. Exact guide identities checked separately."
+  },
+  "cases": {
+    "saver": {
+      "original_paper": "https://doi.org/10.1038/s41592-018-0033-z",
+      "data_source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60361",
+      "code": {
+        "repository": "https://github.com/nzhanglab/SAVER",
+        "commit": "f28d719c1b77ce2ad03e4c066afd876eeade760f",
+        "version": "1.1.3",
+        "historical_tag_commit": "b64a07717ceb2c4a6902161ddc3ca1f4a8309f6b"
+      },
+      "actual_scope": {
+        "original_current_author_R_run": true,
+        "full_input_genes": 3529,
+        "cells": 200,
+        "input_entries_equal_to_GEO": 705800,
+        "followup_fits": 9,
+        "response_genes": 64,
+        "depths": [
+          0.05,
+          0.25
+        ],
+        "seeds_per_depth": 3,
+        "independent_gene_permutation_fits": 3,
+        "posterior_draws_per_fit": 100
+      },
+      "followup_model": "Y_gc ~ Poisson(p * X_gc), observed selected high-coverage X fixed; size.factor=1; comparison after division by p; not literal binomial thinning or exact latent-expression validation",
+      "findings": {
+        "point_MSE_improved_over_counts": "all six depth runs",
+        "Gini_sampling_improved_over_counts_and_mean": "all six depth runs",
+        "variance_sampling_vs_mean": "worse all three low-depth, better all three high-depth",
+        "adjusted_correlation_vs_mean_MAE": "worse all three low-depth, better two of three high-depth; stable-improvement predicate not met",
+        "permuted_abs_correlation_gt_0p3": {
+          "counts": [
+            3,
+            1,
+            2
+          ],
+          "mean": [
+            6,
+            2,
+            6
+          ],
+          "adjusted": [
+            0,
+            0,
+            1
+          ]
+        },
+        "nominal_95_interval_positive_reference_coverage": {
+          "low_depth_range": [
+            0.891,
+            0.92
+          ],
+          "high_depth_range": [
+            0.812,
+            0.827
+          ]
+        },
+        "common_pair_denominators": {
+          "one_low_depth": 1953,
+          "others": 2016,
+          "total": 2016
+        },
+        "undefined_pairs_retained": 63
+      },
+      "review": {
+        "first_draft_preserved": true,
+        "first_review_requests": "R1/R2 implemented with scope",
+        "followup_plan_frozen_before_results": true,
+        "postrun_independent_review": true
+      },
+      "limitations": [
+        "Observed count subset retains measurement noise and selection; no precise single-cell biological truth.",
+        "No named cell-state/causal regulatory inference validated.",
+        "Historical 1.0.0 execution failed with modern glmnet; not counted as historical numerical regression.",
+        "Specific FISH, DE and clustering paper panels not reproduced.",
+        "Posterior intervals are conditional on fitted parameters and working model; no calibrated biological coverage guarantee."
+      ],
+      "parent_redispatches_after_initial": 0
+    },
+    "commot": {
+      "original_paper": "https://doi.org/10.1038/s41592-022-01728-4",
+      "data_and_software_archive": "https://doi.org/10.5281/zenodo.7272562",
+      "code": {
+        "repository": "https://github.com/zcang/COMMOT",
+        "commit": "d117445bc07eaa19109c7609e97d9e35b26e99ca",
+        "historical_archive_version": "0.0.2",
+        "current_version": "0.0.3"
+      },
+      "actual_scope": {
+        "unchanged_author_core_execution": true,
+        "full_top_level_wrapper_execution": false,
+        "numerical_fixture_locations": 7,
+        "reference_L1_errors": [
+          2.2e-07,
+          5.51e-08,
+          1.13e-07
+        ],
+        "reference_acceptance_threshold": 1e-05,
+        "real_cells": 523,
+        "measured_genes": 10000,
+        "LR_pairs": 3,
+        "receptor_positive_cells": 38,
+        "common_accessible_at_smallest_radius": 30,
+        "primary_conditions": 48,
+        "tight_rechecks": 2,
+        "saved_matrices": 50,
+        "comparison_rows": 63,
+        "receiver_share_rows": 3648,
+        "zero_total_shares_retained_missing": 20
+      },
+      "findings": {
+        "global_T500_total_receive": "approximately 24.1462 both with full competitors and focal ligand alone",
+        "Tgfb1_mass_full_vs_alone": [
+          8.2894,
+          24.1462
+        ],
+        "receivers_change_at_least_10_percentage_points_after_omitting_both": "38/38",
+        "independent_pair_negative_control": "unchanged",
+        "fixed_scale_deletion_control_max_matrix_difference": 3.4e-11,
+        "global_T1000_vs_T500_edge_TV": {
+          "native": 0.303,
+          "fixed_cost_regularization_ratio": 0.00072
+        },
+        "default_mixture": "four equally weighted competition settings; in this saturated three-ligand one-receptor panel, total approximately 2D; condition-specific score semantics"
+      },
+      "numerical": {
+        "toy_reference_match_not_equivalent_to_convergence": true,
+        "toy_some_subproblems_remain_uncertified": true,
+        "followup_subsolves": 122,
+        "max_iterations_observed": 6401,
+        "max_reported_equality_residual": 1.02e-08,
+        "primal_dual_gap_certificate": false
+      },
+      "review": {
+        "first_draft_preserved": true,
+        "R1_to_R6_implemented": true,
+        "followup_plan_frozen": true,
+        "second_independent_review": true
+      },
+      "parent_inputs": {
+        "before_first_draft": "additional source-based clue about default mixture semantics",
+        "after_stage_redispatches": 0
+      },
+      "limitations": [
+        "Single tissue, three ligands and one composite receptor.",
+        "Archive coordinate units, without physical calibration.",
+        "Expression proxies and model sensitivity, not measured receptor activation or causal signaling.",
+        "The three-pair subproblem is not a full paper-panel or whole ligand-receptor network reproduction.",
+        "Full top-level package, PDE simulation and all paper figures not reproduced.",
+        "Source traces report stopping and equality residuals; no full primal-dual-gap certification."
+      ]
+    }
+  },
+  "process_evidence": {
+    "native_history": "one original theory turn per case; started/interacted/completed reviewer events observed",
+    "reviewer_clean_context": "declared in dispatch/review records; normalized event metadata does not expose fork settings",
+    "guidance_reading": "matching successful guide-read commands and file identities observed",
+    "experience": "entries, current-state updates and downstream corrections observed; complete per-action experience reread trace not established",
+    "acceptance_not_based_on": "48/50 minute wall time or number of papers/reports"
+  },
+  "public_evidence": {
+    "aggregation": "36 SAVER method rows across nine fits and 63 COMMOT comparison rows",
+    "raw_external_input_redistributed": false,
+    "paper_text_redistributed": false,
+    "runtime_environment_redistributed": false,
+    "full_private_packages": "retained privately with byte-identity recovery and archive CRC/hash checks",
+    "aggregates": [
+      {
+        "case": "saver",
+        "path": "machine/research/saver-commot-2026-11-04/saver-trial-summary.csv",
+        "bytes": 8856,
+        "sha256": "4739bb4b7c57b573a54db666fabe36c2136c14afd11f3243acd66c3aa9c15ca9",
+        "rows": 36,
+        "licensing": "first-party derived aggregate metrics; underlying raw inputs not redistributed",
+        "source_sha256": "4739bb4b7c57b573a54db666fabe36c2136c14afd11f3243acd66c3aa9c15ca9",
+        "source_bytes": 8856,
+        "transformation": "CRLF line endings normalized to LF where present; parsed CSV records unchanged."
+      },
+      {
+        "case": "commot",
+        "path": "machine/research/saver-commot-2026-11-04/commot-comparisons.csv",
+        "bytes": 22519,
+        "sha256": "c6a7c363f9dd28b14a6296ee0236d51b559c720b51fa32a7730b0bd98e5de56a",
+        "rows": 63,
+        "licensing": "first-party derived aggregate metrics; underlying raw inputs not redistributed",
+        "source_sha256": "92eb95448b41897c2fa9d26b880cc5285372c8fbaec6a374f6236b6ca5aefe18",
+        "source_bytes": 22583,
+        "transformation": "CRLF line endings normalized to LF where present; parsed CSV records unchanged."
+      }
+    ]
+  },
+  "adoption": {
+    "existing_first_draft_revisor_path": "retain",
+    "new_first_draft_gate": false,
+    "new_mandatory_file_family": false,
+    "framework_or_method_card_rewrite": false,
+    "optional_insight": "identify actual output and target inference before using aggregate performance; test local attribution as required by the action"
+  },
+  "private_delivery_identities": {
+    "saver": {
+      "report_sha256": "ff2607f18a32d782389392d7ddac7b3400bf0a7ac13398d8880a89d1ebea230e",
+      "availability": "private retained",
+      "source_copy_identity_verified": true
+    },
+    "commot": {
+      "report_sha256": "971a286627184000b906d5494213124caa1437222537beb41adde07f0d127157",
+      "availability": "private retained",
+      "source_copy_identity_verified": true
+    }
+  },
+  "recovery_audits": {
+    "saver": {
+      "availability": "private_archive",
+      "audit_sha256": "1d14fcef05d6dc005b5053b45a955e878f83e64d2d99b3c590a325be0b7b98d4",
+      "verdict": {
+        "quality_result": "needs qualification: minor source-file-count erratum; scoped science and continuity supported",
+        "bounded_path_stable": true,
+        "axes": [
+          "目标保持",
+          "控制流程保持",
+          "修订落实",
+          "状态收敛"
+        ],
+        "blocking_scientific_findings": [],
+        "required_corrections": [
+          "In recovery/public summary, correct historical source comparison to 14 R files plus DESCRIPTION = 15 items. Preserve original archived report and manifest bytes."
+        ],
+        "silent_discarded_required_obligations_found": false,
+        "duration_used_as_success_criterion": false,
+        "scope": "One initial draft, distinct reviewer thread, actual revisions, one prospective nine-fit follow-up, numerical diagnostic, affected-results review and scoped closure. No across-task or causal harness-effectiveness claim."
+      },
+      "original_source_bytes_preserved": true
+    },
+    "commot": {
+      "availability": "private_archive",
+      "audit_sha256": "251e671e0e309649045c9c22ca62b22f11bbd1acfae16d68002106d6319b08e4",
+      "verdict": {
+        "evidence_review": "supported_with_explicit_qualifications",
+        "bounded_workflow_stability": "supported_in_this_single_topic_single_turn_case",
+        "scientific_scope": "Conditional model-attribution sensitivity in one measured 523-cell, three-ligand/one-complex-receptor panel under fixed preprocessing and frozen discrete settings.",
+        "blocking_scientific_corrections": [],
+        "selected_necessary_obligations_remaining": [],
+        "generalized_harness_stability_claim": false,
+        "reason": "Original-code regression, real-data execution, review-driven frozen follow-up and affected acceptance are connected by preserved artifacts and independently recomputable numbers."
+      },
+      "original_source_bytes_preserved": true
+    }
+  },
+  "editorial_correction": {
+    "case": "saver",
+    "original_phrase": "DESCRIPTION and 15 R source files",
+    "corrected_count": "14 R files plus DESCRIPTION = 15 compared entries",
+    "all_compared_contents_equal": true,
+    "scientific_effect": "none",
+    "original_report_and_bundle": "retained unchanged"
+  },
+  "audit_observability_limits": [
+    "COMMOT pre-final reviewed report has an identity receipt but no separately retained old text snapshot for exact diff reconstruction.",
+    "External COMMOT audit verifies saved capacity constraints; equality-residual maximum is supported by trace receipts without saved f/g vectors for per-solve independent reconstruction.",
+    "Revisor thread events observed; exact fork-context settings unexposed.",
+    "Guide reads and corresponding implementation observed; full per-action experience reread trace unestablished."
+  ]
+}

@@ -27,12 +27,29 @@
         "machine/history/review-coverage-iteration.json"
       ],
       "previous_document_snapshot": "machine/reviews/2026-10-review-coverage-iteration/before/public/core/docs/methods/guides/research-guidance-cycle.md"
+    },
+    {
+      "id": "2026-11-01-reader-guidance",
+      "date": "2026-11-01",
+      "reason": "Adopt decision-oriented explanation and uninvolved-reader comprehension; keep technical identity in linked records.",
+      "technical_records": [
+        "machine/history/reader-guidance-20261101.json",
+        "machine/changes/reader-guidance-20261101.json"
+      ],
+      "previous_snapshot": {
+        "availability": "private_archive",
+        "record_id": "20261101-reader-guidance/before/core/docs/methods/guides/research-guidance-cycle.md"
+      },
+      "current_identity": {
+        "bytes": 9331,
+        "sha256": "b0a588b762d992a4737678956926f9c715db10ffb65d1c251eaa005bfcfaa73f"
+      }
     }
   ],
-  "updated_at_utc": "2026-10-23T05:49:05.511223+00:00",
+  "updated_at_utc": "2026-11-01T10:23:08.291360+00:00",
   "current_identity": {
-    "bytes": 9093,
-    "sha256": "b98819035c400485398a64e9da53503959bdddaeee532be7579b1d5189761523"
+    "bytes": 9331,
+    "sha256": "b0a588b762d992a4737678956926f9c715db10ffb65d1c251eaa005bfcfaa73f"
   },
   "current_technical_records": [
     "core/machine/design/review-coverage.json",

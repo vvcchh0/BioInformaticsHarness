@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+from datetime import datetime
 import fnmatch
 import hashlib
 import json
@@ -23,6 +24,8 @@ CHECKPOINT_MANIFEST = "CHECKPOINT-MANIFEST.json"
 RELEASE_MANIFEST = "core/RELEASE-MANIFEST.json"
 POLICY_PATH = "machine/documentation-policy.json"
 INDEX_PATH = "machine/source-design-index.jsonl"
+INDEX_SCHEMA_PATH = "machine/schemas/source-design-index.schema.json"
+SOURCE_SCHEMA_PROFILE = "harness-source-index-profile/v1"
 REFRESH_RECORD_PATH = "machine/history/documentation-refresh.json"
 BASELINE_REVISION = "764bd88"
 FIRST_PARTY_TRANSFORM = "first-party-documentation-revision"
@@ -488,6 +491,204 @@ def _check_case_manifests(
     return checked
 
 
+def _source_schema_profile_errors(schema: object, at: str = "$") -> list[str]:
+    """Accept only the schema vocabulary used by this source-index contract.
+
+    This is a bounded profile, not a general JSON Schema implementation. Unknown
+    assertions and formats fail before records are checked, rather than being
+    silently ignored. read_scope objects intentionally carry opaque annotations.
+    """
+    if not isinstance(schema, dict):
+        return [f"{at}: the source-index profile requires an object schema"]
+    supported = {
+        "$schema", "$comment", "title", "description", "type", "properties",
+        "additionalProperties", "required", "items", "minItems", "maxItems",
+        "minLength", "minProperties", "minimum", "enum", "const", "pattern",
+        "format", "oneOf", "allOf", "if", "then",
+    }
+    errors = [f"{at}: unsupported schema keyword {key}" for key in sorted(schema.keys() - supported)]
+    for key in ("$schema", "$comment", "title", "description"):
+        if key in schema and not isinstance(schema[key], str):
+            errors.append(f"{at}.{key}: expected text")
+    if "$schema" in schema and schema["$schema"] != "https://json-schema.org/draft/2020-12/schema":
+        errors.append(f"{at}: unsupported schema dialect")
+    if "type" in schema and (not isinstance(schema["type"], str) or schema["type"] not in {"object", "array", "string", "null", "boolean", "integer"}):
+        errors.append(f"{at}: unsupported type declaration")
+    for key in ("minItems", "maxItems", "minLength", "minProperties", "minimum"):
+        if key in schema and (type(schema[key]) is not int or schema[key] < 0):
+            errors.append(f"{at}.{key}: this profile requires a nonnegative integer limit")
+    if "additionalProperties" in schema and type(schema["additionalProperties"]) is not bool:
+        errors.append(f"{at}.additionalProperties: only a boolean is supported")
+    if "required" in schema and (not isinstance(schema["required"], list) or any(not isinstance(key, str) for key in schema["required"])):
+        errors.append(f"{at}.required: expected an array of property names")
+    if "enum" in schema and (not isinstance(schema["enum"], list) or not schema["enum"] or any(not isinstance(value, str) for value in schema["enum"])):
+        errors.append(f"{at}.enum: this profile supports nonempty text enums")
+    if "const" in schema and not isinstance(schema["const"], str):
+        errors.append(f"{at}.const: this profile supports text constants")
+    if "pattern" in schema:
+        try:
+            re.compile(schema["pattern"])
+        except (TypeError, re.error):
+            errors.append(f"{at}.pattern: expected a valid Python-compatible regular expression")
+    if "format" in schema and (not isinstance(schema["format"], str) or schema["format"] not in {"uri", "date-time"}):
+        errors.append(f"{at}: unsupported format declaration")
+    if "properties" in schema:
+        if not isinstance(schema["properties"], dict):
+            errors.append(f"{at}.properties: expected an object")
+        else:
+            for key, child in schema["properties"].items():
+                errors.extend(_source_schema_profile_errors(child, f"{at}.properties.{key}"))
+    for key in ("items", "if", "then"):
+        if key in schema:
+            errors.extend(_source_schema_profile_errors(schema[key], f"{at}.{key}"))
+    for key in ("oneOf", "allOf"):
+        if key in schema:
+            if not isinstance(schema[key], list) or not schema[key]:
+                errors.append(f"{at}.{key}: expected a nonempty array of object schemas")
+            else:
+                for number, child in enumerate(schema[key]):
+                    errors.extend(_source_schema_profile_errors(child, f"{at}.{key}[{number}]"))
+    if "then" in schema and "if" not in schema:
+        errors.append(f"{at}: then requires if in this profile")
+    return errors
+
+
+def _source_format_valid(value: str, kind: str) -> bool:
+    if kind == "uri":
+        # Absolute ASCII URI, valid percent escapes, and an HTTP(S) authority.
+        if not re.fullmatch(r"[A-Za-z][A-Za-z0-9+.-]*:[A-Za-z0-9._~:/?#\[\]@!$&'()*+,;=%-]*", value) or re.search(r"%(?![0-9A-Fa-f]{2})", value):
+            return False
+        try:
+            parts = urlsplit(value)
+            if parts.scheme.lower() in {"http", "https"}:
+                return bool(parts.hostname) and (parts.port is None or 0 <= parts.port <= 65535)
+            return True
+        except ValueError:
+            return False
+    # RFC3339 date-time with a declared timezone; leap seconds are unsupported.
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}[Tt]\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:[Zz]|[+-]\d{2}:\d{2})", value):
+        return False
+    try:
+        datetime.fromisoformat(value.upper().replace("Z", "+00:00"))
+        return True
+    except ValueError:
+        return False
+
+
+def _source_schema_errors(value: object, schema: dict[str, object], at: str = "$") -> list[str]:
+    """Validate a record against a preflighted source-index-profile schema."""
+    errors: list[str] = []
+    expected = schema.get("type")
+    matches = {
+        "object": isinstance(value, dict), "array": isinstance(value, list),
+        "string": isinstance(value, str), "null": value is None,
+        "boolean": type(value) is bool,
+        "integer": type(value) is int or (type(value) is float and value.is_integer()),
+    }
+    if expected is not None and not matches[expected]:
+        return [f"{at}: expected {expected}"]
+    if "enum" in schema and value not in schema["enum"]:
+        errors.append(f"{at}: value is outside the declared enum")
+    if "const" in schema and value != schema["const"]:
+        errors.append(f"{at}: value differs from the declared constant")
+    if "oneOf" in schema:
+        count = sum(not _source_schema_errors(value, child, at) for child in schema["oneOf"])
+        if count != 1:
+            errors.append(f"{at}: must match exactly one declared branch")
+    for child in schema.get("allOf", []):
+        errors.extend(_source_schema_errors(value, child, at))
+    if "if" in schema and not _source_schema_errors(value, schema["if"], at) and "then" in schema:
+        errors.extend(_source_schema_errors(value, schema["then"], at))
+    if isinstance(value, dict):
+        properties = schema.get("properties", {})
+        if len(value) < schema.get("minProperties", 0):
+            errors.append(f"{at}: too few properties")
+        for key in schema.get("required", []):
+            if key not in value:
+                errors.append(f"{at}.{key}: required property is missing")
+        for key, item in value.items():
+            if key in properties:
+                errors.extend(_source_schema_errors(item, properties[key], f"{at}.{key}"))
+            elif schema.get("additionalProperties") is False:
+                errors.append(f"{at}.{key}: undeclared property")
+    if isinstance(value, list):
+        if len(value) < schema.get("minItems", 0) or ("maxItems" in schema and len(value) > schema["maxItems"]):
+            errors.append(f"{at}: array length is outside the declared bounds")
+        if "items" in schema:
+            for number, item in enumerate(value):
+                errors.extend(_source_schema_errors(item, schema["items"], f"{at}[{number}]"))
+    if isinstance(value, str):
+        if len(value) < schema.get("minLength", 0):
+            errors.append(f"{at}: text is shorter than the declared minimum")
+        if "pattern" in schema and re.search(schema["pattern"], value) is None:
+            errors.append(f"{at}: text does not match the declared pattern")
+        if "format" in schema and not _source_format_valid(value, schema["format"]):
+            errors.append(f"{at}: invalid {schema['format']} for the source-index profile")
+    if "minimum" in schema and type(value) in {int, float} and value < schema["minimum"]:
+        errors.append(f"{at}: value is below the declared minimum")
+    return errors
+
+
+def _check_document_note_identities(root: Path, findings: list[dict[str, object]]) -> int:
+    """Check present top-level current identities; historical fields stay opaque."""
+    notes_root = root / "machine" / "document-notes"
+    if not notes_root.exists():
+        return 0
+    if not notes_root.is_dir() or _is_reparse_or_link(notes_root):
+        _finding(findings, "machine/document-notes", 1, "document-note-public-path", "Document notes must use a real public directory.")
+        return 0
+    checked = 0
+    for directory, children, files in os.walk(notes_root, followlinks=False):
+        for child in children[:]:
+            candidate = Path(directory) / child
+            if _is_reparse_or_link(candidate):
+                _finding(findings, candidate.relative_to(root).as_posix(), 1, "document-note-public-path", "Document notes must not cross a link.")
+                children.remove(child)
+        for name in sorted(files):
+            if not name.endswith(".json"):
+                continue
+            path = Path(directory) / name
+            rel = path.relative_to(root).as_posix()
+            exists, message = _public_file(root, rel)
+            if not exists:
+                _finding(findings, rel, 1, "document-note-public-path", message)
+                continue
+            try:
+                text = path.read_text(encoding="utf-8")
+                note = json.loads(text)
+            except (OSError, UnicodeError, json.JSONDecodeError):
+                _finding(findings, rel, 1, "document-note-invalid", "The document note must contain readable JSON.")
+                continue
+            if not isinstance(note, dict):
+                _finding(findings, rel, 1, "document-note-invalid", "The document note must be an object.")
+                continue
+            if "current_identity" not in note:
+                continue
+            checked += 1
+            locations = [(len(line) - len(line.lstrip()), number) for number, line in enumerate(text.splitlines(), 1) if re.match(r'^\s*"current_identity"\s*:', line)]
+            line = min(locations)[1] if locations else 1
+            current = note["current_identity"]
+            if not isinstance(current, dict) or type(current.get("bytes")) is not int or current["bytes"] < 0 or not isinstance(current.get("sha256"), str) or re.fullmatch(r"[0-9a-fA-F]{64}", current["sha256"]) is None:
+                _finding(findings, rel, line, "document-note-current-identity", "current_identity requires a nonnegative integer byte count and SHA-256.")
+                continue
+            target = note.get("document", note.get("human_path", rel.removeprefix("machine/document-notes/").removesuffix(".json")))
+            if "document" in note and "human_path" in note and note["document"] != note["human_path"]:
+                _finding(findings, rel, line, "document-note-target", "document and human_path identify different documents.")
+                continue
+            exists, message = _public_file(root, target)
+            if not exists:
+                _finding(findings, rel, line, "document-note-target", f"The current document is not a public file: {message}.")
+                continue
+            try:
+                size, digest = _identity(root / target)
+            except OSError:
+                _finding(findings, rel, line, "document-note-current-identity", "The current document could not be read.")
+                continue
+            if current["bytes"] != size or current["sha256"].lower() != digest:
+                _finding(findings, rel, line, "document-note-current-identity", "The top-level current_identity does not match the current document bytes.")
+    return checked
+
+
 def _check_index(root: Path, findings: list[dict[str, object]]) -> tuple[int, list[dict[str, object]]]:
     index_path = root / INDEX_PATH
     if not index_path.is_file():
@@ -498,6 +699,20 @@ def _check_index(root: Path, findings: list[dict[str, object]]) -> tuple[int, li
     except (OSError, UnicodeError):
         _finding(findings, INDEX_PATH, 1, "source-index-unreadable", "The source/design index could not be read as UTF-8.")
         return 0, []
+    source_schema = None
+    exists, message = _public_file(root, INDEX_SCHEMA_PATH)
+    if not exists:
+        _finding(findings, INDEX_SCHEMA_PATH, 1, "source-index-schema-profile", f"The source-index schema is not a public file: {message}.")
+    else:
+        try:
+            candidate_schema = _read_json(root / INDEX_SCHEMA_PATH)
+            schema_errors = _source_schema_profile_errors(candidate_schema)
+            for message in schema_errors:
+                _finding(findings, INDEX_SCHEMA_PATH, 1, "source-index-schema-profile", message)
+            if not schema_errors:
+                source_schema = candidate_schema
+        except (OSError, UnicodeError, json.JSONDecodeError):
+            _finding(findings, INDEX_SCHEMA_PATH, 1, "source-index-schema-profile", "The source-index schema must contain readable valid JSON.")
     required = {"id", "sources", "design", "borrowing", "implementation", "acceptance"}
     seen: set[str] = set()
     record_count = 0
@@ -521,6 +736,9 @@ def _check_index(root: Path, findings: list[dict[str, object]]) -> tuple[int, li
         except json.JSONDecodeError:
             _finding(findings, INDEX_PATH, number, "source-index-json", "The JSONL row is not valid JSON.")
             continue
+        if source_schema is not None:
+            for message in _source_schema_errors(value, source_schema):
+                _finding(findings, INDEX_PATH, number, "source-index-schema", message)
         if not isinstance(value, dict):
             _finding(findings, INDEX_PATH, number, "source-index-record", "Each JSONL row must be an object.")
             continue
@@ -685,6 +903,7 @@ def check_root(root: Path, *, allow_stale_readme_identity: bool = False) -> dict
         allow_stale_readme_identity=allow_stale_readme_identity,
     )
     record_count, unassessed = _check_index(root, findings)
+    note_identity_count = _check_document_note_identities(root, findings)
     findings.sort(key=lambda item: (str(item["file"]), int(item["line"]), str(item["rule"])))
     return {
         "schema": REPORT_SCHEMA,
@@ -694,6 +913,9 @@ def check_root(root: Path, *, allow_stale_readme_identity: bool = False) -> dict
         "checked_links": link_count,
         "checked_case_artifacts": case_artifact_count,
         "source_index_records": record_count,
+        "source_index_schema_profile": SOURCE_SCHEMA_PROFILE,
+        "checked_document_current_identities": note_identity_count,
+        "scientific_acceptance": "not_assessed",
         "unassessed": unassessed,
         "findings": findings,
     }

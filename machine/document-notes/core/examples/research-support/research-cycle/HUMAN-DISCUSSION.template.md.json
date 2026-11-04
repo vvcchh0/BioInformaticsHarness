@@ -14,6 +14,41 @@
         "machine/history/research-guidance-cycle.json"
       ],
       "acceptance": "Parent interface and documentation acceptance recorded in the linked machine history; actual new scientific direction remains to be discussed."
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "ED-06",
+        "ED-06-align-three-empty-seven-column-rows"
+      ],
+      "previous_document_identity": {
+        "bytes": 3071,
+        "sha256": "092ed621f6b46d3a039d983556790e1d62b1f103b28e916eff7fad1fa2df5057"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
+    },
+    {
+      "id": "2026-11-01-reader-guidance",
+      "date": "2026-11-01",
+      "reason": "Adopt decision-oriented explanation and uninvolved-reader comprehension; keep technical identity in linked records.",
+      "technical_records": [
+        "machine/history/reader-guidance-20261101.json",
+        "machine/changes/reader-guidance-20261101.json"
+      ],
+      "previous_snapshot": {
+        "availability": "private_archive",
+        "record_id": "20261101-reader-guidance/before/core/examples/research-support/research-cycle/HUMAN-DISCUSSION.template.md"
+      },
+      "current_identity": {
+        "bytes": 3416,
+        "sha256": "ec7c538ac3b2aa825ad3c88091726700a5539e888ab0fbab7ae1a15667f8bad8"
+      }
     }
-  ]
+  ],
+  "current_identity": {
+    "bytes": 3416,
+    "sha256": "ec7c538ac3b2aa825ad3c88091726700a5539e888ab0fbab7ae1a15667f8bad8"
+  },
+  "updated_at_utc": "2026-11-01T10:23:08.291360+00:00"
 }

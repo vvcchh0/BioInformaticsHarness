@@ -19,3 +19,7 @@ Python, NumPy, SciPy, scikit-learn, joblib, and optional `psutil` and `requests`
 ## Reusing material
 
 Before redistributing a file, check its case manifest or license notice and retain the listed attribution and change information. If rights for an input or weight are unclear, leave it out of the release, link to its source, or replace it with an openly licensed alternative. The [publication handoff guide](docs/methods/guides/publication-handoff.md) gives a practical file-by-file review process.
+
+## Retained archive notices
+
+The retained NOTICE names `THIRD_PARTY_ARCHIVE.md` and `LICENSES/DejaVu-fonts.txt` in its earlier research-archive context. The current public payload does not ship the upstream archive code, SVG figures or font-outline material described there. Consult the [current third-party inventory](THIRD_PARTY.md) and case manifests for shipped files. NOTICE and LICENSE remain unchanged; later archive additions require their own source and rights review.

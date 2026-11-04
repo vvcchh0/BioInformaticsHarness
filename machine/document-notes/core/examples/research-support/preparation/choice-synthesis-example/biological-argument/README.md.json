@@ -36,12 +36,24 @@
       ],
       "acceptance_status": "accepted_bounded_content_v2",
       "accepted_at_utc": "2026-10-25T13:48:09.940509+00:00"
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "SCI-01-derived-citation-navigation"
+      ],
+      "previous_document_identity": {
+        "bytes": 3086,
+        "sha256": "049c94518dacd7c5291c184b6306c4e69465b42cb13db0da0426a650eeb6d963"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
   ],
-  "updated_at_utc": "2026-10-25T13:48:09.940509+00:00",
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00",
   "current_identity": {
-    "bytes": 3086,
-    "sha256": "049c94518dacd7c5291c184b6306c4e69465b42cb13db0da0426a650eeb6d963"
+    "bytes": 3543,
+    "sha256": "61cac483a326b6dc1690b494883ff8082479122d49adeab9749ffc1ec1347f59"
   },
   "current_technical_records": [
     "core/machine/design/biological-argument.json"

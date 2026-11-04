@@ -60,12 +60,24 @@
         "core/machine/design/rereading-perspectives.json"
       ],
       "acceptance_status": "accepted_guidance_candidate_and_bounded_content_example"
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "ED-11-scope-project-model-default"
+      ],
+      "previous_document_identity": {
+        "bytes": 10527,
+        "sha256": "64cf57482ea075829eb7a050c36247c8fb1dc03ef125d31401ab8f114d464cfb"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
   ],
-  "updated_at_utc": "2026-10-25T12:41:42.164835+00:00",
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00",
   "current_identity": {
-    "bytes": 10527,
-    "sha256": "64cf57482ea075829eb7a050c36247c8fb1dc03ef125d31401ab8f114d464cfb"
+    "bytes": 10575,
+    "sha256": "0e16542f9e26dee274aa1e4aafebe5d1192935503a205c783804b7137d68884a"
   },
   "current_technical_records": [
     "core/machine/design/rereading-perspectives.json"

@@ -42,8 +42,16 @@
             "minLength": 1
           },
           "url": {
-            "type": "string",
-            "format": "uri"
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A public source URI, or null when no publicly locatable URL is supplied. Source kind and the borrowing evidence availability preserve the origin and access scope."
           },
           "version": {
             "type": "string",
@@ -52,13 +60,95 @@
           "license": {
             "type": "string",
             "minLength": 1
+          },
+          "doi": {
+            "type": "string",
+            "minLength": 1
+          },
+          "read_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "relation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "supports": {
+            "type": "string",
+            "minLength": 1
+          },
+          "head": {
+            "type": "string",
+            "minLength": 1
+          },
+          "availability": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private_archive",
+              "not_exported"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?![A-Za-z]:).+"
+          },
+          "public_path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?![A-Za-z]:).+"
+          },
+          "cited_primary_studies_read": {
+            "type": "boolean"
+          },
+          "covered_in_original_GPT_case": {
+            "type": "boolean"
+          },
+          "new_primary_paper_reading_for_this_note": {
+            "type": "boolean"
+          },
+          "reading_scope": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "location",
+                "artifact"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "location": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "artifact": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "read_scope": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "object",
+                "minProperties": 1
+              }
+            ],
+            "description": "Attributed reading extent as nonempty prose or a nonempty domain-specific annotation object. The annotation content is not mechanically interpreted as actual reading or scientific acceptance."
           }
         }
       }
     },
     "design": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 0,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -72,8 +162,8 @@
           "id": {
             "type": "string",
             "minLength": 1,
-            "description": "Stable identifier for the linked design document, formatted as design:<public-root-relative-path>.",
-            "pattern": "^design:.+"
+            "description": "Stable identifier for the linked design or guidance entry: a design:<public-root-relative-path> identity or a versioned slug using letters, digits, period, underscore, colon, slash and hyphen; no whitespace.",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
           },
           "path": {
             "type": "string",
@@ -87,14 +177,47 @@
           "relation": {
             "type": "string",
             "enum": [
-              "resulting_design",
+              "actual_followup_after_dated_guidance_acceptance",
+              "adopt_tested_selection_conditions",
+              "bounded_old_case_regression",
+              "brief_orientation_then_context_triggered_reading",
+              "case_use_with_additional_generic_exploration_supplement",
+              "consolidate_existing_entry_prose",
+              "contextual_observation",
+              "contextual_research_synthesis",
+              "demonstrated_guidance_change_reusing_D53_D57_and_revisor",
               "evaluation_framework",
-              "reference_context"
+              "existing principle instantiated",
+              "existing principle reaffirmed",
+              "existing_carrier_extension",
+              "explicit_additional_carrier",
+              "explicit_optional_proxy",
+              "implementation_support",
+              "independent_bounded_content_acceptance_after_source_attribution_revision",
+              "independent_source_first_pair_then_bounded_revisor_closure",
+              "minimal_existing_carrier_connection",
+              "minimal_existing_carrier_extension",
+              "new_minimal_update_contract_using_existing_revisor",
+              "optional_context_triggered_preparation",
+              "optional_navigation",
+              "preserve_physical_archive_independence",
+              "purpose_first_scoped_method_card",
+              "reference_context",
+              "render_existing_records",
+              "resulting_design",
+              "resulting_guidance_change",
+              "role_and_stage_scoped_entry",
+              "scope_existing_handoff_link",
+              "source_attribution_precision",
+              "study_owned_artifact_extension",
+              "supporting_methodological_reference",
+              "worked_example_of_conditional_choices"
             ],
             "description": "How the source relates to this design path: resulting_design means it informed the design; evaluation_framework means it was used to assess or organize evaluation without claiming it caused the design; reference_context means it supplies context, policy, or implementation identity."
           }
         }
-      }
+      },
+      "description": "The one legacy acceptance/adoption event can omit a new design; ordinary source/design records still require at least one design."
     },
     "borrowing": {
       "type": "object",
@@ -134,6 +257,44 @@
                 "type": "string",
                 "minLength": 1
               }
+            }
+          }
+        },
+        "boundary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_availability": {
+          "type": "string",
+          "minLength": 1
+        },
+        "native_scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "private_motivating_observation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unpublished_evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "availability",
+            "count",
+            "scope"
+          ],
+          "properties": {
+            "availability": {
+              "const": "not_exported"
+            },
+            "count": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "scope": {
+              "type": "string",
+              "minLength": 1
             }
           }
         }
@@ -201,9 +362,43 @@
           "result": {
             "type": "string",
             "minLength": 1
+          },
+          "accepted_at_utc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "current_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accepted_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$comment": "Source-index profile v1 preserves the existing append-only ledger and intentional historical extensions. The maintenance checker validates this declared keyword profile, rejects unsupported schema keywords or formats, and separately checks public local paths and identities. Reading annotations and acceptance labels require content review; schema conformance does not establish actual execution or scientific acceptance.",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "design": {
+            "maxItems": 0
+          }
+        },
+        "required": [
+          "design"
+        ]
+      },
+      "then": {
+        "properties": {
+          "id": {
+            "const": "single-session-stability-20261029-adoption"
           }
         }
       }
     }
-  }
+  ]
 }

@@ -1,6 +1,6 @@
 # 研究操作支持工具
 
-版本research-operations-v1.3，2026-10-23。这组可选工具将已有Artifact/Run/Task/Decision整理为可用入口，旧契约和检查器继续有效。D45初版的设计与实际应用见[公开研究设计与方法索引](../../../docs/REFERENCES-AND-DESIGN.md)；D47新增。
+版本research-operations-v1.3，2026-10-23。这组可选工具将已有Artifact/Run/Task/Decision整理为可用入口，旧契约和检查器继续有效。D45初版及后续D47的设计与实际应用见[公开研究设计与方法索引](../../../docs/REFERENCES-AND-DESIGN.md)。
 
 | 入口 | 输入→输出 | 适用时解决什么 |
 | --- | --- | --- |
@@ -11,7 +11,7 @@
 | `scripts.research_support.diagnostics` | 预定单位/候选/容差与CSV/TSV矩阵→完整性及有限相容汇总 | 指标冲突的有限候选、经验等值和未解释出口 |
 | `scripts.research_support.evidence` | 显式文件、typed回执与提供的解释→同源JSON索引和README | cache、历史失败、资源缺测、重复回执及导航口径 |
 | `scripts.research_support.artifact_interface` | 唯一ID表、显式字段/null、多部分集合及真实MRL保存输出→有界消费/算术回执 | 跨工件对齐、生产端声明与实际文件绑定；[使用指导](guides/artifact-producer-consumer.md)、[公开研究设计与方法索引](../../../docs/REFERENCES-AND-DESIGN.md) |
-| `scripts.research_support.sequence_interface` | S4PRED实体/连续位置表→实际序列化工件→共享reader与保存预测计数 | 提炼本例准备/计分接缝；，仅处理声明的20种标准AA及三态参考格式 |
+| `scripts.research_support.sequence_interface` | S4PRED实体/连续位置表→实际序列化工件→共享reader与保存预测计数 | 提炼本例准备/计分接缝，仅处理声明的20种标准AA及三态参考格式 |
 | `scripts.research_support.release` | 原handoff草案与当前工件→最后发布的唯一入口→接收回执 | 触发跨执行者封包/目录搬迁时，锁定owner、显式root与entry；已有平台可等效替代 |
 | `scripts.research_support.plan_seal` | 显式plan-root→规范READY→严格校验/封存ACK | 首计划版本与字节封存；标准协议和显式旧协议分别处理 |
 | `scripts.research_support.run_bounded` + `execution_capture` | 命令、所选代码/配置/输入→执行前快照及有界运行回执 | 首次真实审计即留档；资源采样需另备psutil，不自动推导依赖闭包 |

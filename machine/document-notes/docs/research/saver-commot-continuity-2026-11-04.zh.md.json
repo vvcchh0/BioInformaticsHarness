@@ -1,0 +1,33 @@
+{
+  "schema": "harness.document-notes/v1",
+  "document": "docs/research/saver-commot-continuity-2026-11-04.zh.md",
+  "origin": "first_party_new_document",
+  "created_at_utc": "2026-11-04T15:39:33.256286+00:00",
+  "source_commit": null,
+  "source_sha256": "56f4773aaf73e0c4c6ce5c15381aa970145822496110f992499ce2483217bf5f",
+  "source_text": "# 两项研究怎样走过复现、评审与接续\r\n\r\n这轮在 SAVER 与 COMMOT 两个独立理论层会话中，观察了原文理解、作者实现运行、独立评阅、实际修订、后续实验和专题收束。两案都在首轮之后完成了新的冻结比较，支持继续使用现有的首稿—revisor 路径。当前采用范围是小型公开数据上的单会话接续；跨会话恢复另设研究。\r\n\r\n## SAVER：恢复表达以后，应该使用哪一种输出？\r\n\r\n[SAVER](https://www.nature.com/articles/s41592-018-0033-z)从单细胞 UMI 计数估计表达，并分别提供表达均值、后验不确定性、抽样和相关性修正。研究首先要弄清楚：单个表达值、群体异质性和基因关联各需要怎样的输出与参照。\r\n\r\n实际执行了当前作者 R 包，对 3,529 基因、200 细胞完成全输入恢复。示例的 705,800 个条目与 [GEO 原始处理计数表](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60361)逐值一致。它是筛选过的实际观察计数，保留了测量噪声；细胞状态和潜在绝对表达需要相应独立证据。\r\n\r\n首轮修订澄清库大小、FISH 尺度校准与不同分布读出的关系。随后冻结 64 个响应基因和评价规则，以已观察计数为固定强度，在两个深度各生成三份 Poisson 观测，再运行三份逐基因独立置换的负对照，共九次原包拟合。这个设计检验条件重建与输出选择，生物样本仍是同一批 200 个细胞。\r\n\r\n| 所需判断 | 实际观察 | 对方法选择的影响 |\r\n| --- | --- | --- |\r\n| 表达点值 | 两个深度的全部六次比较中，后验均值都改善预定点误差 | 可在这一条件重建任务中选择均值输出 |\r\n| 跨细胞分布 | 后验抽样的 Gini 误差六次均较低；方差误差随深度改变，低深度三次反而较差 | 为具体分布量分别评价抽样价值 |\r\n| 基因关联 | 修正相关在置换负对照中更保守；相对均值相关，参考误差未稳定改善 | 同时保留关联准确性与负对照，按用途选择 |\r\n| 后验区间 | 正参考条目的名义 95% 区间覆盖，在两深度分别约为 89%–92% 与 81%–83% | 条件后验的不确定性需要面向使用场景进一步检查 |\r\n\r\n低深度一次出现全零响应基因，63 个相关对无定义；共同评价分母由 2,016 对变为 1,953 对，其他结果保留原分母。汇总时发现条件名 `null` 被 CSV 阅读器当成缺失，修复后重新纳入全部负对照。负结果与失败记录都进入最终复核。\r\n\r\n研究价值在于把“恢复后的矩阵”拆回实际用途。输出中的不确定性要沿具体统计量继续传播；表达点误差的改善只完成了其中一项评价。[逐次汇总表](../../machine/research/saver-commot-2026-11-04/saver-trial-summary.csv)保留所有九次拟合的输出比较。\r\n\r\n## COMMOT：总量稳定时，配体归因怎样变化？\r\n\r\n[COMMOT](https://www.nature.com/articles/s41592-022-01728-4)把空间范围和配体—受体竞争接到集体最优传输。研究需要先确定实际运行的资源约束，再判断总评分、局部分配和空间方向各回答什么问题。\r\n\r\n首轮执行未改写的作者求解核心，完成七位置参考矩阵回归，再在真实 seqFISH+ 的全部 523 个细胞上分析三种 TGFβ 配体与一个复合受体。回归脚本最初误用平方距离，保留失败后按作者默认欧氏距离修复。参考误差通过与迭代停止状态分别检查。\r\n\r\n默认实现平均四类竞争设置，各设置有各自资源池；纯全局设置采用共同资源约束。后续比较分别保持两种输出的含义，在归档坐标单位下设置距离条件。输入由处理后的 RNA 表达形成代理量，物理距离标定和受体活化读出仍需要另外取得。\r\n\r\n首评修订推动了固定归一化对照、共同可达受体、自作用与跨细胞部分的分别评价。冻结后完成 48 个条件与两次更紧容差复查，并保留逐受体和逐边结果。\r\n\r\n| 比较 | 实际观察 | 怎样改变判断 |\r\n| --- | --- | --- |\r\n| 在纯全局模型中遗漏两个竞争配体 | 总接收量约为 24.146；焦点 Tgfb1 分配量由约 8.289 增至 24.146，38 个受体的焦点份额均改变至少 10 个百分点 | 总量验收之后，还要检查具体配体的局部归因 |\r\n| 固定归一化尺度与独立逐对对照 | 固定尺度几乎重现原生删除的变化；逐对焦点结果保持不变 | 这批变化与共同分配机制相符 |\r\n| 距离阈值从 500 扩至 1,000 | 原生设置的焦点边分布总变差距离约为 0.303；固定已有边的成本与正则比例后约为 0.00072 | 扩大允许边与改变成本尺度分别影响结果 |\r\n| 默认混合评分 | 本次三配体且充分饱和的条件下，总评分约为共同受体输入的两倍 | 按混合子问题解释输出；共同守恒的含义留给相应全局设置 |\r\n\r\n总变差距离衡量归一化边分布的变化，取值在零到一之间。它与受体份额、排序和总量各保留自己的用途。计算中遗漏输入配体检验模型敏感性；组织中的真实竞争和因果响应继续接到活性测量或特异性扰动。\r\n\r\n第二轮评阅重核全部 50 份矩阵、63 行比较和 3,648 行份额记录。零总量的 20 个份额保留为缺失。七位置例中仍有未达到停止阈值的子问题，作为未认证数值结果保留；真实后续条件分别经过停止状态和残差检查。[完整比较表](../../machine/research/saver-commot-2026-11-04/commot-comparisons.csv)保留稳定与敏感的条件。\r\n\r\n## 单会话连续性表现\r\n\r\n两案都在初始派发所在的同一轮理论层会话中完成接续，首轮后没有父方再次唤醒。COMMOT 在首稿前收到过默认权重语义的额外来源线索，因此该问题的发现保留外部输入归属。\r\n\r\n| 观察维度 | 两案例提供的证据 |\r\n| --- | --- |\r\n| 目标保持 | SAVER 继续回答不同输出支持何种判断；COMMOT 继续回答约束与信息缺失如何影响归因 |\r\n| 控制流程保持 | 真实运行、冻结首稿、独立评阅、修订和新的冻结实验形成连续链 |\r\n| 修订落实 | 评阅中的分母、FISH 解释、归一化、可达性与数值状态问题接到实际文字和计算 |\r\n| 状态收敛 | 原有失败、负结果、当前接受范围与需要新证据的用途同时保留，最后按有界问题收束 |\r\n\r\n外部回收复核检查了输入身份、汇总算术、评阅落实和交付文件。指南读取有会话事件支持，经验条目与后续调整也有实作对应；逐次执行前重读经验的完整轨迹仍是后续观察项。\r\n\r\n本轮使用已有方法和首稿要求。两项经过选题并获得具体来源的案例，为这条路径提供了有界的使用证据；Harness 相对于其他工作流的增益要通过相应对照研究评价。历史 SAVER 数值回归、论文具体图表、完整 COMMOT 顶层环境与新的因果测量分别保留各自的复现范围。\r\n\r\n## 可复用的认识\r\n\r\n先辨认要支持的判断：点值、分布、关联、局部分配或因果作用。再确定实际输出、配置、参照和评价量，将新观察接回当前选择。遇到差异时，优先寻找能区分解释的对照；已有负结果可以帮助收束下一轮问题。\r\n\r\n现有指南已经承接这些动作，继续通过[研究推进主线](../../core/docs/methods/guides/research-guidance-cycle.md)、[任务连续性](../../core/docs/methods/guides/task-continuity.md)和[方法经验](../../core/docs/methods/guides/method-experience.md)使用。公开的范围与接受记录见[实验摘要](../../machine/research/saver-commot-continuity-2026-11-04.json)。\r\n",
+  "technical_notes": [
+    "Original-source fields identify first authoring. Preserve them on later revisions. Public summaries link original sources and aggregate results; full owner artifacts remain private."
+  ],
+  "editorial_revisions": [
+    {
+      "id": "saver-commot-continuity-20261104",
+      "date": "2026-11-04",
+      "reason": "Publish bounded original-code/real-data same-session continuation outcomes and optional output/attribution insight.",
+      "technical_records": [
+        "machine/research/saver-commot-continuity-2026-11-04.json",
+        "machine/changes/saver-commot-continuity-20261104.json"
+      ],
+      "acceptance_scope": "Selected two cases only; original author code and scoped followups. No new mandatory first-draft requirements or global framework rule."
+    }
+  ],
+  "current_technical_records": [
+    "machine/research/saver-commot-continuity-2026-11-04.json",
+    "machine/changes/saver-commot-continuity-20261104.json"
+  ],
+  "current_identity": {
+    "bytes": 7724,
+    "sha256": "99d55595962fb51f65206e943707ff35daa68931f0669668b884621081e7984e"
+  },
+  "updated_at_utc": "2026-11-04T15:39:33.256286+00:00"
+}

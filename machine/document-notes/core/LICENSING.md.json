@@ -30,6 +30,23 @@
         "core/machine/tools/source-acquisition.json"
       ],
       "acceptance": "local transport tests, bounded live metadata/fullTextXML and preparation interface walkthrough; literature synthesis quality not newly validated"
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "PROV-06-current-notice-scope"
+      ],
+      "previous_document_identity": {
+        "bytes": 2268,
+        "sha256": "49a998e6014e859892c7ce5b0bdc33f060c6dce6e82004f870ff859d8d86fc6e"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
-  ]
+  ],
+  "current_identity": {
+    "bytes": 2747,
+    "sha256": "681782acaabf69175b7bea7eb849dcca23fc44b899a7aeec04c5bb2ae628c51b"
+  },
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00"
 }

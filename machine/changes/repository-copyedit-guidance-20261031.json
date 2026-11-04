@@ -1,0 +1,36 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "repository-copyedit-guidance-20261031",
+  "date": "2026-10-31",
+  "summary": "Align current study/tool entry, runtime-budget prose, examples and public source navigation while retaining scientific conditions and historical artifacts.",
+  "impact": "guidance",
+  "baseline_commit": "83e6e575cac8f01b86f531ca01074b689231661e",
+  "paths": [
+    "core/LICENSING.md",
+    "core/README.md",
+    "core/docs/methods/guides/artifact-producer-consumer.md",
+    "core/docs/methods/guides/joint-geometry-diagnostics.md",
+    "core/docs/methods/guides/plan-seal-and-first-execution.md",
+    "core/docs/methods/guides/receiving-research-work.md",
+    "core/docs/methods/guides/research-preparation.md",
+    "core/docs/methods/guides/review-coverage-and-closure.md",
+    "core/docs/methods/guides/review-first-preparation.md",
+    "core/docs/methods/handoff-contract.md",
+    "core/docs/methods/research-support-tools.md",
+    "core/docs/methods/review-receipt.md",
+    "core/docs/methods/worked-examples/confidence-to-decision.md",
+    "core/docs/methods/worked-examples/dynamic-process-interpretation.md",
+    "core/examples/research-support/README.md",
+    "core/examples/research-support/plan-seal/README.md",
+    "core/examples/research-support/preparation/choice-synthesis-example/biological-argument/README.md",
+    "core/examples/research-support/research-cycle/HUMAN-DISCUSSION.template.md"
+  ],
+  "reading_paths": [
+    "core/README.md",
+    "core/docs/methods/guides/research-preparation.md",
+    "core/docs/methods/guides/plan-seal-and-first-execution.md"
+  ],
+  "revisit": "Re-read affected entry/example or runtime-budget guidance when relevant to the current study. Existing chosen-tool inputs and original scientific acceptances remain attributed; no blanket rerun or historical rewrite.",
+  "acceptance": "Current text matches the existing optional-tool and checkpoint contract; retained scientific conditions, implementation entry and original case reports remain traceable.",
+  "evidence": "machine/history/repository-copyedit-20261031.json"
+}

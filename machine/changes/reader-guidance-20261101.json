@@ -1,0 +1,20 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "reader-guidance-20261101",
+  "date": "2026-11-01",
+  "summary": "Explain research steps through purpose, operation, observed judgment change and next action; assess comprehension by a reader who did not participate.",
+  "impact": "guidance",
+  "baseline_commit": "58cd0adf3a767ec112de30b9c4f20f2a7b52ad76",
+  "paths": [
+    "core/docs/design/06-readable-process.md",
+    "core/docs/methods/guides/biological-explanation-and-handoff.md",
+    "core/docs/methods/guides/research-guidance-cycle.md",
+    "core/examples/research-support/research-cycle/HUMAN-DISCUSSION.template.md"
+  ],
+  "reading_paths": [
+    "core/docs/design/06-readable-process.md"
+  ],
+  "revisit": "Apply at human-facing research delivery or UI preparation. Reuse existing narrative and records. This is a flexible explanation structure, not four mandatory fields or a new first-draft review round. Preserve scientific progress and existing reviewer acceptance; rerun only if new understanding changes a scientific obligation.",
+  "acceptance": "Uninvolved reader can explain why a step was done, what happened and why the result matters without opening JSON. Agent reading and actual human feedback are recorded separately.",
+  "evidence": "machine/history/reader-guidance-20261101.json"
+}

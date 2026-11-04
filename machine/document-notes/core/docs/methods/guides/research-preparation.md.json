@@ -40,12 +40,24 @@
         "machine/history/review-coverage-iteration.json"
       ],
       "previous_document_snapshot": "machine/reviews/2026-10-review-coverage-iteration/before/public/core/docs/methods/guides/research-preparation.md"
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason_ids": [
+        "ED-04"
+      ],
+      "previous_document_identity": {
+        "bytes": 6460,
+        "sha256": "1c131303f92e8a19df20f0350b9932a6c56f617e1a7a066aee53a1cfad87e94e"
+      },
+      "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
     }
   ],
-  "updated_at_utc": "2026-10-23T05:49:05.511223+00:00",
+  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00",
   "current_identity": {
-    "bytes": 6460,
-    "sha256": "1c131303f92e8a19df20f0350b9932a6c56f617e1a7a066aee53a1cfad87e94e"
+    "bytes": 6535,
+    "sha256": "9f8f19dc8bdc9cf860c365b5aeddf8d60149c7e059ee19311f9caa6c701d59d3"
   },
   "current_technical_records": [
     "core/machine/design/review-coverage.json",

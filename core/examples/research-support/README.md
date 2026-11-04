@@ -1,6 +1,6 @@
 # Research-support examples
 
-The examples in this directory use fictional inputs to show how to pass files and decisions between researchers and how to inspect a small diagnostic matrix. Run the commands from the `core/` directory and choose a new path under `.scratch/` for each output.
+The three commands below use fictional inputs to show file handoff, a small diagnostic matrix, and evidence indexing. Other subdirectories describe their own inputs, including a real UCI archive audit and source-based worked examples. Run these commands from the `core/` directory and choose a new path under `.scratch/` for each output.
 
 ```text
 python -B -m scripts.research_support.handoff --root . --manifest examples/research-support/handoff.json --actor demo-producer --phase producer --out .scratch/research-support/producer.json

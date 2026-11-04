@@ -28,11 +28,25 @@
       "technical_records": [
         "machine/research/rereading-validation-2026-10-27.json"
       ]
+    },
+    {
+      "id": "saver-commot-continuity-20261104",
+      "date": "2026-11-04",
+      "reason": "Publish bounded original-code/real-data same-session continuation outcomes and optional output/attribution insight.",
+      "technical_records": [
+        "machine/research/saver-commot-continuity-2026-11-04.json",
+        "machine/changes/saver-commot-continuity-20261104.json"
+      ],
+      "acceptance_scope": "Selected two cases only; original author code and scoped followups. No new mandatory first-draft requirements or global framework rule."
     }
   ],
   "current_identity": {
-    "bytes": 3190,
-    "sha256": "782719aee60d7f67e62f5deb74eef4c6c60671f912fad072d54353b2b26cd6db"
+    "bytes": 3692,
+    "sha256": "f72699e258820873d37e2809dac79457eaaac2616f85bfc093c70b80f84ed9b2"
   },
-  "updated_at_utc": "2026-10-26T23:55:03.663728+00:00"
+  "updated_at_utc": "2026-11-04T15:39:33.256286+00:00",
+  "current_technical_records": [
+    "machine/research/saver-commot-continuity-2026-11-04.json",
+    "machine/changes/saver-commot-continuity-20261104.json"
+  ]
 }

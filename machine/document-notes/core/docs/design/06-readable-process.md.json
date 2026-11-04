@@ -24,5 +24,29 @@
     "source_text is the exact UTF-8 decode of the baseline Git blob; line endings are preserved in the JSON string. source_sha256 hashes the original blob bytes."
   ],
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
-  "source_sha256": "182cc72248fa176e4ff839af37b4c37e818d55fdb87aa2d92f21efaa75614032"
+  "source_sha256": "182cc72248fa176e4ff839af37b4c37e818d55fdb87aa2d92f21efaa75614032",
+  "editorial_revisions": [
+    {
+      "id": "2026-11-01-reader-guidance",
+      "date": "2026-11-01",
+      "reason": "Adopt decision-oriented explanation and uninvolved-reader comprehension; keep technical identity in linked records.",
+      "technical_records": [
+        "machine/history/reader-guidance-20261101.json",
+        "machine/changes/reader-guidance-20261101.json"
+      ],
+      "previous_snapshot": {
+        "availability": "private_archive",
+        "record_id": "20261101-reader-guidance/before/core/docs/design/06-readable-process.md"
+      },
+      "current_identity": {
+        "bytes": 2398,
+        "sha256": "82e81032ff7e12e04dff31bcbd2b141371d588e27c6a45a6f1b1de9ce7a704fa"
+      }
+    }
+  ],
+  "current_identity": {
+    "bytes": 2398,
+    "sha256": "82e81032ff7e12e04dff31bcbd2b141371d588e27c6a45a6f1b1de9ce7a704fa"
+  },
+  "updated_at_utc": "2026-11-01T10:23:08.291360+00:00"
 }

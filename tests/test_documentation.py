@@ -73,6 +73,7 @@ class DocumentationFixture:
             },
         }
         write_text(root / documentation.POLICY_PATH, json.dumps(self.policy, indent=2) + "\n")
+        write_text(root / documentation.INDEX_SCHEMA_PATH, (PUBLIC_ROOT / documentation.INDEX_SCHEMA_PATH).read_text(encoding="utf-8"))
         write_text(root / "README.md", "# Fixture\n\nObserved result was negative under condition C.\n")
         write_text(root / "core" / "README.md", "# Core fixture\n\nThe measured result was negative.\n")
         write_text(root / "tools" / "documentation.py", "# fixture tooling\n")
@@ -102,7 +103,7 @@ class DocumentationFixture:
             "id": "fixture-case",
             "sources": [{"id": "source-1", "kind": "paper", "title": "Fixture source", "url": "https://example.invalid/source/v1"}],
             "design": [{"id": "design-1", "relation": "resulting_design", "path": "core/README.md", "reason": "fixture design"}],
-            "borrowing": {"summary": "No external code copied.", "mode": "none", "evidence": []},
+            "borrowing": {"summary": "No external code copied.", "mode": "none", "evidence": [{"availability": "public", "locator": "core/README.md"}]},
             "implementation": [{"path": "tools/documentation.py", "status": "unknown"}],
             "acceptance": [{"kind": "static", "status": "not_run", "public_path": None, "result": "Not run."}],
         }
@@ -240,6 +241,116 @@ class DocumentationCheckTests(unittest.TestCase):
         self.assertEqual(rejected, 2)
         self.assertFalse(unsafe_out.exists())
         self.assertEqual(rejected_report["findings"][0]["rule"], "report-inside-public-root")
+
+    def test_source_schema_rejects_extensions_and_types_previously_ignored(self) -> None:
+        original = json.loads((self.root / documentation.INDEX_PATH).read_text(encoding="utf-8"))
+        cases = [
+            ("root extra", lambda row: row.update(undeclared=True), "$.undeclared"),
+            ("source extra", lambda row: row["sources"][0].update(undeclared=True), "$.sources[0].undeclared"),
+            ("unknown relation", lambda row: row["design"][0].update(relation="unreviewed_relation"), "$.design[0].relation"),
+            ("invalid stable id", lambda row: row["design"][0].update(id="bad id"), "$.design[0].id"),
+            ("ordinary empty design", lambda row: row.update(design=[]), "$.id"),
+            ("URL text", lambda row: row["sources"][0].update(url="not a URI"), "$.sources[0].url"),
+            ("URL type", lambda row: row["sources"][0].update(url=3), "$.sources[0].url"),
+            ("reading flag type", lambda row: row["sources"][0].update(cited_primary_studies_read="false"), "$.sources[0].cited_primary_studies_read"),
+            ("reading annotation type", lambda row: row["sources"][0].update(read_scope=[]), "$.sources[0].read_scope"),
+            ("acceptance result type", lambda row: row["acceptance"][0].update(result=3), "$.acceptance[0].result"),
+            ("missing evidence", lambda row: row["borrowing"].update(evidence=[]), "$.borrowing.evidence"),
+            ("boolean count", lambda row: row["borrowing"].update(unpublished_evidence={"availability": "not_exported", "count": True, "scope": "local"}), "$.borrowing.unpublished_evidence.count"),
+            ("timestamp", lambda row: row.update(accepted_at_utc="2026-10-31"), "$.accepted_at_utc"),
+        ]
+        for name, mutate, field in cases:
+            with self.subTest(name=name):
+                row = json.loads(json.dumps(original))
+                mutate(row)
+                write_text(self.root / documentation.INDEX_PATH, json.dumps(row) + "\n")
+                report = documentation.check_root(self.root)
+                self.assertEqual(report["status"], "fail")
+                self.assertTrue(any(item["rule"] == "source-index-schema" and field in item["message"] for item in report["findings"]), report["findings"])
+
+    def test_nullable_source_url_and_named_legacy_adoption_remain_valid(self) -> None:
+        row = json.loads((self.root / documentation.INDEX_PATH).read_text(encoding="utf-8"))
+        row["sources"][0].update(url=None, kind="first_party_design", availability="private_archive")
+        row["id"] = "single-session-stability-20261029-adoption"
+        row["design"] = []
+        write_text(self.root / documentation.INDEX_PATH, json.dumps(row) + "\n")
+        report = documentation.check_root(self.root)
+        self.assertEqual(report["status"], "pass", report["findings"])
+        self.assertEqual(report["source_index_schema_profile"], documentation.SOURCE_SCHEMA_PROFILE)
+        self.assertEqual(report["scientific_acceptance"], "not_assessed")
+
+    def test_schema_is_read_and_unsupported_assertions_fail_explicitly(self) -> None:
+        path = self.root / documentation.INDEX_SCHEMA_PATH
+        original = json.loads(path.read_text(encoding="utf-8"))
+        cases = [
+            ("unknown keyword", lambda spec: spec.update(unevaluatedProperties=False)),
+            ("unknown format", lambda spec: spec["properties"]["id"].update(format="hostname")),
+            ("unsupported type form", lambda spec: spec["properties"]["id"].update(type=["string", "null"])),
+        ]
+        for name, mutate in cases:
+            with self.subTest(name=name):
+                schema = json.loads(json.dumps(original))
+                mutate(schema)
+                write_text(path, json.dumps(schema) + "\n")
+                report = documentation.check_root(self.root)
+                self.assertEqual(report["status"], "fail")
+                self.assertTrue(any(item["rule"] == "source-index-schema-profile" for item in report["findings"]), report["findings"])
+        original["properties"]["sources"]["items"]["properties"]["id"]["minLength"] = 100
+        write_text(path, json.dumps(original) + "\n")
+        report = documentation.check_root(self.root)
+        self.assertTrue(any(item["rule"] == "source-index-schema" and "$.sources[0].id" in item["message"] for item in report["findings"]), report["findings"])
+
+    def test_current_public_ledger_remains_compatible_with_source_schema(self) -> None:
+        schema = json.loads((PUBLIC_ROOT / documentation.INDEX_SCHEMA_PATH).read_text(encoding="utf-8"))
+        self.assertEqual(documentation._source_schema_profile_errors(schema), [])
+        rows = [json.loads(line) for line in (PUBLIC_ROOT / documentation.INDEX_PATH).read_text(encoding="utf-8").splitlines() if line.strip()]
+        self.assertGreaterEqual(len(rows), 133)
+        for number, row in enumerate(rows, 1):
+            with self.subTest(line=number, record=row.get("id")):
+                self.assertEqual(documentation._source_schema_errors(row, schema), [])
+
+    def test_current_identity_is_checked_without_rewriting_original_or_dated_identities(self) -> None:
+        target = self.root / "README.md"
+        size, digest = identity(target)
+        note_path = self.root / "machine" / "document-notes" / "README.md.json"
+        for target_fields in ({"document": "README.md"}, {"human_path": "README.md"}, {}):
+            with self.subTest(target_fields=target_fields):
+                note = {
+                    "schema": "harness.document-notes/v1", **target_fields,
+                    "source_text": "Original frozen document", "source_commit": "historical-commit",
+                    "source_sha256": hashlib.sha256(b"Original frozen document").hexdigest(),
+                    "current_identity": {"bytes": size, "sha256": digest},
+                    "editorial_revisions": [{"date": "2026-01-01", "current_identity": {"bytes": 1, "sha256": "0" * 64}}],
+                }
+                write_text(note_path, json.dumps(note, indent=2) + "\n")
+                before = note_path.read_bytes()
+                report = documentation.check_root(self.root)
+                self.assertEqual(report["status"], "pass", report["findings"])
+                self.assertEqual(report["checked_document_current_identities"], 1)
+                self.assertEqual(note_path.read_bytes(), before)
+        write_text(target, "# Fixture\n\nThe current document changed after the recorded observation.\n")
+        report = documentation.check_root(self.root)
+        self.assertEqual(report["status"], "fail")
+        identity_findings = [item for item in report["findings"] if item["rule"] == "document-note-current-identity"]
+        self.assertEqual(len(identity_findings), 1)
+        self.assertEqual(identity_findings[0]["file"], "machine/document-notes/README.md.json")
+        self.assertEqual(note_path.read_bytes(), before)
+
+    def test_current_identity_rejects_bad_types_and_nonpublic_target(self) -> None:
+        size, digest = identity(self.root / "README.md")
+        note_path = self.root / "machine" / "document-notes" / "README.md.json"
+        cases = [
+            {"document": "README.md", "current_identity": {"bytes": True, "sha256": digest}},
+            {"document": "README.md", "current_identity": {"bytes": size, "sha256": "bad"}},
+            {"document": "../outside.md", "current_identity": {"bytes": size, "sha256": digest}},
+            {"document": "README.md", "human_path": "core/README.md", "current_identity": {"bytes": size, "sha256": digest}},
+        ]
+        for note in cases:
+            with self.subTest(note=note):
+                write_text(note_path, json.dumps(note) + "\n")
+                report = documentation.check_root(self.root)
+                self.assertEqual(report["status"], "fail")
+                self.assertTrue(any(item["rule"] in {"document-note-current-identity", "document-note-target"} for item in report["findings"]), report["findings"])
 
 
 def _system_alias_bases() -> list[Path]:

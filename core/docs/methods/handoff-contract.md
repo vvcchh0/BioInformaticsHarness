@@ -41,8 +41,8 @@ python scripts/verification/check_research_handoff.py --manifest PATH [--out PAT
 - `unknown`：必要证据没有提供，无法作出判断。
 - `not_applicable`：记录明确表明该条件不适用；它不能把缺失的评价分母变成通过。
 
-`overall` 按 `fail` 优先、再 `unknown`、最后 `pass` 汇总。CLI 对应退出码为
-`0`、`1`、`2`。无效 JSON、字段类型错误、文件不存在或 schema 不支持时也退出
+`overall` 按 `fail` 优先、再 `unknown`、最后 `pass` 汇总。CLI 退出码为
+`pass=0`、`fail=1`、`unknown=2`。无效 JSON、字段类型错误、文件不存在或 schema 不支持时也退出
 `2`，并在可解析的 JSON 中给出清晰的顶层 `error`，不要求用户从 traceback 中
 猜原因。
 

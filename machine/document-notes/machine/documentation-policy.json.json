@@ -48,12 +48,29 @@
       ],
       "acceptance_status": "accepted_bounded_content_v2",
       "accepted_at_utc": "2026-10-25T13:48:09.940509+00:00"
+    },
+    {
+      "id": "repo-copyedit-20261031",
+      "date": "2026-10-31",
+      "reason": "PROV-02 stale current identity repaired; policy and historical/source fields unchanged.",
+      "previous_declared_current_identity": {
+        "bytes": 8079,
+        "sha256": "f263c862ea67c076ae9c014ed7a0c8e58c779e39a29221f77bf44cd24d03cf49"
+      }
+    },
+    {
+      "id": "saver-commot-publication-compatibility-20261104",
+      "date": "2026-11-04",
+      "reason": "Preserve incoming published study-view source rows and accept their render_existing_records relation; refresh current identity after merging existing policy additions.",
+      "technical_records": [
+        "machine/history/saver-commot-publication-20261104.json"
+      ]
     }
   ],
-  "updated_at_utc": "2026-10-25T13:48:09.940509+00:00",
+  "updated_at_utc": "2026-11-04T15:43:28.203120+00:00",
   "current_identity": {
-    "bytes": 8079,
-    "sha256": "f263c862ea67c076ae9c014ed7a0c8e58c779e39a29221f77bf44cd24d03cf49"
+    "bytes": 9475,
+    "sha256": "ec2562e835c0e6159f56c30c64e2189a7ae2d85625b854b95d0860385df9bb26"
   },
   "current_technical_records": [
     "core/machine/design/biological-argument.json"

@@ -1,5 +1,22 @@
 # Changelog
 
+## 两项复现与单会话接续验证 — 2026-11-04
+
+- 新增[SAVER 与 COMMOT 实验总结](docs/research/saver-commot-continuity-2026-11-04.zh.md)及逐次汇总，连接真实运行、独立评阅、修订、后续实验和专题收束。
+- 在[研究心得](docs/research-insights.md)积累输出用途与局部归因的条件认识，继续沿用现有首稿—revisor 路径。
+- 接收范围、保留的负结果和后续观察项见[变化索引](machine/changes/saver-commot-continuity-20261104.json)。
+
+## 面向读者的过程说明与验收 — 2026-11-01
+
+- 在现有[可读过程](core/docs/design/06-readable-process.md)中明确目的、操作、判断变化与下一步的叙述关系，以及未参与者可脱离JSON复述的验收问题。
+- 研究交接与方向讨论复用这项标准；人读讨论模板先说明研究问题，版本入口留作展开查看。范围见[变化索引](machine/changes/reader-guidance-20261101.json)。
+
+## 文档与来源契约一致性校订 — 2026-10-31
+
+- 统一下层研究入口与可选模板/工具的选用条件，修正进度检查点、示例工作目录、退出码、表格及残句。
+- 说明联合几何实例的公开摘要范围，为Yeast原报告追加定义页与图页定位；历史报告和法律原文保持。
+- 来源索引保留历史行，补齐结构契约和维护检查，并修复当前文档身份；范围见[校订记录](machine/history/repository-copyedit-20261031.json)。
+
 ## 研究路径视图原型 — 2026-10-31
 
 - 新增[研究路径视图](core/examples/research-support/study-view/README.md)：把课题目录中的周期、讨论、证据图与修订记录整理成一页离线 HTML，显示阶段位置、分支选择、证据来路和修订链。
