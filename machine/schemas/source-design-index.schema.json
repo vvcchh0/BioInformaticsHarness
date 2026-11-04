@@ -203,6 +203,7 @@
               "preserve_physical_archive_independence",
               "purpose_first_scoped_method_card",
               "reference_context",
+              "render_existing_records",
               "resulting_design",
               "resulting_guidance_change",
               "role_and_stage_scoped_entry",

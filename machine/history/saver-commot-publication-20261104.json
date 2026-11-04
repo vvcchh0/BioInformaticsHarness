@@ -1,0 +1,35 @@
+{
+  "schema": "harness.publication-history/v1",
+  "date": "2026-11-04",
+  "status": "complete",
+  "prior_local_commits": [
+    "58cd0adf3a767ec112de30b9c4f20f2a7b52ad76",
+    "b6265ec048637f724961c4154f4a4fe5006e25b1"
+  ],
+  "merged_remote_main": "0b62d0935ed06c21bd473817f42d2e391e2a14f7",
+  "preserved_incoming_work": "PR7 study-view prototype and exact published source-index row",
+  "compatibility_fix": {
+    "schema": "machine/schemas/source-design-index.schema.json",
+    "added_relation": "render_existing_records",
+    "reason": "Incoming published read-only study-view record uses this relation; preserve that row instead of changing historical provenance. Existing type and enum validation retained."
+  },
+  "own_new_index": "uses existing evaluation_framework/contextual_observation and private_archive vocabulary",
+  "original_source_fields_preserved": true,
+  "frozen_release_tags_and_assets_changed": false,
+  "runtime_method_implementation_changed": false,
+  "public_raw_external_data_or_paper_text_added": false,
+  "event": "publication_content_preparation",
+  "targeted_tests": {
+    "documentation": {
+      "total": 16,
+      "passed": 14,
+      "skipped": 2
+    },
+    "study_view": {
+      "total": 15,
+      "passed": 14,
+      "skipped": 1
+    }
+  },
+  "maintenance_checks": "Run after this content-preparation event; final execution results are recorded in the publication PR and owner validation receipt."
+}

@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | `scripts.research_support.review_coverage` | 问题地图、来源账本、证据图和主文→缺口、实际动作与当前收束状态 | [覆盖与收束](guides/review-coverage-and-closure.md)的可选检查，区分提名、取得、选读和已综合 |
 | `scripts.research_support.research_cycle` | 证据图、方向讨论与后续阶段引用→当前衔接状态和下一动作 | [综述到后续研究](guides/research-guidance-cycle.md)的可选检查，分开待讨论、已选择和已执行 |
+| `scripts.research_support.study_view` | 课题目录中的周期、讨论、证据图与修订记录→单页离线HTML视图 | 给人读的研究经过：阶段位置、分支选择、证据来路与修订链；只画记录中的显式引用，见[原型说明](../../examples/research-support/study-view/README.md) |
 | `scripts.research_support.handoff` | 必要文件/用途及可选环境→producer或receiver当前观察 | 工件身份、root路径和实际最小启动预检 |
 | `scripts.research_support.diagnostics` | 预定单位/候选/容差与CSV/TSV矩阵→完整性及有限相容汇总 | 指标冲突的有限候选、经验等值和未解释出口 |
 | `scripts.research_support.evidence` | 显式文件、typed回执与提供的解释→同源JSON索引和README | cache、历史失败、资源缺测、重复回执及导航口径 |

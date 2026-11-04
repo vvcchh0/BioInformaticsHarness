@@ -1,0 +1,30 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "saver-commot-continuity-20261104",
+  "date": "2026-11-04",
+  "summary": "Publish two bounded original-code/real-data continuation trials and contextual insights while retaining the existing first-draft/revisor path.",
+  "impact": "evidence",
+  "baseline_commit": "b6265ec048637f724961c4154f4a4fe5006e25b1",
+  "paths": [
+    "docs/research/saver-commot-continuity-2026-11-04.zh.md",
+    "docs/research-insights.md",
+    "core/EVIDENCE.zh.md",
+    "machine/research/saver-commot-continuity-2026-11-04.json",
+    "machine/research/saver-commot-2026-11-04/saver-trial-summary.csv",
+    "machine/research/saver-commot-2026-11-04/commot-comparisons.csv",
+    "CHANGELOG.md",
+    "machine/schemas/source-design-index.schema.json"
+  ],
+  "reading_paths": [
+    "docs/research/saver-commot-continuity-2026-11-04.zh.md"
+  ],
+  "revisit": "Optional when continuing a study, choosing between uncertain outputs, or interpreting aggregate stability. Existing studies retain progress and accepted scope; no automatic rewrite or rerun.",
+  "acceptance": "Two same-theory trajectories completed original implementation runs, independent review/revisions and pre-frozen followup computations; parent recovery and independent arithmetic audits separately recorded. Benefits relative to a no-Harness workflow and cross-session stability remain untested.",
+  "evidence": "machine/research/saver-commot-continuity-2026-11-04.json",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "publication_compatibility": {
+    "path": "machine/schemas/source-design-index.schema.json",
+    "scope": "accept existing render_existing_records relation from incoming published study-view record; no research guidance obligation added"
+  }
+}

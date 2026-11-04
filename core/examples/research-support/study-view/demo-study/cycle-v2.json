@@ -1,0 +1,55 @@
+{
+  "schema": "research-support.research-cycle.v1",
+  "cycle_id": "demo-cycle-001",
+  "version": "cycle-v2",
+  "previous_version": "cycle-v1.json",
+  "stage": "direction_choice",
+  "task": {
+    "study_id": "demo-study-001",
+    "iteration_id": "demo-iteration-001",
+    "task_id": "demo-task-001",
+    "objective": "虚构示例：判断原分类结论在新批次上是否仍可使用。"
+  },
+  "synthesis": {
+    "source_ledger_ref": "source-ledger.json",
+    "evidence_map_ref": "evidence-map.json",
+    "report_ref": "brief.md",
+    "question_ids": [
+      "demo-question-1",
+      "demo-question-2"
+    ],
+    "time_scope": {
+      "mode": "historical_window",
+      "as_of": "虚构截止 2026-10-31",
+      "refresh_before_study": false,
+      "refresh_record_ref": null,
+      "study_target": "same_historical_window",
+      "historical_scope_reason": "虚构示例，只演示结构。"
+    }
+  },
+  "direction": {
+    "discussion_ref": "discussion-v2.json",
+    "requires_human_choice": true,
+    "selected_direction_id": "demo-direction-batch"
+  },
+  "study": {
+    "bridge_ref": null,
+    "task_context_ref": null,
+    "first_plan_ref": null,
+    "first_plan_seal_ref": null
+  },
+  "execution": {
+    "run_receipt_refs": [],
+    "evaluation_ref": null,
+    "evidence_refs": [],
+    "delivery_ref": null
+  },
+  "revision": {
+    "decision_ref": null,
+    "next_cycle_ref": null
+  },
+  "next_action": {
+    "owner": "researcher",
+    "action": "整理批次字段与评价要求，进入数据要求与首计划（虚构）。"
+  }
+}

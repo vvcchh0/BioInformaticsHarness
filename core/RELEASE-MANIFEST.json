@@ -12,11 +12,11 @@
       "transform_details": {}
     },
     {
-      "bytes": 3190,
+      "bytes": 3692,
       "license": "CC-BY-4.0",
       "path": "EVIDENCE.zh.md",
       "role": "evidence-boundary",
-      "sha256": "782719aee60d7f67e62f5deb74eef4c6c60671f912fad072d54353b2b26cd6db",
+      "sha256": "f72699e258820873d37e2809dac79457eaaac2616f85bfc093c70b80f84ed9b2",
       "source": "docs/reviews/2026-10-checkpoint-publication/public-evidence/EVIDENCE.zh.md",
       "source_sha256": "1cd4ca97b19b414403b727a01cdcbf07bae9d91221608e107fad6281e8d1f7fc",
       "transform": "first-party-documentation-revision",
@@ -25,15 +25,25 @@
         "baseline_revision": "764bd88",
         "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
-          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "changed": false,
-            "images_converted_to_ordinary_links": 0,
-            "links_redirected_to_archive_pointers": 0,
-            "links_rewritten_to_package": 0,
-            "local_redactions": []
+            "revision": "2026-10-27",
+            "baseline_revision": "764bd88",
+            "previous_transform": "first-party-documentation-revision",
+            "previous_details": {
+              "revision": "2026-10-22",
+              "baseline_revision": "764bd88",
+              "previous_transform": "markdown-links-and-local-redaction",
+              "previous_details": {
+                "changed": false,
+                "images_converted_to_ordinary_links": 0,
+                "links_redirected_to_archive_pointers": 0,
+                "links_rewritten_to_package": 0,
+                "local_redactions": []
+              }
+            }
           }
         }
       },
@@ -45,15 +55,25 @@
         "transform": "markdown-links-and-local-redaction",
         "source_sha256": "1cd4ca97b19b414403b727a01cdcbf07bae9d91221608e107fad6281e8d1f7fc",
         "transform_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
-          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "changed": false,
-            "images_converted_to_ordinary_links": 0,
-            "links_redirected_to_archive_pointers": 0,
-            "links_rewritten_to_package": 0,
-            "local_redactions": []
+            "revision": "2026-10-27",
+            "baseline_revision": "764bd88",
+            "previous_transform": "first-party-documentation-revision",
+            "previous_details": {
+              "revision": "2026-10-22",
+              "baseline_revision": "764bd88",
+              "previous_transform": "markdown-links-and-local-redaction",
+              "previous_details": {
+                "changed": false,
+                "images_converted_to_ordinary_links": 0,
+                "links_redirected_to_archive_pointers": 0,
+                "links_rewritten_to_package": 0,
+                "local_redactions": []
+              }
+            }
           }
         }
       }
@@ -3586,11 +3606,11 @@
       }
     },
     {
-      "bytes": 9739,
+      "bytes": 10061,
       "license": "CC-BY-4.0",
       "path": "docs/methods/research-support-tools.md",
       "role": "normative-prose",
-      "sha256": "4e7a2baef698fd282bec9d11b653ac4c63d67ab2fffc68aa99cf3810586190b8",
+      "sha256": "e0b80cb57a30d633eadf0fed7118157b569c567ebea5c0fed16ef1556b02abba",
       "source": "docs/methods/research-support-tools.md",
       "source_sha256": "39e5982312101656a16af629a192165a611e998d2d26c9100061ac0db6ac6b18",
       "transform": "first-party-documentation-revision",
@@ -3603,11 +3623,11 @@
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-23",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
             "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "revision": "2026-10-22",
+              "revision": "2026-10-23",
               "baseline_revision": "764bd88",
               "previous_transform": "first-party-documentation-revision",
               "previous_details": {
@@ -3617,13 +3637,18 @@
                 "previous_details": {
                   "revision": "2026-10-22",
                   "baseline_revision": "764bd88",
-                  "previous_transform": "markdown-links-and-local-redaction",
+                  "previous_transform": "first-party-documentation-revision",
                   "previous_details": {
-                    "changed": true,
-                    "images_converted_to_ordinary_links": 0,
-                    "links_redirected_to_archive_pointers": 10,
-                    "links_rewritten_to_package": 7,
-                    "local_redactions": []
+                    "revision": "2026-10-22",
+                    "baseline_revision": "764bd88",
+                    "previous_transform": "markdown-links-and-local-redaction",
+                    "previous_details": {
+                      "changed": true,
+                      "images_converted_to_ordinary_links": 0,
+                      "links_redirected_to_archive_pointers": 10,
+                      "links_rewritten_to_package": 7,
+                      "local_redactions": []
+                    }
                   }
                 }
               }
@@ -3643,11 +3668,11 @@
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-23",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
             "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "revision": "2026-10-22",
+              "revision": "2026-10-23",
               "baseline_revision": "764bd88",
               "previous_transform": "first-party-documentation-revision",
               "previous_details": {
@@ -3657,13 +3682,18 @@
                 "previous_details": {
                   "revision": "2026-10-22",
                   "baseline_revision": "764bd88",
-                  "previous_transform": "markdown-links-and-local-redaction",
+                  "previous_transform": "first-party-documentation-revision",
                   "previous_details": {
-                    "changed": true,
-                    "images_converted_to_ordinary_links": 0,
-                    "links_redirected_to_archive_pointers": 10,
-                    "links_rewritten_to_package": 7,
-                    "local_redactions": []
+                    "revision": "2026-10-22",
+                    "baseline_revision": "764bd88",
+                    "previous_transform": "markdown-links-and-local-redaction",
+                    "previous_details": {
+                      "changed": true,
+                      "images_converted_to_ordinary_links": 0,
+                      "links_redirected_to_archive_pointers": 10,
+                      "links_rewritten_to_package": 7,
+                      "local_redactions": []
+                    }
                   }
                 }
               }
@@ -5798,6 +5828,202 @@
       }
     },
     {
+      "path": "examples/research-support/study-view/README.md",
+      "bytes": 5298,
+      "sha256": "be3b7242d08e014a4ab5a942a715100bc7b294f3ca6e8e1b9f4b298bc1a38b17",
+      "license": "CC-BY-4.0",
+      "role": "documentation",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/README.md",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/README.md",
+      "bytes": 391,
+      "sha256": "2bc4b1a3ff13e94369a6bb7a6d93ba7e9d338c557c48753667af3422335f41d9",
+      "license": "CC-BY-4.0",
+      "role": "documentation",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/README.md",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/brief.md",
+      "bytes": 318,
+      "sha256": "c1e24821a8911027006019c9f9362538dae22acb12303594fc3484d13ce46a62",
+      "license": "CC-BY-4.0",
+      "role": "documentation",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/brief.md",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/cycle-v1.json",
+      "bytes": 1491,
+      "sha256": "2f13ae778533098ddfcdcba2983896de4ea9d228d80c0a21c063af7d57ac7692",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/cycle-v1.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/cycle-v2.json",
+      "bytes": 1546,
+      "sha256": "9703f696d4bb9a8100549bf846534c63e6fb5a947521c9b880b7db36255bf31e",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/cycle-v2.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/discussion-v1.json",
+      "bytes": 2099,
+      "sha256": "3b196f0c900a5641dd7a0722d9e1bf19577fa877a5c5d8f53166f80439e72c96",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/discussion-v1.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/discussion-v2.json",
+      "bytes": 2425,
+      "sha256": "d0dc4e485ff0c3a03c8354f91595f367302d5fabb239f84f4dbb9eb2b007115a",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/discussion-v2.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/evidence-map.json",
+      "bytes": 5629,
+      "sha256": "c8d2478b5595db36a2084cfba38708c8fbd37a530cca64b0a993f1b9df53b953",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/evidence-map.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/human-input-v2.md",
+      "bytes": 208,
+      "sha256": "04899e18395cecdc3243dfb728d9074a46d5f2d5eaeeaf1f1fa0b9706a260681",
+      "license": "CC-BY-4.0",
+      "role": "documentation",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/human-input-v2.md",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/revision/explanation.md",
+      "bytes": 143,
+      "sha256": "6cdf6eedd6b12f2ea6ff0556440521b65ffb0384b0f6c8f3f5eca697af08c2da",
+      "license": "CC-BY-4.0",
+      "role": "documentation",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/revision/explanation.md",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/revision/research-revision.json",
+      "bytes": 3474,
+      "sha256": "037a548576edacedb3b8bff701fcf058395e24ea8cb1224ba82f5da152d37fb8",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/revision/research-revision.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/revision/review-comment.md",
+      "bytes": 147,
+      "sha256": "bee0da9efd557a93bf2c96416f28a61a5a6fc58a7950de483ad47653872fe1ed",
+      "license": "CC-BY-4.0",
+      "role": "documentation",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/revision/review-comment.md",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/source-ledger.json",
+      "bytes": 4452,
+      "sha256": "3f515f7943b8de83cb848eaedf46dc502450d30ba7ab417aec0cbe9c0ccc73bc",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/source-ledger.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/study-view/demo-study/technical-route.md",
+      "bytes": 143,
+      "sha256": "801fc57b41d2d23098db500fcbea9edefd3e99211df69db7c6a1d7e5a03799fe",
+      "license": "CC-BY-4.0",
+      "role": "documentation",
+      "source": "first-party-documentation-revision:examples/research-support/study-view/demo-study/technical-route.md",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
       "bytes": 26766,
       "license": "Apache-2.0",
       "path": "examples/s4pred/describe_entities.py",
@@ -6259,6 +6485,20 @@
       }
     },
     {
+      "path": "machine/tools/study-view.json",
+      "bytes": 8508,
+      "sha256": "2dcce2483934d9373f1ebbe1b9871d7e11bbc9da834c41b2ec6b7eb2e5b652f9",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:machine/tools/study-view.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
       "bytes": 82746,
       "license": "CC-BY-4.0",
       "path": "references.json",
@@ -6639,6 +6879,34 @@
       "transform_details": {}
     },
     {
+      "path": "scripts/research_support/study_view.py",
+      "bytes": 35076,
+      "sha256": "00e122dffadb67ec8cdb8e713e8470040590bc416bc37d382d8112cc68c2c4d9",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:scripts/research_support/study_view.py",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "scripts/research_support/study_view_template.html",
+      "bytes": 33239,
+      "sha256": "34520cfcfcc6efc6d7b393cfc9f6cd83ba4f2985a10039578c9ea6a2ac878a8e",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:scripts/research_support/study_view_template.html",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
       "path": "scripts/research_support/task_context.py",
       "bytes": 30497,
       "sha256": "d023090b2ba315b40e9458b49819da5643fb853582dd23c9031bddc5c0ac729e",
@@ -6928,6 +7196,20 @@
       "transform_details": {}
     },
     {
+      "path": "tests/research_support/test_study_view.py",
+      "bytes": 13998,
+      "sha256": "ec641783395205b125631c6b0fb2711c25a2e428e15c0c2eb851a4385a5ddf9c",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:tests/research_support/test_study_view.py",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
       "bytes": 6661,
       "license": "Apache-2.0",
       "path": "tests/test_execution_capture.py",
@@ -7172,7 +7454,7 @@
     "kind": "first-party-documentation-revision",
     "baseline_revision": "764bd88",
     "baseline_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
-    "head": "58cd0adf3a767ec112de30b9c4f20f2a7b52ad76",
+    "head": "b6265ec048637f724961c4154f4a4fe5006e25b1",
     "frozen_tag": "v0.1.0-alpha.2",
     "frozen_tag_target": "764bd88b090439c8fe0d1646826d23865dc5c20b"
   }

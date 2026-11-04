@@ -235,19 +235,47 @@
         "bytes": 12377,
         "sha256": "b22f42a38caa07d37e1f174f27eaa801ffde44d6a4ba57f52067039e772b6766"
       }
+    },
+    {
+      "id": "study-view-prototype-20261031",
+      "date": "2026-10-31",
+      "reason": "Add the study view prototype entry for issue #6.",
+      "technical_records": [
+        "core/machine/tools/study-view.json",
+        "machine/changes/study-view-prototype-20261031.json"
+      ],
+      "previous_document_identity": {
+        "bytes": 11418,
+        "sha256": "7d5964bcccd74f130d50b7196a8aedb762545f3dfcc7b4de16f90821c675e849"
+      },
+      "acceptance_status": "contributor_prototype_pending_maintainer_review"
+    },
+    {
+      "id": "saver-commot-continuity-20261104",
+      "date": "2026-11-04",
+      "reason": "Publish bounded original-code/real-data same-session continuation outcomes and optional output/attribution insight.",
+      "technical_records": [
+        "machine/research/saver-commot-continuity-2026-11-04.json",
+        "machine/changes/saver-commot-continuity-20261104.json"
+      ],
+      "acceptance_scope": "Selected two cases only; original author code and scoped followups. No new mandatory first-draft requirements or global framework rule."
     }
   ],
-  "updated_at_utc": "2026-11-01T10:23:08.291360+00:00",
+  "updated_at_utc": "2026-11-04T15:39:33.256286+00:00",
   "current_identity": {
-    "bytes": 12377,
-    "sha256": "b22f42a38caa07d37e1f174f27eaa801ffde44d6a4ba57f52067039e772b6766"
+    "bytes": 13370,
+    "sha256": "cd47d24103fb054a1d56eaeae199214ee624d7c6d1b9e89bb65832bf252125d6"
   },
   "current_technical_records": [
     "core/machine/design/review-scope-appraisal.json",
     "machine/history/review-scope-appraisal.json",
     "machine/changes/conditional-model-comparison-20261030.json",
     "machine/changes/revisor-contextual-preparation-20261030.json",
-    "machine/changes/macos-paths-optional-github-proxy-20261030.json"
+    "machine/changes/macos-paths-optional-github-proxy-20261030.json",
+    "core/machine/tools/study-view.json",
+    "machine/changes/study-view-prototype-20261031.json",
+    "machine/research/saver-commot-continuity-2026-11-04.json",
+    "machine/changes/saver-commot-continuity-20261104.json"
   ],
   "revisions": [
     {

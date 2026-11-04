@@ -1,0 +1,26 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "study-view-prototype-20261031",
+  "date": "2026-10-31",
+  "summary": "Add a read-only study view prototype that renders explicit research-cycle, discussion, evidence-map and revision links as one offline HTML page.",
+  "impact": "tool",
+  "origin": "https://github.com/vvcchh0/BioInformaticsHarness/issues/6",
+  "paths": [
+    "core/scripts/research_support/study_view.py",
+    "core/scripts/research_support/study_view_template.html",
+    "core/tests/research_support/test_study_view.py",
+    "core/examples/research-support/study-view/README.md",
+    "core/examples/research-support/study-view/demo-study",
+    "core/machine/tools/study-view.json",
+    "core/docs/methods/research-support-tools.md",
+    "CHANGELOG.md"
+  ],
+  "reading_paths": [
+    "core/examples/research-support/study-view/README.md"
+  ],
+  "revisit": "Optional tool; existing records, checkers and research acceptance are unchanged. Try it on a real study directory before relying on its layout.",
+  "acceptance": "Contributor prototype: automated tests and browser inspection on the fictional demo; maintainer review and real-study use pending.",
+  "status": "prototype_pending_review",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false
+}
