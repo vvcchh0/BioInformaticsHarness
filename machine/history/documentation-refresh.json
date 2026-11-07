@@ -7,7 +7,7 @@
   "documentation_revision": "2026-10-27",
   "working_tree": {
     "kind": "first-party-documentation-revision",
-    "head": "b6265ec048637f724961c4154f4a4fe5006e25b1",
+    "head": "e8d82b695c68e3a752998c81a31790ef173c0942",
     "tag_unchanged_by_refresh": true
   },
   "record_path": "machine/history/documentation-refresh.json",
@@ -27,8 +27,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:CHANGELOG.md",
       "previous_sha256": "7e09c5cb4ab65d4368ea89ecddf01daeb8fb10a4e51af2c08a5f432c59f67e7d",
-      "current_bytes": 13370,
-      "current_sha256": "cd47d24103fb054a1d56eaeae199214ee624d7c6d1b9e89bb65832bf252125d6"
+      "current_bytes": 14725,
+      "current_sha256": "c8c534207c838a21d2b9e94d6441fb85ae4557f47f166f0b27809f19b6bc9a71"
     },
     {
       "path": "LICENSING.md",
@@ -126,8 +126,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/RELEASE-MANIFEST.json",
       "previous_sha256": "b54b0cd83b5870306211066aaf6f49d346d3e379cdcb95351f332e408830da65",
-      "current_bytes": 312394,
-      "current_sha256": "b9917e1b6190f9d52012038735f3b7dbf866f5220b0f312651254b2449d9d576"
+      "current_bytes": 317199,
+      "current_sha256": "5f90d672cd6a69ef60d10d846333cab4ddbe88ef9e8adf31ea5a36aec06abc30"
     },
     {
       "path": "core/THIRD_PARTY.md",
@@ -187,8 +187,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/docs/design/06-readable-process.md",
       "previous_sha256": "182cc72248fa176e4ff839af37b4c37e818d55fdb87aa2d92f21efaa75614032",
-      "current_bytes": 2398,
-      "current_sha256": "82e81032ff7e12e04dff31bcbd2b141371d588e27c6a45a6f1b1de9ce7a704fa"
+      "current_bytes": 7919,
+      "current_sha256": "d28b408a98078442b50ab9077ca484ac8315fcee41288d6252ee563dbd63bb0d"
     },
     {
       "path": "core/docs/design/07-agent-assistance.md",
@@ -563,8 +563,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/docs/methods/guides/biological-explanation-and-handoff.md",
       "previous_sha256": "2f8dc75f5985a7d05a8b574505b47d9c5308e147fd6fc0bb73837c08cb3a1aa2",
-      "current_bytes": 10935,
-      "current_sha256": "a1831cc41a006a7ffd50292a030046beb36bb49bd56faea4efed246087834c4c"
+      "current_bytes": 11498,
+      "current_sha256": "61c6a58ae66203e15de6b518dc4c570dca936146448ac90a00316e57abecda10"
     },
     {
       "path": "core/docs/methods/guides/finite-diagnostics.md",
@@ -683,8 +683,8 @@
       "path": "core/docs/methods/guides/research-preparation.md",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 6535,
-      "current_sha256": "9f8f19dc8bdc9cf860c365b5aeddf8d60149c7e059ee19311f9caa6c701d59d3"
+      "current_bytes": 7129,
+      "current_sha256": "ecdcaae3ca03db3057c465b0484ae84941a7db46cf008bab4e7e2ba0dc65a90e"
     },
     {
       "path": "core/docs/methods/guides/resource-gap-loop.md",
@@ -835,8 +835,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/docs/methods/worked-examples/README.md",
       "previous_sha256": "6661b6468da0bde40b284258f14c24ec279d8d474de3695173b360b88018fdff",
-      "current_bytes": 2952,
-      "current_sha256": "b242dfdf71ae8803d8d2a567537daa28fbecc84769002a9fab732b95c0fdae8b"
+      "current_bytes": 3145,
+      "current_sha256": "96d7144608d03568ac8605256fae6080b0b3fcade8153e4c50171b3f61ebdd26"
     },
     {
       "path": "core/docs/methods/worked-examples/causal-instruments-and-identifiability.md",
@@ -899,6 +899,13 @@
       "baseline_revision": "764bd88",
       "current_bytes": 3984,
       "current_sha256": "e7b535c5d040e044ae1d3d87620ab9168eddbebac82b8ed37c2f205776a581e0"
+    },
+    {
+      "path": "core/docs/methods/worked-examples/research-origins.md",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 5411,
+      "current_sha256": "ece987ef6574d3c8bb4f540c9e8ba2edd88c73050b09c42786f73507413ebea2"
     },
     {
       "path": "core/docs/methods/worked-examples/sampling-scoring-and-use.md",
@@ -1928,6 +1935,13 @@
       "current_sha256": "4b007244be595ba374977f6be3cdcb921a0fdbe908725ca582e3c9ccd5dcc67f"
     },
     {
+      "path": "machine/changes/case-led-explanation-search-20261107.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 961,
+      "current_sha256": "627c14617897f5b0cdd3c3ec4763e56f88bc8e34425464116f97a9ac3faeb729"
+    },
+    {
       "path": "machine/changes/conditional-model-comparison-20261030.json",
       "change": "added",
       "baseline_revision": "764bd88",
@@ -1970,6 +1984,13 @@
       "current_sha256": "ee678089c9330995d1254d7efb284e9254ada27468dfd3688ce68ca18e57915d"
     },
     {
+      "path": "machine/changes/progressive-explanation-20261105.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 1876,
+      "current_sha256": "c6ccada780ce337c5e19a47ed8f3215057791b316f0cab94e7a5547b30f1cdea"
+    },
+    {
       "path": "machine/changes/reader-guidance-20261101.json",
       "change": "added",
       "baseline_revision": "764bd88",
@@ -1989,6 +2010,13 @@
       "baseline_revision": "764bd88",
       "current_bytes": 9355,
       "current_sha256": "d629c0a7717019f4ec3b6d1d8615f72742e1195955d73c85d103c2515e478f58"
+    },
+    {
+      "path": "machine/changes/research-origins-readable-20261105.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 2001,
+      "current_sha256": "9ca682c080585c7e74abf8fdf989caf714bc42737e18050670c0a54270b96b41"
     },
     {
       "path": "machine/changes/research-use-entry-20261029.json",
@@ -2057,8 +2085,8 @@
       "path": "machine/document-notes/CHANGELOG.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 14393,
-      "current_sha256": "dc59cf255c3e1562ab65dfd9627430b66c3f25036995eec04cfc22264cb8d3d3"
+      "current_bytes": 15715,
+      "current_sha256": "feb8b7ff1d8a3f138b26e7e9ec37c09db3ae92ae26f0cc11e68c79ca8a81cde1"
     },
     {
       "path": "machine/document-notes/LICENSING.md.json",
@@ -2169,8 +2197,8 @@
       "path": "machine/document-notes/core/docs/design/06-readable-process.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 10593,
-      "current_sha256": "b99584413ee5109aee964bbbcc1670560ffdaa6d118db799325379fba8f6a3da"
+      "current_bytes": 12436,
+      "current_sha256": "e29d0206c14aaf731785fcbb3c7aa731890892e1bf53ed80a9b7914fb83834d6"
     },
     {
       "path": "machine/document-notes/core/docs/design/07-agent-assistance.md.json",
@@ -2477,8 +2505,8 @@
       "path": "machine/document-notes/core/docs/methods/guides/biological-explanation-and-handoff.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 14249,
-      "current_sha256": "21878ca49853ce5231fa2c05c51cbad0668327d7a996e59e29960692b054c74f"
+      "current_bytes": 15555,
+      "current_sha256": "2d4596136a4ef1268d14392c8c9a63842a818a8059b4682ec339114914043222"
     },
     {
       "path": "machine/document-notes/core/docs/methods/guides/finite-diagnostics.md.json",
@@ -2575,8 +2603,8 @@
       "path": "machine/document-notes/core/docs/methods/guides/research-preparation.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 2743,
-      "current_sha256": "b08591523df5ddede78a4c64a46d766838cf295ea79d3b562f6c4cca500a96bc"
+      "current_bytes": 4113,
+      "current_sha256": "b02db3e2da2fb8d995ae848a2ef8bcedf0ce2cae9f7a4e8ea416072a9a92153a"
     },
     {
       "path": "machine/document-notes/core/docs/methods/guides/resource-gap-loop.md.json",
@@ -2701,8 +2729,8 @@
       "path": "machine/document-notes/core/docs/methods/worked-examples/README.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 3452,
-      "current_sha256": "6553809efe443fc9115fd3a486602765cf0204fa09a0f4df2721841175df2ca0"
+      "current_bytes": 4369,
+      "current_sha256": "e87c235b3509a946376a566856524f24b626c359f1e8d600bd910c1605bf1a2a"
     },
     {
       "path": "machine/document-notes/core/docs/methods/worked-examples/causal-instruments-and-identifiability.md.json",
@@ -2759,6 +2787,13 @@
       "baseline_revision": "764bd88",
       "current_bytes": 4781,
       "current_sha256": "8632d17cd4ea03f99e0879bd9453b434b0a87b420a017ce2f91cb11636060579"
+    },
+    {
+      "path": "machine/document-notes/core/docs/methods/worked-examples/research-origins.md.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 6760,
+      "current_sha256": "efd81692550a2d42b93566e68522ee261e6f82fed24153ec5db9bb54e640b985"
     },
     {
       "path": "machine/document-notes/core/docs/methods/worked-examples/sampling-scoring-and-use.md.json",
@@ -3132,11 +3167,25 @@
       "current_sha256": "37d88d2bc1b57864b79dbffe0d3521bb064285a2ca19d08a502ade61ae383d37"
     },
     {
+      "path": "machine/history/case-led-explanation-search-20261107.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 816,
+      "current_sha256": "8ce7510b24ba64719997e101c778200a852270365aef8594b51a630ce1623832"
+    },
+    {
       "path": "machine/history/preparation-priority-2026-10-24.json",
       "change": "added",
       "baseline_revision": "764bd88",
       "current_bytes": 1777,
       "current_sha256": "62b822c11a40c591e0adb765ff90863e1c8269a2c1973b685586de1fa6494f89"
+    },
+    {
+      "path": "machine/history/progressive-explanation-20261105.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 2594,
+      "current_sha256": "6d723c86d43c6af6cacf952cccd2bddc729408a0df7f834c095785a83762d6f7"
     },
     {
       "path": "machine/history/reader-guidance-20261101.json",
@@ -3158,6 +3207,13 @@
       "baseline_revision": "764bd88",
       "current_bytes": 2789,
       "current_sha256": "928aa939c6cf4c58cac9e48fbfc92468f7002e2ca840ef5289cd2b85a365cfe0"
+    },
+    {
+      "path": "machine/history/research-origins-20261105.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 2548,
+      "current_sha256": "841239df869ad32ad8f3db4b5c04873f390c14ff2584de32e10954762ad1ef14"
     },
     {
       "path": "machine/history/resource-completion-before-D52.json",
@@ -3289,8 +3345,8 @@
       "path": "machine/source-design-index.jsonl",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 309659,
-      "current_sha256": "50b47742f18f4d6c04bd71aa8c7a306fae010873b1b509441f3f53544256135d"
+      "current_bytes": 317177,
+      "current_sha256": "5cc86c96559305390df0cba801165a229c6fea09d9db7ffbeb7cbb5d24798ccd"
     },
     {
       "path": "machine/time-budget-recovery-contract.json",

@@ -1,0 +1,20 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "case-led-explanation-search-20261107",
+  "date": "2026-11-07",
+  "summary": "Use a concrete explanatory ambiguity to trigger, scope and stop educational-source searches.",
+  "impact": "guidance",
+  "baseline_commit": "e8d82b695c68e3a752998c81a31790ef173c0942",
+  "paths": [
+    "core/docs/design/06-readable-process.md",
+    "CHANGELOG.md"
+  ],
+  "reading_paths": [
+    "core/docs/design/06-readable-process.md#具体课题在什么时候需要补读解释资料"
+  ],
+  "revisit": "At the next concrete communication gap, identify the missing relation, use existing evidence first, select sources by the information they can supply, and return to the case original for case-specific measurements or implementation.",
+  "evidence": "machine/history/case-led-explanation-search-20261107.json",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "human_learning_effect": "not_observed"
+}

@@ -1,5 +1,16 @@
 # Changelog
 
+## 按具体课题的解释缺口补读资料 — 2026-11-07
+
+[可读过程指南](core/docs/design/06-readable-process.md#具体课题在什么时候需要补读解释资料)给出何时启动、按什么问题扩大或收束查找，以及怎样把教材的讲法接回原研究。[本轮更新记录](machine/changes/case-led-explanation-search-20261107.json)
+
+## 从实验现象讲清研究起点 — 2026-11-05
+
+- 在[可读过程](core/docs/design/06-readable-process.md#先让读者看见研究从哪里开始)中展开对象、观察或实际需求、未解关系和可辨认问题，让动机与首项比较相接。
+- 新增[SAVER 与 COMMOT 的起点工作例](core/docs/methods/worked-examples/research-origins.md)，分别保留原论文背景、当前研究预期和后来结果的来源与顺序。
+- 开题与交接复用已有说明，保持现有首稿—revisor 路径；变化与阅读范围见[更新索引](machine/changes/research-origins-readable-20261105.json)。
+- 根据实际读者反馈补足[逐句的理解依据](core/docs/design/06-readable-process.md#让下一句话有可依靠的前文)：先解释对象作用和相关机制，术语首次用于判断时说明含义，再连接操作、读数与比较。工作例同步展开；复查范围见[修订索引](machine/changes/progressive-explanation-20261105.json)。
+
 ## 两项复现与单会话接续验证 — 2026-11-04
 
 - 新增[SAVER 与 COMMOT 实验总结](docs/research/saver-commot-continuity-2026-11-04.zh.md)及逐次汇总，连接真实运行、独立评阅、修订、后续实验和专题收束。

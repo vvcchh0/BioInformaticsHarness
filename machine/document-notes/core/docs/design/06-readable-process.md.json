@@ -42,11 +42,44 @@
         "bytes": 2398,
         "sha256": "82e81032ff7e12e04dff31bcbd2b141371d588e27c6a45a6f1b1de9ce7a704fa"
       }
+    },
+    {
+      "id": "research-origins-readable-20261105",
+      "date": "2026-11-05",
+      "reason": "Explain concrete research motivation and observed phenomena with source/timing clarity; optional examples and existing preparation/handoff prose.",
+      "technical_records": [
+        "machine/changes/research-origins-readable-20261105.json",
+        "machine/history/research-origins-20261105.json"
+      ],
+      "acceptance_scope": "Independent agent reading and targeted recheck only; exact new prose not yet assessed by human user."
+    },
+    {
+      "id": "progressive-explanation-20261105",
+      "date": "2026-11-05",
+      "reason": "Provide the prerequisite explanation for each human-facing inference; introduce biological role and mechanism before their use as experimental motivation, and define terms at first consequential use.",
+      "technical_records": [
+        "machine/changes/progressive-explanation-20261105.json",
+        "machine/history/progressive-explanation-20261105.json"
+      ],
+      "acceptance_scope": "Independent text-prerequisite review found the specified major explanation gaps closed after revision. One nonblocking batch-reference clarification was applied as suggested. Actual human comprehension of the revised prose remains unobserved; no scientific acceptance or new experiment is inferred."
+    },
+    {
+      "id": "case-led-explanation-search-20261107",
+      "date": "2026-11-07",
+      "reason": "Use a concrete explanatory ambiguity to trigger, scope and stop educational-source searches.",
+      "technical_records": [
+        "machine/changes/case-led-explanation-search-20261107.json",
+        "machine/history/case-led-explanation-search-20261107.json"
+      ]
     }
   ],
   "current_identity": {
-    "bytes": 2398,
-    "sha256": "82e81032ff7e12e04dff31bcbd2b141371d588e27c6a45a6f1b1de9ce7a704fa"
+    "bytes": 7919,
+    "sha256": "d28b408a98078442b50ab9077ca484ac8315fcee41288d6252ee563dbd63bb0d"
   },
-  "updated_at_utc": "2026-11-01T10:23:08.291360+00:00"
+  "updated_at_utc": "2026-11-07T15:40:10.513584+00:00",
+  "current_technical_records": [
+    "machine/changes/case-led-explanation-search-20261107.json",
+    "machine/history/case-led-explanation-search-20261107.json"
+  ]
 }

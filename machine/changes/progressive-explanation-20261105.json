@@ -1,0 +1,26 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "progressive-explanation-20261105",
+  "date": "2026-11-05",
+  "summary": "Provide the prerequisite explanation for each human-facing inference; introduce biological role and mechanism before their use as experimental motivation, and define terms at first consequential use.",
+  "impact": "guidance",
+  "baseline_commit": "e8d82b695c68e3a752998c81a31790ef173c0942",
+  "paths": [
+    "core/docs/design/06-readable-process.md",
+    "core/docs/methods/worked-examples/research-origins.md",
+    "core/docs/methods/guides/research-preparation.md",
+    "core/docs/methods/guides/biological-explanation-and-handoff.md",
+    "CHANGELOG.md"
+  ],
+  "reading_paths": [
+    "core/docs/design/06-readable-process.md#让下一句话有可依靠的前文"
+  ],
+  "revisit": "When next explaining an active study to a human, check which prior sentences supply the meaning of each important term and inference. Patch missing explanations in existing prose. Retain scientific progress and original artifacts; no automatic research rerun.",
+  "reason": "A prior expert-agent read passed, but the human reader reported logical jumps and unexplained vocabulary in the proposed tRNA and enzyme study introductions.",
+  "acceptance": "Independent text-prerequisite review found the specified major explanation gaps closed after revision. One nonblocking batch-reference clarification was applied as suggested. Actual human comprehension of the revised prose remains unobserved; no scientific acceptance or new experiment is inferred.",
+  "evidence": "machine/history/progressive-explanation-20261105.json",
+  "supersedes_readability_inference": "research-origins-readable-20261105 agent pass does not establish actual human readability.",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "new_experiments_required": false
+}
