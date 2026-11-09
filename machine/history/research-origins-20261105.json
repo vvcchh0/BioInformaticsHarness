@@ -1,0 +1,48 @@
+{
+  "schema": "harness.reader-guidance-observation/v1",
+  "date": "2026-11-05",
+  "status": "locally_implemented_and_agent_read_checked",
+  "user_feedback": "Describe experimental observations and scientific-question formation more concretely and vividly in human-facing Harness explanations.",
+  "baseline_public_commit": "e8d82b695c68e3a752998c81a31790ef173c0942",
+  "implemented": {
+    "existing_design": "core/docs/design/06-readable-process.md",
+    "existing_consumer_guides": [
+      "core/docs/methods/guides/research-preparation.md",
+      "core/docs/methods/guides/biological-explanation-and-handoff.md"
+    ],
+    "optional_worked_example": "core/docs/methods/worked-examples/research-origins.md"
+  },
+  "source_relationships": {
+    "saver": "Original published measurement motivation, followed by separately attributed local continuation results.",
+    "commot": "Published model background and the actually observed baseline, then the prospective local comparison and its subsequently observed results.",
+    "new_labs": "Separate private candidate-selection work; no new trial result claimed."
+  },
+  "reader_check": {
+    "type": "independent native analyst cold read, basic biology assumed, no JSON or full previous-case archive supplied",
+    "input_documents": 3,
+    "initial_result": "core explanation accepted with two local clarification requests",
+    "requests": [
+      "Explain the model proxy meaning of receptor budget at first occurrence",
+      "Explain what fixed normalization and independent-pair controls discriminate"
+    ],
+    "targeted_recheck": "accept; both requests resolved",
+    "reviewed_example_sha256": "8c9739e3449c7d61352ed6f542b0dad96760b7f50e991fe82578c83c44fdc82d",
+    "final_editorial_option": "Use the reviewer-suggested more explicit phrase for shared receptor budget.",
+    "final_example_sha256": "fad00b6569695a856043ee5c1cbec3a7f27724c695e727573b5fb948dc3075d5",
+    "reviewed_full_text_retained": true,
+    "actual_human_comprehension_of_new_text": "not yet obtained"
+  },
+  "scientific_acceptance": {
+    "new_scientific_experiments": false,
+    "prior_case_result": "retained as in the accepted 2026-11-04 trial",
+    "reader_test_role": "explanation and source-role clarity only"
+  },
+  "preserves": {
+    "original_document_source_fields": true,
+    "old_case_reports_and_first_drafts": true,
+    "first_draft_revisor_path": true,
+    "no_new_mandatory_file_family": true,
+    "no_new_first_draft_gate": true,
+    "no_requirement_to_invent_anomaly_or_author_motivation": true
+  }
+}

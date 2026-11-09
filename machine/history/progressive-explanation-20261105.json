@@ -1,0 +1,52 @@
+{
+  "schema": "harness.guidance-history/v1",
+  "id": "progressive-explanation-20261105",
+  "date": "2026-11-05",
+  "trigger": "Human report of missing prerequisites and terminology explanations despite earlier independent-agent approval.",
+  "stages": [
+    {
+      "stage": "prior_agent_read",
+      "result": "accepted_with_local_clarifications",
+      "retained": true
+    },
+    {
+      "stage": "actual_human_feedback",
+      "result": "needs_revision",
+      "affected": "readability of study introductions and adequacy of guidance; not prior scientific result acceptance"
+    },
+    {
+      "stage": "guidance_and_prose_revision",
+      "result": "prepared"
+    },
+    {
+      "stage": "independent_prerequisite_trace",
+      "result": "major_requested_gaps_closed_after_revision",
+      "scope": "biological role and mechanism, gene-to-RNA, readout, multiplicative reference, floor effect, actual observation/comparator, matched alternatives, log-to-ratio scale and scaling control"
+    },
+    {
+      "stage": "actual_human_comprehension_after_revision",
+      "result": "not_yet_observed"
+    }
+  ],
+  "scientific_source_clarifications": [
+    "A tRNA fitness score floor is an analysis convention with a no-division reference, not an instrument detection limit.",
+    "AtHMT natural and engineered reaction directions differ.",
+    "The log-additive model implies constant relative fold effects; raw differences alone do not diagnose interactions."
+  ],
+  "evidence_availability": {
+    "feedback": "maintainer-observed human feedback; private archive retains full context",
+    "drafts_and_reader_checks": "private_archive"
+  },
+  "implemented_paths": [
+    "core/docs/design/06-readable-process.md",
+    "core/docs/methods/worked-examples/research-origins.md",
+    "core/docs/methods/guides/research-preparation.md",
+    "core/docs/methods/guides/biological-explanation-and-handoff.md",
+    "CHANGELOG.md"
+  ],
+  "additional_framework_objects": 0,
+  "additional_mandatory_files_per_study": 0,
+  "scope": "Human explanation guidance and optional examples; proposed case studies not yet executed.",
+  "parent_followup": "Applied reviewer-suggested clarification that batch checks concern the eight variants and repeat records under the actual assay arrangement.",
+  "acceptance": "Independent text-prerequisite review found the specified major explanation gaps closed after revision. One nonblocking batch-reference clarification was applied as suggested. Actual human comprehension of the revised prose remains unobserved; no scientific acceptance or new experiment is inferred."
+}

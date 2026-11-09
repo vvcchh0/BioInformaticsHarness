@@ -52,15 +52,35 @@
         "sha256": "1c131303f92e8a19df20f0350b9932a6c56f617e1a7a066aee53a1cfad87e94e"
       },
       "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
+    },
+    {
+      "id": "research-origins-readable-20261105",
+      "date": "2026-11-05",
+      "reason": "Explain concrete research motivation and observed phenomena with source/timing clarity; optional examples and existing preparation/handoff prose.",
+      "technical_records": [
+        "machine/changes/research-origins-readable-20261105.json",
+        "machine/history/research-origins-20261105.json"
+      ],
+      "acceptance_scope": "Independent agent reading and targeted recheck only; exact new prose not yet assessed by human user."
+    },
+    {
+      "id": "progressive-explanation-20261105",
+      "date": "2026-11-05",
+      "reason": "Provide the prerequisite explanation for each human-facing inference; introduce biological role and mechanism before their use as experimental motivation, and define terms at first consequential use.",
+      "technical_records": [
+        "machine/changes/progressive-explanation-20261105.json",
+        "machine/history/progressive-explanation-20261105.json"
+      ],
+      "acceptance_scope": "Independent text-prerequisite review found the specified major explanation gaps closed after revision. One nonblocking batch-reference clarification was applied as suggested. Actual human comprehension of the revised prose remains unobserved; no scientific acceptance or new experiment is inferred."
     }
   ],
-  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00",
+  "updated_at_utc": "2026-11-05T12:41:31.585199+00:00",
   "current_identity": {
-    "bytes": 6535,
-    "sha256": "9f8f19dc8bdc9cf860c365b5aeddf8d60149c7e059ee19311f9caa6c701d59d3"
+    "bytes": 7129,
+    "sha256": "ecdcaae3ca03db3057c465b0484ae84941a7db46cf008bab4e7e2ba0dc65a90e"
   },
   "current_technical_records": [
-    "core/machine/design/review-coverage.json",
-    "machine/history/review-coverage-iteration.json"
+    "machine/changes/progressive-explanation-20261105.json",
+    "machine/history/progressive-explanation-20261105.json"
   ]
 }

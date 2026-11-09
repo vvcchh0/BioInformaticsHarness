@@ -259,23 +259,45 @@
         "machine/changes/saver-commot-continuity-20261104.json"
       ],
       "acceptance_scope": "Selected two cases only; original author code and scoped followups. No new mandatory first-draft requirements or global framework rule."
+    },
+    {
+      "id": "research-origins-readable-20261105",
+      "date": "2026-11-05",
+      "reason": "Explain concrete research motivation and observed phenomena with source/timing clarity; optional examples and existing preparation/handoff prose.",
+      "technical_records": [
+        "machine/changes/research-origins-readable-20261105.json",
+        "machine/history/research-origins-20261105.json"
+      ],
+      "acceptance_scope": "Independent agent reading and targeted recheck only; exact new prose not yet assessed by human user."
+    },
+    {
+      "id": "progressive-explanation-20261105",
+      "date": "2026-11-05",
+      "reason": "Provide the prerequisite explanation for each human-facing inference; introduce biological role and mechanism before their use as experimental motivation, and define terms at first consequential use.",
+      "technical_records": [
+        "machine/changes/progressive-explanation-20261105.json",
+        "machine/history/progressive-explanation-20261105.json"
+      ],
+      "acceptance_scope": "Independent text-prerequisite review found the specified major explanation gaps closed after revision. One nonblocking batch-reference clarification was applied as suggested. Actual human comprehension of the revised prose remains unobserved; no scientific acceptance or new experiment is inferred."
+    },
+    {
+      "id": "case-led-explanation-search-20261107",
+      "date": "2026-11-07",
+      "reason": "Use a concrete explanatory ambiguity to trigger, scope and stop educational-source searches.",
+      "technical_records": [
+        "machine/changes/case-led-explanation-search-20261107.json",
+        "machine/history/case-led-explanation-search-20261107.json"
+      ]
     }
   ],
-  "updated_at_utc": "2026-11-04T15:39:33.256286+00:00",
+  "updated_at_utc": "2026-11-07T15:40:10.524191+00:00",
   "current_identity": {
-    "bytes": 13370,
-    "sha256": "cd47d24103fb054a1d56eaeae199214ee624d7c6d1b9e89bb65832bf252125d6"
+    "bytes": 14725,
+    "sha256": "c8c534207c838a21d2b9e94d6441fb85ae4557f47f166f0b27809f19b6bc9a71"
   },
   "current_technical_records": [
-    "core/machine/design/review-scope-appraisal.json",
-    "machine/history/review-scope-appraisal.json",
-    "machine/changes/conditional-model-comparison-20261030.json",
-    "machine/changes/revisor-contextual-preparation-20261030.json",
-    "machine/changes/macos-paths-optional-github-proxy-20261030.json",
-    "core/machine/tools/study-view.json",
-    "machine/changes/study-view-prototype-20261031.json",
-    "machine/research/saver-commot-continuity-2026-11-04.json",
-    "machine/changes/saver-commot-continuity-20261104.json"
+    "machine/changes/case-led-explanation-search-20261107.json",
+    "machine/history/case-led-explanation-search-20261107.json"
   ],
   "revisions": [
     {

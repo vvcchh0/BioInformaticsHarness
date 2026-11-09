@@ -1,0 +1,42 @@
+{
+  "schema": "harness.document-notes/v1",
+  "document": "core/docs/methods/worked-examples/research-origins.md",
+  "origin": "first_party_new_document",
+  "source_commit": null,
+  "source_sha256": "fad00b6569695a856043ee5c1cbec3a7f27724c695e727573b5fb948dc3075d5",
+  "source_text": "# 让研究起点可见：从观察走到问题\n\n读者知道方法做了什么以后，常常还想知道：研究者究竟碰到了什么，才需要这个方法？下面把对象、测量和未解关系连成叙述。第一例从原论文的实验背景开始，第二例从已完成研究中的一个阶段继续；两者沿各自真实的来源和顺序展开。\n\n## SAVER：测不到的 RNA，与细胞本来的差异\n\n把来自同一黑色素瘤细胞系的不同细胞分别用于单细胞测序和 RNA FISH。前者记录捕获并测到的 RNA 标签计数；后者用荧光探针观察指定 RNA 分子。单细胞测序只读到细胞中部分转录本，低计数和零值中混有技术未检出；细胞之间本来存在的表达差异也同时留在这张表里。这正是 [SAVER 原论文](https://pmc.ncbi.nlm.nih.gov/articles/PMC6030502/)要处理的实验背景。\n\n眼前的困难具体在于：如果只想把计数表变平滑，借用相似细胞的信息可以减少波动；研究者却还希望保留那些有生物学意义的细胞间变化。因此问题要进一步问成：恢复后的跨细胞分布和基因关联，能在多大程度上与另一种测量吻合？估计的不确定性又该怎样进入比较？两种实验用了不同细胞，论文先比较同一细胞系中的分布及其特征；个体表达值的准确性另外使用条件模拟参考来评价。\n\n这个起点把单个表达值、跨细胞分布和基因关联分别接到了自己的评价。本地接续研究据此选择输出比较，在固定观察计数上生成浅观测后，六次深度实验的均值点误差均改善，抽样 Gini 也改善，但低深度抽样方差误差较差。这个后来得到的结果进一步说明了按用途取舍输出的必要性；原论文背景和本地新结果分别保留。[实际执行与结果](../../../../docs/research/saver-commot-continuity-2026-11-04.zh.md)\n\n## COMMOT：三个配体共用一类受体，怎样分辨各自贡献？\n\n在一张空间测序图上，研究者知道每个细胞的位置和基因计数。某些细胞表达配体，另一些表达受体，一个受体物种又可能与多个配体相互作用。现在需要估计的是哪些来源可能联系哪些接收者，以及各自贡献多少。细胞之间的距离和不同配体共用资源，都会进入这个判断。[COMMOT 原论文](https://www.nature.com/articles/s41592-022-01728-4)把这两项条件接到共同分配模型。\n\n本地真实小面板包含三种 TGFβ 配体和一个复合受体。模型把处理后的 RNA 表达设为分配预算，用它约束各配体能够得到的评分。纯全局基线里，三种配体共同使用的受体预算基本用满。这里出现了一个值得继续问的问题：若表达面板漏掉竞争配体，总接收评分可能仍接近预算，但分给特定配体的量是否改变？“总量可能不变”在设计时是由模型条件引出的预期，竞争者遗漏的实际结果随后才产生。\n\n于是后续方案固定焦点 Tgfb1，分别移除其他竞争者，同时保留原预处理、受体和细胞；再加入两种对照：固定归一化尺度，检查变化是否只是重新缩放输入所致；让各配体—受体对分别计算，检查不与其他配体共用受体预算时的结果。独立评阅帮助把尺度、可达性和自身边的解释接到这项比较。实际运行发现，遗漏另外两个配体后，总接收仍约为 24.146，Tgfb1 却由约 8.289 增至 24.146。这个现象把科学问题落实到局部分配：使用者若要选择某条配体轴，就需要查看该轴的份额与稳定条件。计算输入消融检验的是模型归因，组织中的真实竞争继续接到相应活性或干预测量。[阶段经过与比较结果](../../../../docs/research/saver-commot-continuity-2026-11-04.zh.md)\n\n## 用在下一项研究中\n\n先找得到来源的现象或需求，再解释为什么它值得追问，最后把问题接到有辨识力的比较。已有文献解决了哪部分、自己的问题从哪里延伸，也放在这个叙述里。具体细节随研究而变：进化研究可以从竞争培养中的频率变化起步，酶工程可以从同一测量条件下的活性差异起步；这些只是表达方式，实际对象和现象来自所选资料。\n\n这是一种面向人的解释组织方式，复用现有课题说明、开题讨论和修订过程。写作及读者复述依据见[可读过程](../../design/06-readable-process.md#先让读者看见研究从哪里开始)。\n",
+  "technical_notes": [
+    "Sourced explanatory example; no third-party paper body or raw dataset copied. Original source fields retained on later revisions."
+  ],
+  "editorial_revisions": [
+    {
+      "id": "research-origins-readable-20261105",
+      "date": "2026-11-05",
+      "reason": "Explain concrete research motivation and observed phenomena with source/timing clarity; optional examples and existing preparation/handoff prose.",
+      "technical_records": [
+        "machine/changes/research-origins-readable-20261105.json",
+        "machine/history/research-origins-20261105.json"
+      ],
+      "acceptance_scope": "Independent agent reading and targeted recheck only; exact new prose not yet assessed by human user."
+    },
+    {
+      "id": "progressive-explanation-20261105",
+      "date": "2026-11-05",
+      "reason": "Provide the prerequisite explanation for each human-facing inference; introduce biological role and mechanism before their use as experimental motivation, and define terms at first consequential use.",
+      "technical_records": [
+        "machine/changes/progressive-explanation-20261105.json",
+        "machine/history/progressive-explanation-20261105.json"
+      ],
+      "acceptance_scope": "Independent text-prerequisite review found the specified major explanation gaps closed after revision. One nonblocking batch-reference clarification was applied as suggested. Actual human comprehension of the revised prose remains unobserved; no scientific acceptance or new experiment is inferred."
+    }
+  ],
+  "current_identity": {
+    "bytes": 5411,
+    "sha256": "ece987ef6574d3c8bb4f540c9e8ba2edd88c73050b09c42786f73507413ebea2"
+  },
+  "updated_at_utc": "2026-11-05T12:41:31.582687+00:00",
+  "current_technical_records": [
+    "machine/changes/progressive-explanation-20261105.json",
+    "machine/history/progressive-explanation-20261105.json"
+  ]
+}

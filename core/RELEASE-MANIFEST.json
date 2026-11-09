@@ -738,11 +738,11 @@
       }
     },
     {
-      "bytes": 2398,
+      "bytes": 7919,
       "license": "CC-BY-4.0",
       "path": "docs/design/06-readable-process.md",
       "role": "normative-prose",
-      "sha256": "82e81032ff7e12e04dff31bcbd2b141371d588e27c6a45a6f1b1de9ce7a704fa",
+      "sha256": "d28b408a98078442b50ab9077ca484ac8315fcee41288d6252ee563dbd63bb0d",
       "source": "docs/design/06-readable-process.md",
       "source_sha256": "5be9f9c729093cc4b0fd88072888b87e57044de5e21742f41ae27d904c8e92d4",
       "transform": "first-party-documentation-revision",
@@ -751,15 +751,30 @@
         "baseline_revision": "764bd88",
         "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
-          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "changed": true,
-            "images_converted_to_ordinary_links": 0,
-            "links_redirected_to_archive_pointers": 3,
-            "links_rewritten_to_package": 2,
-            "local_redactions": []
+            "revision": "2026-10-27",
+            "baseline_revision": "764bd88",
+            "previous_transform": "first-party-documentation-revision",
+            "previous_details": {
+              "revision": "2026-10-27",
+              "baseline_revision": "764bd88",
+              "previous_transform": "first-party-documentation-revision",
+              "previous_details": {
+                "revision": "2026-10-22",
+                "baseline_revision": "764bd88",
+                "previous_transform": "markdown-links-and-local-redaction",
+                "previous_details": {
+                  "changed": true,
+                  "images_converted_to_ordinary_links": 0,
+                  "links_redirected_to_archive_pointers": 3,
+                  "links_rewritten_to_package": 2,
+                  "local_redactions": []
+                }
+              }
+            }
           }
         }
       },
@@ -771,15 +786,30 @@
         "transform": "markdown-links-and-local-redaction",
         "source_sha256": "5be9f9c729093cc4b0fd88072888b87e57044de5e21742f41ae27d904c8e92d4",
         "transform_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
-          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "changed": true,
-            "images_converted_to_ordinary_links": 0,
-            "links_redirected_to_archive_pointers": 3,
-            "links_rewritten_to_package": 2,
-            "local_redactions": []
+            "revision": "2026-10-27",
+            "baseline_revision": "764bd88",
+            "previous_transform": "first-party-documentation-revision",
+            "previous_details": {
+              "revision": "2026-10-27",
+              "baseline_revision": "764bd88",
+              "previous_transform": "first-party-documentation-revision",
+              "previous_details": {
+                "revision": "2026-10-22",
+                "baseline_revision": "764bd88",
+                "previous_transform": "markdown-links-and-local-redaction",
+                "previous_details": {
+                  "changed": true,
+                  "images_converted_to_ordinary_links": 0,
+                  "links_redirected_to_archive_pointers": 3,
+                  "links_rewritten_to_package": 2,
+                  "local_redactions": []
+                }
+              }
+            }
           }
         }
       }
@@ -2345,11 +2375,11 @@
       }
     },
     {
-      "bytes": 10935,
+      "bytes": 11498,
       "license": "CC-BY-4.0",
       "path": "docs/methods/guides/biological-explanation-and-handoff.md",
       "role": "normative-prose",
-      "sha256": "a1831cc41a006a7ffd50292a030046beb36bb49bd56faea4efed246087834c4c",
+      "sha256": "61c6a58ae66203e15de6b518dc4c570dca936146448ac90a00316e57abecda10",
       "source": "docs/methods/guides/biological-explanation-and-handoff.md",
       "source_sha256": "1146c3197ace3d9c30e8f14cbb2d823c98d3e5a96bc60aa3b6ca3d55a63a8c1f",
       "transform": "first-party-documentation-revision",
@@ -2358,19 +2388,29 @@
         "baseline_revision": "764bd88",
         "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "revision": "2026-10-24",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-22",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
-            "previous_transform": "markdown-links-and-local-redaction",
+            "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "changed": true,
-              "images_converted_to_ordinary_links": 0,
-              "links_redirected_to_archive_pointers": 7,
-              "links_rewritten_to_package": 3,
-              "local_redactions": []
+              "revision": "2026-10-24",
+              "baseline_revision": "764bd88",
+              "previous_transform": "first-party-documentation-revision",
+              "previous_details": {
+                "revision": "2026-10-22",
+                "baseline_revision": "764bd88",
+                "previous_transform": "markdown-links-and-local-redaction",
+                "previous_details": {
+                  "changed": true,
+                  "images_converted_to_ordinary_links": 0,
+                  "links_redirected_to_archive_pointers": 7,
+                  "links_rewritten_to_package": 3,
+                  "local_redactions": []
+                }
+              }
             }
           }
         }
@@ -2383,19 +2423,29 @@
         "transform": "markdown-links-and-local-redaction",
         "source_sha256": "1146c3197ace3d9c30e8f14cbb2d823c98d3e5a96bc60aa3b6ca3d55a63a8c1f",
         "transform_details": {
-          "revision": "2026-10-24",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-22",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
-            "previous_transform": "markdown-links-and-local-redaction",
+            "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "changed": true,
-              "images_converted_to_ordinary_links": 0,
-              "links_redirected_to_archive_pointers": 7,
-              "links_rewritten_to_package": 3,
-              "local_redactions": []
+              "revision": "2026-10-24",
+              "baseline_revision": "764bd88",
+              "previous_transform": "first-party-documentation-revision",
+              "previous_details": {
+                "revision": "2026-10-22",
+                "baseline_revision": "764bd88",
+                "previous_transform": "markdown-links-and-local-redaction",
+                "previous_details": {
+                  "changed": true,
+                  "images_converted_to_ordinary_links": 0,
+                  "links_redirected_to_archive_pointers": 7,
+                  "links_rewritten_to_package": 3,
+                  "local_redactions": []
+                }
+              }
             }
           }
         }
@@ -2942,8 +2992,8 @@
     },
     {
       "path": "docs/methods/guides/research-preparation.md",
-      "bytes": 6535,
-      "sha256": "9f8f19dc8bdc9cf860c365b5aeddf8d60149c7e059ee19311f9caa6c701d59d3",
+      "bytes": 7129,
+      "sha256": "ecdcaae3ca03db3057c465b0484ae84941a7db46cf008bab4e7e2ba0dc65a90e",
       "license": "CC-BY-4.0",
       "role": "documentation",
       "source": "first-party-documentation-revision:docs/methods/guides/research-preparation.md",
@@ -2954,16 +3004,26 @@
         "baseline_revision": "764bd88",
         "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "revision": "2026-10-23",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-22",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
             "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "revision": "2026-10-22",
-              "baseline_revision": "764bd88"
+              "revision": "2026-10-23",
+              "baseline_revision": "764bd88",
+              "previous_transform": "first-party-documentation-revision",
+              "previous_details": {
+                "revision": "2026-10-22",
+                "baseline_revision": "764bd88",
+                "previous_transform": "first-party-documentation-revision",
+                "previous_details": {
+                  "revision": "2026-10-22",
+                  "baseline_revision": "764bd88"
+                }
+              }
             }
           }
         }
@@ -2976,16 +3036,26 @@
         "transform": "first-party-documentation-revision",
         "source_sha256": null,
         "transform_details": {
-          "revision": "2026-10-23",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-22",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
             "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "revision": "2026-10-22",
-              "baseline_revision": "764bd88"
+              "revision": "2026-10-23",
+              "baseline_revision": "764bd88",
+              "previous_transform": "first-party-documentation-revision",
+              "previous_details": {
+                "revision": "2026-10-22",
+                "baseline_revision": "764bd88",
+                "previous_transform": "first-party-documentation-revision",
+                "previous_details": {
+                  "revision": "2026-10-22",
+                  "baseline_revision": "764bd88"
+                }
+              }
             }
           }
         }
@@ -3913,28 +3983,33 @@
       }
     },
     {
-      "bytes": 2952,
+      "bytes": 3145,
       "license": "CC-BY-4.0",
       "path": "docs/methods/worked-examples/README.md",
       "role": "normative-prose",
-      "sha256": "b242dfdf71ae8803d8d2a567537daa28fbecc84769002a9fab732b95c0fdae8b",
+      "sha256": "96d7144608d03568ac8605256fae6080b0b3fcade8153e4c50171b3f61ebdd26",
       "source": "docs/methods/worked-examples/README.md",
       "source_sha256": "0b1251e5426bbd5fa235f4eb3a87fcb4af1a38db331417b786524f854b62bd11",
       "transform": "first-party-documentation-revision",
       "transform_details": {
-        "revision": "2026-10-24",
+        "revision": "2026-10-27",
         "baseline_revision": "764bd88",
         "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-24",
           "baseline_revision": "764bd88",
-          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "changed": true,
-            "images_converted_to_ordinary_links": 0,
-            "links_redirected_to_archive_pointers": 4,
-            "links_rewritten_to_package": 3,
-            "local_redactions": []
+            "revision": "2026-10-22",
+            "baseline_revision": "764bd88",
+            "previous_transform": "markdown-links-and-local-redaction",
+            "previous_details": {
+              "changed": true,
+              "images_converted_to_ordinary_links": 0,
+              "links_redirected_to_archive_pointers": 4,
+              "links_rewritten_to_package": 3,
+              "local_redactions": []
+            }
           }
         }
       },
@@ -3946,15 +4021,20 @@
         "transform": "markdown-links-and-local-redaction",
         "source_sha256": "0b1251e5426bbd5fa235f4eb3a87fcb4af1a38db331417b786524f854b62bd11",
         "transform_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-24",
           "baseline_revision": "764bd88",
-          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "changed": true,
-            "images_converted_to_ordinary_links": 0,
-            "links_redirected_to_archive_pointers": 4,
-            "links_rewritten_to_package": 3,
-            "local_redactions": []
+            "revision": "2026-10-22",
+            "baseline_revision": "764bd88",
+            "previous_transform": "markdown-links-and-local-redaction",
+            "previous_details": {
+              "changed": true,
+              "images_converted_to_ordinary_links": 0,
+              "links_redirected_to_archive_pointers": 4,
+              "links_rewritten_to_package": 3,
+              "local_redactions": []
+            }
           }
         }
       }
@@ -4158,6 +4238,37 @@
       "transform_details": {
         "revision": "2026-10-24",
         "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "docs/methods/worked-examples/research-origins.md",
+      "bytes": 5411,
+      "sha256": "ece987ef6574d3c8bb4f540c9e8ba2edd88c73050b09c42786f73507413ebea2",
+      "license": "CC-BY-4.0",
+      "role": "documentation",
+      "source": "first-party-documentation-revision:docs/methods/worked-examples/research-origins.md",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88",
+        "previous_transform": "first-party-documentation-revision",
+        "previous_details": {
+          "revision": "2026-10-27",
+          "baseline_revision": "764bd88"
+        }
+      },
+      "previous": {
+        "revision": "764bd88",
+        "path": "docs/methods/worked-examples/research-origins.md",
+        "sha256": "fad00b6569695a856043ee5c1cbec3a7f27724c695e727573b5fb948dc3075d5",
+        "source": "first-party-documentation-revision:docs/methods/worked-examples/research-origins.md",
+        "transform": "first-party-documentation-revision",
+        "source_sha256": null,
+        "transform_details": {
+          "revision": "2026-10-27",
+          "baseline_revision": "764bd88"
+        }
       }
     },
     {
@@ -7454,7 +7565,7 @@
     "kind": "first-party-documentation-revision",
     "baseline_revision": "764bd88",
     "baseline_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
-    "head": "b6265ec048637f724961c4154f4a4fe5006e25b1",
+    "head": "e8d82b695c68e3a752998c81a31790ef173c0942",
     "frozen_tag": "v0.1.0-alpha.2",
     "frozen_tag_target": "764bd88b090439c8fe0d1646826d23865dc5c20b"
   }

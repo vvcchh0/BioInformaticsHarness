@@ -1,0 +1,37 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "research-origins-readable-20261105",
+  "date": "2026-11-05",
+  "summary": "Explain the concrete observation or practical need that starts a study, the unresolved relation and a discriminating question, preserving the distinction between original motivation and later findings.",
+  "impact": "guidance",
+  "baseline_commit": "e8d82b695c68e3a752998c81a31790ef173c0942",
+  "paths": [
+    "core/docs/design/06-readable-process.md",
+    "core/docs/methods/guides/research-preparation.md",
+    "core/docs/methods/guides/biological-explanation-and-handoff.md",
+    "core/docs/methods/worked-examples/README.md",
+    "core/docs/methods/worked-examples/research-origins.md",
+    "CHANGELOG.md"
+  ],
+  "reading_paths": [
+    "core/docs/design/06-readable-process.md"
+  ],
+  "revisit": "At the next human-facing study introduction or continuation discussion, connect the sourced observation/need to the unresolved question and discriminating comparison. Reuse current study prose. Existing scientific progress and accepted reports remain; no automatic scientific rerun or rewrite.",
+  "acceptance": "Prior agent approval retained historically. Subsequent human feedback found logical jumps and unexplained terms; the affected prose and guidance are revised under progressive-explanation-20261105.",
+  "evidence": "machine/history/research-origins-20261105.json",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "requires_observed_anomaly_in_every_study": false,
+  "new_experiments_required": false,
+  "acceptance_history": [
+    {
+      "stage": "prior_agent_read",
+      "text": "Independent agent cold read of three Markdown inputs, followed by targeted recheck of two COMMOT clarifications, accepted. Actual human comprehension of this exact revision remains to be observed."
+    },
+    {
+      "stage": "human_feedback",
+      "result": "needs_revision",
+      "superseding_change": "progressive-explanation-20261105"
+    }
+  ]
+}

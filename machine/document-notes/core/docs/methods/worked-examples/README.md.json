@@ -31,5 +31,26 @@
       ],
       "scientific_execution": false
     }
+  ],
+  "editorial_revisions": [
+    {
+      "id": "research-origins-readable-20261105",
+      "date": "2026-11-05",
+      "reason": "Explain concrete research motivation and observed phenomena with source/timing clarity; optional examples and existing preparation/handoff prose.",
+      "technical_records": [
+        "machine/changes/research-origins-readable-20261105.json",
+        "machine/history/research-origins-20261105.json"
+      ],
+      "acceptance_scope": "Independent agent reading and targeted recheck only; exact new prose not yet assessed by human user."
+    }
+  ],
+  "current_identity": {
+    "bytes": 3145,
+    "sha256": "96d7144608d03568ac8605256fae6080b0b3fcade8153e4c50171b3f61ebdd26"
+  },
+  "updated_at_utc": "2026-11-05T11:20:14.662201+00:00",
+  "current_technical_records": [
+    "machine/changes/research-origins-readable-20261105.json",
+    "machine/history/research-origins-20261105.json"
   ]
 }
