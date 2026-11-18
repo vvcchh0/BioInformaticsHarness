@@ -71,15 +71,28 @@
         "machine/changes/case-led-explanation-search-20261107.json",
         "machine/history/case-led-explanation-search-20261107.json"
       ]
+    },
+    {
+      "id": "visual-explanation-20261110",
+      "date": "2026-11-10",
+      "reason": "Proactively prepare source-based annotated figures, reconstructed explanatory diagrams and workflow visuals for human-facing research communication.",
+      "technical_records": [
+        "machine/history/visual-explanation-20261110.json",
+        "machine/changes/visual-explanation-20261110.json"
+      ],
+      "previous_document_identity": {
+        "bytes": 7919,
+        "sha256": "d28b408a98078442b50ab9077ca484ac8315fcee41288d6252ee563dbd63bb0d"
+      }
     }
   ],
   "current_identity": {
-    "bytes": 7919,
-    "sha256": "d28b408a98078442b50ab9077ca484ac8315fcee41288d6252ee563dbd63bb0d"
+    "bytes": 11238,
+    "sha256": "6d25caf7e60bdd11e77a0f970c923afbd45ed5c893ef51c8cae6c14e8f848848"
   },
-  "updated_at_utc": "2026-11-07T15:40:10.513584+00:00",
+  "updated_at_utc": "2026-11-10T11:22:00.550544+00:00",
   "current_technical_records": [
-    "machine/changes/case-led-explanation-search-20261107.json",
-    "machine/history/case-led-explanation-search-20261107.json"
+    "machine/changes/visual-explanation-20261110.json",
+    "machine/history/visual-explanation-20261110.json"
   ]
 }
