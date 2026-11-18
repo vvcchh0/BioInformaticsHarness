@@ -170,17 +170,29 @@
         "sha256": "9552a844e6af3522e22bf2b1c869eaf70e0d3cbfb419e7c9a8c4ad78645cf481"
       },
       "scope": "Current prose/navigation only; retained original provenance, scientific scope, release assets and selected-tool contracts."
+    },
+    {
+      "id": "visual-explanation-20261110",
+      "date": "2026-11-10",
+      "reason": "Proactively prepare source-based annotated figures, reconstructed explanatory diagrams and workflow visuals for human-facing research communication.",
+      "technical_records": [
+        "machine/history/visual-explanation-20261110.json",
+        "machine/changes/visual-explanation-20261110.json"
+      ],
+      "previous_document_identity": {
+        "bytes": 67756,
+        "sha256": "c282185fdc33f0e295349195019603fc6a3dea14b1c126813cee48c662fe4162"
+      }
     }
   ],
-  "updated_at_utc": "2026-10-31T09:34:51.747288+00:00",
+  "updated_at_utc": "2026-11-10T11:22:00.550544+00:00",
   "current_identity": {
-    "bytes": 67756,
-    "sha256": "c282185fdc33f0e295349195019603fc6a3dea14b1c126813cee48c662fe4162"
+    "bytes": 68227,
+    "sha256": "c08a3d28d011d852a882ab67086603688434adbf9b6cae29e9f8556f76b2def2"
   },
   "current_technical_records": [
-    "core/machine/design/review-scope-appraisal.json",
-    "machine/history/review-scope-appraisal.json",
-    "core/machine/design/biological-argument.json"
+    "machine/changes/visual-explanation-20261110.json",
+    "machine/history/visual-explanation-20261110.json"
   ],
   "revisions": [
     {

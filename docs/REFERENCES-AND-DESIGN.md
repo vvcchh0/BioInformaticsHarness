@@ -231,3 +231,7 @@ RNA velocity的独立原文图、冻结配对及后续两项定向补实，已�
 ## 方法使用经验的延伸记录
 
 既有[任务连续性](../core/docs/methods/guides/task-continuity.md)、[研究推进](../core/docs/methods/guides/research-guidance-cycle.md)及[修订接受](../core/docs/methods/guides/revision-responses-and-acceptance.md)提供任务、证据与决定之间的连接。[方法经验指南](../core/docs/methods/guides/method-experience.md)将使用条件、实际尝试、遇阻与调整保存为可续读的课题工件；[设计记录](../core/machine/design/method-experience.json)说明来源归因和后续提炼范围。
+
+## 主动为读者准备解释图
+
+项目维护者提出：在原图上批注、按当前问题重构机理或框架图，并为缺少图示的工作流主动绘图。现有[可读过程指南](../core/docs/design/06-readable-process.md#主动准备帮助理解的图片)据此加入选图、制作、图文核对与对话展示的用法，复用原有评阅路径。实施范围与后续观察项见[更新记录](../machine/changes/visual-explanation-20261110.json)。

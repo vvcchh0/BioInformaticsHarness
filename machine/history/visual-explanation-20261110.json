@@ -1,0 +1,27 @@
+{
+  "id": "visual-explanation-20261110",
+  "date": "2026-11-10",
+  "basis": {
+    "kind": "maintainer_request",
+    "request": "Actively prepare annotated paper/report figures, reconstruct explanatory figures for shared reader context, and draw workflow control diagrams when original explanatory images are absent."
+  },
+  "implementation": {
+    "guidance": "core/docs/design/06-readable-process.md",
+    "entrypoint": "core/docs/methods/guides/research-guidance-cycle.md",
+    "same_first_draft_revisor_path": true,
+    "new_mandatory_files": false,
+    "image_tool_selection": "Image generation/editing for source-based visual explanation; deterministic vector or Mermaid for simple exact relationship diagrams.",
+    "scientific_invariants": [
+      "Preserve original evidence figures and their scales, labels and scientific content.",
+      "Distinguish original relations, explanatory additions and hypotheses.",
+      "Identify arrow semantics and compare the rendered derivative to the source."
+    ]
+  },
+  "acceptance": {
+    "documentation_checks": "passed_0_findings",
+    "manual_scope_review": "passed_static_scenario_walkthrough",
+    "actual_annotated_figure_trial": "not_run",
+    "reader_comprehension": "not_observed"
+  },
+  "artifact_scope": "Guidance only; no third-party figures redistributed, no generated picture, no new scientific result."
+}

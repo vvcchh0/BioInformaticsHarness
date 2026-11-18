@@ -1,0 +1,25 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "visual-explanation-20261110",
+  "date": "2026-11-10",
+  "summary": "Proactively prepare source-based annotated figures, reconstructed explanatory diagrams and workflow visuals for human-facing research communication.",
+  "impact": "guidance",
+  "baseline_commit": "28b536bc558e1a8bf36a58cab21469af93732fbc",
+  "paths": [
+    "core/docs/design/06-readable-process.md",
+    "core/docs/methods/guides/research-guidance-cycle.md",
+    "CHANGELOG.md",
+    "docs/REFERENCES-AND-DESIGN.md"
+  ],
+  "reading_paths": [
+    "core/docs/design/06-readable-process.md#主动准备帮助理解的图片",
+    "core/docs/methods/guides/research-guidance-cycle.md#先把综合结果解释给人"
+  ],
+  "revisit": "When next introducing a paper figure, unfamiliar mechanism or workflow, use the visual explanation guidance; retain original evidence and caption derived additions, then use the existing revisor path to check scientific fidelity and the reader-facing relation. Existing accepted science, raw figures and prior outputs remain at their original versions.",
+  "evidence": "machine/history/visual-explanation-20261110.json",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "applies_to_existing_studies": "Next relevant explanation; no forced rewrite of frozen past deliveries.",
+  "human_learning_effect": "not_observed",
+  "image_generation_experiment": "not_run"
+}

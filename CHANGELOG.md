@@ -1,5 +1,9 @@
 # Changelog
 
+## 主动为研究解释准备图片 — 2026-11-10
+
+[图片解释指南](core/docs/design/06-readable-process.md#主动准备帮助理解的图片)将原图批注、机理与框架改绘、工作流作图接入现有可读说明与 revisor 路径。用图形组织位置与逻辑关系，在对话中展示图片，并核对科学内容和原始来源。[本轮更新记录](machine/changes/visual-explanation-20261110.json)
+
 ## 按具体课题的解释缺口补读资料 — 2026-11-07
 
 [可读过程指南](core/docs/design/06-readable-process.md#具体课题在什么时候需要补读解释资料)给出何时启动、按什么问题扩大或收束查找，以及怎样把教材的讲法接回原研究。[本轮更新记录](machine/changes/case-led-explanation-search-20261107.json)

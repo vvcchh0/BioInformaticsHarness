@@ -7,7 +7,7 @@
   "documentation_revision": "2026-10-27",
   "working_tree": {
     "kind": "first-party-documentation-revision",
-    "head": "e8d82b695c68e3a752998c81a31790ef173c0942",
+    "head": "28b536bc558e1a8bf36a58cab21469af93732fbc",
     "tag_unchanged_by_refresh": true
   },
   "record_path": "machine/history/documentation-refresh.json",
@@ -27,8 +27,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:CHANGELOG.md",
       "previous_sha256": "7e09c5cb4ab65d4368ea89ecddf01daeb8fb10a4e51af2c08a5f432c59f67e7d",
-      "current_bytes": 14725,
-      "current_sha256": "c8c534207c838a21d2b9e94d6441fb85ae4557f47f166f0b27809f19b6bc9a71"
+      "current_bytes": 15152,
+      "current_sha256": "2be51fecbf171c466751284e53c0bd0bf72e37779aea17652efdd688cb03c9c3"
     },
     {
       "path": "LICENSING.md",
@@ -126,8 +126,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/RELEASE-MANIFEST.json",
       "previous_sha256": "b54b0cd83b5870306211066aaf6f49d346d3e379cdcb95351f332e408830da65",
-      "current_bytes": 317199,
-      "current_sha256": "5f90d672cd6a69ef60d10d846333cab4ddbe88ef9e8adf31ea5a36aec06abc30"
+      "current_bytes": 318096,
+      "current_sha256": "c665cf4d8afdbefedf0b92abc5dae8382d86f7a8442b1b808633dc9f3cce7ff0"
     },
     {
       "path": "core/THIRD_PARTY.md",
@@ -187,8 +187,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/docs/design/06-readable-process.md",
       "previous_sha256": "182cc72248fa176e4ff839af37b4c37e818d55fdb87aa2d92f21efaa75614032",
-      "current_bytes": 7919,
-      "current_sha256": "d28b408a98078442b50ab9077ca484ac8315fcee41288d6252ee563dbd63bb0d"
+      "current_bytes": 11238,
+      "current_sha256": "6d25caf7e60bdd11e77a0f970c923afbd45ed5c893ef51c8cae6c14e8f848848"
     },
     {
       "path": "core/docs/design/07-agent-assistance.md",
@@ -676,8 +676,8 @@
       "path": "core/docs/methods/guides/research-guidance-cycle.md",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 9331,
-      "current_sha256": "b0a588b762d992a4737678956926f9c715db10ffb65d1c251eaa005bfcfaa73f"
+      "current_bytes": 9560,
+      "current_sha256": "d1cb868f44826e54dca6cf032bc0ccdbced7586c24e0f66da527904fff69743c"
     },
     {
       "path": "core/docs/methods/guides/research-preparation.md",
@@ -1809,8 +1809,8 @@
       "path": "docs/REFERENCES-AND-DESIGN.md",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 67756,
-      "current_sha256": "c282185fdc33f0e295349195019603fc6a3dea14b1c126813cee48c662fe4162"
+      "current_bytes": 68227,
+      "current_sha256": "c08a3d28d011d852a882ab67086603688434adbf9b6cae29e9f8556f76b2def2"
     },
     {
       "path": "docs/harness-updates.md",
@@ -2082,11 +2082,18 @@
       "current_sha256": "0d0bd251c170037572a8fa3f250dee398a05ea1904f7842cb395b6a9525a1fb8"
     },
     {
+      "path": "machine/changes/visual-explanation-20261110.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 1439,
+      "current_sha256": "6caae77cf3d6d84fe15cbf31129719f07a153ccf843c846f561c01c12f677928"
+    },
+    {
       "path": "machine/document-notes/CHANGELOG.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 15715,
-      "current_sha256": "feb8b7ff1d8a3f138b26e7e9ec37c09db3ae92ae26f0cc11e68c79ca8a81cde1"
+      "current_bytes": 16261,
+      "current_sha256": "d97753ffb73c517a187d72f04bb2dd30511b6e705291627936904419158d31af"
     },
     {
       "path": "machine/document-notes/LICENSING.md.json",
@@ -2197,8 +2204,8 @@
       "path": "machine/document-notes/core/docs/design/06-readable-process.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 12436,
-      "current_sha256": "e29d0206c14aaf731785fcbb3c7aa731890892e1bf53ed80a9b7914fb83834d6"
+      "current_bytes": 12982,
+      "current_sha256": "541f58606c0d83f24dbcc72a5f4740b7850f36b12bf3e0791dd1fd74df70661b"
     },
     {
       "path": "machine/document-notes/core/docs/design/07-agent-assistance.md.json",
@@ -2596,8 +2603,8 @@
       "path": "machine/document-notes/core/docs/methods/guides/research-guidance-cycle.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 2489,
-      "current_sha256": "b27b453371b98bba902e2b908a324e82db5487e06caa7296ca1c3101b94f4885"
+      "current_bytes": 3075,
+      "current_sha256": "6a61fb494c5baeb9f09b034c85b87d538b3c99a1ad2feb7b88e3c42120674d4b"
     },
     {
       "path": "machine/document-notes/core/docs/methods/guides/research-preparation.md.json",
@@ -3030,8 +3037,8 @@
       "path": "machine/document-notes/docs/REFERENCES-AND-DESIGN.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 8344,
-      "current_sha256": "4f2d639c171ae5af96af2a0035a4b9ec129ee64ca5d555e5565879a012fee584"
+      "current_bytes": 8863,
+      "current_sha256": "ca207bde373c36f78ec656dbef90fc6a0ef4d506e9740c80dd1730da8d8999de"
     },
     {
       "path": "machine/document-notes/docs/harness-updates.md.json",
@@ -3258,6 +3265,13 @@
       "current_sha256": "77174d0ad96208a2e6bc73f38a22669d550af16596cbd66e8411c3ae63ef6e40"
     },
     {
+      "path": "machine/history/visual-explanation-20261110.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 1369,
+      "current_sha256": "c9f5df94a92b015fe0bc29072d73ab14916be018996eec7bb0a6caf82c59a10e"
+    },
+    {
       "path": "machine/history/yeast-citation-navigation-20261031.json",
       "change": "added",
       "baseline_revision": "764bd88",
@@ -3345,8 +3359,8 @@
       "path": "machine/source-design-index.jsonl",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 317177,
-      "current_sha256": "5cc86c96559305390df0cba801165a229c6fea09d9db7ffbeb7cbb5d24798ccd"
+      "current_bytes": 318738,
+      "current_sha256": "7013c6a876805fb8e2b24d68ec7d033dad24a4f313cfd7a07b43315d6af4414e"
     },
     {
       "path": "machine/time-budget-recovery-contract.json",
