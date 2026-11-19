@@ -331,6 +331,17 @@ class ResearchCycleTests(unittest.TestCase):
         self.assertEqual(repaired["status"], "waiting_human")
         self.assertEqual(repaired["next_action"]["owner"], "human")
 
+    def test_unreadable_discussion_before_human_choice_routes_to_researcher(self) -> None:
+        cycle = _copy_fixture(self.root)
+        cycle["stage"] = "direction_choice"
+        cycle["direction"]["discussion_ref"] = "missing-discussion.json"
+        cycle["next_action"]["owner"] = "human"
+        _write_json(self.root / "cycle.json", cycle)
+        check = check_research_cycle(self.root, "cycle.json")
+        self.assertEqual(check["status"], "needs_work")
+        self.assertEqual(check["next_action"]["owner"], "researcher")
+        self.assertIn("discussion_ref", check["next_action"]["action"])
+
     def test_required_human_choice_cannot_be_bypassed_by_existing_authorization(self) -> None:
         cycle = _copy_fixture(self.root)
         (self.root / "authorization.md").write_text("Synthetic authority pointer.\n", encoding="utf-8")

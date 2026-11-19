@@ -24,7 +24,7 @@
     "stage_marks": {
       "current": "the cycle's recorded stage; status shown from the checker",
       "recorded": "a stage reference is present and the checker inspected the stage",
-      "recorded_unchecked": "a stage reference is present but the checker did not inspect the stage (after the current stage, or after direction_choice while waiting_human)",
+      "recorded_unchecked": "a stage reference is present but the checker did not inspect the stage (after the current stage, or after direction_choice when the human gate is pending, including needs_work when an earlier structural check fails)",
       "unconfirmed": "the cycle names a selected direction that its discussion decision does not record",
       "gap": "a stage reference is missing, outside the root or invalid",
       "none": "nothing recorded for the stage",

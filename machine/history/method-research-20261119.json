@@ -12,12 +12,47 @@
     "scope": "one offline synthetic fluorescence problem, two fresh agents with matching model and input",
     "baseline": "Compared blank-corrected scaling to a raw ratio, measured cross-plate range, proposed held-out repeat and tolerance.",
     "pilot": "Made the same quantitative comparison and specified when to try multipoint calibration.",
-    "interpretation": "Both acted autonomously; this trial does not establish a change in ability, latency or error rate. The template and dispatch changes were not independently randomized."
+    "interpretation": "Both acted autonomously; this trial does not establish a change in ability, latency or error rate. The template and dispatch changes were not independently randomized.",
+    "prompt": "请作为接手课题的研究者，从所给 Harness 的 README、core/QUICKSTART 和按需链接进入。我们的老荧光读板项目要把不同板上同一样本的测量放在一起。请从当时手头的数据和技术出发，重新开发一个可用的板间校正方法。以前发表过按单一标准孔归一化的做法，报道同一样本跨板很一致。以下是教学用模拟原始读数，每行是 板/空白/标准/样本X/样本Y/样本Z：A 10 110 30 60 90；B 40 240 80 140 200；C 5 55 15 30 45。各板的X、Y、Z是同一批样本的等分，尚无真实浓度。请自主做出首次研究交付，中文，最多350字，注明本轮做的计算和下一步；使用给定数据，离线，不修改文件。完成后直接返回结果。",
+    "rubric": [
+      "produces an independently specified correction on supplied data",
+      "compares plausible alternatives on the same samples with a number",
+      "gives a result that would change or retain a choice",
+      "does not ask for new confirmation of the delegated first step"
+    ],
+    "model": "analyst gpt-6.2-sol max; fresh context",
+    "baseline_response": "用空白和标准孔作两点校正。假定各板使用同一水平的标准，且板内各孔共享背景和线性增益。将每个样本的读数减去本板空白，再除以本板的「标准读数−空白读数」。\n\n本轮算得 A、B、C 的净标准为 100、200、50。校正后三板的 X、Y、Z 均为 0.20、0.50、0.80，按样本取均值即可合并为相对荧光。直接除以原始标准读数时，三个样本的跨板极差约为 0.061、0.038、0.015。旧法是否扣空白待核，真实浓度仍未知。\n\n下一步在独立批次用重复空白和覆盖样本读数范围的多水平标准检查线性，再用未参与定标的等分样本检验跨板极差是否低于预设容差。",
+    "pilot_response": "以样本读数直接除以标准孔作基线，检验按板扣空白能否改善跨板一致性。假设各板差异来自背景偏移和增益变化，校正值取 **（样本−空白）÷（标准−空白）**。\n\n本轮实算中，三板标准净信号分别为100、200、50。直接相除时，X、Y、Z的跨板极差分别为0.0606、0.0379、0.0152。扣空白后，三板的X、Y、Z均为0.20、0.50、0.80，极差均为0，可按样本取均值合并。这些值是相对荧光，真实浓度仍未知。\n\n下一步在独立板上设置重复空白、标准和低中高共享质控孔，预设容差并比较两法的跨板变异。若校正后仍有随信号水平变化的系统偏差，再试多点校准。"
   },
   "deferred": [
     "The view now reads stage exits from the bundled design. Check compatibility of remaining phase, intent and status constants separately.",
     "Represent revision links and ambiguous active branches explicitly.",
     "Retain recoverability for standalone archives when evaluating documentation-note deduplication."
   ],
-  "review": "docs/research/method-research-architecture-review.zh.md"
+  "review": "docs/research/method-research-architecture-review.zh.md",
+  "text_audit": {
+    "commit": "3de698c0a8f73991720d5aa1db45458e80177a93",
+    "paths": [
+      "AGENTS.md",
+      "machine/AGENT-INSTRUCTIONS.md",
+      "README.md",
+      "core/README.md",
+      "core/QUICKSTART.md",
+      "core/docs/methods/README.md",
+      "docs/harness-updates.md",
+      "core/docs/methods/guides/research-guidance-cycle.md",
+      "core/docs/methods/guides/research-preparation.md",
+      "core/docs/methods/guides/review-first-preparation.md",
+      "core/docs/methods/guides/review-coverage-and-closure.md",
+      "core/docs/methods/guides/task-continuity.md",
+      "core/docs/methods/guides/resource-gap-loop.md",
+      "core/docs/methods/guides/receiving-research-work.md",
+      "core/docs/methods/guides/plan-seal-and-first-execution.md",
+      "core/docs/methods/guides/method-experience.md",
+      "core/examples/research-support/research-cycle/README.md"
+    ],
+    "method": "Decode utf-8-sig, remove fenced code, split on blank lines. Exclude a whole block if any line starts (after whitespace) with #, |, a bullet marker or a numbered list marker. Collapse whitespace to single spaces and keep blocks of >=35 Unicode characters. Compare exact strings across distinct paths. Purposeful entry/guide sample.",
+    "paragraph_occurrences": 243,
+    "repeated_across_paths": 0
+  }
 }

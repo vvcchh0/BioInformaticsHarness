@@ -314,7 +314,12 @@ pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; overflow
     var c = currentCycle();
     if (!c) { view.appendChild(el("p", { "class": "empty", text: "此目录中没有 research-support.research-cycle.v1 记录。" })); return; }
     var stageInfo = STAGE_LABELS[c.stage] || [c.stage];
-    var exits = DATA.stage_exits[c.stage];
+    var exits = (DATA.stage_exits[c.stage] || []).flatMap(function (token) {
+      if (c.stage === "synthesis" && token === "direction_choice") {
+        return c.requires_human_choice === true ? [] : ["已有授权时选择方向"];
+      }
+      return [exitLabel(token)];
+    });
     var next = c.check.next_action || c.next_action || {};
     var branchInfo = c.branches || {};
     var why = [];
@@ -334,7 +339,7 @@ pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; overflow
         el("div", { "class": "note", text: c.cycle_id + " · " + c.version + " · " + (c.task && c.task.task_id || "") })]),
       el("div", { "class": "card" }, [el("div", { "class": "label", text: "为什么走到这里" })].concat(why)),
       el("div", { "class": "card" }, [el("div", { "class": "label", text: "接下来准备做什么" }), el("div", { text: (next.owner ? "[" + next.owner + "] " : "") + (next.action || "—") }),
-        el("div", { "class": "note", text: "本阶段可能的出口：" + (Array.isArray(exits) ? exits.map(exitLabel).join("、") : "—") })])
+        el("div", { "class": "note", text: "本阶段可能的出口：" + (exits.join("、") || "—") })])
     ]));
     if (c.task && c.task.objective) view.appendChild(el("div", { "class": "card" }, [el("div", { "class": "label", text: "课题目标" }), el("div", { text: c.task.objective })]));
     view.appendChild(el("h3", { text: "版本经过" }));

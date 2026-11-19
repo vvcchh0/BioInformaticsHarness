@@ -15,5 +15,16 @@
       ],
       "acceptance": "Parent interface and documentation acceptance recorded in the linked machine history; actual new scientific direction remains to be discussed."
     }
+  ],
+  "current_identity": {
+    "bytes": 5236,
+    "sha256": "6002924c4fce9551758d654dd491aafb881a0d478ac12978ae16e16f5068d5b9"
+  },
+  "technical_notes": [
+    {
+      "date": "2026-11-19",
+      "record": "machine/history/method-research-20261119.json",
+      "scope": "Document delegated technical choices or the conditional stage exit display."
+    }
   ]
 }

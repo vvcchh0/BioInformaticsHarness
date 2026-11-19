@@ -21,7 +21,9 @@
     "core/machine/tools/study-view.json",
     "core/scripts/research_support/study_view_template.html",
     "core/tests/research_support/test_research_cycle.py",
-    "core/tests/research_support/test_study_view.py"
+    "core/tests/research_support/test_study_view.py",
+    "core/docs/design/31-research-guidance-cycle.md",
+    "core/examples/research-support/study-view/README.md"
   ],
   "reading_paths": [
     "core/docs/methods/guides/research-guidance-cycle.md#从已有问题重新开发方法",

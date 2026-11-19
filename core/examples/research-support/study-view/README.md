@@ -45,7 +45,7 @@ python -B -m scripts.research_support.study_view --root examples/research-suppor
 2. **证据图不指明自己的来源账本。** 证据图只有 `preparation_id`，来源账本的路径要通过研究周期配对；没有周期引用的证据图，其发现无法连到来源。
 3. **讨论记录之间没有版本链接。** `discussion-v1` 到 `discussion-v2` 的演进只能经由周期的 `previous_version` 看出，讨论记录本身没有 `previous_version`。
 4. **schema 字段命名不一致。** 研究周期等记录使用 `schema`，`research-revision-v1` 使用 `schema_version`。
-5. **阶段出口有两处表达。** 各阶段可能的出口写在[机器设计](../../../machine/design/research-guidance-cycle.json)中，检查器没有导出；视图另存了一份中文标签，两处需要同步。
+5. **阶段出口来自机器设计。** 生成器读取[阶段契约](../../../machine/design/research-guidance-cycle.json)的出口列表。页面翻译出口名称；在综合阶段，已明确需要人选择时，页面只显示经讨论等适用出口。
 6. **下一动作有多处来源。** 周期记录、检查器报告和证据图的 `review_decision.next_action` 各有一个“下一动作”，视图优先使用检查器的结果。
 
 ## 后续可以做什么

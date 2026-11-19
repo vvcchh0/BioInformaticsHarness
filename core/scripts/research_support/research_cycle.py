@@ -1037,7 +1037,7 @@ def check_research_cycle(
         _finding(findings, "human_gate", True, "cycle is structurally waiting for a required human choice")
     first_failure = next((item for item in findings if item["status"] == "needs_work"), None)
     status = "needs_work" if first_failure else "waiting_human" if waiting_human else "ready"
-    if waiting_human and first_failure:
+    if first_failure and (waiting_human or next_action.get("owner") == "human"):
         report_next_action = {
             "owner": "researcher",
             "action": f"Resolve {first_failure['id']} ({first_failure['detail']}) and rerun the cycle check.",

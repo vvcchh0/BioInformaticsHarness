@@ -45,7 +45,7 @@
       "next": [
         "direction_choice"
       ],
-      "pending_behavior": "If a new human choice is required and still pending, report waiting_human."
+      "pending_behavior": "If a new human choice is pending and checked prerequisites are sound, report waiting_human. When structural checks fail, report needs_work and identify the repair before requesting a choice."
     },
     {
       "stage": "direction_choice",
@@ -188,8 +188,8 @@
     ],
     "status_meanings": {
       "ready": "Declared stage inputs, references and required decision records meet structural conditions; scientific adequacy is reviewed separately.",
-      "waiting_human": "A required genuine human choice has not yet been recorded.",
-      "needs_work": "A referenced input, identity, path, stage prerequisite or required link is missing or inconsistent."
+      "waiting_human": "A required genuine human choice is pending and the checked prerequisites are sound.",
+      "needs_work": "A referenced input, identity, path, stage prerequisite or required link is missing or inconsistent. Structural failures take priority over a pending human gate in the report."
     },
     "reference_rules": "Every record reference is a root-relative path or null. Resolve it from the supplied work root; reject paths that escape the root. Parse each file and calculate its identity from the same read.",
     "direction_binding": "Direction choice and later stages require a valid selected option mapped to question and method identities in the referenced D53 evidence-map version.",
