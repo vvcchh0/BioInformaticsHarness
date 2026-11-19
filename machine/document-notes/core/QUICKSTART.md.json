@@ -21,7 +21,12 @@
         }
       ]
     },
-    "source_text is the exact UTF-8 decode of the baseline Git blob; line endings are preserved in the JSON string. source_sha256 hashes the original blob bytes."
+    "source_text is the exact UTF-8 decode of the baseline Git blob; line endings are preserved in the JSON string. source_sha256 hashes the original blob bytes.",
+    {
+      "date": "2026-11-18",
+      "change": "controlled-comparisons-20261118",
+      "record": "machine/history/controlled-comparisons-20261118.json"
+    }
   ],
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
   "source_sha256": "c15eedc79a66fe5c8eef7eafdec686e78bcc5d680ab9a8229ff25a9adeea5906",
@@ -63,8 +68,8 @@
     }
   ],
   "current_identity": {
-    "bytes": 5260,
-    "sha256": "28f8d4818deb2b52170d8f8ecf2cf2af1ca750e1c72c0443b0f112453be8f6b6"
+    "bytes": 7247,
+    "sha256": "fe4825bc1b3f2ec6500cc7bba97000699b0a6fbcf0019931b21bed6961e050c9"
   },
   "updated_at_utc": "2026-10-29T06:22:52.609392+00:00"
 }

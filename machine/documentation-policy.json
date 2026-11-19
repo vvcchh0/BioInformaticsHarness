@@ -132,7 +132,10 @@
     "core/examples/research-support/method-experience/*.template.json": "Apache-2.0",
     "core/scripts/research_support/study_view_template.html": "Apache-2.0",
     "core/tests/research_support/test_study_view.py": "Apache-2.0",
-    "core/examples/research-support/study-view/demo-study/*.json": "Apache-2.0"
+    "core/examples/research-support/study-view/demo-study/*.json": "Apache-2.0",
+    "core/tests/research_support/test_compare_controls.py": "Apache-2.0",
+    "core/examples/research-support/paired-controls/short.csv": "Apache-2.0",
+    "core/examples/research-support/paired-controls/long.csv": "Apache-2.0"
   },
   "license_scope_updates": [
     {
@@ -213,6 +216,15 @@
         "core/scripts/research_support/study_view_template.html": "Apache-2.0",
         "core/tests/research_support/test_study_view.py": "Apache-2.0",
         "core/examples/research-support/study-view/demo-study/*.json": "Apache-2.0"
+      }
+    },
+    {
+      "date": "2026-11-18",
+      "reason": "First-party regression test and two synthetic CLI fixture tables; these rows were constructed for the diagnostic.",
+      "scopes": {
+        "core/tests/research_support/test_compare_controls.py": "Apache-2.0",
+        "core/examples/research-support/paired-controls/short.csv": "Apache-2.0",
+        "core/examples/research-support/paired-controls/long.csv": "Apache-2.0"
       }
     }
   ]

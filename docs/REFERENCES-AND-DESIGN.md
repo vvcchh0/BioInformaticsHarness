@@ -235,3 +235,7 @@ RNA velocity的独立原文图、冻结配对及后续两项定向补实，已�
 ## 主动为读者准备解释图
 
 项目维护者提出：在原图上批注、按当前问题重构机理或框架图，并为缺少图示的工作流主动绘图。现有[可读过程指南](../core/docs/design/06-readable-process.md#主动准备帮助理解的图片)据此加入选图、制作、图文核对与对话展示的用法，复用原有评阅路径。实施范围与后续观察项见[更新记录](../machine/changes/visual-explanation-20261110.json)。
+
+## 研究方向的推进与对照依据
+
+[Open Math Harness 的并行探索与证明搜索](https://github.com/openmathmodel/open-math-harness/blob/687f2a20dc6ff552d3c881e10910b46c13e84e2a/README.md)分别记录方向裁决与对固定命题的程序验证。本项目借鉴将判断绑定到具体对象的做法：在[比较两次计算](../core/docs/methods/guides/function-and-utility-validation.md#解释两次计算的差值)时用已导出的字段对账，再按测量、设计和反证评阅归因。生信研究中的成员、输入和选点评价同时变化，是此次配对诊断的直接动机。

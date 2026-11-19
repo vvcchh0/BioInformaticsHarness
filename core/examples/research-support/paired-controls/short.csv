@@ -1,0 +1,4 @@
+transcript,readout,input_view,checkpoint_rule,candidate_budget,metric,weights
+tx1,1,short-view-1,dev-loss,4,pearson,w1
+tx2,2,short-view-2,dev-loss,4,pearson,w1
+tx3,3,short-view-3,dev-loss,4,pearson,w1

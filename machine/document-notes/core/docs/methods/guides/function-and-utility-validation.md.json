@@ -36,8 +36,17 @@
     "source_text is the exact UTF-8 decode of the baseline Git blob; line endings are preserved in the JSON string. source_sha256 hashes the original blob bytes.",
     "Citation detail moved from human prose: ProtGPT2 review physical pages 2/5/9/11 and formal paragraphs 15, 22-25, 30-31.",
     "Citation detail moved from human prose: GARNET M3 review pages 19-20, formal paragraphs 19-21 and 43-50/Fig. 6; the assay method is paragraph 50. Supplementary items 11-13 are background for GenerRNA/mutant figures, not the purification or translation method.",
-    "DeepSEED M-LEAK/M-TRANSFER source descriptions and their private historical locators remain in source_text and machine/archive-pointers.jsonl."
+    "DeepSEED M-LEAK/M-TRANSFER source descriptions and their private historical locators remain in source_text and machine/archive-pointers.jsonl.",
+    {
+      "date": "2026-11-18",
+      "change": "controlled-comparisons-20261118",
+      "record": "machine/history/controlled-comparisons-20261118.json"
+    }
   ],
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
-  "source_sha256": "b25b8cb3672df68d3b3e1fbcf8ff599ebab60b29b35b0a9671f87a2e663e77e6"
+  "source_sha256": "b25b8cb3672df68d3b3e1fbcf8ff599ebab60b29b35b0a9671f87a2e663e77e6",
+  "current_identity": {
+    "bytes": 12372,
+    "sha256": "f40afa6c2101a9580e5e9a2b789e6c54a10b9d87661cf634cff12edae1fac27c"
+  }
 }

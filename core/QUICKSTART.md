@@ -30,6 +30,16 @@ python -B -m scripts.research_support.evidence --root . --manifest examples/rese
 
 The handoff command records the producer's observation. The diagnostic example reports the `u2` and `u3` residuals, local candidate matches, and the absence of one candidate that satisfies every condition. The evidence command builds an index from the files named in its manifest.
 
+## Compare controls across two runs
+
+From the core directory, compare two synthetic exports. The example asks whether the score difference could be attributed to the input window.
+
+```sh
+python -B -m scripts.research_support.compare_controls examples/research-support/paired-controls/short.csv examples/research-support/paired-controls/long.csv --root . --key transcript --key-kind entity --vary input --label readout --input input_view --selection checkpoint_rule --selection candidate_budget --evaluation metric --fixed weights
+```
+
+Two transcript IDs are shared and one is unique to each export. On the shared panel the labels match, while the recorded input and selection protocol both change. The report suggests checks to consider before further computation. It does not compute a score or inspect a checkpoint. Use verified entity IDs (repeat `--key` for a composite key), or declare `--key-kind position` for row offsets. Role options name literal exported columns and can be repeated to cover other controls, such as weights, label units, pool identity, selection split or scoring policy. In the example both exports name the same weights. Use `--fixed` for conditions outside the intended contrast. For a rule-only comparison fix the candidate pool and budget separately. An entity key describes observed export coverage; reconcile exclusions and failed predictions against the intended panels. Single-factor attribution still depends on controls not visible in these exports. Missing evidence columns, blank values and the literal `unknown` are unassessed; use `--missing-value` for other markers. Align equivalent encodings using documented transformations before comparing. Shared rows need separate checks for consistent measurement and independent evaluation. Use `--vary system` to describe both systems with their observed conditions. A zero exit code means the diagnostic completed; interpret the differences, incomplete fields and scope in its JSON output.
+
 ## Receive and rerun a handoff
 
 After the producer finishes, the receiver runs the same manifest independently:

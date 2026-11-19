@@ -179,11 +179,11 @@
       "transform_details": {}
     },
     {
-      "bytes": 5260,
+      "bytes": 7247,
       "license": "CC-BY-4.0",
       "path": "QUICKSTART.md",
       "role": "release-guide",
-      "sha256": "28f8d4818deb2b52170d8f8ecf2cf2af1ca750e1c72c0443b0f112453be8f6b6",
+      "sha256": "fe4825bc1b3f2ec6500cc7bba97000699b0a6fbcf0019931b21bed6961e050c9",
       "source": "package-templates/QUICKSTART.md",
       "source_sha256": "c15eedc79a66fe5c8eef7eafdec686e78bcc5d680ab9a8229ff25a9adeea5906",
       "transform": "first-party-documentation-revision",
@@ -192,7 +192,7 @@
         "baseline_revision": "764bd88",
         "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
@@ -206,13 +206,18 @@
               "previous_details": {
                 "revision": "2026-10-22",
                 "baseline_revision": "764bd88",
-                "previous_transform": "template-version-substitution",
+                "previous_transform": "first-party-documentation-revision",
                 "previous_details": {
-                  "changed": false,
-                  "images_converted_to_ordinary_links": 0,
-                  "links_redirected_to_archive_pointers": 0,
-                  "links_rewritten_to_package": 2,
-                  "local_redactions": []
+                  "revision": "2026-10-22",
+                  "baseline_revision": "764bd88",
+                  "previous_transform": "template-version-substitution",
+                  "previous_details": {
+                    "changed": false,
+                    "images_converted_to_ordinary_links": 0,
+                    "links_redirected_to_archive_pointers": 0,
+                    "links_rewritten_to_package": 2,
+                    "local_redactions": []
+                  }
                 }
               }
             }
@@ -227,7 +232,7 @@
         "transform": "template-version-substitution",
         "source_sha256": "c15eedc79a66fe5c8eef7eafdec686e78bcc5d680ab9a8229ff25a9adeea5906",
         "transform_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
@@ -241,13 +246,18 @@
               "previous_details": {
                 "revision": "2026-10-22",
                 "baseline_revision": "764bd88",
-                "previous_transform": "template-version-substitution",
+                "previous_transform": "first-party-documentation-revision",
                 "previous_details": {
-                  "changed": false,
-                  "images_converted_to_ordinary_links": 0,
-                  "links_redirected_to_archive_pointers": 0,
-                  "links_rewritten_to_package": 2,
-                  "local_redactions": []
+                  "revision": "2026-10-22",
+                  "baseline_revision": "764bd88",
+                  "previous_transform": "template-version-substitution",
+                  "previous_details": {
+                    "changed": false,
+                    "images_converted_to_ordinary_links": 0,
+                    "links_redirected_to_archive_pointers": 0,
+                    "links_rewritten_to_package": 2,
+                    "local_redactions": []
+                  }
                 }
               }
             }
@@ -2499,24 +2509,29 @@
       }
     },
     {
-      "bytes": 9769,
+      "bytes": 12372,
       "license": "CC-BY-4.0",
       "path": "docs/methods/guides/function-and-utility-validation.md",
       "role": "normative-prose",
-      "sha256": "9053ba4ec6554eaa59661b34fcf9ecb1639d8c1b4f02bc6da7669c59f494af59",
+      "sha256": "f40afa6c2101a9580e5e9a2b789e6c54a10b9d87661cf634cff12edae1fac27c",
       "source": "docs/methods/guides/function-and-utility-validation.md",
       "source_sha256": "dfe8e767836d30f1f13219173f53fb5ec5500cdc8d137914500934185e41429d",
       "transform": "first-party-documentation-revision",
       "transform_details": {
-        "revision": "2026-10-22",
+        "revision": "2026-10-27",
         "baseline_revision": "764bd88",
-        "previous_transform": "markdown-links-and-local-redaction",
+        "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "changed": true,
-          "images_converted_to_ordinary_links": 0,
-          "links_redirected_to_archive_pointers": 5,
-          "links_rewritten_to_package": 4,
-          "local_redactions": []
+          "revision": "2026-10-22",
+          "baseline_revision": "764bd88",
+          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_details": {
+            "changed": true,
+            "images_converted_to_ordinary_links": 0,
+            "links_redirected_to_archive_pointers": 5,
+            "links_rewritten_to_package": 4,
+            "local_redactions": []
+          }
         }
       },
       "previous": {
@@ -2527,11 +2542,16 @@
         "transform": "markdown-links-and-local-redaction",
         "source_sha256": "dfe8e767836d30f1f13219173f53fb5ec5500cdc8d137914500934185e41429d",
         "transform_details": {
-          "changed": true,
-          "images_converted_to_ordinary_links": 0,
-          "links_redirected_to_archive_pointers": 5,
-          "links_rewritten_to_package": 4,
-          "local_redactions": []
+          "revision": "2026-10-22",
+          "baseline_revision": "764bd88",
+          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_details": {
+            "changed": true,
+            "images_converted_to_ordinary_links": 0,
+            "links_redirected_to_archive_pointers": 5,
+            "links_rewritten_to_package": 4,
+            "local_redactions": []
+          }
         }
       }
     },
@@ -2961,8 +2981,8 @@
     },
     {
       "path": "docs/methods/guides/research-guidance-cycle.md",
-      "bytes": 9560,
-      "sha256": "d1cb868f44826e54dca6cf032bc0ccdbced7586c24e0f66da527904fff69743c",
+      "bytes": 10026,
+      "sha256": "2fd45460fb48ab620eade5f4f0b8f8786dd2ae2d43ad8754ffc2df5c3fe332a1",
       "license": "CC-BY-4.0",
       "role": "documentation",
       "source": "first-party-documentation-revision:docs/methods/guides/research-guidance-cycle.md",
@@ -2977,12 +2997,17 @@
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-23",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
             "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "revision": "2026-10-22",
-              "baseline_revision": "764bd88"
+              "revision": "2026-10-23",
+              "baseline_revision": "764bd88",
+              "previous_transform": "first-party-documentation-revision",
+              "previous_details": {
+                "revision": "2026-10-22",
+                "baseline_revision": "764bd88"
+              }
             }
           }
         }
@@ -2999,12 +3024,17 @@
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-23",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
             "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "revision": "2026-10-22",
-              "baseline_revision": "764bd88"
+              "revision": "2026-10-23",
+              "baseline_revision": "764bd88",
+              "previous_transform": "first-party-documentation-revision",
+              "previous_details": {
+                "revision": "2026-10-22",
+                "baseline_revision": "764bd88"
+              }
             }
           }
         }
@@ -4853,6 +4883,34 @@
       "license": "Apache-2.0",
       "role": "documentation-tooling",
       "source": "first-party-documentation-revision:examples/research-support/method-experience/index.template.json",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/paired-controls/long.csv",
+      "bytes": 198,
+      "sha256": "d65eb18ab32ae38a218e61cff39e687550808655877d8410d404c01766905a28",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/paired-controls/long.csv",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/paired-controls/short.csv",
+      "bytes": 201,
+      "sha256": "3ffd88f7ef356946e15d6f495299119d570eadcef5923d019b1b3b1d9167813b",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/paired-controls/short.csv",
       "source_sha256": null,
       "transform": "first-party-documentation-revision",
       "transform_details": {
@@ -6773,6 +6831,20 @@
       "transform_details": {}
     },
     {
+      "path": "scripts/research_support/compare_controls.py",
+      "bytes": 8213,
+      "sha256": "cd25515a1060432844f958ba8afe9e613bcf2ef8582b4fe055ac7aadb375492d",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:scripts/research_support/compare_controls.py",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
       "bytes": 34882,
       "license": "Apache-2.0",
       "path": "scripts/research_support/diagnostics.py",
@@ -7199,6 +7271,20 @@
       "transform_details": {}
     },
     {
+      "path": "tests/research_support/test_compare_controls.py",
+      "bytes": 4953,
+      "sha256": "737d2049ab403b6a65bef421c671826fe22c54f5e5aa3d2f375362411269e15b",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:tests/research_support/test_compare_controls.py",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
       "bytes": 19115,
       "license": "Apache-2.0",
       "path": "tests/research_support/test_diagnostics.py",
@@ -7585,7 +7671,7 @@
     "kind": "first-party-documentation-revision",
     "baseline_revision": "764bd88",
     "baseline_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
-    "head": "28b536bc558e1a8bf36a58cab21469af93732fbc",
+    "head": "551f731e6445d4da5040be32a2ef9f74f1c954c8",
     "frozen_tag": "v0.1.0-alpha.2",
     "frozen_tag_target": "764bd88b090439c8fe0d1646826d23865dc5c20b"
   }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 在解释分数差前核对比较条件 — 2026-11-18
+
+[方法指南](core/docs/methods/guides/function-and-utility-validation.md#解释两次计算的差值)和[可运行工作例](core/QUICKSTART.md#compare-controls-across-two-runs)帮助研究者发现两次计算中共同改变的条件，选择现有预测可完成的最小对照。[更新记录](machine/changes/controlled-comparisons-20261118.json)
+
 ## 主动为研究解释准备图片 — 2026-11-10
 
 [图片解释指南](core/docs/design/06-readable-process.md#主动准备帮助理解的图片)将原图批注、机理与框架改绘、工作流作图接入现有可读说明与 revisor 路径。用图形组织位置与逻辑关系，在对话中展示图片，并核对科学内容和原始来源。[本轮更新记录](machine/changes/visual-explanation-20261110.json)

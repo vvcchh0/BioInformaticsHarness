@@ -1,0 +1,66 @@
+{
+  "external_commit": "687f2a20dc6ff552d3c881e10910b46c13e84e2a",
+  "study_date": "2026-11-18",
+  "external_evidence": "source_inspected_not_executed",
+  "mechanisms": [
+    {
+      "trigger": "member first tool, direction registration and duplicate check",
+      "source": "https://github.com/openmathmodel/open-math-harness/blob/687f2a20dc6ff552d3c881e10910b46c13e84e2a/program-files/chat-agent/src/swarm/member.rs",
+      "basis": "tool loop enforces direction ownership; similarity judgment is model-based",
+      "local": "research_cycle.py / task_context.py / run_bounded.py: study records and selected task binding, no always-on swarm",
+      "decision": "reuse decision records; continuous swarm gating would require new infrastructure, unnecessary here"
+    },
+    {
+      "trigger": "submission and coordinator verdict",
+      "source": "https://github.com/openmathmodel/open-math-harness/blob/687f2a20dc6ff552d3c881e10910b46c13e84e2a/program-files/chat-agent/src/swarm/service/verdicts.rs",
+      "basis": "coordinator model decides feedback, acceptance and optional finish",
+      "local": "revision-response and independent revisor path",
+      "decision": "retain separate calculation, interpretation and independent review; coordinator verdict does not establish scientific validity"
+    },
+    {
+      "trigger": "register target and choose next branch",
+      "source": "https://github.com/openmathmodel/open-math-harness/blob/687f2a20dc6ff552d3c881e10910b46c13e84e2a/program-files/discovery/src/policy.rs",
+      "basis": "discovery registers a fixed Lean target; search policy consumes typed diagnostics and budgets",
+      "local": "plan_seal, check_research_flow and check_research_relations bind local obligations, stages and information uses",
+      "decision": "add on-demand paired control checks where single-run checks lack cross-run information; no generic branch-scoring oracle"
+    },
+    {
+      "trigger": "verify completed Lean candidate",
+      "source": "https://github.com/openmathmodel/open-math-harness/blob/687f2a20dc6ff552d3c881e10910b46c13e84e2a/program-files/lean/src/verify.rs",
+      "basis": "formal type, axioms and frozen statement checked in a Lean environment",
+      "local": "local comparison and recomputation check only specified numerical/structural properties",
+      "decision": "not compatible as a general empirical verdict"
+    },
+    {
+      "trigger": "resume interrupted swarm",
+      "source": "https://github.com/openmathmodel/open-math-harness/blob/687f2a20dc6ff552d3c881e10910b46c13e84e2a/program-files/chat-agent/src/swarm/service/resume.rs",
+      "basis": "persisted board, pending verdicts and member transcripts; incomplete tool result unknown",
+      "local": "task context, existing artifacts, run receipts and recovery review",
+      "decision": "reuse scoped reinspection; new scheduler and process lifecycle needed for automatic restart, outside this change"
+    }
+  ],
+  "validation_scope": "synthetic two-table regression and package checks; no model performance, empirical effect, reader or external runtime trial",
+  "executed": {
+    "diagnostic_regression_tests": 6,
+    "existing_research_flow_tests": 18,
+    "existing_research_relations_tests": 24,
+    "synthetic_cli": {
+      "common_entities": 2,
+      "left_only": 1,
+      "right_only": 1,
+      "observed_differences": [
+        "members",
+        "input",
+        "selection"
+      ],
+      "fixed_weights": "matching literal field"
+    },
+    "existing_saved_prediction_exports": {
+      "availability": "private",
+      "pairings": 12,
+      "positional_key_and_label_match": 12,
+      "entity_identity_actual_input_and_selection": "unverified from these tables"
+    },
+    "scientific_acceptance": "not_assessed"
+  }
+}

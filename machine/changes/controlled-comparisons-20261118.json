@@ -1,0 +1,25 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "controlled-comparisons-20261118",
+  "date": "2026-11-18",
+  "summary": "Observe paired members and declared comparison controls before attributing a score difference.",
+  "impact": "guidance",
+  "baseline_commit": "551f731e6445d4da5040be32a2ef9f74f1c954c8",
+  "paths": [
+    "core/docs/methods/guides/function-and-utility-validation.md",
+    "core/docs/methods/guides/research-guidance-cycle.md",
+    "core/QUICKSTART.md",
+    "docs/REFERENCES-AND-DESIGN.md",
+    "CHANGELOG.md",
+    "core/scripts/research_support/compare_controls.py"
+  ],
+  "reading_paths": [
+    "core/docs/methods/guides/function-and-utility-validation.md#解释两次计算的差值",
+    "core/QUICKSTART.md#compare-controls-across-two-runs"
+  ],
+  "revisit": "At the next attribution decision, inspect existing exports and identify the smallest discriminating contrast.",
+  "evidence": "machine/history/controlled-comparisons-20261118.json",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "applies_to_existing_studies": "Only on the next relevant comparison; retain frozen records."
+}

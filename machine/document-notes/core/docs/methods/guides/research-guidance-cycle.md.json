@@ -61,11 +61,18 @@
   ],
   "updated_at_utc": "2026-11-10T11:22:00.550544+00:00",
   "current_identity": {
-    "bytes": 9560,
-    "sha256": "d1cb868f44826e54dca6cf032bc0ccdbced7586c24e0f66da527904fff69743c"
+    "bytes": 10026,
+    "sha256": "2fd45460fb48ab620eade5f4f0b8f8786dd2ae2d43ad8754ffc2df5c3fe332a1"
   },
   "current_technical_records": [
     "machine/changes/visual-explanation-20261110.json",
     "machine/history/visual-explanation-20261110.json"
+  ],
+  "technical_notes": [
+    {
+      "date": "2026-11-18",
+      "change": "controlled-comparisons-20261118",
+      "record": "machine/history/controlled-comparisons-20261118.json"
+    }
   ]
 }

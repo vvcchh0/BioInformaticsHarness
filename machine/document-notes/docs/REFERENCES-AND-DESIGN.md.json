@@ -187,8 +187,8 @@
   ],
   "updated_at_utc": "2026-11-10T11:22:00.550544+00:00",
   "current_identity": {
-    "bytes": 68227,
-    "sha256": "c08a3d28d011d852a882ab67086603688434adbf9b6cae29e9f8556f76b2def2"
+    "bytes": 68844,
+    "sha256": "e79025cbbcfc6b5c01349b1af6df7102909edaabc0e7a180daf630d65969c745"
   },
   "current_technical_records": [
     "machine/changes/visual-explanation-20261110.json",
@@ -207,6 +207,13 @@
         "core/machine/design/review-derived-worked-examples.json"
       ],
       "scientific_execution": false
+    }
+  ],
+  "technical_notes": [
+    {
+      "date": "2026-11-18",
+      "change": "controlled-comparisons-20261118",
+      "record": "machine/history/controlled-comparisons-20261118.json"
     }
   ]
 }
