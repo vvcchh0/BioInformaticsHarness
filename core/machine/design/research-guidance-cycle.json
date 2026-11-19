@@ -45,7 +45,7 @@
       "next": [
         "direction_choice"
       ],
-      "pending_behavior": "If a new human choice is pending and checked prerequisites are sound, report waiting_human. When structural checks fail, report needs_work and identify the repair before requesting a choice."
+      "pending_behavior": "The human_discussion stage can be ready for discussion. From direction_choice onward, if a new human choice is pending and checked prerequisites are sound, report waiting_human. When structural checks fail, report needs_work and identify the repair before requesting a choice."
     },
     {
       "stage": "direction_choice",

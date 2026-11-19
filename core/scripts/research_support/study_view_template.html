@@ -314,7 +314,8 @@ pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; overflow
     var c = currentCycle();
     if (!c) { view.appendChild(el("p", { "class": "empty", text: "此目录中没有 research-support.research-cycle.v1 记录。" })); return; }
     var stageInfo = STAGE_LABELS[c.stage] || [c.stage];
-    var exits = (DATA.stage_exits[c.stage] || []).flatMap(function (token) {
+    var stageExits = DATA.stage_exits[c.stage];
+    var exits = (Array.isArray(stageExits) ? stageExits : []).flatMap(function (token) {
       if (c.stage === "synthesis" && token === "direction_choice") {
         return c.requires_human_choice === true ? [] : ["已有授权时选择方向"];
       }

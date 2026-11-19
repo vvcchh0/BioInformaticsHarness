@@ -7,7 +7,7 @@
   "documentation_revision": "2026-10-27",
   "working_tree": {
     "kind": "first-party-documentation-revision",
-    "head": "acd36a595d0aacd79f3742efe6692065bedf572e",
+    "head": "b01364924a6ac76fa368023a5f4971100ce5f3ff",
     "tag_unchanged_by_refresh": true
   },
   "record_path": "machine/history/documentation-refresh.json",
@@ -126,8 +126,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/RELEASE-MANIFEST.json",
       "previous_sha256": "b54b0cd83b5870306211066aaf6f49d346d3e379cdcb95351f332e408830da65",
-      "current_bytes": 332710,
-      "current_sha256": "7a9531fc5634712ddb1133b98f3a236ace1da1f7294b6587cce39ded3cf576dd"
+      "current_bytes": 333534,
+      "current_sha256": "5d6e7b3969895cf3463198a54359cbf5abb6dfeb073d27395ea3d3d89fe2b7d0"
     },
     {
       "path": "core/THIRD_PARTY.md",
@@ -1549,8 +1549,8 @@
       "path": "core/machine/design/research-guidance-cycle.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 21971,
-      "current_sha256": "71ccf3b6428ca88e756e5b6f77ba93647f6b97675206938db705d1d98e6c016e"
+      "current_bytes": 22057,
+      "current_sha256": "8f0f1f490a65068bef7179c3f87864c74c7a55a86b8d1c6d5f877ce877cb9a7e"
     },
     {
       "path": "core/machine/design/research-preparation.json",
@@ -1724,8 +1724,8 @@
       "path": "core/scripts/research_support/study_view_template.html",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 33526,
-      "current_sha256": "6fbe0969e9c9d523aad9ce453f7395d0b076c6600dff03be938da553a566c3e1"
+      "current_bytes": 33586,
+      "current_sha256": "f48fda6ad873ad6c04f1311213f933f72ba0bb3f9c051fa51c79c38ea254f937"
     },
     {
       "path": "core/scripts/research_support/task_context.py",
@@ -1888,8 +1888,8 @@
       "path": "docs/research/method-research-architecture-review.zh.md",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 7110,
-      "current_sha256": "e27952fd0601639a7ccd1631a06d060bb2b60643c2d184b3d833be2aa02bf97f"
+      "current_bytes": 7155,
+      "current_sha256": "e2b06c8aa734e987d52ec1badaf38253d7dd462d2094827ff74c27789d762116"
     },
     {
       "path": "docs/research/open-exploration-2026-10-27.zh.md",
@@ -3143,7 +3143,7 @@
       "change": "added",
       "baseline_revision": "764bd88",
       "current_bytes": 7614,
-      "current_sha256": "8220dad67ba83f80b917e10d77efc322d230d8d127e44d6de500eb6fd79aab17"
+      "current_sha256": "836de33d84c0d219412d567a7d2a7710bc70fb3c37b071d6205e516de2a6a25a"
     },
     {
       "path": "machine/document-notes/docs/research/open-exploration-2026-10-27.zh.md.json",

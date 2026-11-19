@@ -15,7 +15,7 @@
 
 ## 原有结构评议的复核
 
-[结构评议](https://github.com/vvcchh0/BioInformaticsHarness/issues/8)来自研究路径视图的开发。这里沿它的十二条建议核查实际派发的基线包（试验分支的基线提交 `3de698c`）；下表的原文、清单与后文的段落抽样均按该版本计数。视图已有按具体周期绑定账本、按实际引用标阶段的修复；原作者当时列出的重复处与现状应分别计数。[视图 PR](https://github.com/vvcchh0/BioInformaticsHarness/pull/7) · [维护者的处理顺序](https://github.com/vvcchh0/BioInformaticsHarness/issues/8#issuecomment-6555622753)
+[结构评议](https://github.com/vvcchh0/BioInformaticsHarness/issues/8)来自研究路径视图的开发。这里沿它的十二条建议核查实际派发的基线包（版本身份见[试验记录](../../machine/history/method-research-20261119.json)）；下表的原文、清单与后文的段落抽样均按该版本计数。视图已有按具体周期绑定账本、按实际引用标阶段的修复；原作者当时列出的重复处与现状应分别计数。[视图 PR](https://github.com/vvcchh0/BioInformaticsHarness/pull/7) · [维护者的处理顺序](https://github.com/vvcchh0/BioInformaticsHarness/issues/8#issuecomment-6555622753)
 
 | 原议题 | 现状及处理决定 |
 |---|---|
