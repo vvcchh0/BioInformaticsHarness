@@ -61,7 +61,12 @@
         }
       ]
     },
-    "source_text is the exact UTF-8 decode of the baseline Git blob; line endings are preserved in the JSON string. source_sha256 hashes the original blob bytes."
+    "source_text is the exact UTF-8 decode of the baseline Git blob; line endings are preserved in the JSON string. source_sha256 hashes the original blob bytes.",
+    {
+      "date": "2026-11-19",
+      "change": "method-research-20261119",
+      "record": "machine/history/method-research-20261119.json"
+    }
   ],
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
   "source_sha256": "0b1aba2655a8859227d8549dd452d6dbe0a60f41f72b5bc4b0e9c1602460b3ec",
@@ -261,8 +266,8 @@
   ],
   "updated_at_utc": "2026-10-31T03:41:36.878659+00:00",
   "current_identity": {
-    "bytes": 11361,
-    "sha256": "2fc6a7488b066a682c1edf4806529c88a0faaa74457e7ce35b18eda323742a98"
+    "bytes": 11618,
+    "sha256": "929b945ae126b8fdd6aef7d9227fea40094a87133e3a08b739ba3ca271d8b079"
   },
   "current_technical_records": [
     "core/machine/design/rereading-perspectives.json",

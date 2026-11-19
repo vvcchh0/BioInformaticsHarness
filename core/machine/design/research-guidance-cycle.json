@@ -5,7 +5,7 @@
   "status": "implemented_and_locally_interface_validated",
   "placement": "An optional connection in the existing methods layer. It reuses D53 preparation records, D51 task continuity, D52 resource-gap control, plan sealing, statistical-unit guidance, biological explanation, and real producer-consumer interfaces.",
   "problem": "A literature synthesis or execution result must be explained in terms a person can use, discussed where goals or constraints need human direction, and connected to the next data, plan, execution, and evidence update. A review can also be a complete independent deliverable.",
-  "decision": "Use six conditional stages. A prepared brief is ready to discuss; only an actual discussion source can support a joint direction choice. Routine work covered by existing authorization may continue without creating an unnecessary human gate.",
+  "decision": "Use six conditional stages. A prepared brief is ready to discuss; only an actual discussion source can support a joint direction choice. A research direction delegated within the agreed scope can be selected under existing authorization, with its source recorded.",
   "stage_values": [
     "synthesis",
     "human_discussion",
@@ -33,8 +33,10 @@
       "next": [
         "independent_review_delivery",
         "human_discussion",
-        "continue_targeted_reading"
-      ]
+        "continue_targeted_reading",
+        "direction_choice"
+      ],
+      "direction_choice_condition": "The existing authorization delegates this choice within the agreed purpose and resources; record its source and the selected direction."
     },
     {
       "stage": "human_discussion",
@@ -140,7 +142,7 @@
       "a diagnostic reaches its declared budget boundary",
       "the synthesis reveals a choice outside the existing authorization"
     ],
-    "existing_authorization": "Routine bounded repairs and continuation within the current objective may proceed under the existing task context. If requires_human_choice is true, existing_authorization cannot substitute for a real current discussion and choice.",
+    "existing_authorization": "Within the current authorized objective and resources, the researcher may select delegated technical routes and continue bounded work under the existing task context. If requires_human_choice is true, existing_authorization cannot substitute for a real current discussion and choice.",
     "choice_source": "A direction choice requires a valid option and a readable source for the actual human selection whenever the human-choice condition applies. Preparation alone records no agreement."
   },
   "routing": {

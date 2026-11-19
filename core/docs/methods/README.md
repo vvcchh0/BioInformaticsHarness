@@ -14,6 +14,7 @@ Use the trigger that matches your research question. The table suggests a starti
 
 | 触发条件 | 先读 | 需要时再读 |
 |---|---|---|
+| 从前人的测量与技术条件出发重新开发方法 | [开发并检验一个设计选择](guides/research-guidance-cycle.md#从已有问题重新开发方法) | [配对比较](guides/function-and-utility-validation.md#解释两次计算的差值) |
 | 需要把调研、人的方向选择与后续研究连成一条主线 | [研究推进与共同取舍](guides/research-guidance-cycle.md) | [讨论模板](../../examples/research-support/research-cycle/README.md)、[当前任务](guides/task-continuity.md) |
 | 新主题或具体问题需要串起文献、方法与首计划 | [研究前期准备](guides/research-preparation.md) | [资料获取](source-acquisition-routing.md)、[资源缺口](guides/resource-gap-loop.md) |
 | 方法比较仍以名称为主，需要将已读条件接到选择与评价 | [从已读文献写出方法取舍](guides/review-choice-synthesis.md) | [输入与目标工作例](../../examples/research-support/preparation/choice-synthesis-example/README.md)、[单细胞旧例](../../examples/research-support/preparation/choice-synthesis-example/mast-resynthesis.md) |

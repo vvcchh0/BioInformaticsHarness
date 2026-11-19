@@ -1,5 +1,9 @@
 # Changelog
 
+## 从历史问题开展方法研究 — 2026-11-19
+
+[研究指导](core/docs/methods/guides/research-guidance-cycle.md#从已有问题重新开发方法)将首次计算接到一个待检验的设计选择，并说明理论层如何按结果继续。[架构评审](docs/research/method-research-architecture-review.zh.md) · [试验分支变更记录](machine/changes/method-research-20261119.json)
+
 ## 在解释分数差前核对比较条件 — 2026-11-18
 
 [方法指南](core/docs/methods/guides/function-and-utility-validation.md#解释两次计算的差值)和[可运行工作例](core/QUICKSTART.md#compare-controls-across-two-runs)帮助研究者发现两次计算中共同改变的条件，选择现有预测可完成的最小对照。[更新记录](machine/changes/controlled-comparisons-20261118.json)

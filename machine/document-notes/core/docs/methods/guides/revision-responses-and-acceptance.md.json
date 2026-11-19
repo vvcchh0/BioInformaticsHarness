@@ -27,7 +27,12 @@
     },
     "source_text is the exact UTF-8 decode of the baseline Git blob; line endings are preserved in the JSON string. source_sha256 hashes the original blob bytes.",
     "The original case request labels and archive locator for the five route examples remain in source_text and machine/archive-pointers.jsonl: Operon/TE, DMPfold, Locator, Ribozyme and Islet. The public prose names each case and preserves its selection condition and unresolved scope.",
-    "Removed Q/RQ/GC request labels from the Islet and five-case route examples. Exact original identifiers, source pointers and citation text remain in source_text and machine/archive-pointers.jsonl; the public prose preserves each route condition and the unresolved alternative."
+    "Removed Q/RQ/GC request labels from the Islet and five-case route examples. Exact original identifiers, source pointers and citation text remain in source_text and machine/archive-pointers.jsonl; the public prose preserves each route condition and the unresolved alternative.",
+    {
+      "date": "2026-11-19",
+      "change": "method-research-20261119",
+      "record": "machine/history/method-research-20261119.json"
+    }
   ],
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
   "source_sha256": "eb09048d9ed85a09ee8e1e5cedf12cc9c618d2a0ed5aa4653b072da82420020d",
@@ -95,8 +100,8 @@
   ],
   "updated_at_utc": "2026-10-30T14:00:00.663095+00:00",
   "current_identity": {
-    "bytes": 13682,
-    "sha256": "13a7d1e4dfe990b71c3b95182f9d107e04500b915901da90bbaab069162cc19e"
+    "bytes": 13901,
+    "sha256": "2de69cdd5e4cff16a3922b94d96b7fc01694c8d3531a7f3f2f171e3e6835b4c7"
   },
   "current_technical_records": [
     "core/machine/design/rereading-perspectives.json",

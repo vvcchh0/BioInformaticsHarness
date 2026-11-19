@@ -1033,15 +1033,20 @@ def check_research_cycle(
     if stage == "evidence_revision" and not waiting_human:
         _check_revision(work_root, record_file, record, findings, identities)
 
-    failing = any(item["status"] == "needs_work" for item in findings)
-    status = "needs_work" if failing else "waiting_human" if waiting_human else "ready"
     if waiting_human:
+        _finding(findings, "human_gate", True, "cycle is structurally waiting for a required human choice")
+    first_failure = next((item for item in findings if item["status"] == "needs_work"), None)
+    status = "needs_work" if first_failure else "waiting_human" if waiting_human else "ready"
+    if waiting_human and first_failure:
+        report_next_action = {
+            "owner": "researcher",
+            "action": f"Resolve {first_failure['id']} ({first_failure['detail']}) and rerun the cycle check.",
+        }
+    elif waiting_human:
         report_next_action = {
             "owner": "human",
             "action": "record the required discussion and selected direction before advancing this cycle",
         }
-        _finding(findings, "human_gate", True, "cycle is structurally waiting for a required human choice")
-        # The gate finding is added after status calculation but cannot weaken a prior failure.
     else:
         report_next_action = dict(next_action)
     overall = "fail" if status == "needs_work" else "pass"

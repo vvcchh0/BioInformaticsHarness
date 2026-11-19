@@ -1,0 +1,23 @@
+{
+  "schema": "harness.method-research-pilot/v1",
+  "id": "method-research-20261119",
+  "status": "branch_trial",
+  "origin": {
+    "issue": "https://github.com/vvcchh0/BioInformaticsHarness/issues/8",
+    "paper": "https://doi.org/10.1021/acs.jmedchem.2c00991",
+    "private_observation": "Two retrospective trials used different assignments: author-route replay followed by a separately requested independent method construction. The dispatch itself was a confounder."
+  },
+  "design": "Reuse D53 candidate methods and alternatives, D54 intent=study and authority, D51 task/run, and the existing independent review. Research can end with a retained, rejected, or unresolved candidate. No new global workflow stage.",
+  "probe": {
+    "scope": "one offline synthetic fluorescence problem, two fresh agents with matching model and input",
+    "baseline": "Compared blank-corrected scaling to a raw ratio, measured cross-plate range, proposed held-out repeat and tolerance.",
+    "pilot": "Made the same quantitative comparison and specified when to try multipoint calibration.",
+    "interpretation": "Both acted autonomously; this trial does not establish a change in ability, latency or error rate. The template and dispatch changes were not independently randomized."
+  },
+  "deferred": [
+    "The view now reads stage exits from the bundled design. Check compatibility of remaining phase, intent and status constants separately.",
+    "Represent revision links and ambiguous active branches explicitly.",
+    "Retain recoverability for standalone archives when evaluating documentation-note deduplication."
+  ],
+  "review": "docs/research/method-research-architecture-review.zh.md"
+}

@@ -305,8 +305,31 @@ class ResearchCycleTests(unittest.TestCase):
         _write_json(self.root / "cycle.json", cycle)
         report = self._cli(self.root)
         self.assertEqual(report.returncode, 1, report.stderr)
-        self.assertEqual(load_json(self.root / "check.json")["status"], "waiting_human")
-        self.assertEqual(load_json(self.root / "check.json")["overall"], "pass")
+        check = load_json(self.root / "check.json")
+        self.assertEqual(check["status"], "waiting_human")
+        self.assertEqual(check["overall"], "pass")
+        self.assertEqual(check["next_action"]["owner"], "human")
+
+    def test_missing_report_takes_priority_over_pending_human_choice(self) -> None:
+        cycle = _copy_fixture(self.root)
+        cycle["stage"] = "direction_choice"
+        cycle["synthesis"]["report_ref"] = "revised-brief.md"
+        _write_json(self.root / "cycle.json", cycle)
+        result = self._cli(self.root)
+        self.assertEqual(result.returncode, 2, result.stderr)
+        check = load_json(self.root / "check.json")
+        self.assertEqual(check["status"], "needs_work")
+        self.assertEqual(check["overall"], "fail")
+        self.assertIn("human_gate", [item["id"] for item in check["findings"] if item["status"] == "pass"])
+        self.assertEqual(check["next_action"]["owner"], "researcher")
+        self.assertIn("synthesis.report_ref", check["next_action"]["action"])
+        self.assertIn("revised-brief.md", check["next_action"]["action"])
+        self.assertEqual(load_json(self.root / "cycle.json")["next_action"], cycle["next_action"])
+
+        shutil.copyfile(self.root / "brief.md", self.root / "revised-brief.md")
+        repaired = check_research_cycle(self.root, "cycle.json")
+        self.assertEqual(repaired["status"], "waiting_human")
+        self.assertEqual(repaired["next_action"]["owner"], "human")
 
     def test_required_human_choice_cannot_be_bypassed_by_existing_authorization(self) -> None:
         cycle = _copy_fixture(self.root)
@@ -347,7 +370,9 @@ class ResearchCycleTests(unittest.TestCase):
         }
         _write_json(self.root / "discussion.json", discussion)
         _write_json(self.root / "cycle.json", cycle)
-        self.assertEqual(check_research_cycle(self.root, "cycle.json")["status"], "ready")
+        report = check_research_cycle(self.root, "cycle.json")
+        self.assertEqual(report["status"], "ready")
+        self.assertEqual(report["next_action"], cycle["next_action"])
 
     def test_historical_current_refresh_is_deferred_until_data_and_plan(self) -> None:
         cycle = _copy_fixture(self.root)
@@ -368,6 +393,7 @@ class ResearchCycleTests(unittest.TestCase):
         gated = check_research_cycle(self.root, "cycle.json")
         self.assertEqual(gated["status"], "needs_work")
         self.assertTrue(any(item["id"] == "time_scope.refresh_record_ref" and item["status"] == "needs_work" for item in gated["findings"]))
+        self.assertIn("time_scope.refresh_record_ref", gated["next_action"]["action"])
 
     def test_selected_question_method_must_map_to_evidence_map(self) -> None:
         _copy_fixture(self.root)

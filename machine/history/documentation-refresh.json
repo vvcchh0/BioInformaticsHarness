@@ -7,7 +7,7 @@
   "documentation_revision": "2026-10-27",
   "working_tree": {
     "kind": "first-party-documentation-revision",
-    "head": "551f731e6445d4da5040be32a2ef9f74f1c954c8",
+    "head": "3de698c0a8f73991720d5aa1db45458e80177a93",
     "tag_unchanged_by_refresh": true
   },
   "record_path": "machine/history/documentation-refresh.json",
@@ -27,8 +27,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:CHANGELOG.md",
       "previous_sha256": "7e09c5cb4ab65d4368ea89ecddf01daeb8fb10a4e51af2c08a5f432c59f67e7d",
-      "current_bytes": 15565,
-      "current_sha256": "a5bf93e957900afe5dddb28fd30ac92c32ba38b4342d2492c36cc0ce38f45ce4"
+      "current_bytes": 15965,
+      "current_sha256": "9c5766b7b2a479360e7a68acc2946abe149d173835c909a1ae5d2321d2102750"
     },
     {
       "path": "LICENSING.md",
@@ -54,8 +54,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:README.md",
       "previous_sha256": "bd32869f212652df6628abb03f6a97b618de87418aff7dc229b87e988471d755",
-      "current_bytes": 3901,
-      "current_sha256": "c1ce57863fd38b6149c8772ed4f4fa051a6400b9e073f6c6f19bf5ebd32e321e"
+      "current_bytes": 4084,
+      "current_sha256": "94aecaac47b08a513c3243c9bf6fef04d26a9f433fe19673ba4f63b9558e945a"
     },
     {
       "path": "ROADMAP.zh.md",
@@ -90,8 +90,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/QUICKSTART.md",
       "previous_sha256": "c15eedc79a66fe5c8eef7eafdec686e78bcc5d680ab9a8229ff25a9adeea5906",
-      "current_bytes": 7247,
-      "current_sha256": "fe4825bc1b3f2ec6500cc7bba97000699b0a6fbcf0019931b21bed6961e050c9"
+      "current_bytes": 7534,
+      "current_sha256": "2a9be2cb8848dd7586f044d1d3f5f31a1adac3f680ef665da4d716c32dbc5349"
     },
     {
       "path": "core/README.md",
@@ -126,8 +126,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/RELEASE-MANIFEST.json",
       "previous_sha256": "b54b0cd83b5870306211066aaf6f49d346d3e379cdcb95351f332e408830da65",
-      "current_bytes": 321628,
-      "current_sha256": "0a14bc9381998890cab7a105529741783943289d262458c3160b455b5e343900"
+      "current_bytes": 329342,
+      "current_sha256": "309f9282b1a9f93081ca2bdc37a850a6652c3c9e23ce1c51eeb7c8e5818599a8"
     },
     {
       "path": "core/THIRD_PARTY.md",
@@ -430,8 +430,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/docs/methods/README.md",
       "previous_sha256": "0b1aba2655a8859227d8549dd452d6dbe0a60f41f72b5bc4b0e9c1602460b3ec",
-      "current_bytes": 11361,
-      "current_sha256": "2fc6a7488b066a682c1edf4806529c88a0faaa74457e7ce35b18eda323742a98"
+      "current_bytes": 11618,
+      "current_sha256": "929b945ae126b8fdd6aef7d9227fea40094a87133e3a08b739ba3ca271d8b079"
     },
     {
       "path": "core/docs/methods/cards/benchmark-teacher-fairness.md",
@@ -676,8 +676,8 @@
       "path": "core/docs/methods/guides/research-guidance-cycle.md",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 10026,
-      "current_sha256": "2fd45460fb48ab620eade5f4f0b8f8786dd2ae2d43ad8754ffc2df5c3fe332a1"
+      "current_bytes": 11763,
+      "current_sha256": "90fd383f8843236e5f27ff2ccf100454d4d8b55cfef7ebe799267ace53f763a5"
     },
     {
       "path": "core/docs/methods/guides/research-preparation.md",
@@ -720,8 +720,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/docs/methods/guides/revision-responses-and-acceptance.md",
       "previous_sha256": "eb09048d9ed85a09ee8e1e5cedf12cc9c618d2a0ed5aa4653b072da82420020d",
-      "current_bytes": 13682,
-      "current_sha256": "13a7d1e4dfe990b71c3b95182f9d107e04500b915901da90bbaab069162cc19e"
+      "current_bytes": 13901,
+      "current_sha256": "2de69cdd5e4cff16a3922b94d96b7fc01694c8d3531a7f3f2f171e3e6835b4c7"
     },
     {
       "path": "core/docs/methods/guides/sequence-novelty-and-background.md",
@@ -1353,8 +1353,8 @@
       "path": "core/examples/research-support/research-cycle/README.md",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 4433,
-      "current_sha256": "59e448b19e67640add6793c0621267385f9efcafc7039513f68e1bbfafdc651a"
+      "current_bytes": 4566,
+      "current_sha256": "66221db24d73c59ac634f16770e3edd0d450357a73d94cbaeb6d2d4aae9bb427"
     },
     {
       "path": "core/examples/research-support/research-cycle/SPLICE-DISCUSSION.md",
@@ -1549,8 +1549,8 @@
       "path": "core/machine/design/research-guidance-cycle.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 21475,
-      "current_sha256": "1c3b7db8609384a871cab13a0467075543a47f136fc90d626524c0f067bce308"
+      "current_bytes": 21755,
+      "current_sha256": "a986e0c044c8dce3406861f9222a5b8ceeb3f85f84035e292a3e0a162cdd400b"
     },
     {
       "path": "core/machine/design/research-preparation.json",
@@ -1612,8 +1612,8 @@
       "path": "core/machine/tools/study-view.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 8508,
-      "current_sha256": "2dcce2483934d9373f1ebbe1b9871d7e11bbc9da834c41b2ec6b7eb2e5b652f9"
+      "current_bytes": 8884,
+      "current_sha256": "5235c71107977f166a8fd01a704106c6f34d02bdafbbfa44a236954e36205f26"
     },
     {
       "path": "core/references.json",
@@ -1687,8 +1687,8 @@
       "path": "core/scripts/research_support/research_cycle.py",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 68115,
-      "current_sha256": "e57b9055960e0b78b3539797540fa23b18eb1e3405eded34852803c3a7ab5fb0"
+      "current_bytes": 68299,
+      "current_sha256": "9f127d3f45d2caa7d74c6de422a953a355f1d5d2e51ca485cc1da075af7c1c47"
     },
     {
       "path": "core/scripts/research_support/resource_loop.py",
@@ -1717,15 +1717,15 @@
       "path": "core/scripts/research_support/study_view.py",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 35076,
-      "current_sha256": "00e122dffadb67ec8cdb8e713e8470040590bc416bc37d382d8112cc68c2c4d9"
+      "current_bytes": 35665,
+      "current_sha256": "1b248df7ca0f58e0db6d8e0ff930ca7be4defc4b425fecd388e5af3b3a05aff7"
     },
     {
       "path": "core/scripts/research_support/study_view_template.html",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 33239,
-      "current_sha256": "34520cfcfcc6efc6d7b393cfc9f6cd83ba4f2985a10039578c9ea6a2ac878a8e"
+      "current_bytes": 33323,
+      "current_sha256": "d171412a6ca56ffa16ed686f690783a23b6cb1f404d5c82ffbbb6f425c4ca767"
     },
     {
       "path": "core/scripts/research_support/task_context.py",
@@ -1770,8 +1770,8 @@
       "path": "core/tests/research_support/test_research_cycle.py",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 25467,
-      "current_sha256": "ab08640c9abc09bb8787b155c635bd2a08165b59d64e19807a2ac3d6ef5f4aad"
+      "current_bytes": 26954,
+      "current_sha256": "13bd5fdf6c1e4448dbbab42031ebce45a05e2fcc103accffcc78fc374356d4b2"
     },
     {
       "path": "core/tests/research_support/test_review_coverage.py",
@@ -1784,8 +1784,8 @@
       "path": "core/tests/research_support/test_study_view.py",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 13998,
-      "current_sha256": "ec641783395205b125631c6b0fb2711c25a2e428e15c0c2eb851a4385a5ddf9c"
+      "current_bytes": 17140,
+      "current_sha256": "1c5ac0eb8690b6628ec428addcc6e88c298aa873b5165ff70ce0892b657f6e33"
     },
     {
       "path": "core/tests/test_plan_seal.py",
@@ -1837,8 +1837,8 @@
       "path": "docs/REFERENCES-AND-DESIGN.md",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 68844,
-      "current_sha256": "e79025cbbcfc6b5c01349b1af6df7102909edaabc0e7a180daf630d65969c745"
+      "current_bytes": 69423,
+      "current_sha256": "a8bf876d89025310dfa2f38356188c75e4a2c011d678f4356da6475bd9f7d667"
     },
     {
       "path": "docs/harness-updates.md",
@@ -1883,6 +1883,13 @@
       "baseline_revision": "764bd88",
       "current_bytes": 7291,
       "current_sha256": "b2573d2ce414d986bb01a58764dd34c3a18c4d6bc9a3148dd71e8f285400ec92"
+    },
+    {
+      "path": "docs/research/method-research-architecture-review.zh.md",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 6980,
+      "current_sha256": "fdf8415eb7ebbed8f310acbff07b6e363a8ef971c8c9c69a1f1a34e755d54b7c"
     },
     {
       "path": "docs/research/open-exploration-2026-10-27.zh.md",
@@ -2019,6 +2026,13 @@
       "current_sha256": "ee678089c9330995d1254d7efb284e9254ada27468dfd3688ce68ca18e57915d"
     },
     {
+      "path": "machine/changes/method-research-20261119.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 1787,
+      "current_sha256": "d54f762f7d33129521192fb58fcb9d44448e9a79473f478e60b7fcbf8663b980"
+    },
+    {
       "path": "machine/changes/progressive-explanation-20261105.json",
       "change": "added",
       "baseline_revision": "764bd88",
@@ -2127,8 +2141,8 @@
       "path": "machine/document-notes/CHANGELOG.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 16424,
-      "current_sha256": "b7f1c51c3cd63d55ec4f9af7654ff6b4b7dbf22c5403b76dd2ea4c76b455b574"
+      "current_bytes": 16573,
+      "current_sha256": "dc67814dcb98b89fd29588a98509689aed3bc5fa11872d63b861154fea527b06"
     },
     {
       "path": "machine/document-notes/LICENSING.md.json",
@@ -2148,8 +2162,8 @@
       "path": "machine/document-notes/README.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 7824,
-      "current_sha256": "22c36bf7c42161e8c7ffa1398a1e947faad2ac0de333cd7276904030de0ed6a7"
+      "current_bytes": 7978,
+      "current_sha256": "68c88d7ed7b5146b2618da307bdfa9746fa61f3638d4d66feabd330bef1e3622"
     },
     {
       "path": "machine/document-notes/ROADMAP.zh.md.json",
@@ -2176,8 +2190,8 @@
       "path": "machine/document-notes/core/QUICKSTART.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 8000,
-      "current_sha256": "203687107f027078c7c909fd443485d003ce00c541890fdc741582af642d22ab"
+      "current_bytes": 8162,
+      "current_sha256": "9cd097430d428d5fb02468f81ad7f46bcc4dfb5e20bbbeabb892ec33a6ace806"
     },
     {
       "path": "machine/document-notes/core/README.md.json",
@@ -2442,8 +2456,8 @@
       "path": "machine/document-notes/core/docs/methods/README.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 32619,
-      "current_sha256": "b43d9a2767294c6874fe4c9313df926525b06feea10cf01042af5a27e847014b"
+      "current_bytes": 32773,
+      "current_sha256": "d3d678d5545352133f3019de580f8a3dafc1ae3094f133aa1c5d8a544554eb1f"
     },
     {
       "path": "machine/document-notes/core/docs/methods/cards/benchmark-teacher-fairness.md.json",
@@ -2638,8 +2652,8 @@
       "path": "machine/document-notes/core/docs/methods/guides/research-guidance-cycle.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 3264,
-      "current_sha256": "9e57f0470ebc5a94af811a6a7c443a7a17c0852a6727f7d69cbf9c46a1720b8c"
+      "current_bytes": 3427,
+      "current_sha256": "df1069752e08235b2457a6e0cf2ef2cd4e99b5deb53c5932eaf1680dd47a2204"
     },
     {
       "path": "machine/document-notes/core/docs/methods/guides/research-preparation.md.json",
@@ -2680,8 +2694,8 @@
       "path": "machine/document-notes/core/docs/methods/guides/revision-responses-and-acceptance.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 16294,
-      "current_sha256": "1abb228c2048039b89a55212a8ba005bf0bb5f34927259eb8f99876f904e93c3"
+      "current_bytes": 16448,
+      "current_sha256": "4e84dbac8e793fb276cdea8dc58a4bd765cba036ae77b800287e15d44fd90582"
     },
     {
       "path": "machine/document-notes/core/docs/methods/guides/sequence-novelty-and-background.md.json",
@@ -3023,8 +3037,8 @@
       "path": "machine/document-notes/core/examples/research-support/research-cycle/README.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 809,
-      "current_sha256": "fc92978e2e3358b8edc528024a451177737b09669d9c2fdd525add0ae7eb6fa6"
+      "current_bytes": 1125,
+      "current_sha256": "977cb3c1df8d7ca8899958da888acf6f7a695813b271e728727a12fa828b36fc"
     },
     {
       "path": "machine/document-notes/core/examples/research-support/research-cycle/SPLICE-DISCUSSION.md.json",
@@ -3072,8 +3086,8 @@
       "path": "machine/document-notes/docs/REFERENCES-AND-DESIGN.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 9053,
-      "current_sha256": "02e5d38b6aa07044cc93058c6872db4939706e0840d8f96050981f66e37136bd"
+      "current_bytes": 9202,
+      "current_sha256": "c828a6f9555bc16411d0cb1df3e75a4b2e9ff731e030f6825393ccdc3fb127bd"
     },
     {
       "path": "machine/document-notes/docs/harness-updates.md.json",
@@ -3116,6 +3130,13 @@
       "baseline_revision": "764bd88",
       "current_bytes": 916,
       "current_sha256": "60254f8d300ade92cd7d903dd13be4aa6d3d315846e27e488fa92fcb0c7fb681"
+    },
+    {
+      "path": "machine/document-notes/docs/research/method-research-architecture-review.zh.md.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 7632,
+      "current_sha256": "f216176095388edac5795162029ce0358bd029c9d72c369d7debfaa67551ce9a"
     },
     {
       "path": "machine/document-notes/docs/research/open-exploration-2026-10-27.zh.md.json",
@@ -3221,6 +3242,13 @@
       "baseline_revision": "764bd88",
       "current_bytes": 3765,
       "current_sha256": "41819eba5f1fda1386094e99592c4ce147b79d7990b4e60ac41c4501a6068f28"
+    },
+    {
+      "path": "machine/history/method-research-20261119.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 1688,
+      "current_sha256": "ecd5f4560c79af5bc281cf8967a87fb1a4ea79eb81d0af7360ce9ed7bc41a74f"
     },
     {
       "path": "machine/history/preparation-priority-2026-10-24.json",
@@ -3401,8 +3429,8 @@
       "path": "machine/source-design-index.jsonl",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 320457,
-      "current_sha256": "a7309cb948b291a62eb471cc2e1cb08f64a032e7e886c233e4e550e23ec5262d"
+      "current_bytes": 321799,
+      "current_sha256": "dee704ba917e7c86d3f203e3639d77c529d5db49f936fbcac42242182778dccd"
     },
     {
       "path": "machine/time-budget-recovery-contract.json",

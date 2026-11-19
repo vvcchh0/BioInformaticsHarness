@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -131,6 +132,23 @@ class StudyViewModelTests(unittest.TestCase):
         self.assertEqual(returned["data_and_plan"], "none")
         self.assertNotIn("已经过", render_html(model))
 
+    def test_pending_choice_leaves_bridge_unchecked_when_brief_is_missing(self) -> None:
+        def set_refs(record: dict) -> None:
+            record["stage"] = "execution_evaluation"
+            record["synthesis"]["report_ref"] = "missing-brief.md"
+            record["study"]["bridge_ref"] = "bridge.json"
+
+        (self.root / "bridge.json").write_text("{}\n", encoding="utf-8")
+        _rewrite(self.root / "cycle-v1.json", set_refs)
+        cycle = build_study_view(self.root)["cycles"][0]
+        check = cycle["check"]
+        self.assertEqual(check["status"], "needs_work")
+        self.assertIn("missing-brief.md", check["next_action"]["action"])
+        self.assertEqual(cycle["next_action"]["owner"], "human")
+        marks = {s["stage"]: s["mark"] for s in cycle["stages"]}
+        self.assertEqual(marks["synthesis"], "gap")
+        self.assertEqual(marks["data_and_plan"], "recorded_unchecked")
+
     def test_direction_named_only_by_the_cycle_is_unconfirmed(self) -> None:
         _rewrite(self.root / "cycle-v2.json", lambda d: d["direction"].update(selected_direction_id="demo-direction-labels"))
         model = build_study_view(self.root)
@@ -219,6 +237,42 @@ class StudyViewModelTests(unittest.TestCase):
 
 
 class StudyViewHtmlTests(unittest.TestCase):
+    def test_stage_exits_follow_the_relocated_core_design_from_the_study_cwd(self) -> None:
+        design = Path("machine/design/research-guidance-cycle.json")
+        with tempfile.TemporaryDirectory() as temporary:
+            core = Path(temporary) / "relocated"
+            study = Path(temporary) / "study"
+            shutil.copytree(CORE / "scripts", core / "scripts")
+            shutil.copytree(DEMO, study)
+            (core / design).parent.mkdir(parents=True)
+            (study / design).parent.mkdir(parents=True)
+            (study / design).write_text('{"stage_contract": []}', encoding="utf-8")
+            contract = json.loads((CORE / design).read_text(encoding="utf-8"))
+            synthesis = next(row for row in contract["stage_contract"] if row["stage"] == "synthesis")
+            synthesis["next"].insert(0, "future_exit")
+            (core / design).write_text(json.dumps(contract), encoding="utf-8")
+            model_file = core / "view.json"
+            html_file = core / "view.html"
+            subprocess.run(
+                [sys.executable, "-B", str(core / "scripts/research_support/study_view.py"),
+                 "--root", ".", "--out", str(html_file), "--model-out", str(model_file)],
+                cwd=study, capture_output=True, check=True,
+            )
+            model = json.loads(model_file.read_text(encoding="utf-8"))
+            html = html_file.read_text(encoding="utf-8")
+            embedded = re.search(r'<script type="application/json" id="study-view-data">(.*?)</script>', html, re.S)
+            expected = {row["stage"]: row["next"] for row in contract["stage_contract"]}
+            self.assertEqual(model["stage_exits"], expected)
+            self.assertEqual(json.loads(embedded.group(1))["stage_exits"], expected)
+
+    def test_render_saved_v1_model_without_stage_exits(self) -> None:
+        model = build_study_view(DEMO)
+        expected = model.pop("stage_exits")
+        html = render_html(model)
+        embedded = re.search(r'<script type="application/json" id="study-view-data">(.*?)</script>', html, re.S)
+        self.assertEqual(json.loads(embedded.group(1))["stage_exits"], expected)
+        self.assertNotIn("stage_exits", model)
+
     def test_record_text_cannot_close_the_data_script(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary) / "study"

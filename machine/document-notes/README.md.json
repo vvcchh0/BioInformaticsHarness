@@ -5,7 +5,12 @@
   "source_sha256": "bd32869f212652df6628abb03f6a97b618de87418aff7dc229b87e988471d755",
   "source_text": "# BioInformaticsHarness\n\n**生物模型研究的可用原型 · 0.1.0-alpha.2**\n\n把研究问题、方法取舍、实际执行、证据和可接手交付连起来。Harness从模型文献与实现、同行评审对照，以及真实CPU小实验中积累条件指导，帮助研究者和agent把研究推进到可解释、可复核的结果。\n\n## 从这里开始\n\n- **直接使用**：[core quickstart](core/QUICKSTART.md)，Python 3.11+。\n- **按问题找方法**：[领域方法入口](core/docs/methods/README.md)、[生物学解释与人读交接](core/docs/methods/guides/biological-explanation-and-handoff.md)。\n- **真实CPU消费例**：[Splice](examples/splice/README.md)（12条留出序列）、[Yeast](examples/yeast/README.md)（293条留出记录）。需另装科学计算依赖；各读取一个本项目训练的保存状态并核对固定输出。\n- **验证文件**：在仓库根运行 `python -B verify_checkpoint.py`；在 `core/` 运行 `python -B verify_release.py`。\n- **演进与证据**：[CHANGELOG](CHANGELOG.md)、[从案例到设计的历史](docs/history/EVOLUTION.zh.md)、[证据范围](core/EVIDENCE.zh.md)。\n\n```mermaid\nflowchart LR\n  Q[问题与生物学对象] --> P[方法选择与首次方案]\n  P --> A[真实数据审计与执行]\n  A --> E[评价与主张]\n  E --> H[解释与可接手交付]\n  H --> R[评阅与新证据]\n  R --> P\n```\n\n方法卡按具体触发条件选择，保留理由、科学改判条件和可接受的替代路线。工具把明确的路径、字段、身份和消费操作落地；研究者继续负责方法前提和科学判断。\n\n## 本 checkpoint 包含什么\n\n- 条件领域方法、逐阶段选择/信息用途、统计单位和修订路线指导。\n- 工件、handoff、有限诊断、证据索引和唯一交接入口等Python工具。\n- 规范计划清单与封存，以及首次审计前的代码/配置快照。\n- 两项开放UCI数据的真实保存状态消费例及逐文件来源/许可。\n\n原Splice/Yeast研究均完成给定规模的审计、划分、拟合、对照、评价和交付；精选例聚焦独立接手消费。全研究读出与范围见[证据说明](core/EVIDENCE.zh.md)，不从精选子集重新估计全研究性能。软件测试、静态论文分析和真实研究分别登记，尚未估计Harness相对无Harness的因果增益。\n\n## 许可与引用\n\n第一方代码、配置及本项目新增参数/封装采用 **Apache-2.0**；原创说明采用 **CC BY 4.0**。UCI原数据、派生表和状态内保留的数据内容（如支持向量）保留 **CC BY 4.0**与原归属，混合状态逐文件标明。逐文件以 [CHECKPOINT-MANIFEST.json](CHECKPOINT-MANIFEST.json)、core及案例清单为准，见[许可说明](LICENSING.md)、[引用格式](CITATION.cff)。外部库由使用者另行取得。\n\n这是采用筛选后新Git历史的公开checkpoint。完整私有研究档案未导入；早期alpha.1和筹备提交保留在私有研究档案，公开Git从本次独立checkpoint提交开始。范围见[PUBLICATION.md](PUBLICATION.md)。后续方向见[ROADMAP.zh.md](ROADMAP.zh.md)。\n",
   "technical_notes": [
-    "Original published document retained here; current human prose uses public links and keeps technical identity and audit detail in structured records."
+    "Original published document retained here; current human prose uses public links and keeps technical identity and audit detail in structured records.",
+    {
+      "date": "2026-11-19",
+      "change": "method-research-20261119",
+      "record": "machine/history/method-research-20261119.json"
+    }
   ],
   "editorial_revisions": [
     {
@@ -101,8 +106,8 @@
     }
   ],
   "current_identity": {
-    "bytes": 3901,
-    "sha256": "c1ce57863fd38b6149c8772ed4f4fa051a6400b9e073f6c6f19bf5ebd32e321e"
+    "bytes": 4084,
+    "sha256": "94aecaac47b08a513c3243c9bf6fef04d26a9f433fe19673ba4f63b9558e945a"
   },
   "updated_at_utc": "2026-10-31T02:43:03.197183+00:00"
 }

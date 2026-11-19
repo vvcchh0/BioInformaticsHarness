@@ -17,7 +17,8 @@
   },
   "model": {
     "schema": "research-support.study-view.v1",
-    "fields": ["generated_utc", "root_name", "stages", "cycles", "nodes", "edges", "files", "gaps", "scientific_acceptance"],
+    "fields": ["generated_utc", "root_name", "stages", "stage_exits", "cycles", "nodes", "edges", "files", "gaps", "scientific_acceptance"],
+    "stage_exits": "Maps each stage to the ordered tokens in stage_contract[].next of the generating core's machine/design/research-guidance-cycle.json. HTML translates known tokens and displays unknown tokens verbatim. Rendering a saved v1 model without stage_exits supplies the rendering core's contract.",
     "edge_direction": "Every edge runs upstream -> downstream (basis or input -> derived record). Relations stated from the dependent side are reversed and renamed on creation.",
     "edge_context": "An edge with a cycle field holds only for that cycle version; the page indexes edges for the selected version. Evidence source edges carry the cycle that pairs the evidence map with a ledger.",
     "stage_marks": {
@@ -114,10 +115,10 @@
     {"id": "evidence-map-does-not-name-ledger", "detail": "An evidence map carries preparation_id but no ledger path; source links depend on a cycle naming both."},
     {"id": "discussion-has-no-previous-version", "detail": "Discussion versions are linked only through cycle previous_version."},
     {"id": "schema-key-naming", "detail": "Most records use schema; research-revision-v1 uses schema_version."},
-    {"id": "stage-exits-duplicated", "detail": "Stage exits live in machine/design/research-guidance-cycle.json; the checker does not export them and the page keeps its own labels."},
     {"id": "multiple-next-actions", "detail": "Cycle next_action, checker next_action and evidence-map review_decision.next_action coexist; the view prefers the checker."}
   ],
   "validation": {
+    "stage_exits": "test_study_view.py covers generated JSON and embedded HTML data from a relocated core with an added contract token, a same-name file in the study working directory, and rendering a saved model without stage_exits.",
     "automated": "tests/research_support/test_study_view.py: version order, checker reuse, edge direction, evidence relations including unknown values, per-cycle ledger pairing in both scan orders, record-based stage marks (pending choice at a later stage, return to an earlier stage, unconfirmed selection), branch states, revision chain, gaps vs null, later-stage needs_work, symlink/dot exclusion, script-close escaping, CLI no-overwrite",
     "manual": "Demo page inspected in a browser at desktop and 375 px widths: all tabs, trace highlighting, detail panel; no console errors or horizontal overflow",
     "not_done": ["Use on a real study directory", "Reader study of whether the page explains a research path"]

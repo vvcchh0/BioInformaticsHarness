@@ -118,14 +118,15 @@ pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; overflow
     execution_evaluation: ["执行与评价", "实际运行、评价与交付"],
     evidence_revision: ["按新证据修订", "保留、修订、收窄、暂缓或停止"]
   };
-  var STAGE_EXITS = {
-    synthesis: ["独立交付综述", "向人说明并讨论", "继续定向阅读"],
-    human_discussion: ["共同选择方向"],
-    direction_choice: ["独立交付综述", "继续定向阅读", "数据要求与首计划", "暂缓", "停止"],
-    data_and_plan: ["执行与评价"],
-    execution_evaluation: ["按新证据修订"],
-    evidence_revision: ["新周期版本", "暂缓", "停止"]
+  var EXIT_LABELS = {
+    independent_review_delivery: "独立交付综述", continue_targeted_reading: "继续定向阅读",
+    direction_choice: "选择方向", defer: "暂缓", stop: "停止"
   };
+  function exitLabel(token) {
+    if (Object.prototype.hasOwnProperty.call(EXIT_LABELS, token)) return EXIT_LABELS[token];
+    if (Object.prototype.hasOwnProperty.call(STAGE_LABELS, token)) return STAGE_LABELS[token][0];
+    return token;
+  }
   var KIND_LABELS = {
     cycle: "研究周期", source_ledger: "来源账本", source: "来源", evidence_map: "证据图",
     finding: "发现", method: "方法候选", question: "研究问题", discussion: "方向讨论",
@@ -313,6 +314,7 @@ pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; overflow
     var c = currentCycle();
     if (!c) { view.appendChild(el("p", { "class": "empty", text: "此目录中没有 research-support.research-cycle.v1 记录。" })); return; }
     var stageInfo = STAGE_LABELS[c.stage] || [c.stage];
+    var exits = DATA.stage_exits[c.stage];
     var next = c.check.next_action || c.next_action || {};
     var branchInfo = c.branches || {};
     var why = [];
@@ -332,7 +334,7 @@ pre { font-family: var(--mono); font-size: 12px; white-space: pre-wrap; overflow
         el("div", { "class": "note", text: c.cycle_id + " · " + c.version + " · " + (c.task && c.task.task_id || "") })]),
       el("div", { "class": "card" }, [el("div", { "class": "label", text: "为什么走到这里" })].concat(why)),
       el("div", { "class": "card" }, [el("div", { "class": "label", text: "接下来准备做什么" }), el("div", { text: (next.owner ? "[" + next.owner + "] " : "") + (next.action || "—") }),
-        el("div", { "class": "note", text: "本阶段可能的出口：" + (STAGE_EXITS[c.stage] || []).join("、") })])
+        el("div", { "class": "note", text: "本阶段可能的出口：" + (Array.isArray(exits) ? exits.map(exitLabel).join("、") : "—") })])
     ]));
     if (c.task && c.task.objective) view.appendChild(el("div", { "class": "card" }, [el("div", { "class": "label", text: "课题目标" }), el("div", { text: c.task.objective })]));
     view.appendChild(el("h3", { text: "版本经过" }));

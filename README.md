@@ -15,6 +15,8 @@ cd BioInformaticsHarness
 
 文献调研与理论比较，从本轮问题、已有课题记录和预期交付开始，在[方法指南](core/docs/methods/README.md)中按当前决定选择入口。问题尚待成形时读[前期准备](core/docs/methods/guides/research-preparation.md)；需要先看清领域时读[综述优先](core/docs/methods/guides/review-first-preparation.md)。问题已明确时，沿相关指南回到原文与实际研究。
 
+受托重新开发一种方法时，从[尚待检验的设计选择](core/docs/methods/guides/research-guidance-cycle.md#从已有问题重新开发方法)组织第一次计算。
+
 需要资料获取、交接、诊断或证据整理工具时，按[工具快速入门](core/QUICKSTART.md)准备 Python 3.11 或更新版本并选择对应命令。运行真实模型应用时，按案例说明安装科学计算依赖。
 
 ## 示例

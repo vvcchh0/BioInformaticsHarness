@@ -1,0 +1,35 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "method-research-20261119",
+  "date": "2026-11-19",
+  "summary": "Dispatch delegated method design from an unresolved scientific choice; report structural blockers separately from pending human decisions.",
+  "impact": "guidance",
+  "baseline_commit": "3de698c0a8f73991720d5aa1db45458e80177a93",
+  "paths": [
+    "README.md",
+    "core/QUICKSTART.md",
+    "core/docs/methods/README.md",
+    "core/docs/methods/guides/research-guidance-cycle.md",
+    "core/docs/methods/guides/revision-responses-and-acceptance.md",
+    "CHANGELOG.md",
+    "docs/REFERENCES-AND-DESIGN.md",
+    "core/examples/research-support/research-cycle/README.md",
+    "core/machine/design/research-guidance-cycle.json",
+    "core/scripts/research_support/research_cycle.py",
+    "core/scripts/research_support/study_view.py",
+    "docs/research/method-research-architecture-review.zh.md",
+    "core/machine/tools/study-view.json",
+    "core/scripts/research_support/study_view_template.html",
+    "core/tests/research_support/test_research_cycle.py",
+    "core/tests/research_support/test_study_view.py"
+  ],
+  "reading_paths": [
+    "core/docs/methods/guides/research-guidance-cycle.md#从已有问题重新开发方法",
+    "core/examples/research-support/research-cycle/README.md#留下真实选择"
+  ],
+  "revisit": "When the desired output is a newly constructed method or a historical reconstruction of design choices, choose the first discriminating comparison and its authority.",
+  "evidence": "machine/history/method-research-20261119.json",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "applies_to_existing_studies": "At the next relevant choice; preserve prior plans and record the scope of independent reconstruction."
+}

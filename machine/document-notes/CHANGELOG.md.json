@@ -10,6 +10,11 @@
       "date": "2026-11-18",
       "change": "controlled-comparisons-20261118",
       "record": "machine/history/controlled-comparisons-20261118.json"
+    },
+    {
+      "date": "2026-11-19",
+      "change": "method-research-20261119",
+      "record": "machine/history/method-research-20261119.json"
     }
   ],
   "editorial_revisions": [
@@ -310,8 +315,8 @@
   ],
   "updated_at_utc": "2026-11-10T11:22:00.550544+00:00",
   "current_identity": {
-    "bytes": 15565,
-    "sha256": "a5bf93e957900afe5dddb28fd30ac92c32ba38b4342d2492c36cc0ce38f45ce4"
+    "bytes": 15965,
+    "sha256": "9c5766b7b2a479360e7a68acc2946abe149d173835c909a1ae5d2321d2102750"
   },
   "current_technical_records": [
     "machine/changes/visual-explanation-20261110.json",

@@ -16,6 +16,8 @@ python -B scripts/acquisition/route_sources.py --doi 10.1371/journal.pone.031081
 
 The plan command stays offline. Follow the [acquisition guide](docs/methods/source-acquisition-routing.md) to install optional `requests` and explicitly download selected sources.
 
+For a request to develop a method from an earlier research problem, start with [the design choice to test](docs/methods/guides/research-guidance-cycle.md#从已有问题重新开发方法). For a reproduction, start with the authors’ inputs, implementation and numerical reference.
+
 ## Move from a review to a study
 
 Use the [research guidance cycle](docs/methods/guides/research-guidance-cycle.md) to explain the biological problem and technical routes, compare feasible directions, and record the actual choice. The [discussion templates](examples/research-support/research-cycle/README.md) connect that choice to the study bridge and later evaluation. Continue with the data and first-plan steps when a study direction has been selected.

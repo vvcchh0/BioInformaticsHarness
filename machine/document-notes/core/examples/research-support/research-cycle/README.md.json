@@ -15,5 +15,16 @@
       ],
       "acceptance": "Parent interface and documentation acceptance recorded in the linked machine history; actual new scientific direction remains to be discussed."
     }
+  ],
+  "current_identity": {
+    "bytes": 4566,
+    "sha256": "66221db24d73c59ac634f16770e3edd0d450357a73d94cbaeb6d2d4aae9bb427"
+  },
+  "technical_notes": [
+    {
+      "date": "2026-11-19",
+      "change": "method-research-20261119",
+      "record": "machine/history/method-research-20261119.json"
+    }
   ]
 }

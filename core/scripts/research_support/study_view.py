@@ -42,6 +42,7 @@ from scripts.research_support.research_cycle import (  # noqa: E402
 VIEW_SCHEMA = "research-support.study-view.v1"
 REVISION_SCHEMA = "research-revision-v1"
 TEMPLATE_PATH = Path(__file__).with_name("study_view_template.html")
+CYCLE_DESIGN_PATH = Path(__file__).resolve().parents[2] / "machine" / "design" / "research-guidance-cycle.json"
 
 # Transport bounds for one generated page; they do not limit a study.
 MAX_FILES = 2000
@@ -535,7 +536,10 @@ class _Builder:
         # the direction stages while a human choice is pending.
         rank = {stage_id: index for index, stage_id in enumerate(STAGES)}
         checked_through = rank.get(stage, -1)
-        if check["status"] == "waiting_human":
+        if check["status"] == "waiting_human" or any(
+            finding["id"] == "human_gate" and finding["status"] == "pass"
+            for finding in check["findings"]
+        ):
             checked_through = min(checked_through, rank["direction_choice"])
         stages = []
         for stage_id in STAGES:
@@ -643,6 +647,11 @@ class _Builder:
         self.gaps = gaps
 
 
+def _stage_exits() -> dict[str, list[str]]:
+    contract = load_json(CYCLE_DESIGN_PATH)["stage_contract"]
+    return {entry["stage"]: entry["next"] for entry in contract}
+
+
 def build_study_view(root: Path | str | os.PathLike[str], *, exclude: Iterable[Path] = ()) -> dict[str, Any]:
     """Return the view model for one study root without writing anything."""
 
@@ -655,6 +664,7 @@ def build_study_view(root: Path | str | os.PathLike[str], *, exclude: Iterable[P
         "generated_utc": utc_now(),
         "root_name": work_root.name,
         "stages": list(STAGES),
+        "stage_exits": _stage_exits(),
         "cycles": builder.cycles,
         "nodes": builder.nodes,
         "edges": builder.edges,
@@ -668,6 +678,8 @@ def render_html(model: dict[str, Any], *, link_base: str = "") -> str:
     """Embed the model in the static template; link_base prefixes file links."""
 
     payload = dict(model, link_base=link_base)
+    if "stage_exits" not in payload:  # Saved v1 models may predate this field.
+        payload["stage_exits"] = _stage_exits()
     data = json.dumps(payload, ensure_ascii=False, sort_keys=True)
     # Keep the JSON inert inside <script>.
     data = data.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
