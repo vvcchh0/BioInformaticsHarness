@@ -137,7 +137,9 @@
     "core/examples/research-support/paired-controls/short.csv": "Apache-2.0",
     "core/examples/research-support/paired-controls/units-before.csv": "Apache-2.0",
     "core/examples/research-support/paired-controls/units-after.csv": "Apache-2.0",
-    "core/examples/research-support/paired-controls/long.csv": "Apache-2.0"
+    "core/examples/research-support/paired-controls/long.csv": "Apache-2.0",
+    "core/examples/research-support/paired-controls/calibration-shared.csv": "Apache-2.0",
+    "core/examples/research-support/paired-controls/calibration-separate.csv": "Apache-2.0"
   },
   "license_scope_updates": [
     {
@@ -229,6 +231,14 @@
         "core/examples/research-support/paired-controls/units-before.csv": "Apache-2.0",
         "core/examples/research-support/paired-controls/units-after.csv": "Apache-2.0",
         "core/examples/research-support/paired-controls/long.csv": "Apache-2.0"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "reason": "Original teaching CSVs for fold-specific control diagnostics.",
+      "scopes": {
+        "core/examples/research-support/paired-controls/calibration-shared.csv": "Apache-2.0",
+        "core/examples/research-support/paired-controls/calibration-separate.csv": "Apache-2.0"
       }
     }
   ]

@@ -1,4 +1,5 @@
 import contextlib
+import csv
 import io
 import json
 import sys
@@ -101,6 +102,118 @@ class PairedControlTests(unittest.TestCase):
                 self.assertEqual(observed, expected)
                 if not distinct_scope:
                     self.assertEqual(report["axes"]["label"]["changed_pairs"], 2)
+
+    def compare_sources(self, update=None, *, vary="sources", required=False, grouped=True, extra_sources=()):
+        fixture = CORE / "examples/research-support/paired-controls"
+        for name, original in (("a", "shared"), ("b", "separate")):
+            with (fixture / f"calibration-{original}.csv").open(encoding="utf-8", newline="") as f:
+                reader = csv.DictReader(f)
+                rows = list(reader)
+                header = list(reader.fieldnames)
+            if update:
+                update(name, rows, header)
+            with (self.root / f"{name}.csv").open("w", encoding="utf-8", newline="") as f:
+                writer = csv.DictWriter(f, header)
+                writer.writeheader()
+                writer.writerows(rows)
+        args = ["a.csv", "b.csv", "--root", str(self.root), "--vary", vary, "--key-kind", "entity",
+                "--key", "scope", "--key", "fold", "--key", "unit", "--label", "target",
+                "--label", "target_source", "--label", "target_definition", "--input", "input_view",
+                "--evaluation", "metric", "--selection", "selection_rule", "--context", "readout_window",
+                "--split-sources", "train_raw", "test_raw"]
+        if extra_sources:
+            args += ["--split-sources", *extra_sources]
+        if grouped:
+            args += ["--split-by", "fold"]
+        if required:
+            args += ["--require-disjoint-sources"]
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = main(args)
+        return code, json.loads((err if code else out).getvalue())
+
+    def test_within_split_source_reuse_across_units(self):
+        _, report = self.compare_sources(required=True)
+        self.assertEqual(report["common_count"], 3)
+        self.assertEqual(report["changed"], ["sources"])
+        self.assertEqual(report["split_sources"]["left"]["shared_splits"], 1)
+        self.assertEqual(report["split_sources"]["right"]["status"], "disjoint_declared")
+        self.assertEqual(report["control_disposition"], "only_target_differs_on_declared_controls")
+        self.assertEqual(report["disposition"], "shared_train_test_sources")
+        _, ungrouped = self.compare_sources(grouped=False)
+        self.assertEqual(ungrouped["split_sources"]["right"]["status"], "shared")
+
+    def test_source_reuse_across_roles_in_one_split(self):
+        def extra_role(name, rows, header):
+            header.extend(["train_calibration", "test_calibration"])
+            for row in rows:
+                row["train_calibration"] = '["cal-1"]'
+                # Fold b2's measurement packet appears as a held-out calibration input.
+                row["test_calibration"] = '["packet_04"]' if row["fold"] == "b2" else '["cal-2"]'
+        _, report = self.compare_sources(extra_role, extra_sources=("train_calibration", "test_calibration"))
+        self.assertEqual(report["split_sources"]["right"]["status"], "shared")
+        self.assertEqual(report["split_sources"]["right"]["shared_splits"], 1)
+
+    def test_undisclosed_and_partial_sources(self):
+        _, legacy = self.run_case(self.left)
+        self.assertNotIn("split_sources", legacy)
+        _, absent = self.run_case(self.left, extra=("--require-disjoint-sources",))
+        self.assertEqual(absent["split_sources"]["status"], "unknown")
+        self.assertEqual(absent["disposition"], "insufficient_split_source_evidence")
+
+        def incomplete(name, rows, header):
+            for row in rows:
+                row["train_raw"] = "[]"
+        _, empty = self.compare_sources(incomplete, required=True)
+        self.assertEqual(empty["disposition"], "insufficient_split_source_evidence")
+        self.assertIn("sources", empty["unknown_or_incomplete"])
+
+        def mixed(name, rows, header):
+            next(row for row in rows if row["fold"] == "b2")["train_raw"] = "unknown"
+        _, partial = self.compare_sources(mixed, required=True)
+        self.assertEqual(partial["split_sources"]["right"]["status"], "unknown")
+        self.assertEqual(partial["split_sources"]["left"]["status"], "shared")
+        self.assertEqual(partial["split_sources"]["left"]["incomplete_splits"], 1)
+
+    def test_source_sets_are_order_invariant_but_label_and_context_changes_surface(self):
+        def change(name, rows, header):
+            for row in rows:
+                row["train_raw"] = '["a", "b"]' if name == "a" else '["b","a","a"]'
+                if name == "b":
+                    row["target_definition"] = "drift-v2"
+        _, label = self.compare_sources(change, vary="label", required=True)
+        self.assertEqual(label["changed"], ["label"])
+        self.assertEqual(label["disposition"], "only_target_differs_on_declared_controls")
+        self.assertEqual(label["split_sources"]["status"], "disjoint_declared")
+
+        def coupled(name, rows, header):
+            change(name, rows, header)
+            if name == "b":
+                rows.pop()
+                for row in rows:
+                    row["readout_window"] = "frame-B"
+        _, multiple = self.compare_sources(coupled, vary="context")
+        self.assertEqual(set(multiple["changed"]), {"members", "label", "context"})
+        self.assertEqual(multiple["disposition"], "other_declared_controls_differ")
+
+    def test_padded_source_ids_or_split_keys_cannot_certify_disjointness(self):
+        for padded in ['[" packet_02 "]', '[" unknown "]']:
+            with self.subTest(source=padded):
+                def padded_id(name, rows, header):
+                    rows[0]["train_raw"] = padded
+                self.assertEqual(self.compare_sources(padded_id, required=True)[0], 2)
+
+        def padded_fold(name, rows, header):
+            next(row for row in rows if row["fold"] == "b1")["fold"] = " b1 "
+        self.assertEqual(self.compare_sources(padded_fold, required=True)[0], 2)
+
+    def test_invalid_source_list_or_group_rejected(self):
+        for value in ['"packet"', '[""]', '["unknown"]', '[1]', 'broken']:
+            with self.subTest(value=value):
+                def invalid(name, rows, header):
+                    rows[0]["train_raw"] = value
+                self.assertEqual(self.compare_sources(invalid)[0], 2)
+        self.assertEqual(self.run_case(self.left, extra=("--split-by", "id"))[0], 2)
 
     def test_ambiguous_keys_and_malformed_csv_refused(self):
         for rows in [self.left + self.left, ",1,short,dev,4,P\n", "a,1\n"]:

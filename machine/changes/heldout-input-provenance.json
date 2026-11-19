@@ -1,0 +1,27 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "heldout-input-provenance",
+  "date": "2026-11-19",
+  "summary": "Track reported raw sources within each fold and separate changes of membership, labels, context and calibration.",
+  "impact": "guidance_and_tool",
+  "baseline_commit": "562a3fb45cf3c5a170d777754a1cde6caa0a3ffe",
+  "paths": [
+    "CHANGELOG.md",
+    "core/QUICKSTART.md",
+    "core/docs/methods/guides/function-and-utility-validation.md",
+    "docs/REFERENCES-AND-DESIGN.md",
+    "core/scripts/research_support/compare_controls.py",
+    "core/tests/research_support/test_compare_controls.py",
+    "core/examples/research-support/paired-controls/calibration-shared.csv",
+    "core/examples/research-support/paired-controls/calibration-separate.csv"
+  ],
+  "reading_paths": [
+    "core/docs/methods/guides/function-and-utility-validation.md#留出评价共享了哪些输入",
+    "core/QUICKSTART.md#compare-controls-across-two-runs"
+  ],
+  "revisit": "When an analysis attributes differences to one axis or evaluates transfer to held-out measurements.",
+  "evidence": "machine/history/heldout-input-provenance.json",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "applies_to_existing_studies": "Use optional fields for the next relevant comparison; record missing ancestry as unknown."
+}

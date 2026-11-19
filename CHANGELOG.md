@@ -1,5 +1,9 @@
 # Changelog
 
+## 留出评价的来源与构建背景
+
+[比较指南](core/docs/methods/guides/function-and-utility-validation.md#留出评价共享了哪些输入)给出分开检查成员、标签、构建和共用输入的办法。[配对诊断](core/QUICKSTART.md#compare-controls-across-two-runs)可以沿已披露的原始来源检查每折中的复用。[更新记录](machine/changes/heldout-input-provenance.json)
+
 ## 跨运行配对观察单位
 
 [统计单位指南](core/docs/methods/guides/statistical-units-and-selection.md#跨运行配对同一观察单位)和[可运行示例](core/QUICKSTART.md#compare-controls-across-two-runs)说明怎样在重新排序、增删成员或匿名导出后核对同一单位。[更新记录](machine/changes/stable-observation-ids.json)

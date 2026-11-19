@@ -65,12 +65,21 @@
       "technical_records": [
         "machine/history/saver-commot-publication-20261104.json"
       ]
+    },
+    {
+      "id": "heldout-input-provenance",
+      "date": "2026-11-19",
+      "reason": "Reflect traceable held-out input comparisons.",
+      "technical_refs": [
+        "machine/changes/heldout-input-provenance.json",
+        "machine/history/heldout-input-provenance.json"
+      ]
     }
   ],
   "updated_at_utc": "2026-11-04T15:43:28.203120+00:00",
   "current_identity": {
-    "bytes": 10490,
-    "sha256": "63d21d1086d5966524fabfe0d85fd82cec9c7b1339da1d4e121388198cf368bc"
+    "bytes": 11013,
+    "sha256": "5c4880d74d244539f11850875cd26705c6dcc4ec7fbfe6a62412dc22916665ab"
   },
   "current_technical_records": [
     "core/machine/design/biological-argument.json"

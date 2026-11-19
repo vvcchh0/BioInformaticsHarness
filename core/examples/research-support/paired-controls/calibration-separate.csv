@@ -1,0 +1,4 @@
+scope,fold,unit,target,target_definition,target_source,input_view,selection_rule,metric,readout_window,train_raw,test_raw
+instrument-v1,b2,u_01,8,drift-v1,reference-batch-A,sensor-read,all,absolute-error,frame-A,"[""packet_04""]","[""packet_01""]"
+instrument-v1,b1,u_02,9,drift-v1,reference-batch-A,sensor-read,all,absolute-error,frame-A,"[""packet_05""]","[""packet_03""]"
+instrument-v1,b1,u_01,8,drift-v1,reference-batch-A,sensor-read,all,absolute-error,frame-A,"[""packet_01""]","[""packet_02""]"

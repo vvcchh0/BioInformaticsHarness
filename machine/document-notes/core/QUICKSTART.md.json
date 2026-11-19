@@ -75,11 +75,20 @@
         "machine/changes/research-use-entry-20261029.json"
       ],
       "acceptance_ref": "machine/changes/research-use-entry-20261029.json"
+    },
+    {
+      "id": "heldout-input-provenance",
+      "date": "2026-11-19",
+      "reason": "Reflect traceable held-out input comparisons.",
+      "technical_refs": [
+        "machine/changes/heldout-input-provenance.json",
+        "machine/history/heldout-input-provenance.json"
+      ]
     }
   ],
   "current_identity": {
-    "bytes": 8337,
-    "sha256": "a06c4ad5f1d1a1bc0da512df8d89a256f2c8577f43d052e6a86160e1fec89203"
+    "bytes": 9841,
+    "sha256": "9726401a3156ed31f121be346785e300b65919b9f8d4082df39edd6105ff1de0"
   },
   "updated_at_utc": "2026-10-29T06:22:52.609392+00:00"
 }

@@ -316,12 +316,21 @@
         "bytes": 14725,
         "sha256": "c8c534207c838a21d2b9e94d6441fb85ae4557f47f166f0b27809f19b6bc9a71"
       }
+    },
+    {
+      "id": "heldout-input-provenance",
+      "date": "2026-11-19",
+      "reason": "Reflect traceable held-out input comparisons.",
+      "technical_refs": [
+        "machine/changes/heldout-input-provenance.json",
+        "machine/history/heldout-input-provenance.json"
+      ]
     }
   ],
   "updated_at_utc": "2026-11-10T11:22:00.550544+00:00",
   "current_identity": {
-    "bytes": 16327,
-    "sha256": "330e27aedd51cffb794f3222033c6b8822e44aa334a2f547bfec9896b3bc4dc5"
+    "bytes": 16736,
+    "sha256": "a30e5a71668b79f14dea1c62d63a4c7182abc059ad7d8621d2998841434ffeb1"
   },
   "current_technical_records": [
     "machine/changes/visual-explanation-20261110.json",

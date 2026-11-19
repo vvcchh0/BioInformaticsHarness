@@ -245,3 +245,7 @@ RNA velocity的独立原文图、冻结配对及后续两项定向补实，已�
 ## 研究方向的推进与对照依据
 
 [Open Math Harness 的并行探索与证明搜索](https://github.com/openmathmodel/open-math-harness/blob/687f2a20dc6ff552d3c881e10910b46c13e84e2a/README.md)分别记录方向裁决与对固定命题的程序验证。本项目借鉴将判断绑定到具体对象的做法：在[比较两次计算](../core/docs/methods/guides/function-and-utility-validation.md#解释两次计算的差值)时用已导出的字段对账，再按测量、设计和反证评阅归因。生信研究中的成员、输入和选点评价同时变化，是此次配对诊断的直接动机。
+
+## 从模型读数到独立测量
+
+[TISM](https://doi.org/10.1016/j.isci.2024.110807)比较模型输出变化的估计；[MotifDiff](https://doi.org/10.1093/nar/gkaf940)把结合偏向与模型打分相连；[Abell 等的实验登记](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA730497)与[四组合分析](https://github.com/nsabell/mpra-v2/blob/master/notebooks/section5-combn.ipynb)提供报告活性的读数。沿这三个问题的本地回顾促成了[留出来源与构建对照](../core/docs/methods/guides/function-and-utility-validation.md#留出评价共享了哪些输入)。公开示例使用独立制作的匿名教学表。

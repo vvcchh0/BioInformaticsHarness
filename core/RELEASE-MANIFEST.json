@@ -179,11 +179,11 @@
       "transform_details": {}
     },
     {
-      "bytes": 8337,
+      "bytes": 9841,
       "license": "CC-BY-4.0",
       "path": "QUICKSTART.md",
       "role": "release-guide",
-      "sha256": "a06c4ad5f1d1a1bc0da512df8d89a256f2c8577f43d052e6a86160e1fec89203",
+      "sha256": "9726401a3156ed31f121be346785e300b65919b9f8d4082df39edd6105ff1de0",
       "source": "package-templates/QUICKSTART.md",
       "source_sha256": "c15eedc79a66fe5c8eef7eafdec686e78bcc5d680ab9a8229ff25a9adeea5906",
       "transform": "first-party-documentation-revision",
@@ -204,7 +204,7 @@
               "baseline_revision": "764bd88",
               "previous_transform": "first-party-documentation-revision",
               "previous_details": {
-                "revision": "2026-10-22",
+                "revision": "2026-10-27",
                 "baseline_revision": "764bd88",
                 "previous_transform": "first-party-documentation-revision",
                 "previous_details": {
@@ -218,13 +218,18 @@
                     "previous_details": {
                       "revision": "2026-10-22",
                       "baseline_revision": "764bd88",
-                      "previous_transform": "template-version-substitution",
+                      "previous_transform": "first-party-documentation-revision",
                       "previous_details": {
-                        "changed": false,
-                        "images_converted_to_ordinary_links": 0,
-                        "links_redirected_to_archive_pointers": 0,
-                        "links_rewritten_to_package": 2,
-                        "local_redactions": []
+                        "revision": "2026-10-22",
+                        "baseline_revision": "764bd88",
+                        "previous_transform": "template-version-substitution",
+                        "previous_details": {
+                          "changed": false,
+                          "images_converted_to_ordinary_links": 0,
+                          "links_redirected_to_archive_pointers": 0,
+                          "links_rewritten_to_package": 2,
+                          "local_redactions": []
+                        }
                       }
                     }
                   }
@@ -254,7 +259,7 @@
               "baseline_revision": "764bd88",
               "previous_transform": "first-party-documentation-revision",
               "previous_details": {
-                "revision": "2026-10-22",
+                "revision": "2026-10-27",
                 "baseline_revision": "764bd88",
                 "previous_transform": "first-party-documentation-revision",
                 "previous_details": {
@@ -268,13 +273,18 @@
                     "previous_details": {
                       "revision": "2026-10-22",
                       "baseline_revision": "764bd88",
-                      "previous_transform": "template-version-substitution",
+                      "previous_transform": "first-party-documentation-revision",
                       "previous_details": {
-                        "changed": false,
-                        "images_converted_to_ordinary_links": 0,
-                        "links_redirected_to_archive_pointers": 0,
-                        "links_rewritten_to_package": 2,
-                        "local_redactions": []
+                        "revision": "2026-10-22",
+                        "baseline_revision": "764bd88",
+                        "previous_transform": "template-version-substitution",
+                        "previous_details": {
+                          "changed": false,
+                          "images_converted_to_ordinary_links": 0,
+                          "links_redirected_to_archive_pointers": 0,
+                          "links_rewritten_to_package": 2,
+                          "local_redactions": []
+                        }
                       }
                     }
                   }
@@ -2556,11 +2566,11 @@
       }
     },
     {
-      "bytes": 13043,
+      "bytes": 14899,
       "license": "CC-BY-4.0",
       "path": "docs/methods/guides/function-and-utility-validation.md",
       "role": "normative-prose",
-      "sha256": "8076a492ff47d91ff67f7eeb909a431988f94203190b2d1e9b746dc2cb1e2d30",
+      "sha256": "fcec963a61bdc27d7e1eb5bf9b3879d57e262995e2007bb9a936cb5b7aa52def",
       "source": "docs/methods/guides/function-and-utility-validation.md",
       "source_sha256": "dfe8e767836d30f1f13219173f53fb5ec5500cdc8d137914500934185e41429d",
       "transform": "first-party-documentation-revision",
@@ -2573,15 +2583,20 @@
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-22",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
-            "previous_transform": "markdown-links-and-local-redaction",
+            "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "changed": true,
-              "images_converted_to_ordinary_links": 0,
-              "links_redirected_to_archive_pointers": 5,
-              "links_rewritten_to_package": 4,
-              "local_redactions": []
+              "revision": "2026-10-22",
+              "baseline_revision": "764bd88",
+              "previous_transform": "markdown-links-and-local-redaction",
+              "previous_details": {
+                "changed": true,
+                "images_converted_to_ordinary_links": 0,
+                "links_redirected_to_archive_pointers": 5,
+                "links_rewritten_to_package": 4,
+                "local_redactions": []
+              }
             }
           }
         }
@@ -2598,15 +2613,20 @@
           "baseline_revision": "764bd88",
           "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "revision": "2026-10-22",
+            "revision": "2026-10-27",
             "baseline_revision": "764bd88",
-            "previous_transform": "markdown-links-and-local-redaction",
+            "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "changed": true,
-              "images_converted_to_ordinary_links": 0,
-              "links_redirected_to_archive_pointers": 5,
-              "links_rewritten_to_package": 4,
-              "local_redactions": []
+              "revision": "2026-10-22",
+              "baseline_revision": "764bd88",
+              "previous_transform": "markdown-links-and-local-redaction",
+              "previous_details": {
+                "changed": true,
+                "images_converted_to_ordinary_links": 0,
+                "links_redirected_to_archive_pointers": 5,
+                "links_rewritten_to_package": 4,
+                "local_redactions": []
+              }
             }
           }
         }
@@ -4978,6 +4998,34 @@
       }
     },
     {
+      "path": "examples/research-support/paired-controls/calibration-separate.csv",
+      "bytes": 500,
+      "sha256": "9ee4b46bda33f07bbbdcd65ce9b164745ad4e54b91829349805aff12ace5511d",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/paired-controls/calibration-separate.csv",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/paired-controls/calibration-shared.csv",
+      "bytes": 500,
+      "sha256": "5b374df82ec659128292d1045280d4d6f49575cef926e46ddd27d12f0c4091e3",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/paired-controls/calibration-shared.csv",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
       "path": "examples/research-support/paired-controls/long.csv",
       "bytes": 198,
       "sha256": "d65eb18ab32ae38a218e61cff39e687550808655877d8410d404c01766905a28",
@@ -7045,8 +7093,8 @@
     },
     {
       "path": "scripts/research_support/compare_controls.py",
-      "bytes": 8213,
-      "sha256": "cd25515a1060432844f958ba8afe9e613bcf2ef8582b4fe055ac7aadb375492d",
+      "bytes": 13280,
+      "sha256": "dc45ac99b01894541f744a4db73b8f5495f27d05bdb6cca63f11f63afada977a",
       "license": "Apache-2.0",
       "role": "documentation-tooling",
       "source": "first-party-documentation-revision:scripts/research_support/compare_controls.py",
@@ -7054,7 +7102,24 @@
       "transform": "first-party-documentation-revision",
       "transform_details": {
         "revision": "2026-10-27",
-        "baseline_revision": "764bd88"
+        "baseline_revision": "764bd88",
+        "previous_transform": "first-party-documentation-revision",
+        "previous_details": {
+          "revision": "2026-10-27",
+          "baseline_revision": "764bd88"
+        }
+      },
+      "previous": {
+        "revision": "764bd88",
+        "path": "scripts/research_support/compare_controls.py",
+        "sha256": "cd25515a1060432844f958ba8afe9e613bcf2ef8582b4fe055ac7aadb375492d",
+        "source": "first-party-documentation-revision:scripts/research_support/compare_controls.py",
+        "transform": "first-party-documentation-revision",
+        "source_sha256": null,
+        "transform_details": {
+          "revision": "2026-10-27",
+          "baseline_revision": "764bd88"
+        }
       }
     },
     {
@@ -7566,8 +7631,8 @@
     },
     {
       "path": "tests/research_support/test_compare_controls.py",
-      "bytes": 6424,
-      "sha256": "e62354fee889da2b9211febd1d78fdca461350ccc1d1e6e4355be12ac9a3b78d",
+      "bytes": 12774,
+      "sha256": "77b4749fd357d850006eadd0c84e3ca4d96c334337659c54176e496e967c25f0",
       "license": "Apache-2.0",
       "role": "documentation-tooling",
       "source": "first-party-documentation-revision:tests/research_support/test_compare_controls.py",
@@ -7579,7 +7644,12 @@
         "previous_transform": "first-party-documentation-revision",
         "previous_details": {
           "revision": "2026-10-27",
-          "baseline_revision": "764bd88"
+          "baseline_revision": "764bd88",
+          "previous_transform": "first-party-documentation-revision",
+          "previous_details": {
+            "revision": "2026-10-27",
+            "baseline_revision": "764bd88"
+          }
         }
       },
       "previous": {
@@ -7591,7 +7661,12 @@
         "source_sha256": null,
         "transform_details": {
           "revision": "2026-10-27",
-          "baseline_revision": "764bd88"
+          "baseline_revision": "764bd88",
+          "previous_transform": "first-party-documentation-revision",
+          "previous_details": {
+            "revision": "2026-10-27",
+            "baseline_revision": "764bd88"
+          }
         }
       }
     },
@@ -8026,7 +8101,7 @@
     "kind": "first-party-documentation-revision",
     "baseline_revision": "764bd88",
     "baseline_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
-    "head": "c288d1a49daa1fb41a4c187b813cad51ad70c8fd",
+    "head": "562a3fb45cf3c5a170d777754a1cde6caa0a3ffe",
     "frozen_tag": "v0.1.0-alpha.2",
     "frozen_tag_target": "764bd88b090439c8fe0d1646826d23865dc5c20b"
   }

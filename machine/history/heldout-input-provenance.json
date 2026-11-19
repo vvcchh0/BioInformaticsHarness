@@ -1,0 +1,21 @@
+{
+  "schema": "harness.method-experience/v1",
+  "id": "heldout-input-provenance",
+  "basis": "Three retrospective studies distinguished fixed-model numerical fidelity, TF binding labels and four-construct reporter measurements.",
+  "example": [
+    "core/examples/research-support/paired-controls/calibration-shared.csv",
+    "core/examples/research-support/paired-controls/calibration-separate.csv"
+  ],
+  "checks": [
+    {
+      "fixture": "public synthetic calibration exports",
+      "observed": "Three paired keys. One run has shared source IDs within a fold, the other has disjoint declared library IDs."
+    },
+    {
+      "fixture": "private aggregate replay of public MPRA inputs",
+      "available": "private case execution; input study GSE174534 is public",
+      "observed": "For 3437 common X-window pairs in held-out RNA replicate 3, using one shared vs three distinct DNA measurements changes both the observed readout and source assignment. Adding the physical input pool to the declared ancestry reveals a shared source on both sides."
+    }
+  ],
+  "scope": "Compares declarations in supplied tables. Evidence of disjoint recorded measurements is scoped to the disclosed ancestry. Biological independence, authenticity and generalization require evidence beyond these checks."
+}

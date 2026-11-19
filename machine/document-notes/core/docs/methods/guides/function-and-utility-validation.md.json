@@ -51,7 +51,18 @@
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
   "source_sha256": "b25b8cb3672df68d3b3e1fbcf8ff599ebab60b29b35b0a9671f87a2e663e77e6",
   "current_identity": {
-    "bytes": 13043,
-    "sha256": "8076a492ff47d91ff67f7eeb909a431988f94203190b2d1e9b746dc2cb1e2d30"
-  }
+    "bytes": 14899,
+    "sha256": "fcec963a61bdc27d7e1eb5bf9b3879d57e262995e2007bb9a936cb5b7aa52def"
+  },
+  "editorial_revisions": [
+    {
+      "id": "heldout-input-provenance",
+      "date": "2026-11-19",
+      "reason": "Reflect traceable held-out input comparisons.",
+      "technical_refs": [
+        "machine/changes/heldout-input-provenance.json",
+        "machine/history/heldout-input-provenance.json"
+      ]
+    }
+  ]
 }

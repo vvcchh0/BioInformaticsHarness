@@ -50,6 +50,14 @@ python -B -m scripts.research_support.compare_controls units-before.csv units-af
 
 See the [observation unit guide](docs/methods/guides/statistical-units-and-selection.md#跨运行配对同一观察单位) for repeat measurements and reports that lack a stable identifier.
 
+If a comparison claims to hold out a measurement, trace both sides to the raw inputs used in each fold. In this calibration example, three units share the same targets and context across runs; one fold in the first run reuses a calibration input across different units.
+
+```sh
+python -B -m scripts.research_support.compare_controls calibration-shared.csv calibration-separate.csv --root examples/research-support/paired-controls --key scope --key fold --key unit --key-kind entity --vary sources --context readout_window --label target --label target_definition --label target_source --input input_view --selection selection_rule --evaluation metric --split-by fold --split-sources train_raw test_raw --require-disjoint-sources
+```
+
+Read `split_sources` per side and fold. Each source cell is a JSON array of study-scoped IDs. Follow derived artifacts back to the raw measurements; repeat `--split-sources` for additional roles. Where biological origin matters, include the shared parent pool or donor as a source as well. Distinct library IDs can come from the same pool. A blank or empty list leaves coverage unknown. Include fold identity in the key when supplying `--split-by`; without it each file represents one split. The report distinguishes a single changed axis from the declared requirement for disjoint sources. A completed audit can still find overlap. [Worked reasoning about shared inputs](docs/methods/guides/function-and-utility-validation.md#留出评价共享了哪些输入)
+
 ## Receive and rerun a handoff
 
 After the producer finishes, the receiver runs the same manifest independently:

@@ -7,7 +7,7 @@
   "documentation_revision": "2026-10-27",
   "working_tree": {
     "kind": "first-party-documentation-revision",
-    "head": "c288d1a49daa1fb41a4c187b813cad51ad70c8fd",
+    "head": "562a3fb45cf3c5a170d777754a1cde6caa0a3ffe",
     "tag_unchanged_by_refresh": true
   },
   "record_path": "machine/history/documentation-refresh.json",
@@ -27,8 +27,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:CHANGELOG.md",
       "previous_sha256": "7e09c5cb4ab65d4368ea89ecddf01daeb8fb10a4e51af2c08a5f432c59f67e7d",
-      "current_bytes": 16327,
-      "current_sha256": "330e27aedd51cffb794f3222033c6b8822e44aa334a2f547bfec9896b3bc4dc5"
+      "current_bytes": 16736,
+      "current_sha256": "a30e5a71668b79f14dea1c62d63a4c7182abc059ad7d8621d2998841434ffeb1"
     },
     {
       "path": "LICENSING.md",
@@ -90,8 +90,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/QUICKSTART.md",
       "previous_sha256": "c15eedc79a66fe5c8eef7eafdec686e78bcc5d680ab9a8229ff25a9adeea5906",
-      "current_bytes": 8337,
-      "current_sha256": "a06c4ad5f1d1a1bc0da512df8d89a256f2c8577f43d052e6a86160e1fec89203"
+      "current_bytes": 9841,
+      "current_sha256": "9726401a3156ed31f121be346785e300b65919b9f8d4082df39edd6105ff1de0"
     },
     {
       "path": "core/README.md",
@@ -126,8 +126,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/RELEASE-MANIFEST.json",
       "previous_sha256": "b54b0cd83b5870306211066aaf6f49d346d3e379cdcb95351f332e408830da65",
-      "current_bytes": 336739,
-      "current_sha256": "b35423dfc67b0650a09dbb7626d8ffffb5427a930cc8cc1f36dd53ac694ab4e6"
+      "current_bytes": 339998,
+      "current_sha256": "635bbdc5838229147dbcbd59de25b7c6c11481231ea571dbbc3ea8c77268bb56"
     },
     {
       "path": "core/THIRD_PARTY.md",
@@ -581,8 +581,8 @@
       "baseline_revision": "764bd88",
       "baseline_locator": "764bd88:core/docs/methods/guides/function-and-utility-validation.md",
       "previous_sha256": "b25b8cb3672df68d3b3e1fbcf8ff599ebab60b29b35b0a9671f87a2e663e77e6",
-      "current_bytes": 13043,
-      "current_sha256": "8076a492ff47d91ff67f7eeb909a431988f94203190b2d1e9b746dc2cb1e2d30"
+      "current_bytes": 14899,
+      "current_sha256": "fcec963a61bdc27d7e1eb5bf9b3879d57e262995e2007bb9a936cb5b7aa52def"
     },
     {
       "path": "core/docs/methods/guides/guidance-calibration-and-handoff.md",
@@ -961,6 +961,20 @@
       "baseline_revision": "764bd88",
       "current_bytes": 289,
       "current_sha256": "ee884dd5d4119d7d23b06f6c8eded3a822ce363be8c11dc85b582d1200438f78"
+    },
+    {
+      "path": "core/examples/research-support/paired-controls/calibration-separate.csv",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 500,
+      "current_sha256": "9ee4b46bda33f07bbbdcd65ce9b164745ad4e54b91829349805aff12ace5511d"
+    },
+    {
+      "path": "core/examples/research-support/paired-controls/calibration-shared.csv",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 500,
+      "current_sha256": "5b374df82ec659128292d1045280d4d6f49575cef926e46ddd27d12f0c4091e3"
     },
     {
       "path": "core/examples/research-support/paired-controls/long.csv",
@@ -1658,8 +1672,8 @@
       "path": "core/scripts/research_support/compare_controls.py",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 8213,
-      "current_sha256": "cd25515a1060432844f958ba8afe9e613bcf2ef8582b4fe055ac7aadb375492d"
+      "current_bytes": 13280,
+      "current_sha256": "dc45ac99b01894541f744a4db73b8f5495f27d05bdb6cca63f11f63afada977a"
     },
     {
       "path": "core/scripts/research_support/evidence.py",
@@ -1759,8 +1773,8 @@
       "path": "core/tests/research_support/test_compare_controls.py",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 6424,
-      "current_sha256": "e62354fee889da2b9211febd1d78fdca461350ccc1d1e6e4355be12ac9a3b78d"
+      "current_bytes": 12774,
+      "current_sha256": "77b4749fd357d850006eadd0c84e3ca4d96c334337659c54176e496e967c25f0"
     },
     {
       "path": "core/tests/research_support/test_evidence.py",
@@ -1851,8 +1865,8 @@
       "path": "docs/REFERENCES-AND-DESIGN.md",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 69716,
-      "current_sha256": "8e337b672aeb4fe697c6d47c37b4933aa8ce6e743fa63d48d1509dbd0fd8f42e"
+      "current_bytes": 70357,
+      "current_sha256": "33d5bce2f9b215d3a14527d24bc710708c790dd450b97f7e9da7cd1f060fbb5e"
     },
     {
       "path": "docs/harness-updates.md",
@@ -2026,6 +2040,13 @@
       "current_sha256": "0eb7e548cffda826c114dbe2de0816f1ab359e5fb3340c913a3216bd34b21a49"
     },
     {
+      "path": "machine/changes/heldout-input-provenance.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 1333,
+      "current_sha256": "c78674b57b81294534af894b37a6075a02f24fbbe651bce93a5d67a8fd7d2600"
+    },
+    {
       "path": "machine/changes/macos-paths-optional-github-proxy-20261030.json",
       "change": "added",
       "baseline_revision": "764bd88",
@@ -2162,8 +2183,8 @@
       "path": "machine/document-notes/CHANGELOG.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 16718,
-      "current_sha256": "e46bdba0821b3087d3baf8292fd28a811e77beb00843bea6c6326d21046fe606"
+      "current_bytes": 17011,
+      "current_sha256": "f398cf7fb8feaac9fbf84d2e060e71916723cefa2a6c3db79764b797f95a0f76"
     },
     {
       "path": "machine/document-notes/LICENSING.md.json",
@@ -2211,8 +2232,8 @@
       "path": "machine/document-notes/core/QUICKSTART.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 8227,
-      "current_sha256": "289e7a40af2ba38008c77c730db2c85c92f076498d520592fdb3673511bfe6df"
+      "current_bytes": 8520,
+      "current_sha256": "94a82769a92dfaf5d731bbe8b162f56a304fc7974eb3b6c10d84f700c8b443e6"
     },
     {
       "path": "machine/document-notes/core/README.md.json",
@@ -2596,8 +2617,8 @@
       "path": "machine/document-notes/core/docs/methods/guides/function-and-utility-validation.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 13277,
-      "current_sha256": "f32e00793802d1534e0b18f1650afe12c7c1b2c1b1fe3b23672a40716a82dc82"
+      "current_bytes": 13601,
+      "current_sha256": "41cfb22e6ab7d957fa225a9898db7b7b9f9993278218cd110844060d84b7d6be"
     },
     {
       "path": "machine/document-notes/core/docs/methods/guides/guidance-calibration-and-handoff.md.json",
@@ -3114,8 +3135,8 @@
       "path": "machine/document-notes/docs/REFERENCES-AND-DESIGN.md.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 9347,
-      "current_sha256": "c61a34158af756c5453837f48b33f70287d856605d819023d2695543eda846be"
+      "current_bytes": 9640,
+      "current_sha256": "eceb574a28e74f61caf5bd0f74db95a1519eda18771a26894430de4434a4151a"
     },
     {
       "path": "machine/document-notes/docs/harness-updates.md.json",
@@ -3212,8 +3233,8 @@
       "path": "machine/document-notes/machine/documentation-policy.json.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 10913,
-      "current_sha256": "d07b2814d5713cd8879a4299e4a3c0e4a7e26ecfb4c2e2bed68d3dc73c3489c2"
+      "current_bytes": 11206,
+      "current_sha256": "89678e5d904ccfdbca1a724b15d45980005485f075e46e7c0702e78dbb62941b"
     },
     {
       "path": "machine/document-notes/machine/schemas/source-design-index.schema.json.json",
@@ -3233,8 +3254,8 @@
       "path": "machine/documentation-policy.json",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 10490,
-      "current_sha256": "63d21d1086d5966524fabfe0d85fd82cec9c7b1339da1d4e121388198cf368bc"
+      "current_bytes": 11013,
+      "current_sha256": "5c4880d74d244539f11850875cd26705c6dcc4ec7fbfe6a62412dc22916665ab"
     },
     {
       "path": "machine/examples/splice-resource-readiness.json",
@@ -3270,6 +3291,13 @@
       "baseline_revision": "764bd88",
       "current_bytes": 3765,
       "current_sha256": "41819eba5f1fda1386094e99592c4ce147b79d7990b4e60ac41c4501a6068f28"
+    },
+    {
+      "path": "machine/history/heldout-input-provenance.json",
+      "change": "added",
+      "baseline_revision": "764bd88",
+      "current_bytes": 1296,
+      "current_sha256": "18a997ed01ccc96b0ff6ee0036ac98db31689ad72260a2ac03af3bc8c54bf3cc"
     },
     {
       "path": "machine/history/method-research-20261119.json",
@@ -3464,8 +3492,8 @@
       "path": "machine/source-design-index.jsonl",
       "change": "added",
       "baseline_revision": "764bd88",
-      "current_bytes": 322960,
-      "current_sha256": "292591d28d5023a1efe876f8c0a2bab156e10a763d35d70e397406334251a343"
+      "current_bytes": 324725,
+      "current_sha256": "4ecf890a2769dc864ca7ffb1086683f1d26d641f44a461b284fd2fd7fdf6c84b"
     },
     {
       "path": "machine/time-budget-recovery-contract.json",
