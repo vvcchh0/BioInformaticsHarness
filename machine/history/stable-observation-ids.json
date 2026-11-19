@@ -1,0 +1,21 @@
+{
+  "schema": "harness.method-experience/v1",
+  "id": "stable-observation-ids",
+  "basis": "A private study could verify an unordered multiset of errors but lacked a persistent mapping for identity-level replay.",
+  "example": [
+    "core/examples/research-support/paired-controls/units-before.csv",
+    "core/examples/research-support/paired-controls/units-after.csv"
+  ],
+  "pairing_key": [
+    "unit_namespace",
+    "unit_id"
+  ],
+  "expected": {
+    "common": 2,
+    "only_left": 1,
+    "only_right": 1,
+    "changed_shared_readout": 2,
+    "common_after_namespace_change": 0
+  },
+  "scope": "Stable opaque identifiers are study-scoped pseudonyms. Export counts describe observed members. Unresolvable legacy identities remain unknown."
+}

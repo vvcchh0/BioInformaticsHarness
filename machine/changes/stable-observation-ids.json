@@ -1,0 +1,27 @@
+{
+  "schema": "harness.guidance-change/v1",
+  "id": "stable-observation-ids",
+  "date": "2026-11-19",
+  "summary": "Issue each observation unit an opaque ID once within a named study scope and carry it through paired exports.",
+  "impact": "guidance",
+  "baseline_commit": "c288d1a49daa1fb41a4c187b813cad51ad70c8fd",
+  "paths": [
+    "CHANGELOG.md",
+    "core/QUICKSTART.md",
+    "core/docs/methods/guides/statistical-units-and-selection.md",
+    "core/docs/methods/guides/function-and-utility-validation.md",
+    "docs/REFERENCES-AND-DESIGN.md",
+    "core/examples/research-support/paired-controls/units-before.csv",
+    "core/examples/research-support/paired-controls/units-after.csv",
+    "core/tests/research_support/test_compare_controls.py"
+  ],
+  "reading_paths": [
+    "core/docs/methods/guides/statistical-units-and-selection.md#跨运行配对同一观察单位",
+    "core/QUICKSTART.md#compare-controls-across-two-runs"
+  ],
+  "revisit": "When later runs need to identify the same observed or repeated unit.",
+  "evidence": "machine/history/stable-observation-ids.json",
+  "new_first_draft_gate": false,
+  "new_mandatory_file_family": false,
+  "applies_to_existing_studies": "Add a mapping at the next relevant export. Preserve frozen originals."
+}

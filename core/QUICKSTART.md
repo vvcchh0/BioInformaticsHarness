@@ -42,6 +42,14 @@ python -B -m scripts.research_support.compare_controls examples/research-support
 
 Two transcript IDs are shared and one is unique to each export. On the shared panel the labels match, while the recorded input and selection protocol both change. The report suggests checks to consider before further computation. It does not compute a score or inspect a checkpoint. Use verified entity IDs (repeat `--key` for a composite key), or declare `--key-kind position` for row offsets. Role options name literal exported columns and can be repeated to cover other controls, such as weights, label units, pool identity, selection split or scoring policy. In the example both exports name the same weights. Use `--fixed` for conditions outside the intended contrast. For a rule-only comparison fix the candidate pool and budget separately. An entity key describes observed export coverage; reconcile exclusions and failed predictions against the intended panels. Single-factor attribution still depends on controls not visible in these exports. Missing evidence columns, blank values and the literal `unknown` are unassessed; use `--missing-value` for other markers. Align equivalent encodings using documented transformations before comparing. Shared rows need separate checks for consistent measurement and independent evaluation. Use `--vary system` to describe both systems with their observed conditions. A zero exit code means the diagnostic completed; interpret the differences, incomplete fields and scope in its JSON output.
 
+To compare pseudonymized exports, assign an opaque ID once per observation unit and reuse the same study mapping on later runs. This example has the same collection of readout values in both files. Pairing by namespace and unit reveals which observations changed and which units occur in only one export.
+
+```sh
+python -B -m scripts.research_support.compare_controls units-before.csv units-after.csv --root examples/research-support/paired-controls --key unit_namespace --key unit_id --key-kind entity --vary members --label readout --input input_view --selection selection_rule --evaluation metric
+```
+
+See the [observation unit guide](docs/methods/guides/statistical-units-and-selection.md#跨运行配对同一观察单位) for repeat measurements and reports that lack a stable identifier.
+
 ## Receive and rerun a handoff
 
 After the producer finishes, the receiver runs the same manifest independently:

@@ -80,6 +80,28 @@ class PairedControlTests(unittest.TestCase):
         self.assertIn("selection", report["unknown_or_incomplete"])
         self.assertIn("selection", self.run_case(self.left.replace(",4,", ",unknown,"))[1]["unknown_or_incomplete"])
 
+    def test_pseudonyms_pair_by_scope_and_unit_after_reordering(self):
+        fixture = CORE / "examples/research-support/paired-controls"
+        left = (fixture / "units-before.csv").read_text(encoding="utf-8")
+        right = (fixture / "units-after.csv").read_text(encoding="utf-8").splitlines()
+        (self.root / "left.csv").write_text(left, encoding="utf-8")
+        args = ["left.csv", "right.csv", "--root", str(self.root), "--key", "unit_namespace",
+                "--key", "unit_id", "--key-kind", "entity", "--vary", "members", "--label", "readout"]
+        for distinct_scope, expected in [(False, (2, 1, 1)), (True, (0, 3, 3))]:
+            with self.subTest(distinct_scope=distinct_scope):
+                rows = [right[0], *reversed(right[1:])]
+                if distinct_scope:
+                    rows = [row.replace("example-study-v1", "other-study") for row in rows]
+                (self.root / "right.csv").write_text("\n".join(rows), encoding="utf-8")
+                output = io.StringIO()
+                with contextlib.redirect_stdout(output):
+                    self.assertEqual(main(args), 0)
+                report = json.loads(output.getvalue())
+                observed = tuple(report[key] for key in ("common_count", "left_only_count", "right_only_count"))
+                self.assertEqual(observed, expected)
+                if not distinct_scope:
+                    self.assertEqual(report["axes"]["label"]["changed_pairs"], 2)
+
     def test_ambiguous_keys_and_malformed_csv_refused(self):
         for rows in [self.left + self.left, ",1,short,dev,4,P\n", "a,1\n"]:
             self.assertEqual(self.run_case(rows)[0], 2)

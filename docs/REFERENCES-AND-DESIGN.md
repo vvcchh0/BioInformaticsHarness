@@ -6,6 +6,8 @@ The [machine ledger](../machine/source-design-index.jsonl) records the maintaine
 
 Formal model-case results here describe source-led paper and implementation analysis, with retrospective manuscript review where recorded. Model execution and saved-artifact applications have their own records below.
 
+The [cross-run pairing example](../core/QUICKSTART.md#compare-controls-across-two-runs) connects a study-level observation ID to shuffled exports and makes changes in membership visible. The [change record](../machine/changes/stable-observation-ids.json) states the evidence and its scope.
+
 ## Central academic references
 
 | Source | Borrowing or selection | Design and implementation | Acceptance result |

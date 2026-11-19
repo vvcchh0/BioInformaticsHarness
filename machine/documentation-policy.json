@@ -135,6 +135,8 @@
     "core/examples/research-support/study-view/demo-study/*.json": "Apache-2.0",
     "core/tests/research_support/test_compare_controls.py": "Apache-2.0",
     "core/examples/research-support/paired-controls/short.csv": "Apache-2.0",
+    "core/examples/research-support/paired-controls/units-before.csv": "Apache-2.0",
+    "core/examples/research-support/paired-controls/units-after.csv": "Apache-2.0",
     "core/examples/research-support/paired-controls/long.csv": "Apache-2.0"
   },
   "license_scope_updates": [
@@ -224,6 +226,8 @@
       "scopes": {
         "core/tests/research_support/test_compare_controls.py": "Apache-2.0",
         "core/examples/research-support/paired-controls/short.csv": "Apache-2.0",
+        "core/examples/research-support/paired-controls/units-before.csv": "Apache-2.0",
+        "core/examples/research-support/paired-controls/units-after.csv": "Apache-2.0",
         "core/examples/research-support/paired-controls/long.csv": "Apache-2.0"
       }
     }

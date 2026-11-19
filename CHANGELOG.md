@@ -1,5 +1,9 @@
 # Changelog
 
+## 跨运行配对观察单位
+
+[统计单位指南](core/docs/methods/guides/statistical-units-and-selection.md#跨运行配对同一观察单位)和[可运行示例](core/QUICKSTART.md#compare-controls-across-two-runs)说明怎样在重新排序、增删成员或匿名导出后核对同一单位。[更新记录](machine/changes/stable-observation-ids.json)
+
 ## 从历史问题开展方法研究 — 2026-11-19
 
 [研究指导](core/docs/methods/guides/research-guidance-cycle.md#从已有问题重新开发方法)将首次计算接到一个待检验的设计选择，并说明理论层如何按结果继续。[架构评审](docs/research/method-research-architecture-review.zh.md) · [试验分支变更记录](machine/changes/method-research-20261119.json)

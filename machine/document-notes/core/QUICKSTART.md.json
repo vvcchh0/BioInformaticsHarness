@@ -31,6 +31,11 @@
       "date": "2026-11-19",
       "change": "method-research-20261119",
       "record": "machine/history/method-research-20261119.json"
+    },
+    {
+      "date": "2026-11-19",
+      "change": "stable-observation-ids",
+      "record": "machine/history/stable-observation-ids.json"
     }
   ],
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
@@ -73,8 +78,8 @@
     }
   ],
   "current_identity": {
-    "bytes": 7534,
-    "sha256": "2a9be2cb8848dd7586f044d1d3f5f31a1adac3f680ef665da4d716c32dbc5349"
+    "bytes": 8337,
+    "sha256": "a06c4ad5f1d1a1bc0da512df8d89a256f2c8577f43d052e6a86160e1fec89203"
   },
   "updated_at_utc": "2026-10-29T06:22:52.609392+00:00"
 }

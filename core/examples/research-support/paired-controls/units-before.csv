@@ -1,0 +1,4 @@
+unit_namespace,unit_id,readout,input_view,selection_rule,metric
+example-study-v1,u_d2c971af,10,view-v1,all,mean-error
+example-study-v1,u_8bea631d,20,view-v1,all,mean-error
+example-study-v1,u_3c9ab5f2,30,view-v1,all,mean-error

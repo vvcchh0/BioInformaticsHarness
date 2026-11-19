@@ -69,10 +69,17 @@
   ],
   "updated_at_utc": "2026-11-04T15:43:28.203120+00:00",
   "current_identity": {
-    "bytes": 10144,
-    "sha256": "f6db023a5a5ef3a8347a4499c8f6c3a2a3eee89558b35101e3e9701d11eb3516"
+    "bytes": 10490,
+    "sha256": "63d21d1086d5966524fabfe0d85fd82cec9c7b1339da1d4e121388198cf368bc"
   },
   "current_technical_records": [
     "core/machine/design/biological-argument.json"
+  ],
+  "technical_notes": [
+    {
+      "change": "stable-observation-ids",
+      "record": "machine/history/stable-observation-ids.json",
+      "scope": "Apply the existing paired-control fixture license to the two new example exports."
+    }
   ]
 }

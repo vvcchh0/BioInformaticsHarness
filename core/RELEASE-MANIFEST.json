@@ -179,11 +179,11 @@
       "transform_details": {}
     },
     {
-      "bytes": 7534,
+      "bytes": 8337,
       "license": "CC-BY-4.0",
       "path": "QUICKSTART.md",
       "role": "release-guide",
-      "sha256": "2a9be2cb8848dd7586f044d1d3f5f31a1adac3f680ef665da4d716c32dbc5349",
+      "sha256": "a06c4ad5f1d1a1bc0da512df8d89a256f2c8577f43d052e6a86160e1fec89203",
       "source": "package-templates/QUICKSTART.md",
       "source_sha256": "c15eedc79a66fe5c8eef7eafdec686e78bcc5d680ab9a8229ff25a9adeea5906",
       "transform": "first-party-documentation-revision",
@@ -200,7 +200,7 @@
             "baseline_revision": "764bd88",
             "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "revision": "2026-10-22",
+              "revision": "2026-10-27",
               "baseline_revision": "764bd88",
               "previous_transform": "first-party-documentation-revision",
               "previous_details": {
@@ -214,13 +214,18 @@
                   "previous_details": {
                     "revision": "2026-10-22",
                     "baseline_revision": "764bd88",
-                    "previous_transform": "template-version-substitution",
+                    "previous_transform": "first-party-documentation-revision",
                     "previous_details": {
-                      "changed": false,
-                      "images_converted_to_ordinary_links": 0,
-                      "links_redirected_to_archive_pointers": 0,
-                      "links_rewritten_to_package": 2,
-                      "local_redactions": []
+                      "revision": "2026-10-22",
+                      "baseline_revision": "764bd88",
+                      "previous_transform": "template-version-substitution",
+                      "previous_details": {
+                        "changed": false,
+                        "images_converted_to_ordinary_links": 0,
+                        "links_redirected_to_archive_pointers": 0,
+                        "links_rewritten_to_package": 2,
+                        "local_redactions": []
+                      }
                     }
                   }
                 }
@@ -245,7 +250,7 @@
             "baseline_revision": "764bd88",
             "previous_transform": "first-party-documentation-revision",
             "previous_details": {
-              "revision": "2026-10-22",
+              "revision": "2026-10-27",
               "baseline_revision": "764bd88",
               "previous_transform": "first-party-documentation-revision",
               "previous_details": {
@@ -259,13 +264,18 @@
                   "previous_details": {
                     "revision": "2026-10-22",
                     "baseline_revision": "764bd88",
-                    "previous_transform": "template-version-substitution",
+                    "previous_transform": "first-party-documentation-revision",
                     "previous_details": {
-                      "changed": false,
-                      "images_converted_to_ordinary_links": 0,
-                      "links_redirected_to_archive_pointers": 0,
-                      "links_rewritten_to_package": 2,
-                      "local_redactions": []
+                      "revision": "2026-10-22",
+                      "baseline_revision": "764bd88",
+                      "previous_transform": "template-version-substitution",
+                      "previous_details": {
+                        "changed": false,
+                        "images_converted_to_ordinary_links": 0,
+                        "links_redirected_to_archive_pointers": 0,
+                        "links_rewritten_to_package": 2,
+                        "local_redactions": []
+                      }
                     }
                   }
                 }
@@ -2546,11 +2556,11 @@
       }
     },
     {
-      "bytes": 12372,
+      "bytes": 13043,
       "license": "CC-BY-4.0",
       "path": "docs/methods/guides/function-and-utility-validation.md",
       "role": "normative-prose",
-      "sha256": "f40afa6c2101a9580e5e9a2b789e6c54a10b9d87661cf634cff12edae1fac27c",
+      "sha256": "8076a492ff47d91ff67f7eeb909a431988f94203190b2d1e9b746dc2cb1e2d30",
       "source": "docs/methods/guides/function-and-utility-validation.md",
       "source_sha256": "dfe8e767836d30f1f13219173f53fb5ec5500cdc8d137914500934185e41429d",
       "transform": "first-party-documentation-revision",
@@ -2559,15 +2569,20 @@
         "baseline_revision": "764bd88",
         "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
-          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "changed": true,
-            "images_converted_to_ordinary_links": 0,
-            "links_redirected_to_archive_pointers": 5,
-            "links_rewritten_to_package": 4,
-            "local_redactions": []
+            "revision": "2026-10-22",
+            "baseline_revision": "764bd88",
+            "previous_transform": "markdown-links-and-local-redaction",
+            "previous_details": {
+              "changed": true,
+              "images_converted_to_ordinary_links": 0,
+              "links_redirected_to_archive_pointers": 5,
+              "links_rewritten_to_package": 4,
+              "local_redactions": []
+            }
           }
         }
       },
@@ -2579,15 +2594,20 @@
         "transform": "markdown-links-and-local-redaction",
         "source_sha256": "dfe8e767836d30f1f13219173f53fb5ec5500cdc8d137914500934185e41429d",
         "transform_details": {
-          "revision": "2026-10-22",
+          "revision": "2026-10-27",
           "baseline_revision": "764bd88",
-          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_transform": "first-party-documentation-revision",
           "previous_details": {
-            "changed": true,
-            "images_converted_to_ordinary_links": 0,
-            "links_redirected_to_archive_pointers": 5,
-            "links_rewritten_to_package": 4,
-            "local_redactions": []
+            "revision": "2026-10-22",
+            "baseline_revision": "764bd88",
+            "previous_transform": "markdown-links-and-local-redaction",
+            "previous_details": {
+              "changed": true,
+              "images_converted_to_ordinary_links": 0,
+              "links_redirected_to_archive_pointers": 5,
+              "links_rewritten_to_package": 4,
+              "local_redactions": []
+            }
           }
         }
       }
@@ -3507,24 +3527,29 @@
       }
     },
     {
-      "bytes": 16625,
+      "bytes": 18343,
       "license": "CC-BY-4.0",
       "path": "docs/methods/guides/statistical-units-and-selection.md",
       "role": "normative-prose",
-      "sha256": "0035f7df4f4015c0e33a42dfffba210aecbaebbc499a62c6e44c8849539c6f00",
+      "sha256": "a56df509da5ae1309524864741f54429c3423cd4fd50f562277b4c78a2bc4956",
       "source": "docs/methods/guides/statistical-units-and-selection.md",
       "source_sha256": "c9633fa968317dee706dd3daaa194ab01ed5c1274a1c9062e1c71ddac742c0f4",
       "transform": "first-party-documentation-revision",
       "transform_details": {
-        "revision": "2026-10-22",
+        "revision": "2026-10-27",
         "baseline_revision": "764bd88",
-        "previous_transform": "markdown-links-and-local-redaction",
+        "previous_transform": "first-party-documentation-revision",
         "previous_details": {
-          "changed": true,
-          "images_converted_to_ordinary_links": 0,
-          "links_redirected_to_archive_pointers": 15,
-          "links_rewritten_to_package": 0,
-          "local_redactions": []
+          "revision": "2026-10-22",
+          "baseline_revision": "764bd88",
+          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_details": {
+            "changed": true,
+            "images_converted_to_ordinary_links": 0,
+            "links_redirected_to_archive_pointers": 15,
+            "links_rewritten_to_package": 0,
+            "local_redactions": []
+          }
         }
       },
       "previous": {
@@ -3535,11 +3560,16 @@
         "transform": "markdown-links-and-local-redaction",
         "source_sha256": "c9633fa968317dee706dd3daaa194ab01ed5c1274a1c9062e1c71ddac742c0f4",
         "transform_details": {
-          "changed": true,
-          "images_converted_to_ordinary_links": 0,
-          "links_redirected_to_archive_pointers": 15,
-          "links_rewritten_to_package": 0,
-          "local_redactions": []
+          "revision": "2026-10-22",
+          "baseline_revision": "764bd88",
+          "previous_transform": "markdown-links-and-local-redaction",
+          "previous_details": {
+            "changed": true,
+            "images_converted_to_ordinary_links": 0,
+            "links_redirected_to_archive_pointers": 15,
+            "links_rewritten_to_package": 0,
+            "local_redactions": []
+          }
         }
       }
     },
@@ -4968,6 +4998,34 @@
       "license": "Apache-2.0",
       "role": "documentation-tooling",
       "source": "first-party-documentation-revision:examples/research-support/paired-controls/short.csv",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/paired-controls/units-after.csv",
+      "bytes": 226,
+      "sha256": "6153b7afb9a882e46fb0bd589e86f8422b2d0b992dd79df0136f7f8a49508a1f",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/paired-controls/units-after.csv",
+      "source_sha256": null,
+      "transform": "first-party-documentation-revision",
+      "transform_details": {
+        "revision": "2026-10-27",
+        "baseline_revision": "764bd88"
+      }
+    },
+    {
+      "path": "examples/research-support/paired-controls/units-before.csv",
+      "bytes": 226,
+      "sha256": "f67d3f2e710b59bc7515caa41c42df55bd37fc3ea7037715b0a2ae8638d2d2d9",
+      "license": "Apache-2.0",
+      "role": "documentation-tooling",
+      "source": "first-party-documentation-revision:examples/research-support/paired-controls/units-before.csv",
       "source_sha256": null,
       "transform": "first-party-documentation-revision",
       "transform_details": {
@@ -7508,8 +7566,8 @@
     },
     {
       "path": "tests/research_support/test_compare_controls.py",
-      "bytes": 4953,
-      "sha256": "737d2049ab403b6a65bef421c671826fe22c54f5e5aa3d2f375362411269e15b",
+      "bytes": 6424,
+      "sha256": "e62354fee889da2b9211febd1d78fdca461350ccc1d1e6e4355be12ac9a3b78d",
       "license": "Apache-2.0",
       "role": "documentation-tooling",
       "source": "first-party-documentation-revision:tests/research_support/test_compare_controls.py",
@@ -7517,7 +7575,24 @@
       "transform": "first-party-documentation-revision",
       "transform_details": {
         "revision": "2026-10-27",
-        "baseline_revision": "764bd88"
+        "baseline_revision": "764bd88",
+        "previous_transform": "first-party-documentation-revision",
+        "previous_details": {
+          "revision": "2026-10-27",
+          "baseline_revision": "764bd88"
+        }
+      },
+      "previous": {
+        "revision": "764bd88",
+        "path": "tests/research_support/test_compare_controls.py",
+        "sha256": "737d2049ab403b6a65bef421c671826fe22c54f5e5aa3d2f375362411269e15b",
+        "source": "first-party-documentation-revision:tests/research_support/test_compare_controls.py",
+        "transform": "first-party-documentation-revision",
+        "source_sha256": null,
+        "transform_details": {
+          "revision": "2026-10-27",
+          "baseline_revision": "764bd88"
+        }
       }
     },
     {
@@ -7951,7 +8026,7 @@
     "kind": "first-party-documentation-revision",
     "baseline_revision": "764bd88",
     "baseline_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
-    "head": "b01364924a6ac76fa368023a5f4971100ce5f3ff",
+    "head": "c288d1a49daa1fb41a4c187b813cad51ad70c8fd",
     "frozen_tag": "v0.1.0-alpha.2",
     "frozen_tag_target": "764bd88b090439c8fe0d1646826d23865dc5c20b"
   }

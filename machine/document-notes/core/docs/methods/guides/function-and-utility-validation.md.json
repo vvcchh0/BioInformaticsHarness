@@ -41,12 +41,17 @@
       "date": "2026-11-18",
       "change": "controlled-comparisons-20261118",
       "record": "machine/history/controlled-comparisons-20261118.json"
+    },
+    {
+      "date": "2026-11-19",
+      "change": "stable-observation-ids",
+      "record": "machine/history/stable-observation-ids.json"
     }
   ],
   "source_commit": "764bd88b090439c8fe0d1646826d23865dc5c20b",
   "source_sha256": "b25b8cb3672df68d3b3e1fbcf8ff599ebab60b29b35b0a9671f87a2e663e77e6",
   "current_identity": {
-    "bytes": 12372,
-    "sha256": "f40afa6c2101a9580e5e9a2b789e6c54a10b9d87661cf634cff12edae1fac27c"
+    "bytes": 13043,
+    "sha256": "8076a492ff47d91ff67f7eeb909a431988f94203190b2d1e9b746dc2cb1e2d30"
   }
 }
